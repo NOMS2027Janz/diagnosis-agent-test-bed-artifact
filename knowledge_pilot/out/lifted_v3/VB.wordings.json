@@ -1,0 +1,1171 @@
+{
+ "by_wording": {
+  "WSS attenuation drift": "cause.wss_attenuation_drift",
+  "WSS passband shift": "cause.wss_passband_shift",
+  "a misaligned ROADM passband": "cause.wss_passband_shift",
+  "WSS input port failure": "cause.wss_input_port_failure",
+  "Transmit laser failure": "cause.transmit_laser_failure",
+  "the far-end transmitter's laser has failed": "cause.transmit_laser_failure",
+  "transmit laser failure": "cause.transmit_laser_failure",
+  "Card failure": "cause.card_failure",
+  "the far-end card has failed": "cause.card_failure",
+  "Receiver degradation": "cause.receiver_degradation",
+  "degradation of this unit's own receiver": "cause.receiver_degradation",
+  "a broken fibre": "cause.a_broken_fibre",
+  "the fibre section feeding this unit is broken": "cause.a_broken_fibre",
+  "a failed amplifier": "cause.a_failed_amplifier",
+  "the preceding amplifier has failed and emits no light": "cause.a_failed_amplifier",
+  "failure of the unit itself": "cause.a_failed_amplifier",
+  "a disconnected patch cord": "cause.a_disconnected_patch_cord",
+  "the patch cord may have been disconnected": "cause.a_disconnected_patch_cord",
+  "a blocked ROADM port": "cause.a_blocked_roadm_port",
+  "a rise in fibre loss": "cause.a_rise_in_fibre_loss",
+  "its loss has risen sharply": "cause.a_rise_in_fibre_loss",
+  "a rise in an amplifier's noise": "cause.a_rise_in_an_amplifier_s_noise",
+  "a rise in differential group delay": "cause.a_rise_in_differential_group_delay",
+  "a fast polarisation transient": "cause.a_fast_polarisation_transient",
+  "a dirty connector": "cause.a_dirty_connector",
+  "any failure": "cause.failure",
+  "failure": "cause.failure",
+  "Pump or unit failure": "cause.pump_or_unit_failure",
+  "Gain loss": "cause.gain_loss",
+  "gain loss": "cause.gain_loss",
+  "Pump ageing": "cause.pump_ageing",
+  "pump ageing": "cause.pump_ageing",
+  "Gain tilt": "cause.gain_tilt",
+  "failure of this unit's pump laser": "cause.failure_of_this_unit_s_pump_laser",
+  "Switch fabric failure": "cause.switch_fabric_failure",
+  "a fabric failure": "cause.switch_fabric_failure",
+  "Wrong cross-connection": "cause.wrong_cross_connection",
+  "a wrong cross-connection": "cause.wrong_cross_connection",
+  "Client port failure": "cause.client_port_failure",
+  "a failure of the client port": "cause.client_port_failure",
+  "An impairment affecting the whole incoming line": "condition.an_impairment_affecting_the_whole_incoming_line",
+  "continues, after the node, as an impairment of each channel routed onwards": "condition.an_impairment_affecting_the_whole_incoming_line",
+  "A power loss upstream of up to about 8 dB": "condition.a_power_loss_upstream_of_up_to_about_8_db",
+  "A larger loss": "condition.a_power_loss_upstream_of_up_to_about_8_db",
+  "is re-levelled at the node": "condition.power_is_normal",
+  "does not appear downstream as low power": "condition.power_is_normal",
+  "power is normal": "condition.power_is_normal",
+  "the loss of signal-to-noise ratio it caused remains": "condition.the_loss_of_signal_to_noise_ratio_it_caused_rema",
+  "the optical signal-to-noise ratio of every channel falls as well": "condition.the_loss_of_signal_to_noise_ratio_it_caused_rema",
+  "the output is noisier": "condition.the_loss_of_signal_to_noise_ratio_it_caused_rema",
+  "the signal-to-noise ratio falls": "condition.the_loss_of_signal_to_noise_ratio_it_caused_rema",
+  "passes on as low power": "condition.power_is_low",
+  "power is low": "condition.power_is_low",
+  "pass through the node unchanged": "condition.pass_through_the_node_unchanged",
+  "signal quality is reduced": "condition.the_signal_arrives_but_is_impaired",
+  "the signal arrives but is impaired": "condition.the_signal_arrives_but_is_impaired",
+  "is blocked": "condition.is_blocked",
+  "are unaffected": "condition.are_unaffected",
+  "no light reaches the receiver": "condition.no_light_reaches_the_receiver",
+  "No light at the line receiver.": "condition.no_light_reaches_the_receiver",
+  "no light arrives at the input of the receiving end of the multiplex section": "condition.no_light_reaches_the_receiver",
+  "declares loss of signal (G.798 dLOS)": "condition.declares_loss_of_signal_g_798_dlos",
+  "loses OTU frame alignment": "condition.frame_alignment_is_lost",
+  "frame alignment is lost": "condition.frame_alignment_is_lost",
+  "OTU frame alignment lost while light is present.": "condition.frame_alignment_is_lost",
+  "the unit itself has failed": "condition.card_hardware_fault",
+  "Card hardware fault.": "condition.card_hardware_fault",
+  "declares an equipment defect (dEQ)": "condition.declares_an_equipment_defect_deq",
+  "the unit's traffic alarms are masked by the equipment alarm": "condition.the_unit_s_traffic_alarms_are_masked_by_the_equi",
+  "are masked by the equipment alarm": "condition.the_unit_s_traffic_alarms_are_masked_by_the_equi",
+  "lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin": "condition.lower_power_a_lower_signal_to_noise_ratio_a_rais",
+  "pre-FEC errors appear": "condition.pre_fec_errors_appear",
+  "Errors appear": "condition.pre_fec_errors_appear",
+  "Signal degraded: pre-FEC errors above threshold": "condition.pre_fec_errors_appear",
+  "Polarisation changes faster than the tracking range": "condition.polarisation_changes_faster_than_the_tracking_ra",
+  "produce errored seconds": "condition.produce_errored_seconds",
+  "an ODU alarm indication signal is inserted downstream": "condition.an_odu_alarm_indication_signal",
+  "an ODU alarm indication signal": "condition.an_odu_alarm_indication_signal",
+  "carries an ODU alarm indication signal onwards on every ODU cross-connected through it": "condition.an_odu_alarm_indication_signal",
+  "an alarm indication signal is carried onwards": "condition.an_odu_alarm_indication_signal",
+  "An ODU alarm indication signal is received.": "condition.an_odu_alarm_indication_signal",
+  "a backward defect indication is sent": "condition.a_backward_defect_indication_is_sent",
+  "loses the signal": "condition.loses_the_signal",
+  "is lost": "condition.the_client_service_has_failed",
+  "takes the client service down": "condition.the_client_service_has_failed",
+  "is interrupted": "condition.the_client_service_has_failed",
+  "fails": "condition.the_client_service_has_failed",
+  "The client service has failed.": "condition.the_client_service_has_failed",
+  "goes silent": "condition.goes_silent",
+  "are normal": "condition.are_normal",
+  "is normal": "condition.is_normal",
+  "The far end reports a defect on the signal this unit transmits.": "condition.the_far_end_reports_a_defect_on_the_signal_this_",
+  "The unit has detected a fault in its transmit laser.": "condition.the_unit_has_detected_a_fault_in_its_transmit_la",
+  "All three units operate": "condition.all_three_units_operate",
+  "constant-gain mode": "condition.constant_gain_mode",
+  "less light arrives at the input": "condition.the_input_is_weak",
+  "the input is weak": "condition.the_input_is_weak",
+  "less light leaves the output": "condition.the_output_is_weak",
+  "the output is weak": "condition.the_output_is_weak",
+  "Output power is low": "condition.the_output_is_weak",
+  "Loss of the OSC on one section": "condition.loss_of_the_osc_on_one_section",
+  "the supervisory channel is not received": "condition.loss_of_the_osc_on_one_section",
+  "does not propagate to the next": "condition.does_not_propagate_to_the_next",
+  "no light arrives": "condition.no_light_arrives",
+  "no light arrives at its input": "condition.no_light_arrives",
+  "no light leaves": "condition.no_light_leaves",
+  "the output goes dark": "condition.no_light_leaves",
+  "light is present at its input but none leaves its output": "condition.light_is_present_at_its_input_but_none_leaves_it",
+  "raises its drive current to hold the gain": "condition.raises_its_drive_current_to_hold_the_gain",
+  "Traffic is unaffected until the drive current reaches its limit": "condition.traffic_is_unaffected_until_the_drive_current_re",
+  "gives early warning": "condition.gives_early_warning",
+  "leads eventually to the end-of-life alarm (AMP_PUMP_EOL)": "condition.leads_eventually_to_the_end_of_life_alarm_amp_pu",
+  "arrive weaker than the others": "condition.arrive_weaker_than_the_others",
+  "are affected": "condition.arrive_weaker_than_the_others",
+  "the gain departs from its set point by more than 2 dB": "condition.the_gain_departs_from_its_set_point_by_more_than",
+  "the pump drive current exceeds 120 per cent of its beginning-of-life value": "condition.the_pump_drive_current_exceeds_120_per_cent_of_i",
+  "an ODU delivered from the wrong source": "condition.trail_trace_identifier_mismatch_the_odu_received",
+  "Trail trace identifier mismatch: the ODU received is not the one expected.": "condition.trail_trace_identifier_mismatch_the_odu_received",
+  "the service is protected": "condition.the_service_is_protected",
+  "the selector can choose a path free of defects": "condition.the_selector_can_choose_a_path_free_of_defects",
+  "the service suffers only a brief hit while the selector switches": "condition.the_service_suffers_only_a_brief_hit_while_the_s",
+  "is delivered to the wrong destination": "condition.is_delivered_to_the_wrong_destination",
+  "There is no optical symptom.": "condition.there_is_no_optical_symptom",
+  "The far end reports that it is receiving an alarm indication signal.": "condition.the_far_end_reports_that_it_is_receiving_an_alar",
+  "The selector is on the protection path.": "condition.the_selector_is_on_the_protection_path",
+  "The protection path has failed.": "condition.the_protection_path_has_failed",
+  "Port hardware fault.": "condition.port_hardware_fault",
+  "Fabric fault.": "condition.fabric_fault",
+  "the power of every channel": "characteristic.the_power_of_every_channel",
+  "the OSNR of every channel": "characteristic.the_osnr_of_every_channel",
+  "Estimated OSNR": "characteristic.the_osnr_of_every_channel",
+  "Received power": "characteristic.received_power",
+  "Optical power": "characteristic.received_power",
+  "errored seconds, in 15-minute bins": "characteristic.errored_seconds_in_15_minute_bins",
+  "client errored seconds": "characteristic.errored_seconds_in_15_minute_bins",
+  "pre-FEC bit error ratio": "characteristic.pre_fec_bit_error_ratio",
+  "differential group delay": "characteristic.differential_group_delay",
+  "polarisation change rate": "characteristic.polarisation_change_rate",
+  "Total optical power at the unit's input": "characteristic.total_optical_power_at_the_unit_s_input",
+  "Total optical power at the unit's output": "characteristic.total_optical_power_at_the_unit_s_output",
+  "Drive current of the pump laser, as a percentage of its beginning-of-life value": "characteristic.drive_current_of_the_pump_laser_as_a_percentage_",
+  "an indicator of pump health": "characteristic.drive_current_of_the_pump_laser_as_a_percentage_",
+  "Presence of the supervisory channel at the input": "characteristic.presence_of_the_supervisory_channel_at_the_input",
+  "client unavailable seconds": "characteristic.client_unavailable_seconds",
+  "ROADM": "resource.roadm",
+  "colourless, directionless and contentionless ROADM": "resource.roadm",
+  "Transponder": "resource.transponder",
+  "Muxponder": "resource.muxponder",
+  "OTN line card": "resource.otn_line_card",
+  "All units": "resource.all_units",
+  "Booster amplifier (BA)": "resource.booster_amplifier_ba",
+  "At the transmitting end of a multiplex section, after the ROADM": "resource.booster_amplifier_ba",
+  "Line amplifier (LA)": "resource.line_amplifier_la",
+  "At intermediate amplifier sites": "resource.line_amplifier_la",
+  "Preamplifier (PA)": "resource.preamplifier_pa",
+  "At the receiving end of a multiplex section, before the ROADM": "resource.preamplifier_pa",
+  "OTN switch": "resource.otn_switch",
+  "ODU cross-connect fabric": "resource.otn_switch",
+  "Client port, 10GE": "resource.client_port_10ge",
+  "Client port, 100GE": "resource.client_port_100ge",
+  "Client port, 400GE": "resource.client_port_400ge",
+  "client port": "resource.client_port",
+  "OCH_LOS": "alarm.och_los",
+  "OTU_LOF": "alarm.otu_lof",
+  "OTU_SD": "alarm.otu_sd",
+  "OTU_BDI": "alarm.otu_bdi",
+  "EQPT_TX_FAIL": "alarm.eqpt_tx_fail",
+  "EQPT_CARD_FAIL": "alarm.eqpt_card_fail",
+  "AMP_INPUT_LOS": "alarm.amp_input_los",
+  "OMS_LOS_P": "alarm.oms_los_p",
+  "OSC_LOS": "alarm.osc_los",
+  "AMP_FAIL": "alarm.amp_fail",
+  "AMP_GAIN_OOR": "alarm.amp_gain_oor",
+  "AMP_PUMP_EOL": "alarm.amp_pump_eol",
+  "CLIENT_SF": "alarm.client_sf",
+  "ODU_AIS": "alarm.odu_ais",
+  "ODU_BDI": "alarm.odu_bdi",
+  "ODU_TIM": "alarm.odu_tim",
+  "PROT_ACTIVE": "alarm.prot_active",
+  "PROT_UNAVAIL": "alarm.prot_unavail",
+  "EQPT_PORT_FAIL": "alarm.eqpt_port_fail",
+  "OTN_FABRIC_FAIL": "alarm.otn_fabric_fail",
+  "that channel": "scope.the_channel",
+  "The channel": "scope.the_channel",
+  "this channel": "scope.the_channel",
+  "The channel it transmits": "scope.the_channel",
+  "Every channel arriving at the node on that degree": "scope.every_channel_carried_by_the_unit",
+  "Every channel carried by the unit": "scope.every_channel_carried_by_the_unit",
+  "every channel": "scope.every_channel_carried_by_the_unit",
+  "Traffic": "scope.every_channel_carried_by_the_unit",
+  "channels arriving on the other degrees": "scope.other_channels",
+  "other channels": "scope.other_channels",
+  "channels at one edge of the band": "scope.some_channels_not_all",
+  "Some channels, not all": "scope.some_channels_not_all",
+  "the traffic it receives": "scope.the_traffic_it_receives",
+  "its monitoring": "scope.its_monitoring",
+  "its traffic alarms": "scope.its_traffic_alarms",
+  "this receiver only": "scope.this_receiver_only",
+  "the optical path": "scope.the_optical_path",
+  "the unit": "scope.the_unit",
+  "the trend": "scope.the_trend",
+  "Every ODU cross-connected through the switch": "scope.every_odu_cross_connected_through_the_switch",
+  "each": "scope.every_odu_cross_connected_through_the_switch",
+  "one ODU": "scope.one_odu",
+  "The client optic": "scope.the_client_optic",
+  "the port": "scope.the_port",
+  "the client service": "scope.the_client_service",
+  "after the node": "location.downstream",
+  "downstream": "location.downstream",
+  "there": "location.there",
+  "The receiver at the far end": "location.the_receiver_at_the_far_end",
+  "at the far end": "location.the_far_end",
+  "the far end": "location.the_far_end",
+  "here": "location.here",
+  "this receiver": "location.the_line_receiver",
+  "the line receiver": "location.the_line_receiver",
+  "this unit's own receiver": "location.the_line_receiver",
+  "the far-end transmitter": "location.the_far_end_transmitter",
+  "along the channel's path": "location.along_the_channel_s_path",
+  "on the path to the far end": "location.along_the_channel_s_path",
+  "the signal this unit transmits": "location.the_signal_this_unit_transmits",
+  "on this unit": "location.this_unit",
+  "this unit": "location.this_unit",
+  "this card": "location.this_card",
+  "the output": "location.the_output",
+  "the fibre section feeding this unit": "location.the_fibre_section_feeding_this_unit",
+  "the fibre section feeding the unit, not against the unit itself": "location.the_fibre_section_feeding_this_unit",
+  "the preceding amplifier": "location.the_preceding_amplifier",
+  "at the input of the multiplex section": "location.at_the_input_of_the_multiplex_section",
+  "through the switch": "location.through_the_switch",
+  "the wrong destination": "location.the_wrong_destination",
+  "on the ODU path currently in use": "location.on_the_odu_path_currently_in_use",
+  "at either end": "location.at_either_end",
+  "in an OTN switch along the ODU path": "location.in_an_otn_switch_along_the_odu_path",
+  "on the working ODU path": "location.on_the_working_odu_path",
+  "on the protection ODU path": "location.on_the_protection_odu_path",
+  "this port": "location.this_port",
+  "this switch's fabric": "location.this_switch_s_fabric",
+  "available on nodes with the channel monitoring option": "availability.available_on_nodes_with_the_channel_monitoring_o",
+  "Units with the power monitoring option": "availability.units_with_the_power_monitoring_option",
+  "Units with the advanced monitoring option": "availability.units_with_the_advanced_monitoring_option",
+  "Each client port reports client errored seconds in 15-minute bins.": "availability.each_client_port_reports_client_errored_seconds_",
+  "Each client port reports client unavailable seconds in 15-minute bins.": "availability.each_client_port_reports_client_errored_seconds_",
+  "A degradation": "nature.a_degradation",
+  "A degradation, not an outage": "nature.a_degradation",
+  "gradual or step degradation rather than an outage": "nature.a_degradation",
+  "degradation rather than an outage": "nature.a_degradation",
+  "Hard failure": "nature.hard_failure",
+  "hard failure": "nature.hard_failure",
+  "slow, incipient condition": "nature.slow_incipient_condition",
+  "mostly just after provisioning changes": "nature.mostly_just_after_provisioning_changes",
+  "critical": "severity.critical",
+  "minor": "severity.minor",
+  "not alarmed": "severity.not_alarmed",
+  "major": "severity.major",
+  "Each channel leaving a degree is switched separately.": "behaviour.each_channel_leaving_a_degree_is_switched_separa",
+  "When frame alignment is lost, the unit applies the G.798 consequent actions: an ODU alarm indication signal is inserted downstream on every ODU the OTU carries, and a backward defect indication is sent to the far-end transmitter.": "behaviour.when_frame_alignment_is_lost_the_unit_applies_th",
+  "The OTN switch carries an ODU alarm indication signal onwards on every ODU cross-connected through it.": "behaviour.the_otn_switch_carries_an_odu_alarm_indication_s"
+ },
+ "dropped": [],
+ "invented": [],
+ "inventory": {
+  "Cause": {
+   "WSS attenuation drift": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: fault \u2014 The WSS attenuation for one channel drifts above its set value."
+   ],
+   "WSS passband shift": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: fault \u2014 The WSS passband for one channel is shifted or narrowed."
+   ],
+   "WSS input port failure": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: fault \u2014 An input port of a WSS fails."
+   ],
+   "Transmit laser failure": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: fault \u2014 The transmit laser is off or has failed."
+   ],
+   "Card failure": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: fault \u2014 The card fails."
+   ],
+   "Receiver degradation": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: fault \u2014 The receiver degrades."
+   ],
+   "the far-end transmitter's laser has failed": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OCH_LOS (No light at the line receiver.)"
+   ],
+   "the far-end card has failed": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OCH_LOS (No light at the line receiver.)"
+   ],
+   "a broken fibre": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OCH_LOS (No light at the line receiver.)"
+   ],
+   "a failed amplifier": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OCH_LOS (No light at the line receiver.)"
+   ],
+   "a disconnected patch cord": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OCH_LOS (No light at the line receiver.)"
+   ],
+   "a blocked ROADM port": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OCH_LOS (No light at the line receiver.)"
+   ],
+   "a rise in fibre loss": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.)",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_SD (the margin falls below about 1 dB)"
+   ],
+   "a rise in an amplifier's noise": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.)",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_SD (the margin falls below about 1 dB)"
+   ],
+   "a rise in differential group delay": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.)",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_SD (the margin falls below about 1 dB)"
+   ],
+   "a misaligned ROADM passband": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.)",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_SD (the margin falls below about 1 dB)"
+   ],
+   "a fast polarisation transient": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.)"
+   ],
+   "degradation of this unit's own receiver": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.)",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_SD (the margin falls below about 1 dB)"
+   ],
+   "a dirty connector": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_SD (the margin falls below about 1 dB)"
+   ],
+   "any failure": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm OTU_BDI (The far end reports a defect on the signal this unit transmits.)",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm CLIENT_SF (The client service has failed.)",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm PROT_ACTIVE (The selector is on the protection path.)",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm PROT_UNAVAIL (The protection path has failed.)"
+   ],
+   "transmit laser failure": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm EQPT_TX_FAIL (The unit has detected a fault in its transmit laser.)"
+   ],
+   "failure": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: probable cause of alarm EQPT_CARD_FAIL (Card hardware fault.)",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm EQPT_PORT_FAIL (Port hardware fault.)",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm OTN_FABRIC_FAIL (Fabric fault.)"
+   ],
+   "Pump or unit failure": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: fault \u2014 The pump laser or the unit fails and the output goes dark. Every channel carried by the unit is lost downstream. This is a hard failure. Field return rate about 1 per cent of units per year."
+   ],
+   "Gain loss": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: fault \u2014 The unit's gain falls below its set point. Output power is low on every channel, and, since the noise added is unchanged, the signal-to-noise ratio of every channel falls too. This is a gradual or step degradation rather than an outage. About 1 per cent of units per year."
+   ],
+   "Pump ageing": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: fault \u2014 As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year."
+   ],
+   "Gain tilt": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: fault \u2014 The gain is no longer flat across the band, so channels at one edge of the band arrive weaker than the others. Some channels are affected, not all. This is a degradation rather than an outage. About 0.5 per cent of units per year."
+   ],
+   "the fibre section feeding this unit is broken": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm AMP_INPUT_LOS (when no light arrives at its input)",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm OMS_LOS_P (when no light arrives at the input of the receiving end of the multiplex section)",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm OSC_LOS (when the supervisory channel is not received)"
+   ],
+   "its loss has risen sharply": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm AMP_INPUT_LOS (when no light arrives at its input)",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm OMS_LOS_P (when no light arrives at the input of the receiving end of the multiplex section)",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm OSC_LOS (when the supervisory channel is not received)"
+   ],
+   "the preceding amplifier has failed and emits no light": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm AMP_INPUT_LOS (when no light arrives at its input)",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm OMS_LOS_P (when no light arrives at the input of the receiving end of the multiplex section)"
+   ],
+   "the patch cord may have been disconnected": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm OMS_LOS_P (when no light arrives at the input of the receiving end of the multiplex section)"
+   ],
+   "failure of this unit's pump laser": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm AMP_FAIL (when light is present at its input but none leaves its output)"
+   ],
+   "failure of the unit itself": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm AMP_FAIL (when light is present at its input but none leaves its output)"
+   ],
+   "gain loss": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm AMP_GAIN_OOR (when the gain departs from its set point by more than 2 dB)"
+   ],
+   "pump ageing": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: probable cause of alarm AMP_PUMP_EOL (when the pump drive current exceeds 120 per cent of its beginning-of-life value)"
+   ],
+   "Switch fabric failure": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: fault \u2014 Every ODU cross-connected through the switch is interrupted: an alarm indication signal is carried onwards on each."
+   ],
+   "Wrong cross-connection": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: fault \u2014 A cross-connection has been provisioned wrongly, so one ODU is delivered to the wrong destination. There is no optical symptom."
+   ],
+   "Client port failure": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: fault \u2014 The client optic or the port fails, and the client service is lost."
+   ],
+   "a failure of the client port": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm CLIENT_SF (The client service has failed.)"
+   ],
+   "a wrong cross-connection": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm CLIENT_SF (The client service has failed.)",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm ODU_TIM (the ODU received is not the one expected)"
+   ],
+   "a fabric failure": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: probable cause of alarm CLIENT_SF (The client service has failed.)"
+   ]
+  },
+  "Condition": {
+   "An impairment affecting the whole incoming line": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: arriving condition -> continues, after the node, as an impairment of each channel routed onwards"
+   ],
+   "continues, after the node, as an impairment of each channel routed onwards": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: result of An impairment affecting the whole incoming line"
+   ],
+   "A power loss upstream of up to about 8 dB": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: arriving condition -> is re-levelled at the node; does not appear downstream as low power; the loss of signal-to-noise ratio it caused remains"
+   ],
+   "is re-levelled at the node": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: result of A power loss upstream of up to about 8 dB"
+   ],
+   "does not appear downstream as low power": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: result of A power loss upstream of up to about 8 dB"
+   ],
+   "the loss of signal-to-noise ratio it caused remains": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: result of A power loss upstream of up to about 8 dB"
+   ],
+   "A larger loss": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: arriving condition -> passes on as low power"
+   ],
+   "passes on as low power": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: result of A larger loss"
+   ],
+   "pass through the node unchanged": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: result of "
+   ],
+   "power is low": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: symptom of fault WSS attenuation drift"
+   ],
+   "power is normal": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: symptom of fault WSS passband shift"
+   ],
+   "signal quality is reduced": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: symptom of fault WSS passband shift"
+   ],
+   "is blocked": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: symptom of fault WSS input port failure"
+   ],
+   "are unaffected": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: symptom of fault WSS input port failure"
+   ],
+   "no light reaches the receiver": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> declares loss of signal (G.798 dLOS); loses OTU frame alignment"
+   ],
+   "declares loss of signal (G.798 dLOS)": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of no light reaches the receiver"
+   ],
+   "loses OTU frame alignment": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of no light reaches the receiver"
+   ],
+   "the unit itself has failed": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> declares an equipment defect (dEQ); frame alignment is lost; the unit's traffic alarms are masked by the equipment alarm"
+   ],
+   "declares an equipment defect (dEQ)": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of the unit itself has failed"
+   ],
+   "frame alignment is lost": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of the unit itself has failed",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of the signal arrives but is impaired; lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> an ODU alarm indication signal is inserted downstream",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> a backward defect indication is sent"
+   ],
+   "the unit's traffic alarms are masked by the equipment alarm": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of the unit itself has failed"
+   ],
+   "the signal arrives but is impaired": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> pre-FEC errors appear",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> frame alignment is lost"
+   ],
+   "lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> pre-FEC errors appear",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> frame alignment is lost"
+   ],
+   "pre-FEC errors appear": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of the signal arrives but is impaired; lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin"
+   ],
+   "Polarisation changes faster than the tracking range": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: arriving condition -> produce errored seconds"
+   ],
+   "produce errored seconds": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of Polarisation changes faster than the tracking range"
+   ],
+   "an ODU alarm indication signal is inserted downstream": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of frame alignment is lost"
+   ],
+   "a backward defect indication is sent": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: result of frame alignment is lost"
+   ],
+   "loses the signal": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: symptom of fault Transmit laser failure"
+   ],
+   "is lost": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: symptom of fault Card failure",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Pump or unit failure",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: symptom of fault Client port failure"
+   ],
+   "goes silent": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: symptom of fault Card failure"
+   ],
+   "are masked by the equipment alarm": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: symptom of fault Card failure"
+   ],
+   "Errors appear": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: symptom of fault Receiver degradation"
+   ],
+   "are normal": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: symptom of fault Receiver degradation"
+   ],
+   "is normal": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: symptom of fault Receiver degradation"
+   ],
+   "No light at the line receiver.": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm OCH_LOS"
+   ],
+   "OTU frame alignment lost while light is present.": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm OTU_LOF"
+   ],
+   "Signal degraded: pre-FEC errors above threshold": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm OTU_SD"
+   ],
+   "The far end reports a defect on the signal this unit transmits.": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm OTU_BDI"
+   ],
+   "The unit has detected a fault in its transmit laser.": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm EQPT_TX_FAIL"
+   ],
+   "Card hardware fault.": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm EQPT_CARD_FAIL"
+   ],
+   "All three units operate": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: arriving condition -> constant-gain mode"
+   ],
+   "constant-gain mode": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: result of All three units operate"
+   ],
+   "less light arrives at the input": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: arriving condition -> less light leaves the output; the optical signal-to-noise ratio of every channel falls as well"
+   ],
+   "less light leaves the output": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: result of less light arrives at the input"
+   ],
+   "the optical signal-to-noise ratio of every channel falls as well": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: result of less light arrives at the input"
+   ],
+   "Loss of the OSC on one section": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: arriving condition -> does not propagate to the next"
+   ],
+   "does not propagate to the next": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: result of Loss of the OSC on one section"
+   ],
+   "no light arrives": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: arriving condition -> no light leaves"
+   ],
+   "no light leaves": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: result of no light arrives"
+   ],
+   "the input is weak": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: arriving condition -> the output is weak; the output is noisier"
+   ],
+   "the output is weak": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: result of the input is weak"
+   ],
+   "the output is noisier": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: result of the input is weak"
+   ],
+   "the output goes dark": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Pump or unit failure"
+   ],
+   "Output power is low": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Gain loss"
+   ],
+   "the signal-to-noise ratio falls": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Gain loss"
+   ],
+   "raises its drive current to hold the gain": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Pump ageing"
+   ],
+   "Traffic is unaffected until the drive current reaches its limit": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Pump ageing"
+   ],
+   "gives early warning": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Pump ageing"
+   ],
+   "leads eventually to the end-of-life alarm (AMP_PUMP_EOL)": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Pump ageing"
+   ],
+   "arrive weaker than the others": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Gain tilt"
+   ],
+   "are affected": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: symptom of fault Gain tilt"
+   ],
+   "no light arrives at its input": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_INPUT_LOS"
+   ],
+   "no light arrives at the input of the receiving end of the multiplex section": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm OMS_LOS_P"
+   ],
+   "the supervisory channel is not received": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm OSC_LOS"
+   ],
+   "light is present at its input but none leaves its output": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_FAIL"
+   ],
+   "the gain departs from its set point by more than 2 dB": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_GAIN_OOR"
+   ],
+   "the pump drive current exceeds 120 per cent of its beginning-of-life value": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_PUMP_EOL"
+   ],
+   "an ODU alarm indication signal": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: arriving condition -> carries an ODU alarm indication signal onwards on every ODU cross-connected through it",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: arriving condition -> takes the client service down"
+   ],
+   "carries an ODU alarm indication signal onwards on every ODU cross-connected through it": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: result of an ODU alarm indication signal"
+   ],
+   "an ODU delivered from the wrong source": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: arriving condition -> takes the client service down"
+   ],
+   "takes the client service down": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: result of an ODU alarm indication signal; an ODU delivered from the wrong source"
+   ],
+   "the service is protected": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: arriving condition -> the service suffers only a brief hit while the selector switches"
+   ],
+   "the selector can choose a path free of defects": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: arriving condition -> the service suffers only a brief hit while the selector switches"
+   ],
+   "the service suffers only a brief hit while the selector switches": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: result of the service is protected; the selector can choose a path free of defects"
+   ],
+   "is interrupted": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: symptom of fault Switch fabric failure"
+   ],
+   "an alarm indication signal is carried onwards": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: symptom of fault Switch fabric failure"
+   ],
+   "is delivered to the wrong destination": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: symptom of fault Wrong cross-connection"
+   ],
+   "There is no optical symptom.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: symptom of fault Wrong cross-connection"
+   ],
+   "fails": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: symptom of fault Client port failure"
+   ],
+   "The client service has failed.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm CLIENT_SF"
+   ],
+   "An ODU alarm indication signal is received.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm ODU_AIS"
+   ],
+   "The far end reports that it is receiving an alarm indication signal.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm ODU_BDI"
+   ],
+   "Trail trace identifier mismatch: the ODU received is not the one expected.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm ODU_TIM"
+   ],
+   "The selector is on the protection path.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm PROT_ACTIVE"
+   ],
+   "The protection path has failed.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm PROT_UNAVAIL"
+   ],
+   "Port hardware fault.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm EQPT_PORT_FAIL"
+   ],
+   "Fabric fault.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm OTN_FABRIC_FAIL"
+   ]
+  },
+  "Characteristic": {
+   "the power of every channel": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: measured by monitor optical channel monitor"
+   ],
+   "the OSNR of every channel": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: measured by monitor optical channel monitor"
+   ],
+   "Received power": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: measured by monitor Receive performance counters"
+   ],
+   "errored seconds, in 15-minute bins": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: measured by monitor Receive performance counters"
+   ],
+   "Optical power": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: measured by monitor Received power"
+   ],
+   "Estimated OSNR": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: measured by monitor Coherent DSP monitors"
+   ],
+   "pre-FEC bit error ratio": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: measured by monitor Coherent DSP monitors"
+   ],
+   "differential group delay": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: measured by monitor Coherent DSP monitors"
+   ],
+   "polarisation change rate": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: measured by monitor Coherent DSP monitors"
+   ],
+   "Total optical power at the unit's input": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: measured by monitor Input power"
+   ],
+   "Total optical power at the unit's output": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: measured by monitor Output power"
+   ],
+   "Drive current of the pump laser, as a percentage of its beginning-of-life value": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: measured by monitor Pump drive current"
+   ],
+   "an indicator of pump health": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: measured by monitor Pump drive current"
+   ],
+   "Presence of the supervisory channel at the input": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: measured by monitor OSC receiver"
+   ],
+   "client errored seconds": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: measured by monitor client errored seconds"
+   ],
+   "client unavailable seconds": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: measured by monitor client unavailable seconds"
+   ]
+  },
+  "Resource": {
+   "ROADM": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: unit VB-ROADM-CDC"
+   ],
+   "colourless, directionless and contentionless ROADM": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: position of VB-ROADM-CDC"
+   ],
+   "Transponder": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: unit VB-TPD-400"
+   ],
+   "Muxponder": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: unit VB-MXP-200",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: unit VB-MXP-400"
+   ],
+   "OTN line card": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: unit VB-OTN-LC-200",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: unit VB-OTN-LC-400"
+   ],
+   "All units": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm OCH_LOS",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm OTU_LOF",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm OTU_SD",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: raises alarm OTU_BDI"
+   ],
+   "Booster amplifier (BA)": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: unit VB-OA-BST",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_FAIL",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_PUMP_EOL"
+   ],
+   "At the transmitting end of a multiplex section, after the ROADM": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: position of VB-OA-BST"
+   ],
+   "Line amplifier (LA)": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: unit VB-OA-ILA",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_INPUT_LOS",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm OSC_LOS",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_FAIL"
+   ],
+   "At intermediate amplifier sites": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: position of VB-OA-ILA"
+   ],
+   "Preamplifier (PA)": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: unit VB-OA-PRE",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm OMS_LOS_P",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm OSC_LOS",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: raises alarm AMP_FAIL"
+   ],
+   "At the receiving end of a multiplex section, before the ROADM": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: position of VB-OA-PRE"
+   ],
+   "OTN switch": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: unit VB-OTNSW",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm OTN_FABRIC_FAIL"
+   ],
+   "ODU cross-connect fabric": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: position of VB-OTNSW"
+   ],
+   "Client port, 10GE": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: unit VB-CP-10GE"
+   ],
+   "Client port, 100GE": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: unit VB-CP-100GE"
+   ],
+   "Client port, 400GE": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: unit VB-CP-400GE"
+   ],
+   "client port": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm CLIENT_SF",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm ODU_AIS",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm ODU_BDI",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: raises alarm ODU_TIM"
+   ]
+  },
+  "Alarm": {
+   "OCH_LOS": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: No light at the line receiver."
+   ],
+   "OTU_LOF": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: OTU frame alignment lost while light is present."
+   ],
+   "OTU_SD": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: the margin falls below about 1 dB"
+   ],
+   "OTU_BDI": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: The far end reports a defect on the signal this unit transmits."
+   ],
+   "EQPT_TX_FAIL": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: The unit has detected a fault in its transmit laser."
+   ],
+   "EQPT_CARD_FAIL": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: Card hardware fault."
+   ],
+   "AMP_INPUT_LOS": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: when no light arrives at its input"
+   ],
+   "OMS_LOS_P": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: when no light arrives at the input of the receiving end of the multiplex section"
+   ],
+   "OSC_LOS": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: when the supervisory channel is not received"
+   ],
+   "AMP_FAIL": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: when light is present at its input but none leaves its output"
+   ],
+   "AMP_GAIN_OOR": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: when the gain departs from its set point by more than 2 dB"
+   ],
+   "AMP_PUMP_EOL": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: when the pump drive current exceeds 120 per cent of its beginning-of-life value"
+   ],
+   "CLIENT_SF": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: The client service has failed."
+   ],
+   "ODU_AIS": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: An ODU alarm indication signal is received."
+   ],
+   "ODU_BDI": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: The far end reports that it is receiving an alarm indication signal."
+   ],
+   "ODU_TIM": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: the ODU received is not the one expected"
+   ],
+   "PROT_ACTIVE": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: The selector is on the protection path."
+   ],
+   "PROT_UNAVAIL": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: The protection path has failed."
+   ],
+   "EQPT_PORT_FAIL": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: Port hardware fault."
+   ],
+   "OTN_FABRIC_FAIL": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: Fabric fault."
+   ]
+  },
+  "Scope": {
+   "that channel": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: extent of symptom 'power is low' of WSS attenuation drift"
+   ],
+   "The channel": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: extent of symptom 'power is normal' of WSS passband shift",
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: extent of symptom 'signal quality is reduced' of WSS passband shift"
+   ],
+   "Every channel arriving at the node on that degree": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: extent of symptom 'is blocked' of WSS input port failure"
+   ],
+   "channels arriving on the other degrees": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: extent of symptom 'are unaffected' of WSS input port failure"
+   ],
+   "this channel": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: extent of symptom 'loses the signal' of Transmit laser failure"
+   ],
+   "The channel it transmits": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: extent of symptom 'is lost' of Card failure"
+   ],
+   "the traffic it receives": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: extent of symptom 'is lost' of Card failure"
+   ],
+   "its monitoring": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: extent of symptom 'goes silent' of Card failure"
+   ],
+   "its traffic alarms": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: extent of symptom 'are masked by the equipment alarm' of Card failure"
+   ],
+   "this receiver only": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: extent of symptom 'Errors appear' of Receiver degradation"
+   ],
+   "other channels": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: extent of symptom 'are normal' of Receiver degradation"
+   ],
+   "the optical path": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: extent of symptom 'is normal' of Receiver degradation"
+   ],
+   "the unit": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'the output goes dark' of Pump or unit failure",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'raises its drive current to hold the gain' of Pump ageing"
+   ],
+   "Every channel carried by the unit": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'is lost' of Pump or unit failure"
+   ],
+   "every channel": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'Output power is low' of Gain loss",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'the signal-to-noise ratio falls' of Gain loss"
+   ],
+   "Traffic": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'Traffic is unaffected until the drive current reaches its limit' of Pump ageing"
+   ],
+   "the trend": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'gives early warning' of Pump ageing",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'leads eventually to the end-of-life alarm (AMP_PUMP_EOL)' of Pump ageing"
+   ],
+   "channels at one edge of the band": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'arrive weaker than the others' of Gain tilt"
+   ],
+   "Some channels, not all": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: extent of symptom 'are affected' of Gain tilt"
+   ],
+   "Every ODU cross-connected through the switch": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: extent of symptom 'is interrupted' of Switch fabric failure"
+   ],
+   "each": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: extent of symptom 'an alarm indication signal is carried onwards' of Switch fabric failure"
+   ],
+   "one ODU": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: extent of symptom 'is delivered to the wrong destination' of Wrong cross-connection",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: extent of symptom 'There is no optical symptom.' of Wrong cross-connection"
+   ],
+   "The client optic": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: extent of symptom 'fails' of Client port failure"
+   ],
+   "the port": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: extent of symptom 'fails' of Client port failure"
+   ],
+   "the client service": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: extent of symptom 'is lost' of Client port failure"
+   ]
+  },
+  "Location": {
+   "after the node": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: where symptom 'power is low' of WSS attenuation drift shows"
+   ],
+   "there": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: where symptom 'is blocked' of WSS input port failure shows"
+   ],
+   "The receiver at the far end": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where symptom 'loses the signal' of Transmit laser failure shows"
+   ],
+   "at the far end": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where symptom 'is lost' of Card failure shows"
+   ],
+   "here": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where symptom 'is lost' of Card failure shows"
+   ],
+   "this receiver": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where symptom 'Errors appear' of Receiver degradation shows"
+   ],
+   "the far-end transmitter": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'the far-end transmitter's laser has failed' of OCH_LOS lies"
+   ],
+   "the far end": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'the far-end card has failed' of OCH_LOS lies"
+   ],
+   "along the channel's path": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'a broken fibre' of OCH_LOS lies",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'a failed amplifier' of OCH_LOS lies",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'a disconnected patch cord' of OCH_LOS lies",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'a blocked ROADM port' of OCH_LOS lies"
+   ],
+   "the line receiver": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: what alarm OCH_LOS is reported against"
+   ],
+   "this unit's own receiver": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'degradation of this unit's own receiver' of OTU_LOF lies",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'degradation of this unit's own receiver' of OTU_SD lies"
+   ],
+   "on the path to the far end": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'any failure' of OTU_BDI lies"
+   ],
+   "the signal this unit transmits": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: what alarm OTU_BDI is reported against"
+   ],
+   "on this unit": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'transmit laser failure' of EQPT_TX_FAIL lies"
+   ],
+   "this unit": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: what alarm EQPT_TX_FAIL is reported against",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'failure of this unit's pump laser' of AMP_FAIL lies",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'failure of the unit itself' of AMP_FAIL lies",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'gain loss' of AMP_GAIN_OOR lies"
+   ],
+   "this card": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: where the probable cause 'failure' of EQPT_CARD_FAIL lies",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: what alarm EQPT_CARD_FAIL is reported against"
+   ],
+   "the output": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where symptom 'the output goes dark' of Pump or unit failure shows"
+   ],
+   "downstream": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where symptom 'is lost' of Pump or unit failure shows"
+   ],
+   "the fibre section feeding this unit": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'the fibre section feeding this unit is broken' of AMP_INPUT_LOS lies",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'its loss has risen sharply' of AMP_INPUT_LOS lies",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'the fibre section feeding this unit is broken' of OMS_LOS_P lies",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'its loss has risen sharply' of OMS_LOS_P lies"
+   ],
+   "the preceding amplifier": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'the preceding amplifier has failed and emits no light' of AMP_INPUT_LOS lies",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'the preceding amplifier has failed and emits no light' of OMS_LOS_P lies"
+   ],
+   "at the input of the multiplex section": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: where the probable cause 'the patch cord may have been disconnected' of OMS_LOS_P lies"
+   ],
+   "the fibre section feeding the unit, not against the unit itself": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: what alarm OSC_LOS is reported against"
+   ],
+   "through the switch": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where symptom 'is interrupted' of Switch fabric failure shows"
+   ],
+   "the wrong destination": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where symptom 'is delivered to the wrong destination' of Wrong cross-connection shows"
+   ],
+   "on the ODU path currently in use": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'any failure' of CLIENT_SF lies"
+   ],
+   "at either end": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'a failure of the client port' of CLIENT_SF lies"
+   ],
+   "in an OTN switch along the ODU path": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'a wrong cross-connection' of CLIENT_SF lies",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'a fabric failure' of CLIENT_SF lies",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'a wrong cross-connection' of ODU_TIM lies"
+   ],
+   "client port": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: what alarm CLIENT_SF is reported against",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: what alarm ODU_AIS is reported against",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: what alarm ODU_BDI is reported against",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: what alarm ODU_TIM is reported against"
+   ],
+   "on the working ODU path": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'any failure' of PROT_ACTIVE lies"
+   ],
+   "on the protection ODU path": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'any failure' of PROT_UNAVAIL lies"
+   ],
+   "this port": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'failure' of EQPT_PORT_FAIL lies"
+   ],
+   "this switch's fabric": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: where the probable cause 'failure' of OTN_FABRIC_FAIL lies"
+   ],
+   "OTN switch": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: what alarm OTN_FABRIC_FAIL is reported against"
+   ]
+  },
+  "Availability": {
+   "available on nodes with the channel monitoring option": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: availability of monitor optical channel monitor"
+   ],
+   "All units": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: availability of monitor Receive performance counters",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: availability of monitor OSC receiver"
+   ],
+   "Units with the power monitoring option": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: availability of monitor Received power",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: availability of monitor Input power",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: availability of monitor Output power"
+   ],
+   "Units with the advanced monitoring option": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: availability of monitor Coherent DSP monitors",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: availability of monitor Pump drive current"
+   ],
+   "Each client port reports client errored seconds in 15-minute bins.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: availability of monitor client errored seconds"
+   ],
+   "Each client port reports client unavailable seconds in 15-minute bins.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: availability of monitor client unavailable seconds"
+   ]
+  },
+  "Nature": {
+   "A degradation": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: character of fault WSS attenuation drift",
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: character of fault WSS passband shift"
+   ],
+   "Hard failure": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: character of fault WSS input port failure",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: character of fault Transmit laser failure",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: character of fault Card failure",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: character of fault Switch fabric failure"
+   ],
+   "A degradation, not an outage": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: character of fault Receiver degradation"
+   ],
+   "hard failure": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: character of fault Pump or unit failure"
+   ],
+   "gradual or step degradation rather than an outage": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: character of fault Gain loss"
+   ],
+   "slow, incipient condition": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: character of fault Pump ageing"
+   ],
+   "degradation rather than an outage": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: character of fault Gain tilt"
+   ],
+   "mostly just after provisioning changes": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: character of fault Wrong cross-connection"
+   ]
+  },
+  "Severity": {
+   "critical": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: severity of OCH_LOS",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: severity of OTU_LOF",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: severity of EQPT_TX_FAIL",
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: severity of EQPT_CARD_FAIL"
+   ],
+   "minor": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: severity of OTU_SD",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: severity of AMP_GAIN_OOR",
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: severity of AMP_PUMP_EOL",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: severity of PROT_ACTIVE"
+   ],
+   "not alarmed": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: severity of OTU_BDI",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: severity of ODU_AIS",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: severity of ODU_BDI"
+   ],
+   "major": [
+    "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3: severity of OSC_LOS",
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: severity of ODU_TIM"
+   ]
+  },
+  "Behaviour": {
+   "Each channel leaving a degree is switched separately.": [
+    "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2: how channels are switched"
+   ],
+   "When frame alignment is lost, the unit applies the G.798 consequent actions: an ODU alarm indication signal is inserted downstream on every ODU the OTU carries, and a backward defect indication is sent to the far-end transmitter.": [
+    "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5: how channels are switched"
+   ],
+   "The OTN switch carries an ODU alarm indication signal onwards on every ODU cross-connected through it.": [
+    "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4: how channels are switched"
+   ]
+  }
+ },
+ "effort": {
+  "surface": {
+   "calls": 22,
+   "model": "gpt-5.6",
+   "input_tokens": 31429,
+   "output_tokens": 20783,
+   "reasoning_tokens": 15961,
+   "latency_s": 395.7882649898529,
+   "merges_applied": 4,
+   "invented_dropped": 0
+  },
+  "lift": {
+   "lift_total_tokens": 28906,
+   "lift_reasoning_tokens": 139,
+   "lift_latency_s": 138.61,
+   "lift_coverage": 1.0,
+   "concepts": 181,
+   "model": "gpt-5.6"
+  }
+ }
+}

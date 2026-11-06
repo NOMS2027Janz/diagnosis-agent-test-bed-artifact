@@ -1,0 +1,1 @@
+{"case": "x2190-s2143-common_cause", "seed": 2143, "kind": "common_cause", "candidates": 59, "rule_verdicts_agree": 201, "rule_verdicts_differ": 0, "differences": [], "overall_differ": 0, "engine_requests": [], "seconds_code": 0.324, "seconds_graph": 0.519}

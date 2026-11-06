@@ -1,0 +1,367 @@
+{
+ "vendor": "",
+ "document_title": "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1",
+ "standards": [],
+ "unit_types": [
+  {
+   "product_code": "VC-DXC",
+   "unit": "the digital cross-connect",
+   "role_or_position": "switches ODUs between line modules and tributaries",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VC-TRIB-10",
+   "unit": "tributary port",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "10GE",
+   "odu_mapping": "ODU2"
+  },
+  {
+   "product_code": "VC-TRIB-100",
+   "unit": "tributary port",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "100GE",
+   "odu_mapping": "ODU4"
+  },
+  {
+   "product_code": "VC-TRIB-400",
+   "unit": "tributary port",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400GE",
+   "odu_mapping": "ODUflex"
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "customer errored seconds",
+   "value": "15-minute counts (Base)"
+  },
+  {
+   "item": "customer unavailable seconds",
+   "value": "15-minute counts (Base)"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "customer errored seconds",
+   "measures": [
+    "customer errored seconds"
+   ],
+   "availability": "Base",
+   "applies_to": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "location": "Every tributary",
+   "alarm_only": false
+  },
+  {
+   "name": "customer unavailable seconds",
+   "measures": [
+    "customer unavailable seconds"
+   ],
+   "availability": "Base",
+   "applies_to": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "location": "Every tributary",
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "VC-DXC"
+   ],
+   "when": [
+    "an ODU AIS is received on an ODU it switches"
+   ],
+   "result": [
+    "passes an ODU AIS along on every ODU it switches"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "when": [
+    "receives an ODU AIS",
+    "receives an ODU meant for someone else"
+   ],
+   "result": [
+    "drops the customer's service"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "when": [
+    "the service is dual-homed, with a primary and a standby ODU route",
+    "the selector is at the receiving tributary",
+    "the standby route is clean"
+   ],
+   "result": [
+    "the customer only sees a short interruption while the selector moves"
+   ],
+   "threshold": null,
+   "note": null
+  }
+ ],
+ "faults": [
+  {
+   "name": "Fabric outage",
+   "applies_to": [
+    "VC-DXC"
+   ],
+   "description": "The switching fabric dies, and every ODU switched through this cross-connect is cut.",
+   "effects": [
+    {
+     "effect": "dies",
+     "scope": "The switching fabric",
+     "where": "this cross-connect"
+    },
+    {
+     "effect": "is cut",
+     "scope": "every ODU",
+     "where": "switched through this cross-connect"
+    }
+   ],
+   "character": "An outage.",
+   "rate_per_year_fraction": 0.002,
+   "rate_per": "cross-connects a year"
+  },
+  {
+   "name": "Mis-provisioned connection",
+   "applies_to": [
+    "VC-DXC"
+   ],
+   "description": "A connection is set up wrongly, and one ODU ends up at the wrong destination. Nothing shows on the optical side.",
+   "effects": [
+    {
+     "effect": "is set up wrongly",
+     "scope": "A connection",
+     "where": null
+    },
+    {
+     "effect": "ends up at the wrong destination",
+     "scope": "one ODU",
+     "where": null
+    },
+    {
+     "effect": "Nothing shows",
+     "scope": "the optical side",
+     "where": null
+    }
+   ],
+   "character": "An outage; it happens mostly straight after provisioning work.",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "cross-connects a year"
+  },
+  {
+   "name": "Tributary failure",
+   "applies_to": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "description": "The customer-facing optic or the tributary itself fails, and the customer service drops.",
+   "effects": [
+    {
+     "effect": "fails",
+     "scope": "The customer-facing optic",
+     "where": null
+    },
+    {
+     "effect": "fails",
+     "scope": "the tributary itself",
+     "where": null
+    },
+    {
+     "effect": "drops",
+     "scope": "the customer service",
+     "where": null
+    }
+   ],
+   "character": "An outage.",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "tributaries a year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "TRIB-FAIL",
+   "raised_by": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "severity": "urgent",
+   "monitor": null,
+   "symptom": "the customer service on this tributary has failed",
+   "raised_when": "the customer service on this tributary has failed",
+   "probable_causes": [
+    {
+     "cause": "any fault",
+     "where": "on the ODU route in use"
+    },
+    {
+     "cause": "the tributary",
+     "where": "at either end"
+    },
+    {
+     "cause": "a mis-provisioned connection",
+     "where": "at a cross-connect along the ODU route"
+    },
+    {
+     "cause": "a fabric outage",
+     "where": "at a cross-connect along the ODU route"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "the customer service on this tributary"
+  },
+  {
+   "id": "AIS-IN",
+   "raised_by": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "severity": "information only",
+   "monitor": null,
+   "symptom": "an ODU AIS is arriving",
+   "raised_when": "an ODU AIS is arriving",
+   "probable_causes": [],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "REMOTE-AIS",
+   "raised_by": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "severity": "information only",
+   "monitor": null,
+   "symptom": "the other end says it is receiving ODU AIS",
+   "raised_when": "the other end says it is receiving ODU AIS",
+   "probable_causes": [],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "TRACE-MISMATCH",
+   "raised_by": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "severity": "important",
+   "monitor": null,
+   "symptom": "the ODU arriving is not the expected one",
+   "raised_when": "the ODU arriving is not the expected one",
+   "probable_causes": [
+    {
+     "cause": "a mis-provisioned connection",
+     "where": "at a cross-connect along the ODU route"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "the ODU arriving"
+  },
+  {
+   "id": "ON-STANDBY",
+   "raised_by": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "severity": "advisory",
+   "monitor": null,
+   "symptom": "the selector has moved to the standby route",
+   "raised_when": "the selector has moved to the standby route",
+   "probable_causes": [
+    {
+     "cause": "any fault",
+     "where": "on the primary route"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "the selector"
+  },
+  {
+   "id": "STANDBY-LOST",
+   "raised_by": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "severity": "advisory",
+   "monitor": null,
+   "symptom": "the standby route has failed",
+   "raised_when": "the standby route has failed",
+   "probable_causes": [
+    {
+     "cause": "any fault",
+     "where": "on the standby route"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "the standby route"
+  },
+  {
+   "id": "TRIB-HW",
+   "raised_by": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "severity": "urgent",
+   "monitor": null,
+   "symptom": "tributary hardware fault",
+   "raised_when": "tributary hardware fault",
+   "probable_causes": [
+    {
+     "cause": "tributary hardware fault",
+     "where": "in this tributary"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "this tributary"
+  },
+  {
+   "id": "FABRIC-HW",
+   "raised_by": [
+    "VC-DXC"
+   ],
+   "severity": "urgent",
+   "monitor": null,
+   "symptom": "fabric hardware fault",
+   "raised_when": "fabric hardware fault",
+   "probable_causes": [
+    {
+     "cause": "fabric hardware fault",
+     "where": "in this cross-connect"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "this cross-connect"
+  }
+ ],
+ "routing": "dual-homed, with a primary and a standby ODU route and the selector at the receiving tributary",
+ "troubleshooting_notes": []
+}

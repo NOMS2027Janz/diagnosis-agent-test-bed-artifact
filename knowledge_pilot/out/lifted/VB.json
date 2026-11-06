@@ -1,0 +1,3886 @@
+{
+ "system": "vendor VB",
+ "dialect": "VB manuals",
+ "modules": [],
+ "note": "agent-lifted from VB's manuals (pilot steps 2 and 3)",
+ "concepts": [
+  {
+   "id": "wss_att_drift",
+   "label": "WSS attenuation drift",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A gradual deviation in a wavelength-selective switch's attenuation setting that leaves the affected optical channel underpowered after the node.",
+   "example": "A WSS configured for 3 dB attenuation drifts to 7 dB, causing its routed channel to emerge at low power.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "power_low"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "wss_passband_shift",
+   "label": "WSS passband shift",
+   "synonyms": [
+    "a misaligned ROADM passband"
+   ],
+   "kind": "Cause",
+   "gloss": "Misalignment of a WSS/ROADM spectral passband with an optical carrier, reducing that channel's quality even though its measured power can remain normal.",
+   "example": "A 100 GHz ROADM filter shifts away from a 193.1 THz carrier, producing pre-FEC errors while channel power remains nominal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "power_normal"
+    },
+    {
+     "rel": "produces",
+     "target": "signal_quality_reduced"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "wss_input_port_failure",
+   "label": "WSS input port failure",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "Failure of one WSS input port that blocks all channels entering on its associated ROADM degree while channels from other degrees remain unaffected.",
+   "example": "The west-degree WSS input fails, blocking every west-arriving wavelength but leaving east-degree traffic intact.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "blocked"
+    },
+    {
+     "rel": "produces",
+     "target": "unaffected"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "transmit_laser_failure",
+   "label": "Transmit laser failure",
+   "synonyms": [
+    "the far-end transmitter's laser has failed",
+    "transmit laser failure"
+   ],
+   "kind": "Cause",
+   "gloss": "Failure of the local or far-end transmitting laser that removes the launched optical signal and causes the corresponding remote receiver to lose that channel.",
+   "example": "The laser on a VB-TPD-400 turns off, so the receiver at the opposite end reports loss of signal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "loses_signal"
+    },
+    {
+     "rel": "lies-at",
+     "target": "far_end_transmitter"
+    },
+    {
+     "rel": "lies-at",
+     "target": "on_this_unit"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "card_failure",
+   "label": "Card failure",
+   "synonyms": [
+    "the far-end card has failed"
+   ],
+   "kind": "Cause",
+   "gloss": "A far-end equipment-card failure that removes carried traffic and monitoring, with traffic alarms potentially hidden by the equipment alarm.",
+   "example": "A remote VB-OTN-LC-400 fails completely, making its channel and telemetry disappear while EQPT_CARD_FAIL masks secondary alarms.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "lost"
+    },
+    {
+     "rel": "produces",
+     "target": "goes_silent"
+    },
+    {
+     "rel": "produces",
+     "target": "masked_by_equipment_alarm"
+    },
+    {
+     "rel": "lies-at",
+     "target": "far_end"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "receiver_degradation",
+   "label": "Receiver degradation",
+   "synonyms": [
+    "degradation of this unit's own receiver"
+   ],
+   "kind": "Cause",
+   "gloss": "Deterioration confined to a unit's own optical receiver that creates receive errors despite a normal optical path and normal reception on other channels.",
+   "example": "A receiver front end becomes noisy and reports pre-FEC errors on one local channel although its incoming power and neighboring channels are normal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "errors_appear"
+    },
+    {
+     "rel": "produces",
+     "target": "are_normal"
+    },
+    {
+     "rel": "produces",
+     "target": "is_normal"
+    },
+    {
+     "rel": "lies-at",
+     "target": "own_receiver"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "broken_fibre",
+   "label": "a broken fibre",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A physical break anywhere along an optical channel path that interrupts propagation of its light.",
+   "example": "A cable cut between two sites prevents the channel from reaching the line receiver and leads to OCH_LOS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "failed_amplifier",
+   "label": "a failed amplifier",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "An optical amplifier on a channel path that has ceased providing usable optical output.",
+   "example": "An inline EDFA loses its pump and goes dark, causing downstream receivers to lose all channels traversing it.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "disconnected_patch_cord",
+   "label": "a disconnected patch cord",
+   "synonyms": [
+    "the patch cord may have been disconnected"
+   ],
+   "kind": "Cause",
+   "gloss": "An unplugged optical patch lead on a channel path or at a multiplex-section input that breaks optical continuity.",
+   "example": "A technician unplugs the patch cord feeding a preamplifier, causing OMS_LOS_P at the receiving end.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    },
+    {
+     "rel": "lies-at",
+     "target": "multiplex_section_input"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "blocked_roadm_port",
+   "label": "a blocked ROADM port",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A ROADM port placed in, or failed into, a blocking state so that an intended channel cannot traverse its optical path.",
+   "example": "The add port for 193.4 THz remains blocked after provisioning, and the far-end receiver raises OCH_LOS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "rise_fibre_loss",
+   "label": "a rise in fibre loss",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "An increase in attenuation along a channel's fibre path that reduces received margin and can degrade or break OTU framing.",
+   "example": "A bent span adds 5 dB of loss, raising pre-FEC errors until OTU_SD is reported.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "rise_amplifier_noise",
+   "label": "a rise in an amplifier's noise",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "An increase in noise contributed by an amplifier on the channel path, lowering optical signal-to-noise ratio without necessarily removing light.",
+   "example": "A deteriorating EDFA adds excess ASE noise, so OTU_SD appears while received power remains acceptable.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "rise_dgd",
+   "label": "a rise in differential group delay",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "An increase in differential group delay along the optical path that introduces polarization-mode-dispersion impairment.",
+   "example": "Changing fibre conditions raise DGD beyond the coherent receiver's tolerance and cause intermittent OTU_LOF.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "fast_polarisation_transient",
+   "label": "a fast polarisation transient",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A rapid change of optical polarization on the channel path that exceeds receiver tracking capability and causes transient errors or frame loss.",
+   "example": "A fibre disturbance rotates polarization too quickly for the DSP, producing errored seconds and a brief OTU_LOF.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "dirty_connector",
+   "label": "a dirty connector",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "Contamination on an optical connector that adds loss or reflections and degrades the traversing signal.",
+   "example": "Dust on an LC connector raises pre-FEC BER above threshold and triggers OTU_SD.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "channel_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "failure",
+   "label": "any failure",
+   "synonyms": [
+    "failure"
+   ],
+   "kind": "Cause",
+   "gloss": "An unspecified underlying fault used when an alarm indicates failure but the schema does not identify a more precise component or mechanism.",
+   "example": "An OTU_BDI is correlated to an unknown remote failure when no specific failed resource can be determined.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "pump_or_unit_failure",
+   "label": "Pump or unit failure",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A complete optical-amplifier pump or unit failure that makes the amplifier output dark and loses every channel it carries.",
+   "example": "The pump in a VB-OA-ILA stops, leaving no output light and dropping all downstream wavelengths.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "output_dark"
+    },
+    {
+     "rel": "produces",
+     "target": "lost"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "gain_loss",
+   "label": "Gain loss",
+   "synonyms": [
+    "gain loss"
+   ],
+   "kind": "Cause",
+   "gloss": "Loss of gain within the current amplifier unit, resulting in low output power and reduced SNR across every carried channel.",
+   "example": "A line amplifier delivers 5 dB less gain than configured, weakening all channels and reducing their OSNR.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "output_power_low"
+    },
+    {
+     "rel": "produces",
+     "target": "snr_falls"
+    },
+    {
+     "rel": "lies-at",
+     "target": "this_unit"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "pump_ageing",
+   "label": "Pump ageing",
+   "synonyms": [
+    "pump ageing"
+   ],
+   "kind": "Cause",
+   "gloss": "Progressive deterioration of an amplifier pump that requires increasing drive current to maintain gain and eventually reaches the pump end-of-life threshold.",
+   "example": "A VB-OA-PRE pump current rises from 100% to 121% of its beginning-of-life value, triggering AMP_PUMP_EOL before traffic fails.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "raises_drive_current"
+    },
+    {
+     "rel": "produces",
+     "target": "traffic_unaffected"
+    },
+    {
+     "rel": "produces",
+     "target": "early_warning"
+    },
+    {
+     "rel": "produces",
+     "target": "leads_pump_eol"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "gain_tilt",
+   "label": "Gain tilt",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A non-flat amplifier gain profile that weakens selected wavelengths, especially channels at one edge of the optical band, rather than all channels equally.",
+   "example": "An EDFA provides 3 dB less gain at the long-wavelength band edge, so only those edge channels become weak.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "arrive_weaker"
+    },
+    {
+     "rel": "produces",
+     "target": "are_affected"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "feeding_fibre_broken",
+   "label": "the fibre section feeding this unit is broken",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A break in the fibre section immediately upstream of the monitored unit that prevents input light from arriving.",
+   "example": "The span feeding a VB-OA-ILA is cut, causing the amplifier to raise AMP_INPUT_LOS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "feeding_fibre_section"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "feeding_loss_risen",
+   "label": "its loss has risen sharply",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A sharp increase in attenuation on the fibre section feeding a unit, potentially reducing its input below loss-of-signal thresholds.",
+   "example": "A severe bend adds 15 dB on the incoming span, and the preamplifier raises OMS_LOS_P.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "feeding_fibre_section"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "preceding_amp_failed",
+   "label": "the preceding amplifier has failed and emits no light",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "Failure of the immediately upstream amplifier such that it emits no light toward the monitored unit.",
+   "example": "The previous inline amplifier goes dark, causing the next line amplifier to report AMP_INPUT_LOS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "preceding_amplifier"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "pump_laser_failure",
+   "label": "failure of this unit's pump laser",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "Failure of the pump laser inside the current optical-amplifier unit, preventing normal amplification despite input light being present.",
+   "example": "Input channels are visible at a VB-OA-BST, but its failed pump produces no output and AMP_FAIL is raised.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "this_unit"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "unit_failure",
+   "label": "failure of the unit itself",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A complete internal failure of the current amplifier unit, distinct from loss of its incoming optical signal.",
+   "example": "A power-supply fault disables a VB-OA-PRE even though light reaches its input, resulting in AMP_FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "this_unit"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "switch_fabric_failure",
+   "label": "Switch fabric failure",
+   "synonyms": [
+    "a fabric failure"
+   ],
+   "kind": "Cause",
+   "gloss": "Failure of an OTN switch's cross-connect fabric that interrupts ODUs traversing it and forwards alarm indication signals downstream.",
+   "example": "The VB-OTNSW fabric fails, interrupting all cross-connected ODUs and causing AIS to be carried onward.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "interrupted"
+    },
+    {
+     "rel": "produces",
+     "target": "ais_carried_onwards"
+    },
+    {
+     "rel": "lies-at",
+     "target": "otn_switch_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "wrong_cross_connection",
+   "label": "Wrong cross-connection",
+   "synonyms": [
+    "a wrong cross-connection"
+   ],
+   "kind": "Cause",
+   "gloss": "An erroneous ODU cross-connect in an OTN switch that delivers one ODU to the wrong destination without producing an optical-layer symptom.",
+   "example": "After provisioning, ODU2 from client A is connected to client C instead of client B, causing ODU_TIM at C while optical power stays normal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "wrong_destination_condition"
+    },
+    {
+     "rel": "produces",
+     "target": "no_optical_symptom"
+    },
+    {
+     "rel": "lies-at",
+     "target": "otn_switch_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "client_port_failure",
+   "label": "Client port failure",
+   "synonyms": [
+    "a failure of the client port"
+   ],
+   "kind": "Cause",
+   "gloss": "Failure of a client-facing port or its optic at either service endpoint, causing the associated client service or received traffic to be lost.",
+   "example": "A VB-CP-100GE optic fails at one endpoint, taking down the 100GE client service.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "fails"
+    },
+    {
+     "rel": "produces",
+     "target": "lost"
+    },
+    {
+     "rel": "lies-at",
+     "target": "either_end"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "whole_line_impairment",
+   "label": "An impairment affecting the whole incoming line",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An impairment common to the entire incoming WDM line whose effect is inherited by every channel routed onward through the node.",
+   "example": "A noisy incoming amplified span lowers OSNR for all wavelengths, and each wavelength remains impaired after ROADM routing.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "impairment_routed_onwards"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "impairment_routed_onwards",
+   "label": "continues, after the node, as an impairment of each channel routed onwards",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "The persistence after a node of a line-wide impairment on each individual channel that the node forwards.",
+   "example": "All channels entering with poor OSNR leave on different ROADM degrees with that poor OSNR still present.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "upstream_power_loss_8db",
+   "label": "A power loss upstream of up to about 8 dB",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An upstream optical-power reduction of roughly 8 dB or less that a node can re-level, hiding low power downstream while retaining the associated SNR penalty.",
+   "example": "A channel loses 6 dB before a ROADM, is restored to target output power there, but still has degraded OSNR.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "relevelled"
+    },
+    {
+     "rel": "produces",
+     "target": "not_low_downstream"
+    },
+    {
+     "rel": "produces",
+     "target": "snr_loss_remains"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "relevelled",
+   "label": "is re-levelled at the node",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which a node adjusts an incoming channel back to its configured output power level.",
+   "example": "A channel arriving 4 dB low is equalized by the node to its nominal \u22122 dBm output.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "not_low_downstream",
+   "label": "does not appear downstream as low power",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which upstream attenuation is no longer observable as low channel power after node equalization.",
+   "example": "Downstream monitoring reads nominal power even though the channel was weak before the ROADM.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "snr_loss_remains",
+   "label": "the loss of signal-to-noise ratio it caused remains",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "The residual signal-to-noise-ratio degradation that remains after optical power has been restored by a node.",
+   "example": "After re-leveling restores a channel to \u22122 dBm, its OSNR remains 4 dB below baseline.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "larger_loss",
+   "label": "A larger loss",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An upstream attenuation increase too large for node equalization to compensate, so reduced power continues downstream.",
+   "example": "A 14 dB span loss exceeds the ROADM adjustment range and the channel exits the node underpowered.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "passes_low_power"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "passes_low_power",
+   "label": "passes on as low power",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which a node forwards a channel while its optical power remains below target.",
+   "example": "A channel arriving far below the equalizer range leaves the ROADM 8 dB low.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "passes_unchanged",
+   "label": "pass through the node unchanged",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition or impairment that traverses a node without being corrected or otherwise altered.",
+   "example": "A channel's DGD impairment is unchanged as it passes through an intermediate ROADM.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "power_low",
+   "label": "power is low",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A per-channel condition in which optical power measured after a node is below its expected operating level.",
+   "example": "The 193.1 THz channel measures \u221212 dBm after the ROADM instead of its \u22123 dBm target.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "channel_scope"
+    },
+    {
+     "rel": "shows-at",
+     "target": "after_node"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "power_normal",
+   "label": "power is normal",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A per-channel condition in which optical power remains within the expected range despite a possible non-power impairment.",
+   "example": "A filtered channel reads its normal \u22123 dBm even while its pre-FEC BER rises.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "channel_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "signal_quality_reduced",
+   "label": "signal quality is reduced",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A per-channel degradation of signal integrity, such as reduced OSNR or increased errors, regardless of whether optical power is normal.",
+   "example": "A shifted WSS passband increases pre-FEC BER on one channel while its power remains nominal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "channel_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "blocked",
+   "label": "is blocked",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which every channel entering a node on one ROADM degree is prevented from passing at the failed point.",
+   "example": "Failure of the west WSS input blocks all wavelengths arriving from the west degree.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "channels_on_degree"
+    },
+    {
+     "rel": "shows-at",
+     "target": "there"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "unaffected",
+   "label": "are unaffected",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which channels arriving on ROADM degrees other than the failed degree continue operating normally.",
+   "example": "When the west input port fails, channels arriving from north and east remain in service.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "other_degree_channels"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "no_light_receiver",
+   "label": "no light reaches the receiver",
+   "synonyms": [
+    "No light at the line receiver."
+   ],
+   "kind": "Condition",
+   "gloss": "Absence of optical light at a line receiver, causing digital loss of signal and loss of OTU frame alignment.",
+   "example": "Received power falls below detection, so the receiver declares G.798 dLOS and loses OTU framing.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "declares_dlos"
+    },
+    {
+     "rel": "produces",
+     "target": "loses_otu_alignment"
+    },
+    {
+     "rel": "shows-at",
+     "target": "line_receiver"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "declares_dlos",
+   "label": "declares loss of signal (G.798 dLOS)",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "The receiver's assertion of the G.798 digital loss-of-signal defect because no usable input signal is detected.",
+   "example": "With the incoming fibre disconnected, the line receiver sets dLOS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "loses_otu_alignment",
+   "label": "loses OTU frame alignment",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Loss of synchronization to the framing structure of the received Optical Transport Unit signal.",
+   "example": "After incoming light disappears, the receiver can no longer identify OTU frame boundaries.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "unit_itself_failed",
+   "label": "the unit itself has failed",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which the monitored equipment unit has internally failed, leading to an equipment defect, lost framing, and suppression of dependent traffic alarms.",
+   "example": "A line card hardware failure declares dEQ, loses frame alignment, and masks its OTU traffic alarms.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "declares_deq"
+    },
+    {
+     "rel": "produces",
+     "target": "frame_alignment_lost"
+    },
+    {
+     "rel": "produces",
+     "target": "traffic_alarms_masked"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "declares_deq",
+   "label": "declares an equipment defect (dEQ)",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "The unit's assertion of an equipment defect indicating an internal hardware or equipment-level failure.",
+   "example": "A failed card processor causes the unit to declare dEQ.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "frame_alignment_lost",
+   "label": "frame alignment is lost",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A receive condition in which OTU frame boundaries cannot be recovered, triggering downstream ODU-AIS insertion and a backward defect indication.",
+   "example": "Severe signal impairment causes loss of frame alignment, after which the unit inserts ODU-AIS and sends BDI upstream.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "odu_ais_inserted"
+    },
+    {
+     "rel": "produces",
+     "target": "bdi_sent"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "traffic_alarms_masked",
+   "label": "the unit's traffic alarms are masked by the equipment alarm",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Suppression of traffic-related alarms because a higher-level equipment alarm already identifies the failed unit.",
+   "example": "When EQPT_CARD_FAIL is active, derived OTU_LOF alarms on that card are hidden.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "signal_impaired",
+   "label": "the signal arrives but is impaired",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which light and a signal reach the receiver but their quality is poor enough to cause pre-FEC errors or eventual frame loss.",
+   "example": "A low-OSNR channel is present at the receiver but develops errors and later loses OTU alignment.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "prefec_errors_appear"
+    },
+    {
+     "rel": "produces",
+     "target": "frame_alignment_lost"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "impairment_bundle",
+   "label": "lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "The class of optical or receiver impairments\u2014including low power, low OSNR, excessive DGD, filter penalty, receiver penalty, or margin erosion\u2014that can produce pre-FEC errors and frame loss.",
+   "example": "A narrowed ROADM passband imposes a filtering penalty that first raises pre-FEC BER and then causes OTU_LOF.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "prefec_errors_appear"
+    },
+    {
+     "rel": "produces",
+     "target": "frame_alignment_lost"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "prefec_errors_appear",
+   "label": "pre-FEC errors appear",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which bit errors are observed at the receiver before forward-error correction is applied.",
+   "example": "The receiver records a pre-FEC BER of 2\u00d710\u207b\u00b3 while post-FEC traffic is still error-free.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "polarisation_too_fast",
+   "label": "Polarisation changes faster than the tracking range",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An optical-polarization variation rate beyond the receiver's tracking range, causing transient decoding errors.",
+   "example": "A rapid state-of-polarization rotation exceeds DSP tracking and creates several errored seconds.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "errored_seconds_produced"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "errored_seconds_produced",
+   "label": "produce errored seconds",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A performance condition in which one or more seconds contain errors attributable to the current impairment.",
+   "example": "A polarization transient causes five one-second intervals to be counted as errored seconds.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "odu_ais_inserted",
+   "label": "an ODU alarm indication signal is inserted downstream",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Insertion of an ODU Alarm Indication Signal on downstream ODUs as the consequent action for an upstream framing defect.",
+   "example": "After OTU frame loss, the line card sends ODU-AIS toward every downstream client mapped into that OTU.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "bdi_sent",
+   "label": "a backward defect indication is sent",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Transmission of a backward defect indication toward the far-end transmitter to report a receive-side defect.",
+   "example": "A receiver that loses OTU framing returns BDI to the transmitting terminal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "loses_signal",
+   "label": "loses the signal",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Loss of a specific transmitted optical channel as observed by the receiver at the opposite end.",
+   "example": "When the local transmit laser fails, the far-end receiver loses the 193.2 THz channel.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "channel_scope"
+    },
+    {
+     "rel": "shows-at",
+     "target": "far_end_receiver"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "lost",
+   "label": "is lost",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Complete absence of the referenced channel, traffic, carried channels, or client service at the relevant local, remote, or downstream observation point.",
+   "example": "An amplifier output failure causes every channel it carries to be lost downstream.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "transmitted_channel"
+    },
+    {
+     "rel": "affects",
+     "target": "received_traffic"
+    },
+    {
+     "rel": "affects",
+     "target": "channels_carried"
+    },
+    {
+     "rel": "affects",
+     "target": "client_service"
+    },
+    {
+     "rel": "shows-at",
+     "target": "far_end"
+    },
+    {
+     "rel": "shows-at",
+     "target": "here"
+    },
+    {
+     "rel": "shows-at",
+     "target": "downstream"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "goes_silent",
+   "label": "goes silent",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which monitoring or telemetry from a failed resource ceases entirely.",
+   "example": "After the remote card crashes, its performance-monitoring counters stop updating.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "monitoring_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "masked_by_equipment_alarm",
+   "label": "are masked by the equipment alarm",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which traffic alarms are suppressed or hidden because an equipment-level alarm is active.",
+   "example": "OTU traffic alarms are masked while EQPT_CARD_FAIL identifies the failed card.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "traffic_alarms_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "errors_appear",
+   "label": "Errors appear",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Errors observed only by the current receiver, indicating a local receive-side problem rather than a shared optical-path fault.",
+   "example": "One receiver reports rising pre-FEC errors while another receiver on the same path remains normal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "receiver_only"
+    },
+    {
+     "rel": "shows-at",
+     "target": "this_receiver"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "are_normal",
+   "label": "are normal",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which channels other than the affected one continue to meet normal operating criteria.",
+   "example": "One locally degraded receiver reports errors, but all other channels remain error-free.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "other_channels"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "is_normal",
+   "label": "is normal",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which the end-to-end optical path has normal power and quality, pointing away from a path impairment.",
+   "example": "Path monitoring shows expected power and OSNR despite errors at one receiver.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "optical_path"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "otu_lof_condition",
+   "label": "OTU frame alignment lost while light is present.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Loss of OTU frame alignment while optical light is still present, distinguishing a quality or framing defect from optical loss of signal.",
+   "example": "The receiver measures \u22124 dBm input power but cannot lock to OTU frames, so OTU_LOF is raised.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "signal_degraded_threshold",
+   "label": "Signal degraded: pre-FEC errors above threshold",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A signal-degrade condition declared when the pre-FEC error metric exceeds its configured threshold.",
+   "example": "Pre-FEC BER rises above 1\u00d710\u207b\u00b3 for the hold-off period and triggers OTU_SD.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "far_end_defect_report",
+   "label": "The far end reports a defect on the signal this unit transmits.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A backward indication from the remote endpoint that it detects a defect on the signal transmitted by the local unit.",
+   "example": "The local line card receives BDI because the far-end receiver cannot frame the local OTU signal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "tx_laser_fault_detected",
+   "label": "The unit has detected a fault in its transmit laser.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A locally detected hardware fault in the unit's transmit laser or its drive circuitry.",
+   "example": "Laser bias telemetry goes out of range and the unit raises EQPT_TX_FAIL.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "card_hardware_fault",
+   "label": "Card hardware fault.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An equipment condition indicating that a card has suffered an internal hardware failure.",
+   "example": "A failed card power rail causes EQPT_CARD_FAIL.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "all_three_operate",
+   "label": "All three units operate",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "The normal amplifier-chain condition in which booster, line, and preamplifier units are all operational and regulate their configured gain.",
+   "example": "The BA, ILA, and PA each remain active and hold their target gain across the multiplex section.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "constant_gain_mode"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "constant_gain_mode",
+   "label": "constant-gain mode",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An amplifier operating mode that regulates output so the configured optical gain remains constant as input power varies.",
+   "example": "When span input drops by 2 dB, the EDFA increases output effort to preserve 20 dB gain.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "less_light_input",
+   "label": "less light arrives at the input",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A reduction in total optical power arriving at an amplifier input that leads to reduced output light and lower per-channel OSNR.",
+   "example": "A span adds 3 dB loss, so the line amplifier receives less light and its output channels have poorer OSNR.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "less_light_output"
+    },
+    {
+     "rel": "produces",
+     "target": "optical_snr_falls"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "less_light_output",
+   "label": "less light leaves the output",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A reduction in optical power emitted from an amplifier output as a consequence of reduced input or insufficient gain.",
+   "example": "After input power falls 5 dB, the amplifier output is also below its normal total power.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "optical_snr_falls",
+   "label": "the optical signal-to-noise ratio of every channel falls as well",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A reduction in optical signal-to-noise ratio across every channel affected by the amplifier or line condition.",
+   "example": "All 80 wavelengths lose about 2 dB of OSNR after a weak amplifier input.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "osc_loss_section",
+   "label": "Loss of the OSC on one section",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Loss of the optical supervisory channel on a single fibre section, confined to that section rather than automatically cascading across subsequent sections.",
+   "example": "The OSC receiver at one ILA loses its upstream supervisory carrier, while the next section generates and receives its own OSC normally.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "not_propagate_next"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "not_propagate_next",
+   "label": "does not propagate to the next",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which a section-local defect is terminated and is not reproduced on the following network section.",
+   "example": "OSC_LOS on span A\u2013B is visible at B but does not cause OSC_LOS on span B\u2013C.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "no_light_arrives",
+   "label": "no light arrives",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Complete absence of optical input to a unit, causing that unit to emit no carried light.",
+   "example": "A fibre cut removes all input to an inline amplifier, so no WDM channels leave its output.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "no_light_leaves"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "no_light_leaves",
+   "label": "no light leaves",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Complete absence of emitted optical light at a unit's output.",
+   "example": "The output power monitor reads below detection and downstream receivers lose all wavelengths.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "input_weak",
+   "label": "the input is weak",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An amplifier input condition in which incoming optical power is below its normal range, producing a weak and noisier output.",
+   "example": "A line amplifier receives \u221230 dBm total power and emits channels with low power and degraded OSNR.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "output_weak"
+    },
+    {
+     "rel": "produces",
+     "target": "output_noisier"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "output_weak",
+   "label": "the output is weak",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An output condition in which emitted optical power is below the required operating level.",
+   "example": "The amplifier output is 6 dB below its configured total-power target.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "output_noisier",
+   "label": "the output is noisier",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An output condition in which the signal contains more amplifier noise and therefore lower OSNR than normal.",
+   "example": "The amplifier restores some power but adds enough ASE that each channel loses 3 dB of OSNR.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "output_dark",
+   "label": "the output goes dark",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Complete loss of optical output from the amplifier unit, affecting the unit's entire output rather than an individual channel.",
+   "example": "A pump failure drives the VB-OA-ILA output below detection for all wavelengths.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "unit_scope"
+    },
+    {
+     "rel": "shows-at",
+     "target": "output_location"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "output_power_low",
+   "label": "Output power is low",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An amplifier condition in which output power is below target for every channel it carries.",
+   "example": "Gain loss leaves all 40 channels 4 dB below their expected output levels.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "every_channel"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "snr_falls",
+   "label": "the signal-to-noise ratio falls",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A reduction in signal-to-noise ratio affecting every channel traversing the impaired unit.",
+   "example": "Excess amplifier noise lowers OSNR on every wavelength by 2 dB.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "every_channel"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "raises_drive_current",
+   "label": "raises its drive current to hold the gain",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "The amplifier's compensating action of increasing pump-laser drive current to preserve configured gain as the pump ages.",
+   "example": "The controller raises pump current from 100% to 112% of beginning-of-life current to maintain 20 dB gain.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "unit_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "traffic_unaffected",
+   "label": "Traffic is unaffected until the drive current reaches its limit",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Continued normal traffic delivery while pump-current compensation remains below its operating limit.",
+   "example": "At 115% pump current the amplifier still holds gain, so no client packets are lost.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "traffic_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "early_warning",
+   "label": "gives early warning",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A maintenance indication derived from a deteriorating trend before that deterioration causes service impact.",
+   "example": "A steadily rising pump-current graph warns operations weeks before an end-of-life alarm.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "trend_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "leads_pump_eol",
+   "label": "leads eventually to the end-of-life alarm (AMP_PUMP_EOL)",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "The progression of an ageing-pump trend to the AMP_PUMP_EOL alarm once the configured current threshold is reached.",
+   "example": "Pump current rises past 120% of beginning-of-life value and AMP_PUMP_EOL is asserted.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "trend_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "arrive_weaker",
+   "label": "arrive weaker than the others",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A relative-power condition in which channels at one edge of the optical band reach the receiver below the level of central channels.",
+   "example": "C-band edge channels arrive 3 dB weaker than mid-band channels because of gain tilt.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "edge_channels"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "are_affected",
+   "label": "are affected",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A selective impairment condition that applies to some channels but not to the full carried spectrum.",
+   "example": "Only the four longest-wavelength channels show low power; the remaining channels are normal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "some_channels"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "amp_input_no_light",
+   "label": "no light arrives at its input",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Absence of all optical light at a line amplifier's input, used as the trigger condition for AMP_INPUT_LOS.",
+   "example": "A span cut makes the VB-OA-ILA input monitor read no light and raises AMP_INPUT_LOS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "oms_input_no_light",
+   "label": "no light arrives at the input of the receiving end of the multiplex section",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Absence of optical light at the receiving end input of an optical multiplex section, used to declare OMS loss of signal.",
+   "example": "No WDM power reaches the preamplifier at the far end, so OMS_LOS_P is raised.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "supervisory_not_received",
+   "label": "the supervisory channel is not received",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Failure to receive the optical supervisory channel at a line-amplifier or preamplifier input.",
+   "example": "The payload wavelengths remain detectable but the OSC carrier is absent, causing OSC_LOS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "input_light_output_none",
+   "label": "light is present at its input but none leaves its output",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An amplifier failure signature in which optical input is present but no optical signal emerges from the output.",
+   "example": "The input monitor reads \u22125 dBm while the output is dark, so AMP_FAIL is raised.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "gain_out_of_range",
+   "label": "the gain departs from its set point by more than 2 dB",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An amplifier condition in which actual gain differs from its configured set point by more than 2 dB.",
+   "example": "A 20 dB gain target measures 17.5 dB, triggering AMP_GAIN_OOR.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "pump_current_120",
+   "label": "the pump drive current exceeds 120 per cent of its beginning-of-life value",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An amplifier pump-age threshold condition in which drive current exceeds 120% of its beginning-of-life value.",
+   "example": "Pump telemetry reaches 122%, causing AMP_PUMP_EOL.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "odu_ais",
+   "label": "an ODU alarm indication signal",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An ODU Alarm Indication Signal representing an upstream ODU defect and causing downstream AIS propagation and client-service loss.",
+   "example": "A failed upstream OTU inserts ODU-AIS, which the OTN switch forwards and the client port treats as service down.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "odu_ais_carried"
+    },
+    {
+     "rel": "produces",
+     "target": "client_service_down"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "odu_ais_carried",
+   "label": "carries an ODU alarm indication signal onwards on every ODU cross-connected through it",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Forwarding of ODU-AIS by an OTN switch on every ODU cross-connection affected by the incoming indication.",
+   "example": "The switch receives AIS on a failed aggregate ODU and carries it onward on each mapped downstream ODU.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "wrong_source_odu",
+   "label": "an ODU delivered from the wrong source",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An ODU delivered from a source other than the one provisioned or expected at the destination.",
+   "example": "Client B receives client A's ODU after an incorrect cross-connect, taking B's intended service down.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "client_service_down"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "client_service_down",
+   "label": "takes the client service down",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which the client-facing service is unavailable because the delivered ODU is defective, alarmed, or from the wrong source.",
+   "example": "Reception of ODU-AIS causes the 100GE client service to go down.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "service_protected",
+   "label": "the service is protected",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A service configuration with an alternate path that can be selected after a defect on the active path.",
+   "example": "A 100GE service has working and protection ODU paths through separate switches.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "brief_hit"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "selector_path_free",
+   "label": "the selector can choose a path free of defects",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Availability to the protection selector of at least one candidate path without relevant defects.",
+   "example": "When the working ODU fails, the selector finds the protection ODU healthy and switches to it.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "brief_hit"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "brief_hit",
+   "label": "the service suffers only a brief hit while the selector switches",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A short service interruption limited to the interval required for a protection selector to change paths.",
+   "example": "Traffic pauses for 30 ms while the selector moves from the failed working path to protection.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "interrupted",
+   "label": "is interrupted",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Loss of continuity for every ODU cross-connected through a failed OTN switch fabric.",
+   "example": "A fabric outage stops all ODUs traversing the VB-OTNSW.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "odus_through_switch"
+    },
+    {
+     "rel": "shows-at",
+     "target": "through_switch"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "ais_carried_onwards",
+   "label": "an alarm indication signal is carried onwards",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Propagation of an alarm indication signal on each affected ODU beyond the point of interruption.",
+   "example": "After fabric failure, each downstream ODU carries AIS toward its client port.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "each_odu"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "wrong_destination_condition",
+   "label": "is delivered to the wrong destination",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Delivery of one ODU to a destination other than its provisioned endpoint because of an incorrect cross-connect.",
+   "example": "ODU A appears on client port C instead of client port B.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "one_odu"
+    },
+    {
+     "rel": "shows-at",
+     "target": "wrong_destination"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "no_optical_symptom",
+   "label": "There is no optical symptom.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Absence of any optical-power or light-loss indication for an ODU-layer routing defect.",
+   "example": "Power and OTU framing remain normal even though the switch sends the ODU to the wrong client.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "one_odu"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "fails",
+   "label": "fails",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A failure state affecting a client optic and its associated client port.",
+   "example": "The 100GE pluggable stops transmitting, placing the port in a failed state.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "client_optic"
+    },
+    {
+     "rel": "affects",
+     "target": "port_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "client_service_failed",
+   "label": "The client service has failed.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition indicating that the service presented on a client port is no longer operational.",
+   "example": "Loss of the client optic causes the port to declare CLIENT_SF.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "odu_ais_received",
+   "label": "An ODU alarm indication signal is received.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Reception at a client port of an ODU Alarm Indication Signal from upstream.",
+   "example": "The egress client port detects the ODU-AIS pattern and raises ODU_AIS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "far_end_ais_report",
+   "label": "The far end reports that it is receiving an alarm indication signal.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A backward report that the remote endpoint is receiving an alarm indication signal on the ODU.",
+   "example": "The local client port raises ODU_BDI after the far end reports incoming AIS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "trail_trace_mismatch",
+   "label": "Trail trace identifier mismatch: the ODU received is not the one expected.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "Mismatch between the received ODU trail trace identifier and the identifier provisioned for the expected ODU.",
+   "example": "Port C expects trace ID CLIENT-C but receives CLIENT-A and raises ODU_TIM.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "selector_protection_path",
+   "label": "The selector is on the protection path.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A protection-state condition in which the service selector currently forwards traffic over the protection ODU path.",
+   "example": "Following a working-path defect, the selector switches to protection and PROT_ACTIVE is shown.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "protection_path_failed",
+   "label": "The protection path has failed.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A condition in which the standby or selected protection path is defective and unavailable for reliable protection.",
+   "example": "The backup ODU loses framing, causing PROT_UNAVAIL.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "port_hardware_fault",
+   "label": "Port hardware fault.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An internal hardware defect in a client port, distinct from a remote service or ODU-path defect.",
+   "example": "A failed port PHY causes EQPT_PORT_FAIL on a VB-CP-100GE.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "fabric_fault",
+   "label": "Fabric fault.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "An internal hardware or functional defect of an OTN switch fabric.",
+   "example": "The cross-connect ASIC fails self-test and raises OTN_FABRIC_FAIL.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "channel_power",
+   "label": "the power of every channel",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The measured optical power of each individual wavelength channel, available when a node has the channel-monitoring option.",
+   "example": "A channel monitor reports \u22123.1 dBm for 193.1 THz and \u22124.0 dBm for 193.2 THz.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "channel_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "channel_osnr",
+   "label": "the OSNR of every channel",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The measured optical signal-to-noise ratio of each individual wavelength channel, available with channel monitoring.",
+   "example": "The node reports 21 dB OSNR for one channel and 17 dB for another.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "channel_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "received_power",
+   "label": "Received power",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The optical power measured at a unit's receiver, supported across the listed transponder, muxponder, and OTN line-card units when power monitoring is available.",
+   "example": "A VB-TPD-400 reports received power of \u22126.2 dBm.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "all_units"
+    },
+    {
+     "rel": "available-with",
+     "target": "power_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "errored_seconds",
+   "label": "errored seconds, in 15-minute bins",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The count of one-second intervals containing errors, accumulated and reported in 15-minute performance bins by all listed terminal units.",
+   "example": "A VB-MXP-400 reports 12 errored seconds for the 10:00\u201310:15 interval.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "all_units"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "optical_power",
+   "label": "Optical power",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "A monitored optical-power value exposed by units equipped with the power-monitoring option.",
+   "example": "A unit reports \u22125.5 dBm at its monitored optical interface.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "power_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "estimated_osnr",
+   "label": "Estimated OSNR",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "A receiver- or DSP-derived estimate of optical signal-to-noise ratio available with advanced monitoring.",
+   "example": "Advanced telemetry estimates the received channel OSNR at 18.7 dB.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "advanced_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "prefec_ber",
+   "label": "pre-FEC bit error ratio",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The ratio of erroneous received bits before forward-error correction, available through advanced monitoring.",
+   "example": "The line card reports a pre-FEC BER of 8\u00d710\u207b\u2074.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "advanced_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "differential_group_delay",
+   "label": "differential group delay",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The measured delay difference between principal polarization modes of the received optical signal, exposed by advanced monitoring.",
+   "example": "The coherent receiver reports 18 ps of DGD.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "advanced_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "polarisation_change_rate",
+   "label": "polarisation change rate",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The measured rate at which the received signal's state of polarization changes, available with advanced monitoring.",
+   "example": "Telemetry shows a polarization rotation rate above the receiver's tracking threshold.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "advanced_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "total_input_power",
+   "label": "Total optical power at the unit's input",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The aggregate optical power of all light measured at a unit's input when power monitoring is installed.",
+   "example": "An amplifier reports total input power of \u22128 dBm across 40 channels.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "power_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "total_output_power",
+   "label": "Total optical power at the unit's output",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The aggregate optical power of all light measured at a unit's output when power monitoring is installed.",
+   "example": "A booster reports +17 dBm total output power.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "power_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "pump_drive_current",
+   "label": "Drive current of the pump laser, as a percentage of its beginning-of-life value",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The amplifier pump-laser drive current normalized as a percentage of its beginning-of-life value and available through advanced monitoring.",
+   "example": "A five-year-old amplifier reports pump drive current at 116%.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "advanced_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "pump_health",
+   "label": "an indicator of pump health",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "An advanced-monitoring indicator summarizing the condition or remaining margin of an amplifier pump.",
+   "example": "The management system marks pump health as degraded after a sustained current increase.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "advanced_monitoring_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "supervisory_presence",
+   "label": "Presence of the supervisory channel at the input",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "A status measurement indicating whether the optical supervisory channel is present at a unit's input.",
+   "example": "An ILA reports OSC presence=false after an upstream span fault.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "all_units"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "client_errored_seconds",
+   "label": "client errored seconds",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The number of one-second client-interface intervals containing errors, reported by each client port in 15-minute bins.",
+   "example": "A 100GE client port reports three client errored seconds from 12:00 to 12:15.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "client_es_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "client_unavailable_seconds",
+   "label": "client unavailable seconds",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "The number of seconds for which a client interface was unavailable, reported by each client port in 15-minute bins.",
+   "example": "A failed optic produces 900 client unavailable seconds in one 15-minute interval.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "client_uas_available"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "roadm",
+   "label": "ROADM",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A reconfigurable optical add/drop multiplexer using WSS functions to route wavelength channels and subject to attenuation drift, passband shift, and input-port failure.",
+   "example": "The VB-ROADM-CDC routes a 193.1 THz channel from the west degree to the east degree.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "wss_att_drift"
+    },
+    {
+     "rel": "has-fault",
+     "target": "wss_passband_shift"
+    },
+    {
+     "rel": "has-fault",
+     "target": "wss_input_port_failure"
+    }
+   ],
+   "instances": [
+    "VB-ROADM-CDC"
+   ]
+  },
+  {
+   "id": "cdc_roadm",
+   "label": "colourless, directionless and contentionless ROADM",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A ROADM that can add or drop any wavelength on any direction without fixed wavelength ports or contention restrictions.",
+   "example": "A colourless, directionless, contentionless node assigns two same-frequency services to different add/drop resources and line degrees.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "transponder",
+   "label": "Transponder",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A terminal optical resource that converts a client signal to and from a single line-side wavelength channel.",
+   "example": "A VB-TPD-400 maps a 400GE client signal onto one coherent optical channel.",
+   "ref": null,
+   "relations": [],
+   "instances": [
+    "VB-TPD-400"
+   ]
+  },
+  {
+   "id": "muxponder",
+   "label": "Muxponder",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A terminal resource that multiplexes multiple lower-rate client signals into a higher-rate optical line signal and demultiplexes them on receive.",
+   "example": "A VB-MXP-400 combines four 100GE clients into one 400G line channel.",
+   "ref": null,
+   "relations": [],
+   "instances": [
+    "VB-MXP-200",
+    "VB-MXP-400"
+   ]
+  },
+  {
+   "id": "otn_line_card",
+   "label": "OTN line card",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A card that terminates OTN line signals and provides OTU/ODU framing, monitoring, and transport functions.",
+   "example": "A VB-OTN-LC-400 terminates an OTU4-like line signal and exposes its ODUs to the switch.",
+   "ref": null,
+   "relations": [],
+   "instances": [
+    "VB-OTN-LC-200",
+    "VB-OTN-LC-400"
+   ]
+  },
+  {
+   "id": "all_units",
+   "label": "All units",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "The collective class of VB transponders, muxponders, and OTN line cards that share receiver, transmitter, card-fault, and performance-monitoring behavior.",
+   "example": "A VB-TPD-400 and VB-OTN-LC-400 can both raise OTU_LOF and report 15-minute errored seconds.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "transmit_laser_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "card_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "receiver_degradation"
+    }
+   ],
+   "instances": [
+    "VB-TPD-400",
+    "VB-MXP-200",
+    "VB-MXP-400",
+    "VB-OTN-LC-200",
+    "VB-OTN-LC-400"
+   ]
+  },
+  {
+   "id": "booster_amplifier",
+   "label": "Booster amplifier (BA)",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "An optical amplifier placed after a transmitting ROADM to raise multiplex-section launch power and subject to pump, gain, ageing, and tilt faults.",
+   "example": "A VB-OA-BST boosts the ROADM output before it enters the outgoing fibre span.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "pump_or_unit_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_loss"
+    },
+    {
+     "rel": "has-fault",
+     "target": "pump_ageing"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_tilt"
+    }
+   ],
+   "instances": [
+    "VB-OA-BST"
+   ]
+  },
+  {
+   "id": "booster_position",
+   "label": "At the transmitting end of a multiplex section, after the ROADM",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "The network placement immediately after the transmitting-end ROADM and before the outgoing multiplex-section fibre.",
+   "example": "At site A, the booster sits between the ROADM degree output and the A\u2013B line fibre.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "line_amplifier",
+   "label": "Line amplifier (LA)",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "An intermediate-site optical amplifier that restores WDM line power along a multiplex section and monitors its incoming span.",
+   "example": "A VB-OA-ILA amplifies the WDM signal midway between terminal sites.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "pump_or_unit_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_loss"
+    },
+    {
+     "rel": "has-fault",
+     "target": "pump_ageing"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_tilt"
+    }
+   ],
+   "instances": [
+    "VB-OA-ILA"
+   ]
+  },
+  {
+   "id": "line_amp_position",
+   "label": "At intermediate amplifier sites",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "The placement of a line amplifier at an intermediate site between the transmitting and receiving ends of a multiplex section.",
+   "example": "An ILA is installed at the midpoint hut on a 160 km optical route.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "preamplifier",
+   "label": "Preamplifier (PA)",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "An optical amplifier at the receiving end of a multiplex section, before the ROADM, that raises incoming line power for node reception.",
+   "example": "A VB-OA-PRE amplifies the incoming WDM line immediately before the receive-side ROADM.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "pump_or_unit_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_loss"
+    },
+    {
+     "rel": "has-fault",
+     "target": "pump_ageing"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_tilt"
+    }
+   ],
+   "instances": [
+    "VB-OA-PRE"
+   ]
+  },
+  {
+   "id": "preamplifier_position",
+   "label": "At the receiving end of a multiplex section, before the ROADM",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "The network placement at the receiving end of a multiplex section between the incoming fibre and the ROADM.",
+   "example": "At site B, the preamplifier is connected after the A\u2013B span and before B's ROADM.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "otn_switch",
+   "label": "OTN switch",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "An equipment resource that cross-connects ODUs through a switching fabric and can suffer fabric failures or erroneous cross-connections.",
+   "example": "The VB-OTNSW maps an incoming ODU2 from a line card to a 100GE client port.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "switch_fabric_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "wrong_cross_connection"
+    }
+   ],
+   "instances": [
+    "VB-OTNSW"
+   ]
+  },
+  {
+   "id": "odu_fabric",
+   "label": "ODU cross-connect fabric",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "The internal OTN switching fabric that establishes cross-connections between incoming and outgoing ODU tributaries.",
+   "example": "The ODU fabric connects ODU2 port 1/1 to egress port 4/3.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "client_port_10ge",
+   "label": "Client port, 10GE",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A 10 Gigabit Ethernet client-facing port resource that can experience client-port hardware or optic failure.",
+   "example": "A VB-CP-10GE accepts a customer's 10GE signal for OTN transport.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "client_port_failure"
+    }
+   ],
+   "instances": [
+    "VB-CP-10GE"
+   ]
+  },
+  {
+   "id": "client_port_100ge",
+   "label": "Client port, 100GE",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A 100 Gigabit Ethernet client-facing port resource that can experience client-port hardware or optic failure.",
+   "example": "A VB-CP-100GE maps a customer 100GE service into an ODU.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "client_port_failure"
+    }
+   ],
+   "instances": [
+    "VB-CP-100GE"
+   ]
+  },
+  {
+   "id": "client_port_400ge",
+   "label": "Client port, 400GE",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A 400 Gigabit Ethernet client-facing port resource that can experience client-port hardware or optic failure.",
+   "example": "A VB-CP-400GE terminates a 400GE client and feeds the OTN line system.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "client_port_failure"
+    }
+   ],
+   "instances": [
+    "VB-CP-400GE"
+   ]
+  },
+  {
+   "id": "client_port",
+   "label": "client port",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "The generic class of 10GE, 100GE, and 400GE client-facing ports on which service, ODU, protection, and equipment alarms are reported.",
+   "example": "A VB-CP-100GE raises CLIENT_SF after its client optic fails.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "client_port_failure"
+    }
+   ],
+   "instances": [
+    "VB-CP-10GE",
+    "VB-CP-100GE",
+    "VB-CP-400GE"
+   ]
+  },
+  {
+   "id": "och_los",
+   "label": "OCH_LOS",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An optical-channel loss-of-signal alarm raised by a terminal unit when no light reaches its line receiver, commonly due to transmitter, card, path, amplifier, patching, or ROADM blockage faults.",
+   "example": "A cut fibre removes channel light at a VB-TPD-400 receiver, which raises OCH_LOS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "all_units"
+    },
+    {
+     "rel": "raised-on",
+     "target": "no_light_receiver"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "transmit_laser_failure"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "card_failure"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "broken_fibre"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "failed_amplifier"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "disconnected_patch_cord"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "blocked_roadm_port"
+    }
+   ],
+   "instances": [
+    "OCH_LOS"
+   ]
+  },
+  {
+   "id": "otu_lof",
+   "label": "OTU_LOF",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An OTU loss-of-frame alarm raised when light is present but OTU frame alignment is lost because of severe optical or receiver impairment.",
+   "example": "Excess DGD prevents a VB-MXP-400 from framing the OTU signal, so it raises OTU_LOF.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "all_units"
+    },
+    {
+     "rel": "raised-on",
+     "target": "otu_lof_condition"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "rise_fibre_loss"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "rise_amplifier_noise"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "rise_dgd"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "wss_passband_shift"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "fast_polarisation_transient"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "receiver_degradation"
+    }
+   ],
+   "instances": [
+    "OTU_LOF"
+   ]
+  },
+  {
+   "id": "otu_sd",
+   "label": "OTU_SD",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An OTU signal-degrade alarm raised when pre-FEC errors exceed threshold, indicating reduced margin before total frame loss.",
+   "example": "A dirty connector raises pre-FEC BER above the configured limit and a VB-OTN-LC-400 raises OTU_SD.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "all_units"
+    },
+    {
+     "rel": "raised-on",
+     "target": "signal_degraded_threshold"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "rise_fibre_loss"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "rise_amplifier_noise"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "dirty_connector"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "wss_passband_shift"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "rise_dgd"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "receiver_degradation"
+    }
+   ],
+   "instances": [
+    "OTU_SD"
+   ]
+  },
+  {
+   "id": "otu_bdi",
+   "label": "OTU_BDI",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An OTU backward-defect-indication alarm showing that the far end reports a defect on the signal transmitted by this unit.",
+   "example": "A local transponder raises OTU_BDI after the remote receiver loses frame alignment.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "all_units"
+    },
+    {
+     "rel": "raised-on",
+     "target": "far_end_defect_report"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "failure"
+    }
+   ],
+   "instances": [
+    "OTU_BDI"
+   ]
+  },
+  {
+   "id": "eqpt_tx_fail",
+   "label": "EQPT_TX_FAIL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An equipment alarm raised by a terminal unit when it detects failure of its own transmit laser.",
+   "example": "A VB-TPD-400 detects missing laser output and raises EQPT_TX_FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "all_units"
+    },
+    {
+     "rel": "raised-on",
+     "target": "tx_laser_fault_detected"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "transmit_laser_failure"
+    }
+   ],
+   "instances": [
+    "EQPT_TX_FAIL"
+   ]
+  },
+  {
+   "id": "eqpt_card_fail",
+   "label": "EQPT_CARD_FAIL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An equipment alarm raised when a transponder, muxponder, or OTN line card detects an internal card hardware fault.",
+   "example": "A failed FPGA on a VB-MXP-400 causes EQPT_CARD_FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "all_units"
+    },
+    {
+     "rel": "raised-on",
+     "target": "card_hardware_fault"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "failure"
+    }
+   ],
+   "instances": [
+    "EQPT_CARD_FAIL"
+   ]
+  },
+  {
+   "id": "amp_input_los",
+   "label": "AMP_INPUT_LOS",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "A line-amplifier alarm indicating that no light reaches its input because of an upstream fibre, loss, or preceding-amplifier problem.",
+   "example": "A broken feeding span causes a VB-OA-ILA to raise AMP_INPUT_LOS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "line_amplifier"
+    },
+    {
+     "rel": "raised-on",
+     "target": "amp_input_no_light"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "feeding_fibre_broken"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "feeding_loss_risen"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "preceding_amp_failed"
+    }
+   ],
+   "instances": [
+    "AMP_INPUT_LOS"
+   ]
+  },
+  {
+   "id": "oms_los_p",
+   "label": "OMS_LOS_P",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "A preamplifier alarm indicating loss of all optical multiplex-section light at the receiving-end input.",
+   "example": "A disconnected receive-side patch cord causes the VB-OA-PRE to raise OMS_LOS_P.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "preamplifier"
+    },
+    {
+     "rel": "raised-on",
+     "target": "oms_input_no_light"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "feeding_fibre_broken"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "feeding_loss_risen"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "preceding_amp_failed"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "disconnected_patch_cord"
+    }
+   ],
+   "instances": [
+    "OMS_LOS_P"
+   ]
+  },
+  {
+   "id": "osc_los",
+   "label": "OSC_LOS",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An alarm raised by a line amplifier or preamplifier when the optical supervisory channel is not received from the feeding section.",
+   "example": "A severe upstream loss removes the OSC at an ILA, which raises OSC_LOS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "line_amplifier"
+    },
+    {
+     "rel": "raised-by",
+     "target": "preamplifier"
+    },
+    {
+     "rel": "raised-on",
+     "target": "supervisory_not_received"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "feeding_fibre_broken"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "feeding_loss_risen"
+    }
+   ],
+   "instances": [
+    "OSC_LOS"
+   ]
+  },
+  {
+   "id": "amp_fail",
+   "label": "AMP_FAIL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An optical-amplifier failure alarm raised when input light is present but no output light is produced, usually because of pump or unit failure.",
+   "example": "A VB-OA-BST has normal input power but a dark output after pump failure, so it raises AMP_FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "booster_amplifier"
+    },
+    {
+     "rel": "raised-by",
+     "target": "line_amplifier"
+    },
+    {
+     "rel": "raised-by",
+     "target": "preamplifier"
+    },
+    {
+     "rel": "raised-on",
+     "target": "input_light_output_none"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "pump_laser_failure"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "unit_failure"
+    }
+   ],
+   "instances": [
+    "AMP_FAIL"
+   ]
+  },
+  {
+   "id": "amp_gain_oor",
+   "label": "AMP_GAIN_OOR",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An alarm raised by a line amplifier or preamplifier when measured gain differs from its set point by more than 2 dB.",
+   "example": "A preamplifier set to 20 dB delivers 17 dB and raises AMP_GAIN_OOR.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "line_amplifier"
+    },
+    {
+     "rel": "raised-by",
+     "target": "preamplifier"
+    },
+    {
+     "rel": "raised-on",
+     "target": "gain_out_of_range"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "gain_loss"
+    }
+   ],
+   "instances": [
+    "AMP_GAIN_OOR"
+   ]
+  },
+  {
+   "id": "amp_pump_eol",
+   "label": "AMP_PUMP_EOL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An amplifier pump end-of-life alarm raised when pump drive current exceeds 120% of its beginning-of-life value.",
+   "example": "A VB-OA-ILA reports 123% pump current and raises AMP_PUMP_EOL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "booster_amplifier"
+    },
+    {
+     "rel": "raised-by",
+     "target": "line_amplifier"
+    },
+    {
+     "rel": "raised-by",
+     "target": "preamplifier"
+    },
+    {
+     "rel": "raised-on",
+     "target": "pump_current_120"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "pump_ageing"
+    }
+   ],
+   "instances": [
+    "AMP_PUMP_EOL"
+   ]
+  },
+  {
+   "id": "client_sf",
+   "label": "CLIENT_SF",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "A client-port service-failure alarm indicating that the client service is down because of a port, ODU routing, switch-fabric, or other failure.",
+   "example": "A wrong ODU cross-connect deprives a VB-CP-100GE of its expected service and CLIENT_SF is raised.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "client_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "client_service_failed"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "failure"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "client_port_failure"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "wrong_cross_connection"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "switch_fabric_failure"
+    }
+   ],
+   "instances": [
+    "CLIENT_SF"
+   ]
+  },
+  {
+   "id": "odu_ais_alarm",
+   "label": "ODU_AIS",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "A client-port alarm indicating that an ODU Alarm Indication Signal has been received from upstream.",
+   "example": "An upstream OTU failure inserts AIS, and the egress client port raises ODU_AIS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "client_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "odu_ais_received"
+    }
+   ],
+   "instances": [
+    "ODU_AIS"
+   ]
+  },
+  {
+   "id": "odu_bdi",
+   "label": "ODU_BDI",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "A client-port ODU backward-defect alarm indicating that the far end reports receiving an alarm indication signal.",
+   "example": "The remote client receives ODU-AIS and reports it backward, causing the local port to raise ODU_BDI.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "client_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "far_end_ais_report"
+    }
+   ],
+   "instances": [
+    "ODU_BDI"
+   ]
+  },
+  {
+   "id": "odu_tim",
+   "label": "ODU_TIM",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An ODU trail-trace-identifier-mismatch alarm raised when a client port receives an ODU other than the one provisioned.",
+   "example": "A wrong cross-connect delivers trace ID A to a port expecting B, which raises ODU_TIM.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "client_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "trail_trace_mismatch"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "wrong_cross_connection"
+    }
+   ],
+   "instances": [
+    "ODU_TIM"
+   ]
+  },
+  {
+   "id": "prot_active",
+   "label": "PROT_ACTIVE",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "A protection-status alarm or indication showing that a client service selector is currently using the protection path.",
+   "example": "After the working ODU fails, the selector moves to backup and the port reports PROT_ACTIVE.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "client_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "selector_protection_path"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "failure"
+    }
+   ],
+   "instances": [
+    "PROT_ACTIVE"
+   ]
+  },
+  {
+   "id": "prot_unavail",
+   "label": "PROT_UNAVAIL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "A protection alarm indicating that the configured protection path has failed and cannot provide backup service.",
+   "example": "Loss of framing on the standby ODU causes the client port to raise PROT_UNAVAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "client_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "protection_path_failed"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "failure"
+    }
+   ],
+   "instances": [
+    "PROT_UNAVAIL"
+   ]
+  },
+  {
+   "id": "eqpt_port_fail",
+   "label": "EQPT_PORT_FAIL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "A client-port equipment alarm indicating an internal port hardware fault.",
+   "example": "A failed Ethernet PHY on a VB-CP-400GE raises EQPT_PORT_FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "client_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "port_hardware_fault"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "failure"
+    }
+   ],
+   "instances": [
+    "EQPT_PORT_FAIL"
+   ]
+  },
+  {
+   "id": "otn_fabric_fail",
+   "label": "OTN_FABRIC_FAIL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "An OTN-switch equipment alarm indicating a fault in the ODU cross-connect fabric.",
+   "example": "A fabric ASIC failure in VB-OTNSW raises OTN_FABRIC_FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "otn_switch"
+    },
+    {
+     "rel": "raised-on",
+     "target": "fabric_fault"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "failure"
+    }
+   ],
+   "instances": [
+    "OTN_FABRIC_FAIL"
+   ]
+  },
+  {
+   "id": "channel_scope",
+   "label": "The channel",
+   "synonyms": [
+    "that channel",
+    "this channel"
+   ],
+   "kind": "Scope",
+   "gloss": "The single optical wavelength channel to which a stated condition or fault consequence applies.",
+   "example": "For a passband shift at 193.1 THz, the channel scope is only that 193.1 THz service.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "channels_on_degree",
+   "label": "Every channel arriving at the node on that degree",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "All wavelength channels entering a ROADM node through one specified line degree.",
+   "example": "The scope includes every wavelength arriving on the west degree when its WSS input fails.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "other_degree_channels",
+   "label": "channels arriving on the other degrees",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "Channels entering the same ROADM through degrees other than the degree associated with the fault.",
+   "example": "If the west input fails, channels on the north and east degrees are the other-degree channels.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "transmitted_channel",
+   "label": "The channel it transmits",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The particular optical channel launched by the unit's transmitter and potentially observed as lost at the far end.",
+   "example": "The transmitted channel is the 193.2 THz carrier emitted by a VB-TPD-400.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "received_traffic",
+   "label": "the traffic it receives",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The payload traffic arriving at and accepted by a unit or port from its peer.",
+   "example": "A remote card failure removes the 100GE traffic received at the local endpoint.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "monitoring_scope",
+   "label": "its monitoring",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The telemetry and performance-monitoring output associated with a particular resource.",
+   "example": "After a card goes silent, its power and error counters constitute the missing monitoring scope.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "traffic_alarms_scope",
+   "label": "its traffic alarms",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The set of service- and signal-related alarms generated by a particular unit for its carried traffic.",
+   "example": "OTU_LOF and OTU_SD on a failed line card are within its traffic-alarm scope.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "receiver_only",
+   "label": "this receiver only",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "A scope restricted to the current receiver, excluding the shared path and other receivers or channels.",
+   "example": "Errors seen only by receiver 1, while receiver 2 remains normal, have receiver-only scope.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "other_channels",
+   "label": "other channels",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "All channels relevant to the comparison except the specifically affected channel.",
+   "example": "When one channel's receiver degrades, the remaining 39 wavelengths are the other channels.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "optical_path",
+   "label": "the optical path",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The end-to-end physical and optical route traversed by a channel between transmitter and receiver.",
+   "example": "The optical path includes patching, ROADMs, fibre spans, and amplifiers from site A to site B.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "unit_scope",
+   "label": "the unit",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The complete monitored equipment unit to which a condition applies, rather than one individual channel.",
+   "example": "A dark amplifier output affects the whole VB-OA-ILA unit.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "channels_carried",
+   "label": "Every channel carried by the unit",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "All wavelength channels transported through a given optical unit.",
+   "example": "The 80 wavelengths passing through a line amplifier are its channels carried.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "every_channel",
+   "label": "every channel",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The entire set of channels under the referenced resource or event, with no channel excluded.",
+   "example": "Gain loss lowers output power on every channel through the amplifier.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "traffic_scope",
+   "label": "Traffic",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The payload service traffic whose continuity or quality is being described.",
+   "example": "During early pump ageing, the traffic scope remains unaffected.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "trend_scope",
+   "label": "the trend",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The time-series behavior of a monitored metric used to detect progressive deterioration.",
+   "example": "The month-by-month rise in pump current is the trend used for early warning.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "edge_channels",
+   "label": "channels at one edge of the band",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "Wavelength channels located near one boundary of the amplifier's supported optical band.",
+   "example": "The longest-wavelength four channels at the edge of the C-band are weakened by gain tilt.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "some_channels",
+   "label": "Some channels, not all",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "A proper subset of carried channels, explicitly not the whole set.",
+   "example": "Five of 80 wavelengths show low power while the other 75 remain normal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "odus_through_switch",
+   "label": "Every ODU cross-connected through the switch",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "All ODU connections whose configured routes traverse the specified OTN switch fabric.",
+   "example": "Twenty ODU2 services cross-connected through VB-OTNSW are all interrupted by its fabric failure.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "each_odu",
+   "label": "each",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "Each individual ODU among the set affected by an OTN switching or AIS-propagation event.",
+   "example": "AIS is placed on each ODU that crossed the failed fabric.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "one_odu",
+   "label": "one ODU",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "A single ODU connection, as opposed to all ODUs carried by a switch or line signal.",
+   "example": "A wrong cross-connect misroutes one ODU while unrelated ODUs remain correct.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "client_optic",
+   "label": "The client optic",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The optical transceiver or pluggable that implements the client-facing physical interface.",
+   "example": "The QSFP-DD in a VB-CP-400GE is the client optic.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "port_scope",
+   "label": "the port",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The complete client-port resource, including its interface electronics and operational state.",
+   "example": "A PHY hardware failure affects the whole 100GE port.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "client_service",
+   "label": "the client service",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The customer-facing service carried through a client port and its associated ODU path.",
+   "example": "The 100GE connection between customer routers is the client service lost after ODU-AIS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "after_node",
+   "label": "after the node",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The observation point on the outgoing side of a network node after its switching or equalization functions.",
+   "example": "Channel power measured at the ROADM degree output is measured after the node.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "there",
+   "label": "there",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The same local point associated with the referenced fault or resource, used as the observation location of its effect.",
+   "example": "Channels are blocked there\u2014at the failed WSS input within the node.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "far_end_receiver",
+   "label": "The receiver at the far end",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The receiver at the remote endpoint corresponding to the current unit's transmitter.",
+   "example": "For a transmitter at site A, the far-end receiver is the line receiver at site B.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "far_end",
+   "label": "the far end",
+   "synonyms": [
+    "at the far end"
+   ],
+   "kind": "Location",
+   "gloss": "The remote endpoint of the monitored bidirectional service or trail.",
+   "example": "A local card at site A treats the peer card at site B as the far end.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "here",
+   "label": "here",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The local monitored endpoint or node from whose perspective the condition is described.",
+   "example": "A downstream AIS arriving at the current client port is observed here.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_receiver",
+   "label": "this receiver",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The specific local receiver currently under diagnosis or reporting the condition.",
+   "example": "Errors appear at this receiver on port 1/1 but not at the peer receiver.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "far_end_transmitter",
+   "label": "the far-end transmitter",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The remote transmitter that sends the optical signal received by the current local receiver.",
+   "example": "For a receiver at site B, the associated laser at site A is the far-end transmitter.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "channel_path",
+   "label": "along the channel's path",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "Any point along the end-to-end optical route followed by a particular wavelength channel.",
+   "example": "A broken fibre midway between ROADMs lies along the channel path.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "line_receiver",
+   "label": "the line receiver",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The optical receiver that terminates the network-facing OTU line signal.",
+   "example": "The coherent line receiver on a VB-OTN-LC-400 detects incoming channel light.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "own_receiver",
+   "label": "this unit's own receiver",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The receive function physically contained in the current equipment unit.",
+   "example": "A noisy coherent front end on the local muxponder is its own receiver.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "path_to_far_end",
+   "label": "on the path to the far end",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The transport route from the current endpoint toward its remote peer.",
+   "example": "A failed inline amplifier on the A-to-B route lies on the path to the far end.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "transmitted_signal",
+   "label": "the signal this unit transmits",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The optical or OTN signal emitted by the current unit and evaluated by the far-end receiver.",
+   "example": "The local 400G OTU carrier is the transmitted signal on which the far end reports a defect.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "on_this_unit",
+   "label": "on this unit",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "A location on or within the currently referenced equipment unit rather than on the remote peer or intervening path.",
+   "example": "A locally detected transmit-laser failure is on this unit.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_unit",
+   "label": "this unit",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The current managed equipment instance whose alarms, measurements, or internal faults are being discussed.",
+   "example": "For AMP_GAIN_OOR on ILA-7, this unit is ILA-7.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_card",
+   "label": "this card",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The particular equipment card currently being monitored or diagnosed.",
+   "example": "A failed FPGA is located on this card, VB-OTN-LC-400 slot 3.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "output_location",
+   "label": "the output",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The egress optical interface of the referenced unit where emitted power is observed.",
+   "example": "A power meter at the amplifier output detects no light.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "downstream",
+   "label": "downstream",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The direction or set of resources reached after the current point in the signal's forwarding direction.",
+   "example": "ODU-AIS inserted by the receiver is observed at downstream client ports.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "feeding_fibre_section",
+   "label": "the fibre section feeding this unit",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The immediately upstream fibre span that delivers optical light into the current unit.",
+   "example": "For ILA-2, the fibre from ILA-1 to ILA-2 is its feeding fibre section.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "preceding_amplifier",
+   "label": "the preceding amplifier",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The nearest upstream amplifier whose output feeds the current unit or span.",
+   "example": "The ILA at site A is the preceding amplifier for the ILA at site B.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "multiplex_section_input",
+   "label": "at the input of the multiplex section",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The ingress point at which the composite WDM signal enters an optical multiplex section.",
+   "example": "A disconnected patch lead between the ROADM and booster is at the multiplex-section input.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "feeding_fibre_reported",
+   "label": "the fibre section feeding the unit, not against the unit itself",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The upstream feeding-fibre location against which an input-loss problem is attributed, explicitly excluding the receiving unit itself.",
+   "example": "Operations records the cut against span A\u2013B rather than against the healthy preamplifier at B.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "through_switch",
+   "label": "through the switch",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The route segment inside and across an OTN switch fabric traversed by cross-connected ODUs.",
+   "example": "An ODU from line card 1 to client port 8 passes through the switch.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "wrong_destination",
+   "label": "the wrong destination",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The endpoint or egress port that incorrectly receives an ODU because of bad cross-connect provisioning.",
+   "example": "Client port C is the wrong destination for the ODU intended for client port B.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "odu_path_in_use",
+   "label": "on the ODU path currently in use",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The working or protection ODU route currently selected to carry live client traffic.",
+   "example": "After protection switching, the backup route becomes the ODU path in use.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "either_end",
+   "label": "at either end",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "Either of the two client-facing endpoints that terminate the service.",
+   "example": "A client-port failure at site A or site B is a failure at either end.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "otn_switch_path",
+   "label": "in an OTN switch along the ODU path",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "A location in an OTN switch that lies along the end-to-end route of an ODU.",
+   "example": "A wrong cross-connect in the intermediate VB-OTNSW lies on the OTN switch path.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "working_odu_path",
+   "label": "on the working ODU path",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The primary ODU route normally selected to carry a protected service.",
+   "example": "The direct A\u2013B ODU route is the working path before any protection switch.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "protection_odu_path",
+   "label": "on the protection ODU path",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The alternate ODU route reserved or configured to carry service when the working path is defective.",
+   "example": "The diverse A\u2013C\u2013B route is the protection ODU path.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_port",
+   "label": "this port",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The specific local client or equipment port currently being referenced.",
+   "example": "For EQPT_PORT_FAIL on 1/4, this port is client port 1/4.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "switch_fabric",
+   "label": "this switch's fabric",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "The internal forwarding fabric of the current OTN switch.",
+   "example": "The cross-connect ASIC matrix inside VB-OTNSW is this switch's fabric.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "channel_monitoring_available",
+   "label": "available on nodes with the channel monitoring option",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "An availability constraint stating that per-channel power and OSNR measurements exist only on nodes equipped with the channel-monitoring option.",
+   "example": "A ROADM with the option reports each wavelength's power and OSNR, while an unequipped node does not.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "power_monitoring_available",
+   "label": "Units with the power monitoring option",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "An availability constraint limiting optical-power measurements to units fitted or licensed with the power-monitoring option.",
+   "example": "A power-monitoring-enabled amplifier exposes total input and output power.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "advanced_monitoring_available",
+   "label": "Units with the advanced monitoring option",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "An availability constraint limiting OSNR estimates, pre-FEC BER, DGD, polarization, and pump-health metrics to units with advanced monitoring.",
+   "example": "A licensed line card reports pre-FEC BER and DGD that a basic card does not expose.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "client_es_available",
+   "label": "Each client port reports client errored seconds in 15-minute bins.",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "The reporting capability by which every client port supplies client errored-second counts in 15-minute intervals.",
+   "example": "A VB-CP-100GE reports seven errored seconds for the latest 15-minute bin.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "client_uas_available",
+   "label": "Each client port reports client unavailable seconds in 15-minute bins.",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "The reporting capability by which every client port supplies client unavailable-second counts in 15-minute intervals.",
+   "example": "A down client port reports 900 unavailable seconds for a full 15-minute bin.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "degradation",
+   "label": "A degradation",
+   "synonyms": [],
+   "kind": "Nature",
+   "gloss": "A fault nature in which performance or signal margin worsens while some signal or service may remain available.",
+   "example": "A 3 dB OSNR decline with traffic still passing is a degradation.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "hard_failure",
+   "label": "Hard failure",
+   "synonyms": [
+    "hard failure"
+   ],
+   "kind": "Nature",
+   "gloss": "An abrupt, complete functional loss that produces an outage rather than merely reduced margin.",
+   "example": "A pump stopping and making an amplifier output dark is a hard failure.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "degradation_not_outage",
+   "label": "A degradation, not an outage",
+   "synonyms": [],
+   "kind": "Nature",
+   "gloss": "A reduced-quality state that does not completely interrupt the affected service.",
+   "example": "OTU_SD with corrected errors and continuing client traffic is a degradation, not an outage.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "gradual_step_degradation",
+   "label": "gradual or step degradation rather than an outage",
+   "synonyms": [],
+   "kind": "Nature",
+   "gloss": "A progressive or discrete worsening of performance that remains distinguishable from complete service loss.",
+   "example": "Connector loss increases by 2 dB after maintenance and then slowly worsens without immediate LOS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "slow_incipent",
+   "label": "slow, incipient condition",
+   "synonyms": [],
+   "kind": "Nature",
+   "gloss": "A slowly developing pre-failure condition that provides evidence of impending equipment deterioration.",
+   "example": "Pump current rising over several months is a slow incipient condition.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "degradation_rather_outage",
+   "label": "degradation rather than an outage",
+   "synonyms": [],
+   "kind": "Nature",
+   "gloss": "A fault classification indicating impaired quality or margin while the signal remains present, rather than total loss.",
+   "example": "Amplifier gain tilt weakening only band-edge channels is degradation rather than an outage.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "after_provisioning",
+   "label": "mostly just after provisioning changes",
+   "synonyms": [],
+   "kind": "Nature",
+   "gloss": "A temporal fault pattern occurring mainly immediately after configuration or cross-connect changes.",
+   "example": "An ODU_TIM appears just after an operator provisions a new ODU cross-connection.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "critical",
+   "label": "critical",
+   "synonyms": [],
+   "kind": "Severity",
+   "gloss": "The highest operational severity, used for conditions requiring immediate attention because service or essential equipment is seriously affected.",
+   "example": "A fabric failure interrupting all ODUs is classified critical.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "minor",
+   "label": "minor",
+   "synonyms": [],
+   "kind": "Severity",
+   "gloss": "A low alarm severity for a condition needing attention but not currently causing major service impact.",
+   "example": "An early pump-ageing warning with unaffected traffic is classified minor.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "not_alarmed",
+   "label": "not alarmed",
+   "synonyms": [],
+   "kind": "Severity",
+   "gloss": "A severity state indicating that the condition is informational or below alarm thresholds and generates no active alarm.",
+   "example": "A small pump-current increase within normal limits is recorded but not alarmed.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "major",
+   "label": "major",
+   "synonyms": [],
+   "kind": "Severity",
+   "gloss": "A high alarm severity below critical, generally indicating significant degradation or loss that requires prompt repair.",
+   "example": "Loss of one unprotected client service is classified major.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "roadm_switching",
+   "label": "Each channel leaving a degree is switched separately.",
+   "synonyms": [],
+   "kind": "Behaviour",
+   "gloss": "ROADM behavior in which each wavelength leaving a line degree is independently switched rather than all channels following one common route.",
+   "example": "At one degree, 193.1 THz is routed east while 193.2 THz is dropped locally.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "g798_actions",
+   "label": "When frame alignment is lost, the unit applies the G.798 consequent actions: an ODU alarm indication signal is inserted downstream on every ODU the OTU carries, and a backward defect indication is sent to the far-end transmitter.",
+   "synonyms": [],
+   "kind": "Behaviour",
+   "gloss": "The G.798 consequent behavior on OTU frame loss: insert ODU-AIS downstream on every ODU carried by the OTU and send BDI toward the remote transmitter.",
+   "example": "After OTU_LOF, a line card sends AIS to all mapped clients and BDI back to the source terminal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "otn_ais_forwarding",
+   "label": "The OTN switch carries an ODU alarm indication signal onwards on every ODU cross-connected through it.",
+   "synonyms": [],
+   "kind": "Behaviour",
+   "gloss": "OTN-switch behavior that propagates an incoming ODU-AIS indication on every affected ODU cross-connection through the fabric.",
+   "example": "An AIS received on an aggregate line ODU is forwarded by the switch to each corresponding egress ODU.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  }
+ ]
+}

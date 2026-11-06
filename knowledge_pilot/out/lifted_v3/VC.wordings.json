@@ -1,0 +1,1395 @@
+{
+ "by_wording": {
+  "Fabric outage": "cause.fabric_outage",
+  "a fabric outage": "cause.fabric_outage",
+  "Mis-provisioned connection": "cause.mis_provisioned_connection",
+  "a mis-provisioned connection": "cause.mis_provisioned_connection",
+  "Tributary failure": "cause.tributary_failure",
+  "any fault": "cause.any_fault",
+  "Any fault": "cause.any_fault",
+  "the tributary": "cause.the_tributary",
+  "tributary hardware fault": "cause.tributary_hardware_fault",
+  "fabric hardware fault": "cause.fabric_hardware_fault",
+  "Amplifier outage": "cause.amplifier_outage",
+  "may be out of service": "cause.amplifier_outage",
+  "is out of service": "cause.amplifier_outage",
+  "the module is out of service": "cause.amplifier_outage",
+  "an amplifier out of service": "cause.amplifier_outage",
+  "Gain sag": "cause.gain_sag",
+  "its gain has sagged": "cause.gain_sag",
+  "Excess noise": "cause.excess_noise",
+  "excess amplifier noise": "cause.excess_noise",
+  "Pump wear-out": "cause.pump_wear_out",
+  "its pump is wearing out": "cause.pump_wear_out",
+  "pump wear-out": "cause.pump_wear_out",
+  "Spectral tilt": "cause.spectral_tilt",
+  "it may be severed": "cause.a_severed_fibre",
+  "is severed": "cause.a_severed_fibre",
+  "a severed fibre": "cause.a_severed_fibre",
+  "its attenuation may have jumped": "cause.fibre_attenuation_that_has_jumped",
+  "its attenuation has jumped": "cause.fibre_attenuation_that_has_jumped",
+  "fibre attenuation that has jumped": "cause.fibre_attenuation_that_has_jumped",
+  "may have been unplugged": "cause.an_unplugged_patch_lead",
+  "an unplugged patch lead": "cause.an_unplugged_patch_lead",
+  "Over-attenuation": "cause.over_attenuation",
+  "Passband misalignment": "cause.passband_misalignment",
+  "a misaligned router passband": "cause.passband_misalignment",
+  "Direction input fault": "cause.direction_input_fault",
+  "a router input that has failed": "cause.direction_input_fault",
+  "Transmitter dark": "cause.transmitter_dark",
+  "The transmitter has gone dark": "cause.transmitter_dark",
+  "Module failure": "cause.module_failure",
+  "its module has failed": "cause.module_failure",
+  "Module hardware fault": "cause.module_failure",
+  "Receiver impairment": "cause.receiver_impairment",
+  "this terminal's own receiver impairment": "cause.receiver_impairment",
+  "Transmitter wear-out": "cause.transmitter_wear_out",
+  "Margin creep": "cause.margin_creep",
+  "DGD growth": "cause.dgd_growth",
+  "a polarisation swing": "cause.a_polarisation_swing",
+  "a soiled connector end-face": "cause.a_soiled_connector_end_face",
+  "transmit laser fault": "cause.transmit_laser_fault",
+  "an ODU AIS is received on an ODU it switches": "condition.an_odu_ais_is_arriving",
+  "receives an ODU AIS": "condition.an_odu_ais_is_arriving",
+  "an ODU AIS is arriving": "condition.an_odu_ais_is_arriving",
+  "passes an ODU AIS along on every ODU it switches": "condition.passes_an_odu_ais_along_on_every_odu_it_switches",
+  "receives an ODU meant for someone else": "condition.the_odu_arriving_is_not_the_expected_one",
+  "the ODU arriving is not the expected one": "condition.the_odu_arriving_is_not_the_expected_one",
+  "drops the customer's service": "condition.the_customer_service_on_this_tributary_has_faile",
+  "dies": "condition.the_customer_service_on_this_tributary_has_faile",
+  "is cut": "condition.the_customer_service_on_this_tributary_has_faile",
+  "Nothing shows": "condition.the_customer_service_on_this_tributary_has_faile",
+  "fails": "condition.the_customer_service_on_this_tributary_has_faile",
+  "drops": "condition.the_customer_service_on_this_tributary_has_faile",
+  "the customer service on this tributary has failed": "condition.the_customer_service_on_this_tributary_has_faile",
+  "is set up wrongly": "condition.is_set_up_wrongly",
+  "ends up at the wrong destination": "condition.ends_up_at_the_wrong_destination",
+  "the service is dual-homed, with a primary and a standby ODU route": "condition.the_service_is_dual_homed_with_a_primary_and_a_s",
+  "the selector is at the receiving tributary": "condition.the_selector_is_at_the_receiving_tributary",
+  "the standby route is clean": "condition.the_standby_route_is_clean",
+  "the customer only sees a short interruption while the selector moves": "condition.the_customer_only_sees_a_short_interruption_whil",
+  "the selector has moved to the standby route": "condition.the_selector_has_moved_to_the_standby_route",
+  "the standby route has failed": "condition.the_standby_route_has_failed",
+  "At installation": "condition.at_installation",
+  "the gain is set to cancel the attenuation of the fibre length that feeds the module": "condition.the_gain_is_set_to_cancel_the_attenuation_of_the",
+  "the module keeps that gain from then on": "condition.the_module_keeps_that_gain_from_then_on",
+  "When the incoming light weakens": "condition.when_the_incoming_light_weakens",
+  "the outgoing light weakens by the same amount": "condition.the_outgoing_light_weakens_by_the_same_amount",
+  "leaves the module weaker": "condition.the_outgoing_light_weakens_by_the_same_amount",
+  "come out weaker": "condition.the_outgoing_light_weakens_by_the_same_amount",
+  "every wavelength carried gets noisier": "condition.every_wavelength_carried_gets_noisier",
+  "leaves the module noisier": "condition.every_wavelength_carried_gets_noisier",
+  "is noisier": "condition.every_wavelength_carried_gets_noisier",
+  "When the incoming light disappears": "condition.when_the_incoming_light_disappears",
+  "no light": "condition.when_the_incoming_light_disappears",
+  "Darkness at the receiver": "condition.when_the_incoming_light_disappears",
+  "sees no light": "condition.when_the_incoming_light_disappears",
+  "The receiver sees no light": "condition.when_the_incoming_light_disappears",
+  "the outgoing light disappears too": "condition.the_outgoing_light_disappears_too",
+  "nothing leaves the module": "condition.the_outgoing_light_disappears_too",
+  "is gone": "condition.the_outgoing_light_disappears_too",
+  "no light although light is entering": "condition.the_outgoing_light_disappears_too",
+  "Anything else the module receives": "condition.anything_else_the_module_receives",
+  "it sends on as it is": "condition.it_sends_on_as_it_is",
+  "Every shelter": "condition.every_shelter",
+  "ends the supervisory link it receives": "condition.ends_the_supervisory_link_it_receives",
+  "starts a fresh one on the next fibre length": "condition.starts_a_fresh_one_on_the_next_fibre_length",
+  "a supervisory outage": "condition.a_supervisory_outage",
+  "receives nothing": "condition.a_supervisory_outage",
+  "never spreads beyond the fibre length where it occurs": "condition.never_spreads_beyond_the_fibre_length_where_it_o",
+  "look normal": "condition.level_is_fine",
+  "level is fine": "condition.level_is_fine",
+  "creeps up": "condition.creeps_up",
+  "ends in PUMP-EOL": "condition.ends_in_pump_eol",
+  "no service effect until late": "condition.no_service_effect_until_late",
+  "the gain strays more than 2 dB from its setting": "condition.the_gain_strays_more_than_2_db_from_its_setting",
+  "I-PUMP passes 120 per cent of its commissioning value": "condition.i_pump_passes_120_per_cent_of_its_commissioning_",
+  "as it leaves a direction": "condition.as_it_leaves_a_direction",
+  "The router steers every wavelength on its own.": "condition.the_router_steers_every_wavelength_on_its_own",
+  "A problem hits all the light entering on one direction": "condition.a_problem_hits_all_the_light_entering_on_one_dir",
+  "the problem reappears, after the router, on each wavelength steered onwards from it": "condition.the_problem_reappears_after_the_router_on_each_w",
+  "as long as its attenuation range allows": "condition.as_long_as_its_attenuation_range_allows",
+  "brings the wavelength levels back to the launch level": "condition.brings_the_wavelength_levels_back_to_the_launch_",
+  "is evened out at the router": "condition.brings_the_wavelength_levels_back_to_the_launch_",
+  "A drop in level of up to about 8 dB before the router": "condition.a_drop_in_level_of_up_to_about_8_db_before_the_r",
+  "the noise penalty the drop caused does not go away": "condition.the_noise_penalty_the_drop_caused_does_not_go_aw",
+  "A bigger drop": "condition.a_bigger_drop",
+  "leaves the router as a weak wavelength": "condition.leaves_the_router_as_a_weak_wavelength",
+  "leaves the router weak": "condition.leaves_the_router_as_a_weak_wavelength",
+  "crosses the router as it arrived": "condition.crosses_the_router_as_it_arrived",
+  "quality suffers": "condition.quality_suffers",
+  "stops at the router": "condition.stops_at_the_router",
+  "carries on": "condition.carries_on",
+  "the terminal declares a loss-of-signal defect (dLOS in G.798 terms)": "condition.the_terminal_declares_a_loss_of_signal_defect_dl",
+  "the terminal declares an equipment defect (dEQ)": "condition.the_terminal_declares_an_equipment_defect_deq",
+  "can no longer find its OTU frame": "condition.the_otu_frame_is_lost",
+  "the OTU frame is lost": "condition.the_otu_frame_is_lost",
+  "the frame is lost once it exceeds the margin by far": "condition.the_otu_frame_is_lost",
+  "Once the OTU frame is gone": "condition.the_otu_frame_is_lost",
+  "The OTU frame is lost though light arrives": "condition.the_otu_frame_is_lost",
+  "Light that arrives in poor shape": "condition.light_that_arrives_in_poor_shape",
+  "weak": "condition.weak",
+  "noisy": "condition.noisy",
+  "with too much differential group delay": "condition.with_too_much_differential_group_delay",
+  "clipped by a filter": "condition.clipped_by_a_filter",
+  "spoiled by the receiver itself": "condition.spoiled_by_the_receiver_itself",
+  "with its margin slowly worn away": "condition.the_wavelength_s_margin_shrinks_slowly",
+  "The wavelength's margin shrinks slowly": "condition.the_wavelength_s_margin_shrinks_slowly",
+  "pre-FEC errors begin once the damage exceeds the wavelength's margin": "condition.pre_fec_errors_begin_once_the_damage_exceeds_the",
+  "errors appear": "condition.pre_fec_errors_begin_once_the_damage_exceeds_the",
+  "Polarisation swings faster than the tracker can follow": "condition.polarisation_swings_faster_than_the_tracker_can_",
+  "errored seconds": "condition.errored_seconds",
+  "the terminal follows G.798": "condition.the_terminal_follows_g_798",
+  "It inserts ODU AIS towards every ODU it carries downstream": "condition.it_inserts_odu_ais_towards_every_odu_it_carries_",
+  "returns a backward defect indication to the terminal at the other end": "condition.returns_a_backward_defect_indication_to_the_term",
+  "The transmit laser stops or fails": "condition.transmit_laser_fault",
+  "an eventual dark transmitter": "condition.transmit_laser_fault",
+  "loses the wavelength this module sends": "condition.loses_the_wavelength_this_module_sends",
+  "what the module receives is lost": "condition.what_the_module_receives_is_lost",
+  "its telemetry stops": "condition.its_telemetry_stops",
+  "its traffic alarms are hidden behind the hardware alarm": "condition.its_traffic_alarms_are_hidden_behind_the_hardwar",
+  "stay healthy": "condition.stay_healthy",
+  "The laser bias climbs as the laser ages": "condition.the_laser_bias_climbs_as_the_laser_ages",
+  "it is seen": "condition.it_is_seen",
+  "Pre-FEC errors exceed the degrade level": "condition.pre_fec_errors_exceed_the_degrade_level",
+  "The other end reports a defect in what this terminal sends": "condition.the_other_end_reports_a_defect_in_what_this_term",
+  "Laser bias above 120 per cent of its commissioning value": "condition.laser_bias_above_120_per_cent_of_its_commissioni",
+  "the other end says it is receiving ODU AIS": "condition.the_other_end_says_it_is_receiving_odu_ais",
+  "customer errored seconds": "characteristic.errored_seconds",
+  "customer unavailable seconds": "characteristic.customer_unavailable_seconds",
+  "Aggregate optical power entering the module": "characteristic.aggregate_optical_power_entering_the_module",
+  "Aggregate optical power leaving the module": "characteristic.aggregate_optical_power_leaving_the_module",
+  "Pump drive, as a share of the value at commissioning": "characteristic.pump_drive_as_a_share_of_the_value_at_commission",
+  "Whether the supervisory link is being received": "characteristic.whether_the_supervisory_link_is_being_received",
+  "per wavelength, the level": "characteristic.received_light_level",
+  "Received light level": "characteristic.received_light_level",
+  "per wavelength, the OSNR": "characteristic.estimated_osnr",
+  "estimated OSNR": "characteristic.estimated_osnr",
+  "pre-FEC error ratio": "characteristic.pre_fec_error_ratio",
+  "DGD": "characteristic.dgd",
+  "polarisation drift rate": "characteristic.polarisation_drift_rate",
+  "Transmit laser bias, as a share of its value at commissioning": "characteristic.transmit_laser_bias_as_a_share_of_its_value_at_c",
+  "the digital cross-connect": "resource.the_digital_cross_connect",
+  "switches ODUs between line modules and tributaries": "resource.the_digital_cross_connect",
+  "VC-DXC": "resource.the_digital_cross_connect",
+  "tributary port": "resource.tributary_port",
+  "VC-TRIB-10": "resource.tributary_port",
+  "VC-TRIB-100": "resource.tributary_port",
+  "VC-TRIB-400": "resource.tributary_port",
+  "launch OFA": "resource.launch_ofa",
+  "where a wavelength section leaves the wavelength router": "resource.launch_ofa",
+  "VC-OFA-T": "resource.launch_ofa",
+  "mid-span OFA": "resource.mid_span_ofa",
+  "in repeater shelters between terminals": "resource.mid_span_ofa",
+  "VC-OFA-M": "resource.mid_span_ofa",
+  "landing OFA": "resource.landing_ofa",
+  "where a wavelength section arrives at the next wavelength router": "resource.landing_ofa",
+  "VC-OFA-R": "resource.landing_ofa",
+  "wavelength router": "resource.wavelength_router",
+  "single-client wavelength terminal": "resource.single_client_wavelength_terminal",
+  "VC-WT-400T": "resource.single_client_wavelength_terminal",
+  "aggregating wavelength terminal": "resource.aggregating_wavelength_terminal",
+  "VC-WT-200A": "resource.aggregating_wavelength_terminal",
+  "several clients on one wavelength": "resource.aggregating_wavelength_terminal",
+  "VC-WT-400A": "resource.aggregating_wavelength_terminal",
+  "digital-switching line module": "resource.digital_switching_line_module",
+  "VC-WT-200D": "resource.digital_switching_line_module",
+  "VC-WT-400D": "resource.digital_switching_line_module",
+  "TRIB-FAIL": "alarm.trib_fail",
+  "AIS-IN": "alarm.ais_in",
+  "REMOTE-AIS": "alarm.remote_ais",
+  "TRACE-MISMATCH": "alarm.trace_mismatch",
+  "ON-STANDBY": "alarm.on_standby",
+  "STANDBY-LOST": "alarm.standby_lost",
+  "TRIB-HW": "alarm.trib_hw",
+  "FABRIC-HW": "alarm.fabric_hw",
+  "IN-DARK": "alarm.in_dark",
+  "SEC-IN-DARK": "alarm.in_dark",
+  "RX-DARK": "alarm.in_dark",
+  "SV-LOSS": "alarm.sv_loss",
+  "OUT-DARK": "alarm.out_dark",
+  "GAIN-DEV": "alarm.gain_dev",
+  "PUMP-EOL": "alarm.pump_eol",
+  "FRAME-LOSS": "alarm.frame_loss",
+  "DEGRADE": "alarm.degrade",
+  "REMOTE-DEFECT": "alarm.remote_defect",
+  "TX-HW": "alarm.tx_hw",
+  "MOD-HW": "alarm.mod_hw",
+  "TX-BIAS": "alarm.tx_bias",
+  "The switching fabric": "scope.the_switching_fabric",
+  "every ODU": "scope.every_odu",
+  "A connection": "scope.a_connection",
+  "one ODU": "scope.one_odu",
+  "the optical side": "scope.the_optical_side",
+  "The customer-facing optic": "scope.the_customer_facing_optic",
+  "the tributary itself": "scope.the_tributary_itself",
+  "the customer service": "scope.the_customer_service",
+  "service": "scope.the_customer_service",
+  "the module": "scope.the_module",
+  "every wavelength": "scope.every_wavelength",
+  "every wavelength it carried": "scope.every_wavelength",
+  "Output levels": "scope.output_levels",
+  "I-PUMP": "scope.i_pump",
+  "the trend": "scope.the_trend",
+  "the wavelengths at one end of the band": "scope.the_wavelengths_at_one_end_of_the_band",
+  "one wavelength": "scope.one_wavelength",
+  "All the light coming in on that direction": "scope.all_the_light_coming_in_on_that_direction",
+  "light entering on the other directions": "scope.light_entering_on_the_other_directions",
+  "the transmit laser": "scope.the_transmit_laser",
+  "the laser": "scope.the_transmit_laser",
+  "the terminal at the other end of the wavelength": "scope.the_terminal_at_the_other_end_of_the_wavelength",
+  "the terminal at the other end": "scope.the_terminal_at_the_other_end_of_the_wavelength",
+  "what the module receives": "scope.what_the_module_receives",
+  "its telemetry": "scope.its_telemetry",
+  "its traffic alarms": "scope.its_traffic_alarms",
+  "this receiver alone": "scope.this_receiver_alone",
+  "the other wavelengths": "scope.the_other_wavelengths",
+  "the route": "scope.the_route",
+  "transmitter": "scope.transmitter",
+  "the wavelength's margin": "scope.the_wavelength_s_margin",
+  "The wavelength's margin": "scope.the_wavelength_s_margin",
+  "this cross-connect": "location.this_cross_connect",
+  "in this cross-connect": "location.this_cross_connect",
+  "switched through this cross-connect": "location.this_cross_connect",
+  "on the ODU route in use": "location.on_the_odu_route_in_use",
+  "at either end": "location.at_either_end",
+  "at a cross-connect along the ODU route": "location.at_a_cross_connect_along_the_odu_route",
+  "the customer service on this tributary": "location.the_customer_service_on_this_tributary",
+  "the ODU arriving": "location.the_odu_arriving",
+  "on the primary route": "location.on_the_primary_route",
+  "the selector": "location.the_selector",
+  "on the standby route": "location.the_standby_route",
+  "the standby route": "location.the_standby_route",
+  "in this tributary": "location.this_tributary",
+  "this tributary": "location.this_tributary",
+  "downstream": "location.downstream",
+  "this module": "location.this_module",
+  "The module itself": "location.this_module",
+  "in this module": "location.this_module",
+  "This module": "location.this_module",
+  "the fibre length feeding the module": "location.the_fibre_length_feeding_the_module",
+  "that fibre length": "location.the_fibre_length_feeding_the_module",
+  "the OFA before that fibre length": "location.the_ofa_before_that_fibre_length",
+  "the patch lead at the head of the wavelength section": "location.the_patch_lead_at_the_head_of_the_wavelength_sec",
+  "the router": "location.the_router",
+  "the other end of the wavelength": "location.the_other_end_of_the_wavelength",
+  "the other end": "location.the_other_end_of_the_wavelength",
+  "at the other end": "location.the_other_end_of_the_wavelength",
+  "on this side": "location.on_this_side",
+  "at the receiver": "location.this_receiver_alone",
+  "along its route": "location.along_its_route",
+  "anywhere earlier on the wavelength's route": "location.anywhere_earlier_on_the_wavelength_s_route",
+  "Earlier on the route": "location.anywhere_earlier_on_the_wavelength_s_route",
+  "this terminal": "location.this_terminal",
+  "in this terminal": "location.this_terminal",
+  "between here and the other end, the other end included": "location.between_here_and_the_other_end_the_other_end_inc",
+  "what this terminal sends": "location.what_this_terminal_sends",
+  "This terminal's transmitter": "location.this_terminal_s_transmitter",
+  "Base": "availability.base",
+  "Optical Power pack": "availability.optical_power_pack",
+  "Insight pack": "availability.insight_pack",
+  "With the Spectrum pack": "availability.with_the_spectrum_pack",
+  "An outage.": "nature.an_outage",
+  "An outage; it happens mostly straight after provisioning work.": "nature.an_outage",
+  "An outage": "nature.an_outage",
+  "A degradation.": "nature.a_degradation",
+  "A degradation": "nature.a_degradation",
+  "Slow": "nature.slow",
+  "urgent": "severity.urgent",
+  "Urgent": "severity.urgent",
+  "information only": "severity.information_only",
+  "Information only": "severity.information_only",
+  "important": "severity.important",
+  "advisory": "severity.advisory",
+  "Advisory": "severity.advisory",
+  "dual-homed, with a primary and a standby ODU route and the selector at the receiving tributary": "behaviour.dual_homed_with_a_primary_and_a_standby_odu_rout",
+  "The router steers every wavelength on its own as it leaves a direction.": "behaviour.the_router_steers_every_wavelength_on_its_own_as"
+ },
+ "dropped": [
+  "the other end says it is receiving ODU AIS"
+ ],
+ "invented": [],
+ "inventory": {
+  "Cause": {
+   "Fabric outage": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: fault \u2014 The switching fabric dies, and every ODU switched through this cross-connect is cut."
+   ],
+   "Mis-provisioned connection": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: fault \u2014 A connection is set up wrongly, and one ODU ends up at the wrong destination. Nothing shows on the optical side."
+   ],
+   "Tributary failure": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: fault \u2014 The customer-facing optic or the tributary itself fails, and the customer service drops."
+   ],
+   "any fault": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm TRIB-FAIL (the customer service on this tributary has failed)",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm ON-STANDBY (the selector has moved to the standby route)",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm STANDBY-LOST (the standby route has failed)"
+   ],
+   "the tributary": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm TRIB-FAIL (the customer service on this tributary has failed)"
+   ],
+   "a mis-provisioned connection": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm TRIB-FAIL (the customer service on this tributary has failed)",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm TRACE-MISMATCH (the ODU arriving is not the expected one)"
+   ],
+   "a fabric outage": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm TRIB-FAIL (the customer service on this tributary has failed)"
+   ],
+   "tributary hardware fault": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm TRIB-HW (tributary hardware fault)"
+   ],
+   "fabric hardware fault": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: probable cause of alarm FABRIC-HW (fabric hardware fault)"
+   ],
+   "Amplifier outage": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: fault \u2014 The pump or the whole module dies."
+   ],
+   "Gain sag": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: fault \u2014 The gain falls short of its setting."
+   ],
+   "Excess noise": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: fault \u2014 The amplifying stage adds more noise than its rating."
+   ],
+   "Pump wear-out": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: fault \u2014 I-PUMP creeps up as the module works harder to hold its gain, and the trend ends in PUMP-EOL."
+   ],
+   "Spectral tilt": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: fault \u2014 The gain is no longer even across the band."
+   ],
+   "it may be severed": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm IN-DARK (P-IN shows no light)",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm SEC-IN-DARK (P-IN shows no light)"
+   ],
+   "its attenuation may have jumped": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm IN-DARK (P-IN shows no light)",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm SEC-IN-DARK (P-IN shows no light)"
+   ],
+   "may be out of service": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm IN-DARK (P-IN shows no light)",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm SEC-IN-DARK (P-IN shows no light)"
+   ],
+   "may have been unplugged": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm SEC-IN-DARK (P-IN shows no light)"
+   ],
+   "is severed": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm SV-LOSS (SV-RX receives nothing)"
+   ],
+   "its attenuation has jumped": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm SV-LOSS (SV-RX receives nothing)"
+   ],
+   "is out of service": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm OUT-DARK (P-OUT shows no light although light is entering)"
+   ],
+   "the module is out of service": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm GAIN-DEV (the gain strays more than 2 dB from its setting)"
+   ],
+   "its gain has sagged": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm GAIN-DEV (the gain strays more than 2 dB from its setting)"
+   ],
+   "its pump is wearing out": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm GAIN-DEV (the gain strays more than 2 dB from its setting)"
+   ],
+   "pump wear-out": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: probable cause of alarm PUMP-EOL (I-PUMP passes 120 per cent of its commissioning value)"
+   ],
+   "Over-attenuation": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: fault \u2014 The selector module attenuates one wavelength more than it should, so that wavelength leaves the router weak."
+   ],
+   "Passband misalignment": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: fault \u2014 The selector module's passband for one wavelength has moved off centre or become too narrow. The wavelength's level is fine but its quality suffers."
+   ],
+   "Direction input fault": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: fault \u2014 An input of a selector module dies. All the light coming in on that direction stops at the router, while light entering on the other directions carries on."
+   ],
+   "Transmitter dark": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: fault \u2014 The transmit laser stops or fails, and the terminal at the other end of the wavelength sees no light."
+   ],
+   "Module failure": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: fault \u2014 The module dies."
+   ],
+   "Receiver impairment": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: fault \u2014 The receiver itself has deteriorated."
+   ],
+   "Transmitter wear-out": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: fault \u2014 The laser bias climbs as the laser ages, ahead of an eventual dark transmitter.",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm TX-BIAS (Laser bias above 120 per cent of its commissioning value)"
+   ],
+   "Margin creep": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: fault \u2014 The wavelength's margin shrinks slowly, as parts along its route age; it is seen at the receiver."
+   ],
+   "The transmitter has gone dark": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm RX-DARK (The receiver sees no light)"
+   ],
+   "its module has failed": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm RX-DARK (The receiver sees no light)"
+   ],
+   "a severed fibre": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm RX-DARK (The receiver sees no light)"
+   ],
+   "an amplifier out of service": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm RX-DARK (The receiver sees no light)"
+   ],
+   "an unplugged patch lead": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm RX-DARK (The receiver sees no light)"
+   ],
+   "a router input that has failed": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm RX-DARK (The receiver sees no light)"
+   ],
+   "fibre attenuation that has jumped": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm FRAME-LOSS (The OTU frame is lost though light arrives)",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm DEGRADE (Pre-FEC errors exceed the degrade level (margin below about 1 dB))"
+   ],
+   "excess amplifier noise": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm FRAME-LOSS (The OTU frame is lost though light arrives)",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm DEGRADE (Pre-FEC errors exceed the degrade level (margin below about 1 dB))"
+   ],
+   "DGD growth": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm FRAME-LOSS (The OTU frame is lost though light arrives)",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm DEGRADE (Pre-FEC errors exceed the degrade level (margin below about 1 dB))"
+   ],
+   "a misaligned router passband": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm FRAME-LOSS (The OTU frame is lost though light arrives)",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm DEGRADE (Pre-FEC errors exceed the degrade level (margin below about 1 dB))"
+   ],
+   "a polarisation swing": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm FRAME-LOSS (The OTU frame is lost though light arrives)"
+   ],
+   "this terminal's own receiver impairment": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm FRAME-LOSS (The OTU frame is lost though light arrives)",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm DEGRADE (Pre-FEC errors exceed the degrade level (margin below about 1 dB))"
+   ],
+   "a soiled connector end-face": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm DEGRADE (Pre-FEC errors exceed the degrade level (margin below about 1 dB))"
+   ],
+   "Any fault": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm REMOTE-DEFECT (The other end reports a defect in what this terminal sends)"
+   ],
+   "transmit laser fault": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm TX-HW (The terminal detects a transmit laser fault)"
+   ],
+   "Module hardware fault": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: probable cause of alarm MOD-HW (Module hardware fault)"
+   ]
+  },
+  "Condition": {
+   "an ODU AIS is received on an ODU it switches": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: arriving condition -> passes an ODU AIS along on every ODU it switches"
+   ],
+   "passes an ODU AIS along on every ODU it switches": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: result of an ODU AIS is received on an ODU it switches"
+   ],
+   "receives an ODU AIS": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: arriving condition -> drops the customer's service"
+   ],
+   "receives an ODU meant for someone else": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: arriving condition -> drops the customer's service"
+   ],
+   "drops the customer's service": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: result of receives an ODU AIS; receives an ODU meant for someone else"
+   ],
+   "the service is dual-homed, with a primary and a standby ODU route": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: arriving condition -> the customer only sees a short interruption while the selector moves"
+   ],
+   "the selector is at the receiving tributary": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: arriving condition -> the customer only sees a short interruption while the selector moves"
+   ],
+   "the standby route is clean": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: arriving condition -> the customer only sees a short interruption while the selector moves"
+   ],
+   "the customer only sees a short interruption while the selector moves": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: result of the service is dual-homed, with a primary and a standby ODU route; the selector is at the receiving tributary; the standby route is clean"
+   ],
+   "dies": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: symptom of fault Fabric outage"
+   ],
+   "is cut": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: symptom of fault Fabric outage"
+   ],
+   "is set up wrongly": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: symptom of fault Mis-provisioned connection"
+   ],
+   "ends up at the wrong destination": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: symptom of fault Mis-provisioned connection"
+   ],
+   "Nothing shows": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: symptom of fault Mis-provisioned connection"
+   ],
+   "fails": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: symptom of fault Tributary failure"
+   ],
+   "drops": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: symptom of fault Tributary failure"
+   ],
+   "the customer service on this tributary has failed": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRIB-FAIL"
+   ],
+   "an ODU AIS is arriving": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm AIS-IN"
+   ],
+   "the other end says it is receiving ODU AIS": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm REMOTE-AIS"
+   ],
+   "the ODU arriving is not the expected one": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRACE-MISMATCH"
+   ],
+   "the selector has moved to the standby route": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm ON-STANDBY"
+   ],
+   "the standby route has failed": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm STANDBY-LOST"
+   ],
+   "tributary hardware fault": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRIB-HW"
+   ],
+   "fabric hardware fault": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm FABRIC-HW"
+   ],
+   "At installation": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: arriving condition -> the gain is set to cancel the attenuation of the fibre length that feeds the module; the module keeps that gain from then on"
+   ],
+   "the gain is set to cancel the attenuation of the fibre length that feeds the module": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of At installation"
+   ],
+   "the module keeps that gain from then on": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of At installation"
+   ],
+   "When the incoming light weakens": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: arriving condition -> the outgoing light weakens by the same amount; every wavelength carried gets noisier"
+   ],
+   "the outgoing light weakens by the same amount": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of When the incoming light weakens"
+   ],
+   "every wavelength carried gets noisier": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of When the incoming light weakens"
+   ],
+   "When the incoming light disappears": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: arriving condition -> the outgoing light disappears too"
+   ],
+   "the outgoing light disappears too": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of When the incoming light disappears"
+   ],
+   "Anything else the module receives": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: arriving condition -> it sends on as it is"
+   ],
+   "it sends on as it is": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of Anything else the module receives"
+   ],
+   "Every shelter": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: arriving condition -> ends the supervisory link it receives; starts a fresh one on the next fibre length"
+   ],
+   "ends the supervisory link it receives": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of Every shelter"
+   ],
+   "starts a fresh one on the next fibre length": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of Every shelter"
+   ],
+   "a supervisory outage": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: arriving condition -> never spreads beyond the fibre length where it occurs"
+   ],
+   "never spreads beyond the fibre length where it occurs": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: result of a supervisory outage"
+   ],
+   "nothing leaves the module": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Amplifier outage"
+   ],
+   "is gone": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Amplifier outage"
+   ],
+   "leaves the module weaker": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Gain sag"
+   ],
+   "leaves the module noisier": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Gain sag"
+   ],
+   "look normal": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Excess noise"
+   ],
+   "is noisier": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Excess noise"
+   ],
+   "creeps up": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Pump wear-out"
+   ],
+   "ends in PUMP-EOL": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Pump wear-out"
+   ],
+   "no service effect until late": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Pump wear-out"
+   ],
+   "come out weaker": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: symptom of fault Spectral tilt"
+   ],
+   "no light": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm IN-DARK",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm SEC-IN-DARK"
+   ],
+   "receives nothing": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm SV-LOSS"
+   ],
+   "no light although light is entering": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm OUT-DARK"
+   ],
+   "the gain strays more than 2 dB from its setting": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm GAIN-DEV"
+   ],
+   "I-PUMP passes 120 per cent of its commissioning value": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm PUMP-EOL"
+   ],
+   "as it leaves a direction": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: arriving condition -> The router steers every wavelength on its own."
+   ],
+   "The router steers every wavelength on its own.": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: result of as it leaves a direction"
+   ],
+   "A problem hits all the light entering on one direction": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: arriving condition -> the problem reappears, after the router, on each wavelength steered onwards from it"
+   ],
+   "the problem reappears, after the router, on each wavelength steered onwards from it": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: result of A problem hits all the light entering on one direction"
+   ],
+   "as long as its attenuation range allows": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: arriving condition -> brings the wavelength levels back to the launch level"
+   ],
+   "brings the wavelength levels back to the launch level": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: result of as long as its attenuation range allows"
+   ],
+   "A drop in level of up to about 8 dB before the router": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: arriving condition -> is evened out at the router; the noise penalty the drop caused does not go away"
+   ],
+   "is evened out at the router": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: result of A drop in level of up to about 8 dB before the router"
+   ],
+   "the noise penalty the drop caused does not go away": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: result of A drop in level of up to about 8 dB before the router"
+   ],
+   "A bigger drop": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: arriving condition -> leaves the router as a weak wavelength"
+   ],
+   "leaves the router as a weak wavelength": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: result of A bigger drop"
+   ],
+   "crosses the router as it arrived": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: result of "
+   ],
+   "leaves the router weak": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: symptom of fault Over-attenuation"
+   ],
+   "level is fine": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: symptom of fault Passband misalignment"
+   ],
+   "quality suffers": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: symptom of fault Passband misalignment"
+   ],
+   "stops at the router": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: symptom of fault Direction input fault"
+   ],
+   "carries on": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: symptom of fault Direction input fault"
+   ],
+   "Darkness at the receiver": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> the terminal declares a loss-of-signal defect (dLOS in G.798 terms); can no longer find its OTU frame"
+   ],
+   "the terminal declares a loss-of-signal defect (dLOS in G.798 terms)": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Darkness at the receiver"
+   ],
+   "can no longer find its OTU frame": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Darkness at the receiver"
+   ],
+   "Module failure": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> the terminal declares an equipment defect (dEQ); the OTU frame is lost"
+   ],
+   "the terminal declares an equipment defect (dEQ)": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Module failure"
+   ],
+   "the OTU frame is lost": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Module failure"
+   ],
+   "Light that arrives in poor shape": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> pre-FEC errors begin once the damage exceeds the wavelength's margin; the frame is lost once it exceeds the margin by far"
+   ],
+   "weak": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> pre-FEC errors begin once the damage exceeds the wavelength's margin; the frame is lost once it exceeds the margin by far"
+   ],
+   "noisy": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> pre-FEC errors begin once the damage exceeds the wavelength's margin; the frame is lost once it exceeds the margin by far"
+   ],
+   "with too much differential group delay": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> pre-FEC errors begin once the damage exceeds the wavelength's margin; the frame is lost once it exceeds the margin by far"
+   ],
+   "clipped by a filter": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> pre-FEC errors begin once the damage exceeds the wavelength's margin; the frame is lost once it exceeds the margin by far"
+   ],
+   "spoiled by the receiver itself": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> pre-FEC errors begin once the damage exceeds the wavelength's margin; the frame is lost once it exceeds the margin by far"
+   ],
+   "with its margin slowly worn away": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> pre-FEC errors begin once the damage exceeds the wavelength's margin; the frame is lost once it exceeds the margin by far"
+   ],
+   "pre-FEC errors begin once the damage exceeds the wavelength's margin": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Light that arrives in poor shape; weak; noisy; with too much differential group delay; clipped by a filter; spoiled by the receiver itself; with its margin slowly worn away"
+   ],
+   "the frame is lost once it exceeds the margin by far": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Light that arrives in poor shape; weak; noisy; with too much differential group delay; clipped by a filter; spoiled by the receiver itself; with its margin slowly worn away"
+   ],
+   "Polarisation swings faster than the tracker can follow": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> errored seconds"
+   ],
+   "errored seconds": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Polarisation swings faster than the tracker can follow"
+   ],
+   "Once the OTU frame is gone": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: arriving condition -> the terminal follows G.798; It inserts ODU AIS towards every ODU it carries downstream; returns a backward defect indication to the terminal at the other end"
+   ],
+   "the terminal follows G.798": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Once the OTU frame is gone"
+   ],
+   "It inserts ODU AIS towards every ODU it carries downstream": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Once the OTU frame is gone"
+   ],
+   "returns a backward defect indication to the terminal at the other end": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: result of Once the OTU frame is gone"
+   ],
+   "The transmit laser stops or fails": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Transmitter dark"
+   ],
+   "sees no light": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Transmitter dark"
+   ],
+   "loses the wavelength this module sends": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Module failure"
+   ],
+   "what the module receives is lost": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Module failure"
+   ],
+   "its telemetry stops": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Module failure"
+   ],
+   "its traffic alarms are hidden behind the hardware alarm": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Module failure"
+   ],
+   "errors appear": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Receiver impairment"
+   ],
+   "stay healthy": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Receiver impairment"
+   ],
+   "The laser bias climbs as the laser ages": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Transmitter wear-out"
+   ],
+   "an eventual dark transmitter": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Transmitter wear-out"
+   ],
+   "The wavelength's margin shrinks slowly": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Margin creep"
+   ],
+   "it is seen": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: symptom of fault Margin creep"
+   ],
+   "The receiver sees no light": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm RX-DARK"
+   ],
+   "The OTU frame is lost though light arrives": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm FRAME-LOSS"
+   ],
+   "Pre-FEC errors exceed the degrade level": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm DEGRADE"
+   ],
+   "The other end reports a defect in what this terminal sends": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm REMOTE-DEFECT"
+   ],
+   "transmit laser fault": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm TX-HW"
+   ],
+   "Module hardware fault": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm MOD-HW"
+   ],
+   "Laser bias above 120 per cent of its commissioning value": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm TX-BIAS"
+   ]
+  },
+  "Characteristic": {
+   "customer errored seconds": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: measured by monitor customer errored seconds"
+   ],
+   "customer unavailable seconds": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: measured by monitor customer unavailable seconds"
+   ],
+   "Aggregate optical power entering the module": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: measured by monitor P-IN"
+   ],
+   "Aggregate optical power leaving the module": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: measured by monitor P-OUT"
+   ],
+   "Pump drive, as a share of the value at commissioning": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: measured by monitor I-PUMP"
+   ],
+   "Whether the supervisory link is being received": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: measured by monitor SV-RX"
+   ],
+   "per wavelength, the level": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: measured by monitor spectrum monitor"
+   ],
+   "per wavelength, the OSNR": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: measured by monitor spectrum monitor"
+   ],
+   "Received light level": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: measured by monitor Received light level and errored seconds, in 15-minute counters",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: measured by monitor Received light level, live"
+   ],
+   "errored seconds": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: measured by monitor Received light level and errored seconds, in 15-minute counters"
+   ],
+   "estimated OSNR": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: measured by monitor From the coherent receiver, once a second"
+   ],
+   "pre-FEC error ratio": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: measured by monitor From the coherent receiver, once a second"
+   ],
+   "DGD": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: measured by monitor From the coherent receiver, once a second"
+   ],
+   "polarisation drift rate": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: measured by monitor From the coherent receiver, once a second"
+   ],
+   "Transmit laser bias, as a share of its value at commissioning": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: measured by monitor Transmit laser bias, as a share of its value at commissioning"
+   ]
+  },
+  "Resource": {
+   "the digital cross-connect": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: unit VC-DXC"
+   ],
+   "switches ODUs between line modules and tributaries": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: position of VC-DXC"
+   ],
+   "tributary port": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: unit VC-TRIB-10",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: unit VC-TRIB-100",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: unit VC-TRIB-400"
+   ],
+   "VC-TRIB-10": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRIB-FAIL",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm AIS-IN",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm REMOTE-AIS",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRACE-MISMATCH"
+   ],
+   "VC-TRIB-100": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRIB-FAIL",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm AIS-IN",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm REMOTE-AIS",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRACE-MISMATCH"
+   ],
+   "VC-TRIB-400": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRIB-FAIL",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm AIS-IN",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm REMOTE-AIS",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm TRACE-MISMATCH"
+   ],
+   "VC-DXC": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: raises alarm FABRIC-HW"
+   ],
+   "launch OFA": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: unit VC-OFA-T"
+   ],
+   "where a wavelength section leaves the wavelength router": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: position of VC-OFA-T"
+   ],
+   "mid-span OFA": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: unit VC-OFA-M"
+   ],
+   "in repeater shelters between terminals": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: position of VC-OFA-M"
+   ],
+   "landing OFA": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: unit VC-OFA-R"
+   ],
+   "where a wavelength section arrives at the next wavelength router": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: position of VC-OFA-R"
+   ],
+   "VC-OFA-M": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm IN-DARK",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm SV-LOSS",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm OUT-DARK",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm GAIN-DEV"
+   ],
+   "VC-OFA-R": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm SEC-IN-DARK",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm SV-LOSS",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm OUT-DARK",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm GAIN-DEV"
+   ],
+   "VC-OFA-T": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm OUT-DARK",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: raises alarm PUMP-EOL"
+   ],
+   "wavelength router": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: unit VC-WR-X"
+   ],
+   "single-client wavelength terminal": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: unit VC-WT-400T"
+   ],
+   "aggregating wavelength terminal": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: unit VC-WT-200A",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: unit VC-WT-400A"
+   ],
+   "several clients on one wavelength": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: position of VC-WT-200A"
+   ],
+   "digital-switching line module": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: unit VC-WT-200D",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: unit VC-WT-400D"
+   ],
+   "VC-WT-400T": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm RX-DARK",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm FRAME-LOSS",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm DEGRADE",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm REMOTE-DEFECT"
+   ],
+   "VC-WT-200A": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm RX-DARK",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm FRAME-LOSS",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm DEGRADE",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm REMOTE-DEFECT"
+   ],
+   "VC-WT-400A": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm RX-DARK",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm FRAME-LOSS",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm DEGRADE",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm REMOTE-DEFECT"
+   ],
+   "VC-WT-200D": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm RX-DARK",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm FRAME-LOSS",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm DEGRADE",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm REMOTE-DEFECT"
+   ],
+   "VC-WT-400D": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm RX-DARK",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm FRAME-LOSS",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm DEGRADE",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: raises alarm REMOTE-DEFECT"
+   ]
+  },
+  "Alarm": {
+   "TRIB-FAIL": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: the customer service on this tributary has failed"
+   ],
+   "AIS-IN": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: an ODU AIS is arriving"
+   ],
+   "REMOTE-AIS": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: the other end says it is receiving ODU AIS"
+   ],
+   "TRACE-MISMATCH": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: the ODU arriving is not the expected one"
+   ],
+   "ON-STANDBY": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: the selector has moved to the standby route"
+   ],
+   "STANDBY-LOST": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: the standby route has failed"
+   ],
+   "TRIB-HW": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: tributary hardware fault"
+   ],
+   "FABRIC-HW": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: fabric hardware fault"
+   ],
+   "IN-DARK": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: P-IN shows no light"
+   ],
+   "SEC-IN-DARK": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: P-IN shows no light"
+   ],
+   "SV-LOSS": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: SV-RX receives nothing"
+   ],
+   "OUT-DARK": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: P-OUT shows no light although light is entering"
+   ],
+   "GAIN-DEV": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: the gain strays more than 2 dB from its setting"
+   ],
+   "PUMP-EOL": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: I-PUMP passes 120 per cent of its commissioning value"
+   ],
+   "RX-DARK": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: The receiver sees no light"
+   ],
+   "FRAME-LOSS": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: The OTU frame is lost though light arrives"
+   ],
+   "DEGRADE": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: Pre-FEC errors exceed the degrade level (margin below about 1 dB)"
+   ],
+   "REMOTE-DEFECT": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: The other end reports a defect in what this terminal sends"
+   ],
+   "TX-HW": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: The terminal detects a transmit laser fault"
+   ],
+   "MOD-HW": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: Module hardware fault"
+   ],
+   "TX-BIAS": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: Laser bias above 120 per cent of its commissioning value"
+   ]
+  },
+  "Scope": {
+   "The switching fabric": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: extent of symptom 'dies' of Fabric outage"
+   ],
+   "every ODU": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: extent of symptom 'is cut' of Fabric outage"
+   ],
+   "A connection": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: extent of symptom 'is set up wrongly' of Mis-provisioned connection"
+   ],
+   "one ODU": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: extent of symptom 'ends up at the wrong destination' of Mis-provisioned connection"
+   ],
+   "the optical side": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: extent of symptom 'Nothing shows' of Mis-provisioned connection"
+   ],
+   "The customer-facing optic": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: extent of symptom 'fails' of Tributary failure"
+   ],
+   "the tributary itself": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: extent of symptom 'fails' of Tributary failure"
+   ],
+   "the customer service": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: extent of symptom 'drops' of Tributary failure"
+   ],
+   "the module": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'nothing leaves the module' of Amplifier outage"
+   ],
+   "every wavelength it carried": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'is gone' of Amplifier outage"
+   ],
+   "every wavelength": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'leaves the module weaker' of Gain sag",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'leaves the module noisier' of Gain sag",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'is noisier' of Excess noise"
+   ],
+   "Output levels": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'look normal' of Excess noise"
+   ],
+   "I-PUMP": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'creeps up' of Pump wear-out"
+   ],
+   "the trend": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'ends in PUMP-EOL' of Pump wear-out"
+   ],
+   "service": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'no service effect until late' of Pump wear-out"
+   ],
+   "the wavelengths at one end of the band": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: extent of symptom 'come out weaker' of Spectral tilt"
+   ],
+   "one wavelength": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: extent of symptom 'leaves the router weak' of Over-attenuation",
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: extent of symptom 'level is fine' of Passband misalignment",
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: extent of symptom 'quality suffers' of Passband misalignment"
+   ],
+   "All the light coming in on that direction": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: extent of symptom 'stops at the router' of Direction input fault"
+   ],
+   "light entering on the other directions": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: extent of symptom 'carries on' of Direction input fault"
+   ],
+   "the transmit laser": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'The transmit laser stops or fails' of Transmitter dark"
+   ],
+   "the terminal at the other end of the wavelength": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'sees no light' of Transmitter dark"
+   ],
+   "the terminal at the other end": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'loses the wavelength this module sends' of Module failure"
+   ],
+   "what the module receives": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'what the module receives is lost' of Module failure"
+   ],
+   "its telemetry": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'its telemetry stops' of Module failure"
+   ],
+   "its traffic alarms": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'its traffic alarms are hidden behind the hardware alarm' of Module failure"
+   ],
+   "this receiver alone": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'errors appear' of Receiver impairment"
+   ],
+   "the other wavelengths": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'stay healthy' of Receiver impairment"
+   ],
+   "the route": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'stay healthy' of Receiver impairment"
+   ],
+   "the laser": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'The laser bias climbs as the laser ages' of Transmitter wear-out"
+   ],
+   "transmitter": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'an eventual dark transmitter' of Transmitter wear-out"
+   ],
+   "the wavelength's margin": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'The wavelength's margin shrinks slowly' of Margin creep"
+   ],
+   "The wavelength's margin": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: extent of symptom 'it is seen' of Margin creep"
+   ]
+  },
+  "Location": {
+   "this cross-connect": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where symptom 'dies' of Fabric outage shows",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: what alarm FABRIC-HW is reported against"
+   ],
+   "switched through this cross-connect": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where symptom 'is cut' of Fabric outage shows"
+   ],
+   "on the ODU route in use": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'any fault' of TRIB-FAIL lies"
+   ],
+   "at either end": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'the tributary' of TRIB-FAIL lies"
+   ],
+   "at a cross-connect along the ODU route": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'a mis-provisioned connection' of TRIB-FAIL lies",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'a fabric outage' of TRIB-FAIL lies",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'a mis-provisioned connection' of TRACE-MISMATCH lies"
+   ],
+   "the customer service on this tributary": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: what alarm TRIB-FAIL is reported against"
+   ],
+   "the ODU arriving": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: what alarm TRACE-MISMATCH is reported against"
+   ],
+   "on the primary route": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'any fault' of ON-STANDBY lies"
+   ],
+   "the selector": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: what alarm ON-STANDBY is reported against"
+   ],
+   "on the standby route": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'any fault' of STANDBY-LOST lies"
+   ],
+   "the standby route": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: what alarm STANDBY-LOST is reported against"
+   ],
+   "in this tributary": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'tributary hardware fault' of TRIB-HW lies"
+   ],
+   "this tributary": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: what alarm TRIB-HW is reported against"
+   ],
+   "in this cross-connect": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: where the probable cause 'fabric hardware fault' of FABRIC-HW lies"
+   ],
+   "downstream": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where symptom 'is noisier' of Excess noise shows"
+   ],
+   "this module": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where symptom 'creeps up' of Pump wear-out shows",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where symptom 'ends in PUMP-EOL' of Pump wear-out shows"
+   ],
+   "the fibre length feeding the module": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'it may be severed' of IN-DARK lies",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'its attenuation may have jumped' of IN-DARK lies",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'it may be severed' of SEC-IN-DARK lies",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'its attenuation may have jumped' of SEC-IN-DARK lies"
+   ],
+   "the OFA before that fibre length": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'may be out of service' of IN-DARK lies",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'may be out of service' of SEC-IN-DARK lies"
+   ],
+   "the patch lead at the head of the wavelength section": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'may have been unplugged' of SEC-IN-DARK lies"
+   ],
+   "that fibre length": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: what alarm SV-LOSS is reported against"
+   ],
+   "The module itself": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'is out of service' of OUT-DARK lies"
+   ],
+   "in this module": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'the module is out of service' of GAIN-DEV lies",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'its gain has sagged' of GAIN-DEV lies",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'its pump is wearing out' of GAIN-DEV lies",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: where the probable cause 'pump wear-out' of PUMP-EOL lies"
+   ],
+   "the router": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: where symptom 'leaves the router weak' of Over-attenuation shows",
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: where symptom 'stops at the router' of Direction input fault shows"
+   ],
+   "the other end of the wavelength": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where symptom 'sees no light' of Transmitter dark shows"
+   ],
+   "the other end": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where symptom 'loses the wavelength this module sends' of Module failure shows"
+   ],
+   "on this side": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where symptom 'what the module receives is lost' of Module failure shows",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where symptom 'its telemetry stops' of Module failure shows",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where symptom 'its traffic alarms are hidden behind the hardware alarm' of Module failure shows"
+   ],
+   "this receiver alone": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where symptom 'errors appear' of Receiver impairment shows"
+   ],
+   "along its route": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where symptom 'The wavelength's margin shrinks slowly' of Margin creep shows"
+   ],
+   "at the receiver": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where symptom 'it is seen' of Margin creep shows"
+   ],
+   "at the other end": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'The transmitter has gone dark' of RX-DARK lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'its module has failed' of RX-DARK lies"
+   ],
+   "anywhere earlier on the wavelength's route": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'a severed fibre' of RX-DARK lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'an amplifier out of service' of RX-DARK lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'an unplugged patch lead' of RX-DARK lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'a router input that has failed' of RX-DARK lies"
+   ],
+   "Earlier on the route": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'fibre attenuation that has jumped' of FRAME-LOSS lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'excess amplifier noise' of FRAME-LOSS lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'DGD growth' of FRAME-LOSS lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'a misaligned router passband' of FRAME-LOSS lies"
+   ],
+   "this terminal": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'this terminal's own receiver impairment' of FRAME-LOSS lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'this terminal's own receiver impairment' of DEGRADE lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: what alarm TX-BIAS is reported against"
+   ],
+   "between here and the other end, the other end included": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'Any fault' of REMOTE-DEFECT lies"
+   ],
+   "what this terminal sends": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: what alarm REMOTE-DEFECT is reported against"
+   ],
+   "This terminal's transmitter": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'transmit laser fault' of TX-HW lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: what alarm TX-HW is reported against"
+   ],
+   "This module": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'Module hardware fault' of MOD-HW lies",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: what alarm MOD-HW is reported against"
+   ],
+   "in this terminal": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: where the probable cause 'Transmitter wear-out' of TX-BIAS lies"
+   ]
+  },
+  "Availability": {
+   "Base": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: availability of monitor customer errored seconds",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: availability of monitor customer unavailable seconds",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: availability of monitor SV-RX",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: availability of monitor Received light level and errored seconds, in 15-minute counters"
+   ],
+   "Optical Power pack": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: availability of monitor P-IN",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: availability of monitor P-OUT",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: availability of monitor Received light level, live"
+   ],
+   "Insight pack": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: availability of monitor I-PUMP",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: availability of monitor From the coherent receiver, once a second",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: availability of monitor Transmit laser bias, as a share of its value at commissioning"
+   ],
+   "With the Spectrum pack": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: availability of monitor spectrum monitor"
+   ]
+  },
+  "Nature": {
+   "An outage.": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: character of fault Fabric outage",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: character of fault Tributary failure",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: character of fault Amplifier outage",
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: character of fault Direction input fault"
+   ],
+   "An outage; it happens mostly straight after provisioning work.": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: character of fault Mis-provisioned connection"
+   ],
+   "A degradation.": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: character of fault Gain sag",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: character of fault Excess noise",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: character of fault Spectral tilt",
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: character of fault Over-attenuation"
+   ],
+   "Slow": [
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: character of fault Pump wear-out",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: character of fault Transmitter wear-out",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: character of fault Margin creep"
+   ],
+   "An outage": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: character of fault Transmitter dark",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: character of fault Module failure"
+   ],
+   "A degradation": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: character of fault Receiver impairment"
+   ]
+  },
+  "Severity": {
+   "urgent": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: severity of TRIB-FAIL",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: severity of TRIB-HW",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: severity of FABRIC-HW",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: severity of IN-DARK"
+   ],
+   "information only": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: severity of AIS-IN",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: severity of REMOTE-AIS"
+   ],
+   "important": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: severity of TRACE-MISMATCH",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: severity of SV-LOSS"
+   ],
+   "advisory": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: severity of ON-STANDBY",
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: severity of STANDBY-LOST",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: severity of GAIN-DEV",
+    "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4: severity of PUMP-EOL"
+   ],
+   "Urgent": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: severity of RX-DARK",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: severity of FRAME-LOSS",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: severity of TX-HW",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: severity of MOD-HW"
+   ],
+   "Advisory": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: severity of DEGRADE",
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: severity of TX-BIAS"
+   ],
+   "Information only": [
+    "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2: severity of REMOTE-DEFECT"
+   ]
+  },
+  "Behaviour": {
+   "dual-homed, with a primary and a standby ODU route and the selector at the receiving tributary": [
+    "VC Digital Cross-Connect and Tributaries \u2014 Service Handbook SH-DXC, edition 1: how channels are switched"
+   ],
+   "The router steers every wavelength on its own as it leaves a direction.": [
+    "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3: how channels are switched"
+   ]
+  }
+ },
+ "effort": {
+  "surface": {
+   "calls": 22,
+   "model": "gpt-5.6",
+   "input_tokens": 32755,
+   "output_tokens": 18050,
+   "reasoning_tokens": 12593,
+   "latency_s": 322.13584756851196,
+   "merges_applied": 14,
+   "invented_dropped": 0
+  },
+  "lift": {
+   "lift_total_tokens": 32893,
+   "lift_reasoning_tokens": 123,
+   "lift_latency_s": 146.64,
+   "lift_coverage": 1.0,
+   "concepts": 210,
+   "model": "gpt-5.6"
+  }
+ }
+}

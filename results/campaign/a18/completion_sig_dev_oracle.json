@@ -1,0 +1,433 @@
+{
+ "kind": "sig",
+ "seed": "dev",
+ "degradation": {
+  "signatures_removed": 27,
+  "probable_causes_removed": 40
+ },
+ "types": {
+  "PLANT-OMS-INPUT": {
+   "gaps": [
+    {
+     "fault_mode": "CONNECTOR_DIRTY",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "PLANT-SPAN": {
+   "gaps": [
+    {
+     "fault_mode": "SOP_TRANSIENT",
+     "effects": [
+      {
+       "effect": "POL_TRANSIENT",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-CP-100GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-10GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-400GE": {
+   "gaps": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-MXP-200": {
+   "gaps": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-MXP-400": {
+   "gaps": [
+    {
+     "fault_mode": "MARGIN_EROSION",
+     "effects": [
+      {
+       "effect": "MARGIN_DECLINE",
+       "scope": "channel",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OA-BST": {
+   "gaps": [
+    {
+     "fault_mode": "AMP_NF_RISE",
+     "effects": [
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OA-ILA": {
+   "gaps": [
+    {
+     "fault_mode": "PUMP_CURRENT_DRIFT",
+     "effects": [
+      {
+       "effect": "PUMP_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OA-PRE": {
+   "gaps": [
+    {
+     "fault_mode": "AMP_GAIN_DROP",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "all_channels",
+       "where": null
+      },
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "PUMP_CURRENT_DRIFT",
+     "effects": [
+      {
+       "effect": "PUMP_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OTN-LC-200": {
+   "gaps": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OTN-LC-400": {
+   "gaps": [
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OTNSW": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-ROADM-CDC": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-TPD-400": {
+   "gaps": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VB-CP-100GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-CP-10GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-CP-400GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-MXP-200": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-MXP-400": {
+   "gaps": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VB-OA-BST": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OA-ILA": {
+   "gaps": [
+    {
+     "fault_mode": "AMP_GAIN_DROP",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "all_channels",
+       "where": null
+      },
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "AMP_GAIN_TILT",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "some_channels",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VB-OA-PRE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OTN-LC-200": {
+   "gaps": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VB-OTN-LC-400": {
+   "gaps": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VB-OTNSW": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-ROADM-CDC": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-TPD-400": {
+   "gaps": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  }
+ }
+}

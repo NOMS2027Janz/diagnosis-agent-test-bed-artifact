@@ -1,0 +1,1 @@
+{"case": "x2190-s2098-transient", "seed": 2098, "kind": "transient", "candidates": 96, "rule_verdicts_agree": 384, "rule_verdicts_differ": 0, "differences": [], "overall_differ": 0, "engine_requests": [], "seconds_code": 0.462, "seconds_graph": 0.524}

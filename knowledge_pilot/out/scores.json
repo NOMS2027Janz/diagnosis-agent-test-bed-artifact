@@ -1,0 +1,805 @@
+{
+ "v1": {
+  "lift": {
+   "VA": {
+    "concepts": 225,
+    "with_counterpart": 220,
+    "mixed": 0,
+    "mixed_ids": []
+   },
+   "VB": {
+    "concepts": 241,
+    "with_counterpart": 228,
+    "mixed": 2,
+    "mixed_ids": [
+     "failure",
+     "far_end"
+    ]
+   }
+  },
+  "VA-op.none": {
+   "proposed": 92,
+   "correct": 91,
+   "wrong": 1,
+   "precision": 0.989,
+   "forced": 1,
+   "confident_errors": 1,
+   "concept_recall_a": 0.523,
+   "unknown_ids": 0,
+   "meaning_recall": 0.867,
+   "shared_meanings": 105,
+   "wrong_examples": [
+    [
+     "characteristic.osnr",
+     "op.ocm_osnr",
+     0.87
+    ]
+   ],
+   "effort_tokens": 35839
+  },
+  "VA-op.constructed": {
+   "proposed": 141,
+   "correct": 129,
+   "wrong": 12,
+   "precision": 0.915,
+   "forced": 2,
+   "confident_errors": 12,
+   "concept_recall_a": 0.736,
+   "unknown_ids": 0,
+   "meaning_recall": 0.952,
+   "shared_meanings": 105,
+   "wrong_examples": [
+    [
+     "condition.pump_i_climbs",
+     "op.PUMP_CURRENT_DRIFT",
+     0.98
+    ],
+    [
+     "cause.pump_ageing",
+     "op.PUMP_AGEING",
+     0.99
+    ],
+    [
+     "condition.lbc_rising",
+     "op.LASER_BIAS_DRIFT",
+     0.98
+    ],
+    [
+     "cause.laser_ageing",
+     "op.LASER_AGEING",
+     0.99
+    ],
+    [
+     "condition.slow_margin_decline",
+     "op.MARGIN_EROSION",
+     0.99
+    ],
+    [
+     "cause.margin_erosion",
+     "op.MARGIN_DECLINE",
+     0.99
+    ],
+    [
+     "condition.passband_shifted",
+     "op.WSS_FILTER_SHIFT",
+     0.99
+    ],
+    [
+     "condition.fast_sop_change",
+     "op.SOP_TRANSIENT",
+     0.99
+    ],
+    [
+     "cause.fast_sop_event",
+     "op.POL_TRANSIENT",
+     0.99
+    ],
+    [
+     "condition.service_hit",
+     "op.PROTECTION_SWITCH_HIT",
+     0.98
+    ],
+    [
+     "condition.deq",
+     "op.OTU_ERRORED",
+     1.0
+    ],
+    [
+     "characteristic.osnr",
+     "op.ocm_osnr",
+     1.0
+    ]
+   ],
+   "effort_tokens": 83163
+  },
+  "VA-op.given": {
+   "proposed": 123,
+   "correct": 122,
+   "wrong": 1,
+   "precision": 0.992,
+   "forced": 0,
+   "confident_errors": 1,
+   "concept_recall_a": 0.701,
+   "unknown_ids": 0,
+   "meaning_recall": 0.914,
+   "shared_meanings": 105,
+   "wrong_examples": [
+    [
+     "condition.deq",
+     "op.OTU_ERRORED",
+     0.9
+    ]
+   ],
+   "effort_tokens": 40373
+  },
+  "VB-op.none": {
+   "proposed": 90,
+   "correct": 89,
+   "wrong": 1,
+   "precision": 0.989,
+   "forced": 0,
+   "confident_errors": 1,
+   "concept_recall_a": 0.489,
+   "unknown_ids": 0,
+   "meaning_recall": 0.881,
+   "shared_meanings": 101,
+   "wrong_examples": [
+    [
+     "all_units",
+     "op.LineInterface",
+     0.91
+    ]
+   ],
+   "effort_tokens": 37121
+  },
+  "VB-op.constructed": {
+   "proposed": 120,
+   "correct": 119,
+   "wrong": 1,
+   "precision": 0.992,
+   "forced": 0,
+   "confident_errors": 1,
+   "concept_recall_a": 0.654,
+   "unknown_ids": 0,
+   "meaning_recall": 0.891,
+   "shared_meanings": 101,
+   "wrong_examples": [
+    [
+     "pump_ageing",
+     "op.PUMP_AGEING",
+     0.99
+    ]
+   ],
+   "effort_tokens": 86153
+  },
+  "VB-op.given": {
+   "proposed": 92,
+   "correct": 92,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.505,
+   "unknown_ids": 0,
+   "meaning_recall": 0.881,
+   "shared_meanings": 101,
+   "wrong_examples": [],
+   "effort_tokens": 41418
+  },
+  "VA-VB.none": {
+   "proposed": 177,
+   "correct": 176,
+   "wrong": 1,
+   "precision": 0.994,
+   "forced": 1,
+   "confident_errors": 1,
+   "concept_recall_a": 0.83,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.775,
+   "meaning_recall": 0.944,
+   "shared_meanings": 143,
+   "wrong_examples": [
+    [
+     "characteristic.osnr",
+     "channel_osnr",
+     0.98
+    ]
+   ],
+   "effort_tokens": 53366
+  },
+  "VA-VB.constructed": {
+   "proposed": 211,
+   "correct": 204,
+   "wrong": 7,
+   "precision": 0.967,
+   "forced": 1,
+   "confident_errors": 7,
+   "concept_recall_a": 0.736,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.762,
+   "meaning_recall": 0.853,
+   "shared_meanings": 143,
+   "wrong_examples": [
+    [
+     "condition.deq",
+     "signal_degraded_threshold",
+     0.95
+    ],
+    [
+     "condition.ends_eol_alarm",
+     "pump_current_120",
+     0.89
+    ],
+    [
+     "condition.pump_i_above_120",
+     "leads_pump_eol",
+     0.9
+    ],
+    [
+     "condition.line_impairment",
+     "passes_unchanged",
+     0.92
+    ],
+    [
+     "condition.passes_through",
+     "whole_line_impairment",
+     0.91
+    ],
+    [
+     "condition.passes_through",
+     "impairment_routed_onwards",
+     0.97
+    ],
+    [
+     "characteristic.osnr",
+     "channel_osnr",
+     0.99
+    ]
+   ],
+   "effort_tokens": 114922
+  },
+  "VA-VB.given": {
+   "proposed": 178,
+   "correct": 177,
+   "wrong": 1,
+   "precision": 0.994,
+   "forced": 1,
+   "confident_errors": 0,
+   "concept_recall_a": 0.561,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.568,
+   "meaning_recall": 0.678,
+   "shared_meanings": 143,
+   "wrong_examples": [
+    [
+     "condition.lbc_rising",
+     "tx_laser_fault_detected",
+     0.72
+    ]
+   ],
+   "effort_tokens": 56419
+  }
+ },
+ "v2": {
+  "lift": {
+   "VA": {
+    "concepts": 216,
+    "with_counterpart": 211,
+    "mixed": 0,
+    "mixed_ids": []
+   },
+   "VB": {
+    "concepts": 215,
+    "with_counterpart": 202,
+    "mixed": 2,
+    "mixed_ids": [
+     "characteristic.osnr",
+     "location.far_end"
+    ]
+   }
+  },
+  "VA-op.none": {
+   "proposed": 91,
+   "correct": 91,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.548,
+   "unknown_ids": 0,
+   "meaning_recall": 0.867,
+   "shared_meanings": 105,
+   "wrong_examples": [],
+   "effort_tokens": 34468
+  },
+  "VA-op.constructed": {
+   "proposed": 129,
+   "correct": 127,
+   "wrong": 2,
+   "precision": 0.984,
+   "forced": 0,
+   "confident_errors": 2,
+   "concept_recall_a": 0.759,
+   "unknown_ids": 0,
+   "meaning_recall": 0.933,
+   "shared_meanings": 105,
+   "wrong_examples": [
+    [
+     "location.anywhere_upstream",
+     "op.path_to_far_end",
+     0.86
+    ],
+    [
+     "location.upstream_path",
+     "op.path_to_far_end",
+     0.86
+    ]
+   ],
+   "effort_tokens": 82320
+  },
+  "VA-op.given": {
+   "proposed": 114,
+   "correct": 114,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.687,
+   "unknown_ids": 0,
+   "meaning_recall": 0.895,
+   "shared_meanings": 105,
+   "wrong_examples": [],
+   "effort_tokens": 39017
+  },
+  "VB-op.none": {
+   "proposed": 91,
+   "correct": 91,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.58,
+   "unknown_ids": 0,
+   "meaning_recall": 0.901,
+   "shared_meanings": 101,
+   "wrong_examples": [],
+   "effort_tokens": 33944
+  },
+  "VB-op.constructed": {
+   "proposed": 96,
+   "correct": 95,
+   "wrong": 1,
+   "precision": 0.99,
+   "forced": 0,
+   "confident_errors": 1,
+   "concept_recall_a": 0.605,
+   "unknown_ids": 0,
+   "meaning_recall": 0.891,
+   "shared_meanings": 101,
+   "wrong_examples": [
+    [
+     "cause.pump_ageing",
+     "op.PUMP_AGEING",
+     0.98
+    ]
+   ],
+   "effort_tokens": 82914
+  },
+  "VB-op.given": {
+   "proposed": 87,
+   "correct": 87,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.554,
+   "unknown_ids": 0,
+   "meaning_recall": 0.861,
+   "shared_meanings": 101,
+   "wrong_examples": [],
+   "effort_tokens": 39560
+  },
+  "VA-VB.none": {
+   "proposed": 172,
+   "correct": 172,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.847,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.851,
+   "meaning_recall": 0.993,
+   "shared_meanings": 143,
+   "wrong_examples": [],
+   "effort_tokens": 50608
+  },
+  "VA-VB.constructed": {
+   "proposed": 184,
+   "correct": 178,
+   "wrong": 6,
+   "precision": 0.967,
+   "forced": 0,
+   "confident_errors": 6,
+   "concept_recall_a": 0.764,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.748,
+   "meaning_recall": 0.86,
+   "shared_meanings": 143,
+   "wrong_examples": [
+    [
+     "location.locally",
+     "location.this_port",
+     0.96
+    ],
+    [
+     "location.this_card",
+     "location.this_port",
+     0.94
+    ],
+    [
+     "location.this_port",
+     "location.here",
+     0.96
+    ],
+    [
+     "location.this_port",
+     "location.this_unit",
+     0.96
+    ],
+    [
+     "location.this_port",
+     "location.this_card",
+     0.94
+    ],
+    [
+     "location.this_switch",
+     "location.this_port",
+     0.93
+    ]
+   ],
+   "effort_tokens": 114578
+  },
+  "VA-VB.given": {
+   "proposed": 199,
+   "correct": 196,
+   "wrong": 3,
+   "precision": 0.985,
+   "forced": 0,
+   "confident_errors": 3,
+   "concept_recall_a": 0.616,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.604,
+   "meaning_recall": 0.671,
+   "shared_meanings": 143,
+   "wrong_examples": [
+    [
+     "condition.osc_not_received",
+     "condition.not_propagate",
+     0.91
+    ],
+    [
+     "location.through_switch",
+     "location.otn_switch_path",
+     0.95
+    ],
+    [
+     "location.switch_odu_path",
+     "location.through_switch",
+     0.95
+    ]
+   ],
+   "effort_tokens": 55225
+  }
+ },
+ "v3": {
+  "lift": {
+   "VA": {
+    "concepts": 179,
+    "with_counterpart": 173,
+    "mixed": 8,
+    "mixed_ids": [
+     "condition.otu_bdi_is_returned",
+     "condition.the_client_service_down",
+     "characteristic.errored_seconds",
+     "alarm.amp_input_los",
+     "scope.all_channels",
+     "scope.port",
+     "location.locally",
+     "location.downstream"
+    ]
+   },
+   "VB": {
+    "concepts": 181,
+    "with_counterpart": 170,
+    "mixed": 12,
+    "mixed_ids": [
+     "cause.failure",
+     "condition.an_impairment_affecting_the_whole_incoming_line",
+     "condition.power_is_normal",
+     "condition.the_client_service_has_failed",
+     "characteristic.the_osnr_of_every_channel",
+     "characteristic.errored_seconds_in_15_minute_bins",
+     "scope.every_channel_carried_by_the_unit",
+     "scope.other_channels",
+     "location.downstream",
+     "location.the_far_end",
+     "location.along_the_channel_s_path",
+     "location.in_an_otn_switch_along_the_odu_path"
+    ]
+   }
+  },
+  "VA-op.none": {
+   "proposed": 90,
+   "correct": 90,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.667,
+   "unknown_ids": 0,
+   "meaning_recall": 0.857,
+   "shared_meanings": 105,
+   "wrong_examples": [],
+   "effort_tokens": 32548
+  },
+  "VA-op.constructed": {
+   "proposed": 116,
+   "correct": 102,
+   "wrong": 14,
+   "precision": 0.879,
+   "forced": 2,
+   "confident_errors": 14,
+   "concept_recall_a": 0.748,
+   "unknown_ids": 0,
+   "meaning_recall": 0.886,
+   "shared_meanings": 105,
+   "wrong_examples": [
+    [
+     "cause.pump_ageing",
+     "op.PUMP_AGEING",
+     0.98
+    ],
+    [
+     "condition.pump_i_climbs_to_maintain_gain",
+     "op.PUMP_CURRENT_DRIFT",
+     0.98
+    ],
+    [
+     "cause.laser_ageing",
+     "op.LASER_AGEING",
+     0.98
+    ],
+    [
+     "condition.lbc_rising",
+     "op.LASER_BIAS_DRIFT",
+     0.98
+    ],
+    [
+     "cause.margin_erosion",
+     "op.MARGIN_DECLINE",
+     0.98
+    ],
+    [
+     "condition.slow_decline_of_the_channel_s_margin_usually_fro",
+     "op.MARGIN_EROSION",
+     0.98
+    ],
+    [
+     "condition.passband_shifted",
+     "op.WSS_FILTER_SHIFT",
+     0.98
+    ],
+    [
+     "cause.fast_sop_event",
+     "op.POL_TRANSIENT",
+     0.97
+    ],
+    [
+     "condition.fast_sop_change_beyond_tracking_speed",
+     "op.SOP_TRANSIENT",
+     0.98
+    ],
+    [
+     "condition.the_service_takes_a_hit_only",
+     "op.PROTECTION_SWITCH_HIT",
+     0.97
+    ],
+    [
+     "condition.cross_connected_to_the_wrong_destination",
+     "op.XC_MISCONNECT",
+     0.98
+    ],
+    [
+     "characteristic.osnr",
+     "op.ocm_osnr",
+     0.99
+    ],
+    [
+     "location.upstream_on_the_path",
+     "op.path_to_far_end",
+     0.98
+    ],
+    [
+     "location.through_the_switch",
+     "op.odu_path_switch",
+     0.98
+    ]
+   ],
+   "effort_tokens": 83155
+  },
+  "VA-op.given": {
+   "proposed": 97,
+   "correct": 97,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.719,
+   "unknown_ids": 0,
+   "meaning_recall": 0.867,
+   "shared_meanings": 105,
+   "wrong_examples": [],
+   "effort_tokens": 36997
+  },
+  "VB-op.none": {
+   "proposed": 87,
+   "correct": 87,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.669,
+   "unknown_ids": 0,
+   "meaning_recall": 0.861,
+   "shared_meanings": 101,
+   "wrong_examples": [],
+   "effort_tokens": 33461
+  },
+  "VB-op.constructed": {
+   "proposed": 88,
+   "correct": 88,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.669,
+   "unknown_ids": 0,
+   "meaning_recall": 0.842,
+   "shared_meanings": 101,
+   "wrong_examples": [],
+   "effort_tokens": 80207
+  },
+  "VB-op.given": {
+   "proposed": 92,
+   "correct": 92,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.708,
+   "unknown_ids": 0,
+   "meaning_recall": 0.851,
+   "shared_meanings": 101,
+   "wrong_examples": [],
+   "effort_tokens": 38532
+  },
+  "VA-VB.none": {
+   "proposed": 140,
+   "correct": 140,
+   "wrong": 0,
+   "precision": 1.0,
+   "forced": 0,
+   "confident_errors": 0,
+   "concept_recall_a": 0.848,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.818,
+   "meaning_recall": 0.909,
+   "shared_meanings": 143,
+   "wrong_examples": [],
+   "effort_tokens": 46026
+  },
+  "VA-VB.constructed": {
+   "proposed": 168,
+   "correct": 156,
+   "wrong": 12,
+   "precision": 0.929,
+   "forced": 0,
+   "confident_errors": 12,
+   "concept_recall_a": 0.836,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.829,
+   "meaning_recall": 0.916,
+   "shared_meanings": 143,
+   "wrong_examples": [
+    [
+     "location.through_the_switch",
+     "location.in_an_otn_switch_along_the_odu_path",
+     0.95
+    ],
+    [
+     "location.at_a_switch_on_the_odu_path",
+     "location.through_the_switch",
+     0.95
+    ],
+    [
+     "location.locally",
+     "location.client_port",
+     0.9
+    ],
+    [
+     "location.locally",
+     "location.this_port",
+     0.9
+    ],
+    [
+     "location.this_card",
+     "location.client_port",
+     0.88
+    ],
+    [
+     "location.this_card",
+     "location.this_port",
+     0.88
+    ],
+    [
+     "location.this_port",
+     "location.here",
+     0.91
+    ],
+    [
+     "location.this_port",
+     "location.this_unit",
+     0.92
+    ],
+    [
+     "location.this_port",
+     "location.this_card",
+     0.87
+    ],
+    [
+     "location.this_port",
+     "location.this_switch_s_fabric",
+     0.86
+    ],
+    [
+     "location.this_switch",
+     "location.client_port",
+     0.86
+    ],
+    [
+     "location.this_switch",
+     "location.this_port",
+     0.86
+    ]
+   ],
+   "effort_tokens": 105188
+  },
+  "VA-VB.given": {
+   "proposed": 104,
+   "correct": 102,
+   "wrong": 2,
+   "precision": 0.981,
+   "forced": 0,
+   "confident_errors": 2,
+   "concept_recall_a": 0.545,
+   "unknown_ids": 0,
+   "concept_recall_b": 0.559,
+   "meaning_recall": 0.636,
+   "shared_meanings": 143,
+   "wrong_examples": [
+    [
+     "location.through_the_switch",
+     "location.in_an_otn_switch_along_the_odu_path",
+     0.97
+    ],
+    [
+     "location.at_a_switch_on_the_odu_path",
+     "location.through_the_switch",
+     0.97
+    ]
+   ],
+   "effort_tokens": 48785
+  }
+ }
+}

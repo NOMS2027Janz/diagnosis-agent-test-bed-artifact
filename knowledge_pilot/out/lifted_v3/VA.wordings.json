@@ -1,0 +1,1164 @@
+{
+ "by_wording": {
+  "Transmit laser failure": "cause.transmit_laser_failure",
+  "laser failed": "cause.transmit_laser_failure",
+  "transmit laser failure": "cause.transmit_laser_failure",
+  "Card failure": "cause.card_failure",
+  "card failed": "cause.card_failure",
+  "card failure": "cause.card_failure",
+  "Receiver degradation": "cause.receiver_degradation",
+  "receiver degradation": "cause.receiver_degradation",
+  "Laser ageing": "cause.laser_ageing",
+  "laser ageing": "cause.laser_ageing",
+  "Margin erosion": "cause.margin_erosion",
+  "fibre cut": "cause.fibre_break",
+  "Fibre break": "cause.fibre_break",
+  "EDFA dead": "cause.edfa_dead",
+  "previous EDFA dead": "cause.edfa_dead",
+  "jumper pulled": "cause.jumper_pulled",
+  "OMS input jumper pulled": "cause.jumper_pulled",
+  "ROADM ingress port blocked": "cause.roadm_ingress_port_blocked",
+  "high span loss": "cause.high_span_loss",
+  "EDFA noise figure degradation": "cause.edfa_noise_figure_degradation",
+  "Noise figure degradation": "cause.edfa_noise_figure_degradation",
+  "DGD increase": "cause.dgd_increase",
+  "WSS passband offset": "cause.wss_passband_offset",
+  "fast SOP event": "cause.fast_sop_event",
+  "contaminated connector": "cause.contaminated_connector",
+  "Any failure": "cause.any_failure",
+  "Gain loss": "cause.gain_loss",
+  "gain loss": "cause.gain_loss",
+  "Pump ageing": "cause.pump_ageing",
+  "pump ageing": "cause.pump_ageing",
+  "Gain tilt": "cause.gain_tilt",
+  "Fabric failure": "cause.fabric_failure",
+  "fabric failure": "cause.fabric_failure",
+  "Misconnection": "cause.misconnection",
+  "misconnection": "cause.misconnection",
+  "Port failure": "cause.port_failure",
+  "client port failure": "cause.port_failure",
+  "port failure": "cause.port_failure",
+  "WSS attenuation drift": "cause.wss_attenuation_drift",
+  "WSS ingress port failure": "cause.wss_ingress_port_failure",
+  "No light": "condition.no_light_at_the_receiver",
+  "loss of signal": "condition.no_light_at_the_receiver",
+  "No light at the receiver": "condition.no_light_at_the_receiver",
+  "dLOS": "condition.no_light_at_the_receiver",
+  "A card with no input light": "condition.no_light_at_the_receiver",
+  "Loss of light at IN-PWR": "condition.no_light_at_the_receiver",
+  "Loss of OTU frame": "condition.loss_of_otu_frame",
+  "loss of frame if much larger": "condition.loss_of_otu_frame",
+  "loss of OTU frame": "condition.loss_of_otu_frame",
+  "OTU frame lost, light present": "condition.loss_of_otu_frame",
+  "Card hardware fault": "condition.card_hardware_fault",
+  "dEQ": "condition.card_hardware_fault",
+  "traffic alarms masked": "condition.traffic_alarms_masked_by_the_equipment_alarm",
+  "traffic alarms masked by the equipment alarm": "condition.traffic_alarms_masked_by_the_equipment_alarm",
+  "Degraded light: low power, low OSNR, high DGD, passband penalty, receiver penalty, slow margin decline": "condition.degraded_light_low_power_low_osnr_high_dgd_passb",
+  "Pre-FEC errors once the degradation is larger than the channel margin": "condition.errors",
+  "Errors": "condition.errors",
+  "Errors above the degrade threshold (margin under about 1 dB)": "condition.errors",
+  "Fast SOP change beyond tracking speed": "condition.fast_sop_change_beyond_tracking_speed",
+  "Errored seconds": "condition.errored_seconds",
+  "ODU-AIS is sent downstream": "condition.odu_ais_is_sent_downstream",
+  "The switch forwards ODU-AIS on each ODU it cross-connects.": "condition.odu_ais_is_sent_downstream",
+  "ODU-AIS forwarded": "condition.odu_ais_is_sent_downstream",
+  "ODU-AIS": "condition.odu_ais_is_sent_downstream",
+  "OTU-BDI is returned": "condition.otu_bdi_is_returned",
+  "Far end reports a defect on this card's transmitted signal": "condition.otu_bdi_is_returned",
+  "Laser off or failed": "condition.laser_off_or_failed",
+  "received traffic lost": "condition.received_traffic_lost",
+  "monitoring silent": "condition.monitoring_silent",
+  "normal": "condition.normal",
+  "LBC rising": "condition.lbc_rising",
+  "precedes transmit laser failure": "condition.precedes_transmit_laser_failure",
+  "Slow decline of the channel's margin, usually from ageing of components along the path": "condition.slow_decline_of_the_channel_s_margin_usually_fro",
+  "Transmit laser fault detected": "condition.transmit_laser_fault_detected",
+  "LBC above 120 % of beginning of life (internal supervision)": "condition.lbc_above_120_of_beginning_of_life_internal_supe",
+  "The EDFA cards run in automatic gain control (AGC).": "condition.the_edfa_cards_run_in_automatic_gain_control_agc",
+  "The gain target is provisioned at turn-up equal to the attenuation of the fibre span ahead of the card.": "condition.the_gain_target_is_provisioned_at_turn_up_equal_",
+  "Under AGC, a drop of input level": "condition.under_agc_a_drop_of_input_level",
+  "An upstream power loss within that range": "condition.under_agc_a_drop_of_input_level",
+  "a larger loss": "condition.under_agc_a_drop_of_input_level",
+  "an equal drop of output level": "condition.low_output",
+  "low output": "condition.low_output",
+  "the optical signal-to-noise ratio (OSNR) of all channels degrades with it": "condition.osnr_down",
+  "OSNR down": "condition.osnr_down",
+  "the OSNR penalty it caused stays": "condition.osnr_down",
+  "has no output light": "condition.no_output_light",
+  "no output light": "condition.no_output_light",
+  "No light at OUT-PWR with input light present": "condition.no_output_light",
+  "Other conditions at the input": "condition.other_conditions_at_the_input",
+  "are passed through to the output": "condition.are_passed_through_to_the_output",
+  "Every hut terminates the optical supervisory channel (OSC) and launches its own OSC onto the next span": "condition.every_hut_terminates_the_optical_supervisory_cha",
+  "an OSC failure is confined to the span on which it occurs": "condition.an_osc_failure_is_confined_to_the_span_on_which_",
+  "all channels lost": "condition.all_channels_lost",
+  "output power normal": "condition.output_power_normal",
+  "power normal": "condition.output_power_normal",
+  "PUMP-I climbs to maintain gain": "condition.pump_i_climbs_to_maintain_gain",
+  "ends in the end-of-life alarm": "condition.ends_in_the_end_of_life_alarm",
+  "channels low": "condition.low_in_power",
+  "is passed on as low power": "condition.low_in_power",
+  "low in power": "condition.low_in_power",
+  "OSC not received": "condition.osc_not_received",
+  "Gain more than 2 dB from target": "condition.gain_more_than_2_db_from_target",
+  "PUMP-I above 120 % of beginning of life": "condition.pump_i_above_120_of_beginning_of_life",
+  "a misdirected ODU": "condition.a_misdirected_odu",
+  "the client service down": "condition.the_client_service_down",
+  "interrupted": "condition.the_client_service_down",
+  "failed": "condition.the_client_service_down",
+  "down": "condition.the_client_service_down",
+  "fails": "condition.the_client_service_down",
+  "ODU-AIS or a misdirected ODU": "condition.odu_ais_or_a_misdirected_odu",
+  "SNCP is configured": "condition.sncp_is_configured",
+  "the selector has a defect-free path to choose": "condition.the_selector_has_a_defect_free_path_to_choose",
+  "the service takes a hit only": "condition.the_service_takes_a_hit_only",
+  "cross-connected to the wrong destination": "condition.cross_connected_to_the_wrong_destination",
+  "no optical symptom": "condition.no_optical_symptom",
+  "Switching is per channel": "condition.switching_is_per_channel",
+  "A line-wide impairment on an ingress degree therefore continues as a per-channel impairment on each channel routed onward.": "condition.a_line_wide_impairment_on_an_ingress_degree_ther",
+  "is levelled out at the node": "condition.is_levelled_out_at_the_node",
+  "passes through": "condition.passes_through",
+  "Attenuation creeps above its setting": "condition.attenuation_creeps_above_its_setting",
+  "Passband shifted": "condition.passband_shifted",
+  "Passband narrowed": "condition.passband_narrowed",
+  "signal quality down": "condition.signal_quality_down",
+  "blocked": "condition.blocked",
+  "unaffected": "condition.unaffected",
+  "Received optical power": "characteristic.received_optical_power",
+  "errored seconds": "characteristic.errored_seconds",
+  "client ES": "characteristic.errored_seconds",
+  "OSNR": "characteristic.osnr",
+  "pre-FEC BER": "characteristic.pre_fec_ber",
+  "DGD": "characteristic.dgd",
+  "SOP rate of change": "characteristic.sop_rate_of_change",
+  "Transmit laser bias current, % of beginning of life": "characteristic.transmit_laser_bias_current_of_beginning_of_life",
+  "Composite input power": "characteristic.composite_input_power",
+  "Composite output power": "characteristic.composite_output_power",
+  "Pump laser drive current, % of beginning of life": "characteristic.pump_laser_drive_current_of_beginning_of_life",
+  "OSC receiver status": "characteristic.osc_receiver_status",
+  "client UAS": "characteristic.client_uas",
+  "Per-channel power": "characteristic.per_channel_power",
+  "VA-TPD-400": "resource.va_tpd_400",
+  "400G transponder": "resource.va_tpd_400",
+  "VA-MXP-200": "resource.va_mxp_200",
+  "200G muxponder": "resource.va_mxp_200",
+  "VA-MXP-400": "resource.va_mxp_400",
+  "400G muxponder": "resource.va_mxp_400",
+  "VA-OTN-LC-200": "resource.va_otn_lc_200",
+  "200G OTN line card": "resource.va_otn_lc_200",
+  "VA-OTN-LC-400": "resource.va_otn_lc_400",
+  "400G OTN line card": "resource.va_otn_lc_400",
+  "EDFA card": "resource.edfa_card",
+  "transmit-side EDFA (booster), fitted at the head end of each optical multiplex section (OMS)": "resource.transmit_side_edfa_booster_fitted_at_the_head_en",
+  "optical line amplifier (OLA), fitted at in-line amplifier huts": "resource.optical_line_amplifier_ola_fitted_at_in_line_amp",
+  "OLA": "resource.optical_line_amplifier_ola_fitted_at_in_line_amp",
+  "receive-side EDFA (pre-amp), fitted at the tail end of each OMS": "resource.receive_side_edfa_pre_amp_fitted_at_the_tail_end",
+  "Pre-amp": "resource.receive_side_edfa_pre_amp_fitted_at_the_tail_end",
+  "pre-amp": "resource.receive_side_edfa_pre_amp_fitted_at_the_tail_end",
+  "All": "resource.all",
+  "OTN cross-connect switch": "resource.otn_cross_connect_switch",
+  "Switch": "resource.otn_cross_connect_switch",
+  "client interface port": "resource.client_interface_port",
+  "Client port": "resource.client_interface_port",
+  "colourless, directionless, contentionless ROADM": "resource.colourless_directionless_contentionless_roadm",
+  "one WSS module per degree": "resource.one_wss_module_per_degree",
+  "OCH_LOS": "alarm.och_los",
+  "OTU_LOF": "alarm.otu_lof",
+  "OTU_SD": "alarm.otu_sd",
+  "OTU_BDI": "alarm.otu_bdi",
+  "EQPT_TX_FAIL": "alarm.eqpt_tx_fail",
+  "EQPT_CARD_FAIL": "alarm.eqpt_card_fail",
+  "LASER_BIAS_HIGH": "alarm.laser_bias_high",
+  "AMP_INPUT_LOS": "alarm.amp_input_los",
+  "OMS_LOS_P": "alarm.amp_input_los",
+  "OSC_LOS": "alarm.osc_los",
+  "AMP_FAIL": "alarm.amp_fail",
+  "AMP_GAIN_OOR": "alarm.amp_gain_oor",
+  "AMP_PUMP_EOL": "alarm.amp_pump_eol",
+  "CLIENT_SF": "alarm.client_sf",
+  "ODU_AIS": "alarm.odu_ais",
+  "ODU_BDI": "alarm.odu_bdi",
+  "ODU_TIM": "alarm.odu_tim",
+  "PROT_ACTIVE": "alarm.prot_active",
+  "PROT_UNAVAIL": "alarm.prot_unavail",
+  "EQPT_PORT_FAIL": "alarm.eqpt_port_fail",
+  "OTN_FABRIC_FAIL": "alarm.otn_fabric_fail",
+  "the channel": "scope.one_channel",
+  "the transmitted channel": "scope.one_channel",
+  "one channel": "scope.one_channel",
+  "that channel": "scope.one_channel",
+  "received traffic": "scope.received_traffic",
+  "monitoring": "scope.monitoring",
+  "traffic alarms": "scope.traffic_alarms",
+  "this receiver only": "scope.this_receiver_only",
+  "other channels": "scope.other_channels",
+  "the optical path": "scope.the_optical_path",
+  "LBC": "scope.lbc",
+  "the channel's margin": "scope.the_channel_s_margin",
+  "all channels": "scope.all_channels",
+  "every channel downstream": "scope.all_channels",
+  "all channels arriving on that degree": "scope.all_channels",
+  "this card": "scope.this_card",
+  "channels at one band edge": "scope.channels_at_one_band_edge",
+  "All ODUs": "scope.all_odus",
+  "each": "scope.all_odus",
+  "One ODU": "scope.one_odu",
+  "Client optic": "scope.client_optic",
+  "port": "scope.port",
+  "One WSS input port": "scope.port",
+  "client service": "scope.client_service",
+  "other degrees": "scope.other_degrees",
+  "the far-end receiver": "location.the_far_end_receiver",
+  "Far-end": "location.the_far_end_receiver",
+  "locally": "location.locally",
+  "at the node": "location.locally",
+  "the receiver": "location.the_receiver",
+  "Far-end transmitter": "location.far_end_transmitter",
+  "Anywhere upstream on the channel's path": "location.upstream_on_the_path",
+  "Upstream on the path": "location.upstream_on_the_path",
+  "This card": "location.this_card",
+  "on the path to the far end": "location.downstream",
+  "downstream": "location.downstream",
+  "after the node": "location.downstream",
+  "one band edge": "location.one_band_edge",
+  "on the incoming span": "location.the_incoming_span",
+  "the incoming span": "location.the_incoming_span",
+  "previous EDFA": "location.previous_edfa",
+  "OMS input": "location.oms_input",
+  "through the switch": "location.through_the_switch",
+  "on the active ODU path": "location.on_the_active_odu_path",
+  "at either end": "location.at_either_end",
+  "at a switch on the ODU path": "location.at_a_switch_on_the_odu_path",
+  "on the working ODU path": "location.on_the_working_odu_path",
+  "on the protection ODU path": "location.on_the_protection_odu_path",
+  "This port": "location.this_port",
+  "This switch": "location.this_switch",
+  "Standard": "availability.standard",
+  "15-minute bins (standard)": "availability.standard",
+  "Power monitoring licence": "availability.power_monitoring_licence",
+  "Advanced monitoring licence": "availability.advanced_monitoring_licence",
+  "OCM licence": "availability.ocm_licence",
+  "Hard": "nature.hard",
+  "Soft": "nature.soft",
+  "Incipient": "nature.incipient",
+  "Critical": "severity.critical",
+  "Minor": "severity.minor",
+  "Not alarmed": "severity.not_alarmed",
+  "Major": "severity.major",
+  "On loss of OTU frame, G.798 consequent actions apply: ODU-AIS is sent downstream on every ODU in the OTU, and OTU-BDI is returned to the far-end transmitter.": "behaviour.on_loss_of_otu_frame_g_798_consequent_actions_ap",
+  "Every hut terminates the optical supervisory channel (OSC) and launches its own OSC onto the next span.": "behaviour.every_hut_terminates_the_optical_supervisory_cha",
+  "Client services may be protected with SNCP: a working and a protection ODU path, with the selector at the receiving client port.": "behaviour.client_services_may_be_protected_with_sncp_a_wor",
+  "Switching is per channel at each egress degree. A line-wide impairment on an ingress degree therefore continues as a per-channel impairment on each channel routed onward.": "behaviour.switching_is_per_channel_at_each_egress_degree_a"
+ },
+ "dropped": [],
+ "invented": [],
+ "inventory": {
+  "Cause": {
+   "Transmit laser failure": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: fault \u2014 Laser off or failed; loss of signal at the far-end receiver of the channel"
+   ],
+   "Card failure": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: fault \u2014 Far-end loss of signal on the transmitted channel; received traffic lost locally, monitoring silent, traffic alarms masked by the equipment alarm"
+   ],
+   "Receiver degradation": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: fault \u2014 Errors at this receiver only; other channels and the optical path normal"
+   ],
+   "Laser ageing": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: fault \u2014 LBC rising; precedes transmit laser failure"
+   ],
+   "Margin erosion": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: fault \u2014 Slow decline of the channel's margin, usually from ageing of components along the path; seen at the receiver"
+   ],
+   "laser failed": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OCH_LOS (No light at the receiver)"
+   ],
+   "card failed": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OCH_LOS (No light at the receiver)"
+   ],
+   "fibre cut": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OCH_LOS (No light at the receiver)"
+   ],
+   "EDFA dead": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OCH_LOS (No light at the receiver)",
+    "VA EDFA Family: Fault Management Guide: fault \u2014 Pump laser or card failure",
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm AMP_FAIL (No light at OUT-PWR with input light present)",
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm AMP_GAIN_OOR (Gain more than 2 dB from target)"
+   ],
+   "jumper pulled": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OCH_LOS (No light at the receiver)"
+   ],
+   "ROADM ingress port blocked": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OCH_LOS (No light at the receiver)"
+   ],
+   "high span loss": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_LOF (OTU frame lost, light present)",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_SD (Errors above the degrade threshold (margin under about 1 dB))",
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm AMP_INPUT_LOS (Loss of light at IN-PWR)",
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm OMS_LOS_P (Loss of light at IN-PWR)"
+   ],
+   "EDFA noise figure degradation": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_LOF (OTU frame lost, light present)",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_SD (Errors above the degrade threshold (margin under about 1 dB))"
+   ],
+   "DGD increase": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_LOF (OTU frame lost, light present)",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_SD (Errors above the degrade threshold (margin under about 1 dB))"
+   ],
+   "WSS passband offset": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_LOF (OTU frame lost, light present)",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_SD (Errors above the degrade threshold (margin under about 1 dB))",
+    "VA ROADM (CDC): Fault Management Guide: fault \u2014 Passband of one channel shifted or narrowed; power normal, signal quality down"
+   ],
+   "fast SOP event": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_LOF (OTU frame lost, light present)"
+   ],
+   "receiver degradation": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_LOF (OTU frame lost, light present)",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_SD (Errors above the degrade threshold (margin under about 1 dB))"
+   ],
+   "contaminated connector": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_SD (Errors above the degrade threshold (margin under about 1 dB))"
+   ],
+   "Any failure": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm OTU_BDI (Far end reports a defect on this card's transmitted signal)",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm CLIENT_SF (Client service failed)",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm PROT_ACTIVE (Selector on the protection path)",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm PROT_UNAVAIL (Protection path failed)"
+   ],
+   "transmit laser failure": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm EQPT_TX_FAIL (Transmit laser fault detected)"
+   ],
+   "card failure": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm EQPT_CARD_FAIL (Card hardware fault)"
+   ],
+   "laser ageing": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: probable cause of alarm LASER_BIAS_HIGH (LBC above 120 % of beginning of life (internal supervision))"
+   ],
+   "Gain loss": [
+    "VA EDFA Family: Fault Management Guide: fault \u2014 Gain under target"
+   ],
+   "Noise figure degradation": [
+    "VA EDFA Family: Fault Management Guide: fault \u2014 Amplifier stage noisier than specified"
+   ],
+   "Pump ageing": [
+    "VA EDFA Family: Fault Management Guide: fault \u2014 "
+   ],
+   "Gain tilt": [
+    "VA EDFA Family: Fault Management Guide: fault \u2014 Gain not flat across the C-band"
+   ],
+   "Fibre break": [
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm AMP_INPUT_LOS (Loss of light at IN-PWR)",
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm OMS_LOS_P (Loss of light at IN-PWR)",
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm OSC_LOS (OSC not received)"
+   ],
+   "previous EDFA dead": [
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm AMP_INPUT_LOS (Loss of light at IN-PWR)",
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm OMS_LOS_P (Loss of light at IN-PWR)"
+   ],
+   "OMS input jumper pulled": [
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm OMS_LOS_P (Loss of light at IN-PWR)"
+   ],
+   "gain loss": [
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm AMP_GAIN_OOR (Gain more than 2 dB from target)"
+   ],
+   "pump ageing": [
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm AMP_GAIN_OOR (Gain more than 2 dB from target)",
+    "VA EDFA Family: Fault Management Guide: probable cause of alarm AMP_PUMP_EOL (PUMP-I above 120 % of beginning of life)"
+   ],
+   "Fabric failure": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: fault \u2014 All ODUs through the switch interrupted; ODU-AIS forwarded on each"
+   ],
+   "Misconnection": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: fault \u2014 One ODU cross-connected to the wrong destination; no optical symptom",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm ODU_TIM (Trace identifier mismatch)"
+   ],
+   "Port failure": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: fault \u2014 Client optic or port failed; client service down"
+   ],
+   "client port failure": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm CLIENT_SF (Client service failed)"
+   ],
+   "misconnection": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm CLIENT_SF (Client service failed)"
+   ],
+   "fabric failure": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm CLIENT_SF (Client service failed)",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm OTN_FABRIC_FAIL (Fabric fault)"
+   ],
+   "port failure": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: probable cause of alarm EQPT_PORT_FAIL (Port hardware fault)"
+   ],
+   "WSS attenuation drift": [
+    "VA ROADM (CDC): Fault Management Guide: fault \u2014 Attenuation of one channel creeps above its setting; that channel is low in power after the node"
+   ],
+   "WSS ingress port failure": [
+    "VA ROADM (CDC): Fault Management Guide: fault \u2014 One WSS input port fails; all channels arriving on that degree are blocked at the node; other degrees unaffected"
+   ]
+  },
+  "Condition": {
+   "No light": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: arriving condition -> dLOS; Loss of OTU frame"
+   ],
+   "dLOS": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of No light"
+   ],
+   "Loss of OTU frame": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of No light",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of Card failure"
+   ],
+   "Card failure": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: arriving condition -> dEQ; Loss of OTU frame; traffic alarms masked"
+   ],
+   "dEQ": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of Card failure"
+   ],
+   "traffic alarms masked": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of Card failure"
+   ],
+   "Degraded light: low power, low OSNR, high DGD, passband penalty, receiver penalty, slow margin decline": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: arriving condition -> Pre-FEC errors once the degradation is larger than the channel margin; loss of frame if much larger"
+   ],
+   "Pre-FEC errors once the degradation is larger than the channel margin": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of Degraded light: low power, low OSNR, high DGD, passband penalty, receiver penalty, slow margin decline"
+   ],
+   "loss of frame if much larger": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of Degraded light: low power, low OSNR, high DGD, passband penalty, receiver penalty, slow margin decline"
+   ],
+   "Fast SOP change beyond tracking speed": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: arriving condition -> Errored seconds"
+   ],
+   "Errored seconds": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of Fast SOP change beyond tracking speed"
+   ],
+   "loss of OTU frame": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: arriving condition -> ODU-AIS is sent downstream",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: arriving condition -> OTU-BDI is returned"
+   ],
+   "ODU-AIS is sent downstream": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of loss of OTU frame"
+   ],
+   "OTU-BDI is returned": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: result of loss of OTU frame"
+   ],
+   "Laser off or failed": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Transmit laser failure"
+   ],
+   "loss of signal": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Transmit laser failure",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Card failure"
+   ],
+   "received traffic lost": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Card failure"
+   ],
+   "monitoring silent": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Card failure"
+   ],
+   "traffic alarms masked by the equipment alarm": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Card failure"
+   ],
+   "Errors": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Receiver degradation"
+   ],
+   "normal": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Receiver degradation"
+   ],
+   "LBC rising": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Laser ageing"
+   ],
+   "precedes transmit laser failure": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Laser ageing"
+   ],
+   "Slow decline of the channel's margin, usually from ageing of components along the path": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: symptom of fault Margin erosion"
+   ],
+   "No light at the receiver": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OCH_LOS"
+   ],
+   "OTU frame lost, light present": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_LOF"
+   ],
+   "Errors above the degrade threshold (margin under about 1 dB)": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_SD"
+   ],
+   "Far end reports a defect on this card's transmitted signal": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_BDI"
+   ],
+   "Transmit laser fault detected": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm EQPT_TX_FAIL"
+   ],
+   "Card hardware fault": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm EQPT_CARD_FAIL"
+   ],
+   "LBC above 120 % of beginning of life (internal supervision)": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm LASER_BIAS_HIGH"
+   ],
+   "The EDFA cards run in automatic gain control (AGC).": [
+    "VA EDFA Family: Fault Management Guide: arriving condition -> The gain target is provisioned at turn-up equal to the attenuation of the fibre span ahead of the card."
+   ],
+   "The gain target is provisioned at turn-up equal to the attenuation of the fibre span ahead of the card.": [
+    "VA EDFA Family: Fault Management Guide: result of The EDFA cards run in automatic gain control (AGC)."
+   ],
+   "Under AGC, a drop of input level": [
+    "VA EDFA Family: Fault Management Guide: arriving condition -> an equal drop of output level; the optical signal-to-noise ratio (OSNR) of all channels degrades with it"
+   ],
+   "an equal drop of output level": [
+    "VA EDFA Family: Fault Management Guide: result of Under AGC, a drop of input level"
+   ],
+   "the optical signal-to-noise ratio (OSNR) of all channels degrades with it": [
+    "VA EDFA Family: Fault Management Guide: result of Under AGC, a drop of input level"
+   ],
+   "A card with no input light": [
+    "VA EDFA Family: Fault Management Guide: arriving condition -> has no output light"
+   ],
+   "has no output light": [
+    "VA EDFA Family: Fault Management Guide: result of A card with no input light"
+   ],
+   "Other conditions at the input": [
+    "VA EDFA Family: Fault Management Guide: arriving condition -> are passed through to the output"
+   ],
+   "are passed through to the output": [
+    "VA EDFA Family: Fault Management Guide: result of Other conditions at the input"
+   ],
+   "Every hut terminates the optical supervisory channel (OSC) and launches its own OSC onto the next span": [
+    "VA EDFA Family: Fault Management Guide: arriving condition -> an OSC failure is confined to the span on which it occurs"
+   ],
+   "an OSC failure is confined to the span on which it occurs": [
+    "VA EDFA Family: Fault Management Guide: result of Every hut terminates the optical supervisory channel (OSC) and launches its own OSC onto the next span"
+   ],
+   "no output light": [
+    "VA EDFA Family: Fault Management Guide: symptom of fault EDFA dead"
+   ],
+   "all channels lost": [
+    "VA EDFA Family: Fault Management Guide: symptom of fault EDFA dead"
+   ],
+   "low output": [
+    "VA EDFA Family: Fault Management Guide: symptom of fault Gain loss"
+   ],
+   "OSNR down": [
+    "VA EDFA Family: Fault Management Guide: symptom of fault Gain loss",
+    "VA EDFA Family: Fault Management Guide: symptom of fault Noise figure degradation"
+   ],
+   "output power normal": [
+    "VA EDFA Family: Fault Management Guide: symptom of fault Noise figure degradation"
+   ],
+   "PUMP-I climbs to maintain gain": [
+    "VA EDFA Family: Fault Management Guide: symptom of fault Pump ageing"
+   ],
+   "ends in the end-of-life alarm": [
+    "VA EDFA Family: Fault Management Guide: symptom of fault Pump ageing"
+   ],
+   "channels low": [
+    "VA EDFA Family: Fault Management Guide: symptom of fault Gain tilt"
+   ],
+   "Loss of light at IN-PWR": [
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_INPUT_LOS",
+    "VA EDFA Family: Fault Management Guide: raises alarm OMS_LOS_P"
+   ],
+   "OSC not received": [
+    "VA EDFA Family: Fault Management Guide: raises alarm OSC_LOS"
+   ],
+   "No light at OUT-PWR with input light present": [
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_FAIL"
+   ],
+   "Gain more than 2 dB from target": [
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_GAIN_OOR"
+   ],
+   "PUMP-I above 120 % of beginning of life": [
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_PUMP_EOL"
+   ],
+   "The switch forwards ODU-AIS on each ODU it cross-connects.": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: result of "
+   ],
+   "ODU-AIS": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: arriving condition -> the client service down"
+   ],
+   "a misdirected ODU": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: arriving condition -> the client service down"
+   ],
+   "the client service down": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: result of ODU-AIS; a misdirected ODU"
+   ],
+   "ODU-AIS or a misdirected ODU": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: arriving condition -> the service takes a hit only"
+   ],
+   "SNCP is configured": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: arriving condition -> the service takes a hit only"
+   ],
+   "the selector has a defect-free path to choose": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: arriving condition -> the service takes a hit only"
+   ],
+   "the service takes a hit only": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: result of ODU-AIS or a misdirected ODU; SNCP is configured; the selector has a defect-free path to choose"
+   ],
+   "interrupted": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: symptom of fault Fabric failure"
+   ],
+   "ODU-AIS forwarded": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: symptom of fault Fabric failure"
+   ],
+   "cross-connected to the wrong destination": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: symptom of fault Misconnection"
+   ],
+   "no optical symptom": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: symptom of fault Misconnection"
+   ],
+   "failed": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: symptom of fault Port failure"
+   ],
+   "down": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: symptom of fault Port failure"
+   ],
+   "Switching is per channel": [
+    "VA ROADM (CDC): Fault Management Guide: arriving condition -> A line-wide impairment on an ingress degree therefore continues as a per-channel impairment on each channel routed onward."
+   ],
+   "A line-wide impairment on an ingress degree therefore continues as a per-channel impairment on each channel routed onward.": [
+    "VA ROADM (CDC): Fault Management Guide: result of Switching is per channel"
+   ],
+   "An upstream power loss within that range": [
+    "VA ROADM (CDC): Fault Management Guide: arriving condition -> is levelled out at the node; the OSNR penalty it caused stays"
+   ],
+   "is levelled out at the node": [
+    "VA ROADM (CDC): Fault Management Guide: result of An upstream power loss within that range"
+   ],
+   "the OSNR penalty it caused stays": [
+    "VA ROADM (CDC): Fault Management Guide: result of An upstream power loss within that range"
+   ],
+   "a larger loss": [
+    "VA ROADM (CDC): Fault Management Guide: arriving condition -> is passed on as low power"
+   ],
+   "is passed on as low power": [
+    "VA ROADM (CDC): Fault Management Guide: result of a larger loss"
+   ],
+   "passes through": [
+    "VA ROADM (CDC): Fault Management Guide: result of "
+   ],
+   "Attenuation creeps above its setting": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS attenuation drift"
+   ],
+   "low in power": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS attenuation drift"
+   ],
+   "Passband shifted": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS passband offset"
+   ],
+   "Passband narrowed": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS passband offset"
+   ],
+   "power normal": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS passband offset"
+   ],
+   "signal quality down": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS passband offset"
+   ],
+   "fails": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS ingress port failure"
+   ],
+   "blocked": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS ingress port failure"
+   ],
+   "unaffected": [
+    "VA ROADM (CDC): Fault Management Guide: symptom of fault WSS ingress port failure"
+   ]
+  },
+  "Characteristic": {
+   "Received optical power": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: measured by monitor OPR-15",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: measured by monitor OPR"
+   ],
+   "errored seconds": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: measured by monitor ES-15"
+   ],
+   "OSNR": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: measured by monitor OSNR-EST",
+    "VA ROADM (CDC): Fault Management Guide: measured by monitor optical channel monitor (OCM licence)"
+   ],
+   "pre-FEC BER": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: measured by monitor PREFEC-BER"
+   ],
+   "DGD": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: measured by monitor DGD"
+   ],
+   "SOP rate of change": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: measured by monitor SOP-RATE"
+   ],
+   "Transmit laser bias current, % of beginning of life": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: measured by monitor LBC"
+   ],
+   "Composite input power": [
+    "VA EDFA Family: Fault Management Guide: measured by monitor IN-PWR"
+   ],
+   "Composite output power": [
+    "VA EDFA Family: Fault Management Guide: measured by monitor OUT-PWR"
+   ],
+   "Pump laser drive current, % of beginning of life": [
+    "VA EDFA Family: Fault Management Guide: measured by monitor PUMP-I"
+   ],
+   "OSC receiver status": [
+    "VA EDFA Family: Fault Management Guide: measured by monitor OSC-RX"
+   ],
+   "client ES": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: measured by monitor client ES"
+   ],
+   "client UAS": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: measured by monitor client UAS"
+   ],
+   "Per-channel power": [
+    "VA ROADM (CDC): Fault Management Guide: measured by monitor optical channel monitor (OCM licence)"
+   ]
+  },
+  "Resource": {
+   "VA-TPD-400": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: unit VA-TPD-400",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OCH_LOS",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_LOF",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_SD"
+   ],
+   "400G transponder": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: position of VA-TPD-400"
+   ],
+   "VA-MXP-200": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: unit VA-MXP-200",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OCH_LOS",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_LOF",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_SD"
+   ],
+   "200G muxponder": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: position of VA-MXP-200"
+   ],
+   "VA-MXP-400": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: unit VA-MXP-400",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OCH_LOS",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_LOF",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_SD"
+   ],
+   "400G muxponder": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: position of VA-MXP-400"
+   ],
+   "VA-OTN-LC-200": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: unit VA-OTN-LC-200",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OCH_LOS",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_LOF",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_SD"
+   ],
+   "200G OTN line card": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: position of VA-OTN-LC-200"
+   ],
+   "VA-OTN-LC-400": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: unit VA-OTN-LC-400",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OCH_LOS",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_LOF",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: raises alarm OTU_SD"
+   ],
+   "400G OTN line card": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: position of VA-OTN-LC-400"
+   ],
+   "EDFA card": [
+    "VA EDFA Family: Fault Management Guide: unit VA-OA-BST",
+    "VA EDFA Family: Fault Management Guide: unit VA-OA-ILA",
+    "VA EDFA Family: Fault Management Guide: unit VA-OA-PRE"
+   ],
+   "transmit-side EDFA (booster), fitted at the head end of each optical multiplex section (OMS)": [
+    "VA EDFA Family: Fault Management Guide: position of VA-OA-BST"
+   ],
+   "optical line amplifier (OLA), fitted at in-line amplifier huts": [
+    "VA EDFA Family: Fault Management Guide: position of VA-OA-ILA"
+   ],
+   "receive-side EDFA (pre-amp), fitted at the tail end of each OMS": [
+    "VA EDFA Family: Fault Management Guide: position of VA-OA-PRE"
+   ],
+   "OLA": [
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_INPUT_LOS",
+    "VA EDFA Family: Fault Management Guide: raises alarm OSC_LOS",
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_GAIN_OOR"
+   ],
+   "Pre-amp": [
+    "VA EDFA Family: Fault Management Guide: raises alarm OMS_LOS_P"
+   ],
+   "pre-amp": [
+    "VA EDFA Family: Fault Management Guide: raises alarm OSC_LOS",
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_GAIN_OOR"
+   ],
+   "All": [
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_FAIL",
+    "VA EDFA Family: Fault Management Guide: raises alarm AMP_PUMP_EOL"
+   ],
+   "OTN cross-connect switch": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: unit VA-OTNSW"
+   ],
+   "client interface port": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: unit VA-CP-10GE",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: unit VA-CP-100GE",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: unit VA-CP-400GE"
+   ],
+   "Client port": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: raises alarm CLIENT_SF",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: raises alarm ODU_AIS",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: raises alarm ODU_BDI",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: raises alarm ODU_TIM"
+   ],
+   "Switch": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: raises alarm OTN_FABRIC_FAIL"
+   ],
+   "colourless, directionless, contentionless ROADM": [
+    "VA ROADM (CDC): Fault Management Guide: unit VA-ROADM-CDC"
+   ],
+   "one WSS module per degree": [
+    "VA ROADM (CDC): Fault Management Guide: position of VA-ROADM-CDC"
+   ]
+  },
+  "Alarm": {
+   "OCH_LOS": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: No light at the receiver"
+   ],
+   "OTU_LOF": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: OTU frame lost, light present"
+   ],
+   "OTU_SD": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: Errors above the degrade threshold (margin under about 1 dB)"
+   ],
+   "OTU_BDI": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: Far end reports a defect on this card's transmitted signal"
+   ],
+   "EQPT_TX_FAIL": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: Transmit laser fault detected"
+   ],
+   "EQPT_CARD_FAIL": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: Card hardware fault"
+   ],
+   "LASER_BIAS_HIGH": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: LBC above 120 % of beginning of life (internal supervision)"
+   ],
+   "AMP_INPUT_LOS": [
+    "VA EDFA Family: Fault Management Guide: Loss of light at IN-PWR"
+   ],
+   "OMS_LOS_P": [
+    "VA EDFA Family: Fault Management Guide: Loss of light at IN-PWR"
+   ],
+   "OSC_LOS": [
+    "VA EDFA Family: Fault Management Guide: OSC not received"
+   ],
+   "AMP_FAIL": [
+    "VA EDFA Family: Fault Management Guide: No light at OUT-PWR with input light present"
+   ],
+   "AMP_GAIN_OOR": [
+    "VA EDFA Family: Fault Management Guide: Gain more than 2 dB from target"
+   ],
+   "AMP_PUMP_EOL": [
+    "VA EDFA Family: Fault Management Guide: PUMP-I above 120 % of beginning of life"
+   ],
+   "CLIENT_SF": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: Client service failed"
+   ],
+   "ODU_AIS": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: ODU-AIS received"
+   ],
+   "ODU_BDI": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: Far end reports AIS"
+   ],
+   "ODU_TIM": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: Trace identifier mismatch"
+   ],
+   "PROT_ACTIVE": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: Selector on the protection path"
+   ],
+   "PROT_UNAVAIL": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: Protection path failed"
+   ],
+   "EQPT_PORT_FAIL": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: Port hardware fault"
+   ],
+   "OTN_FABRIC_FAIL": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: Fabric fault"
+   ]
+  },
+  "Scope": {
+   "the channel": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'Laser off or failed' of Transmit laser failure",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'loss of signal' of Transmit laser failure"
+   ],
+   "the transmitted channel": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'loss of signal' of Card failure"
+   ],
+   "received traffic": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'received traffic lost' of Card failure"
+   ],
+   "monitoring": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'monitoring silent' of Card failure"
+   ],
+   "traffic alarms": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'traffic alarms masked by the equipment alarm' of Card failure"
+   ],
+   "this receiver only": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'Errors' of Receiver degradation"
+   ],
+   "other channels": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'normal' of Receiver degradation"
+   ],
+   "the optical path": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'normal' of Receiver degradation"
+   ],
+   "LBC": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'LBC rising' of Laser ageing"
+   ],
+   "transmit laser failure": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'precedes transmit laser failure' of Laser ageing"
+   ],
+   "the channel's margin": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: extent of symptom 'Slow decline of the channel's margin, usually from ageing of components along the path' of Margin erosion"
+   ],
+   "all channels": [
+    "VA EDFA Family: Fault Management Guide: extent of symptom 'no output light' of EDFA dead",
+    "VA EDFA Family: Fault Management Guide: extent of symptom 'all channels lost' of EDFA dead",
+    "VA EDFA Family: Fault Management Guide: extent of symptom 'low output' of Gain loss",
+    "VA EDFA Family: Fault Management Guide: extent of symptom 'OSNR down' of Gain loss"
+   ],
+   "every channel downstream": [
+    "VA EDFA Family: Fault Management Guide: extent of symptom 'OSNR down' of Noise figure degradation"
+   ],
+   "this card": [
+    "VA EDFA Family: Fault Management Guide: extent of symptom 'PUMP-I climbs to maintain gain' of Pump ageing",
+    "VA EDFA Family: Fault Management Guide: extent of symptom 'ends in the end-of-life alarm' of Pump ageing"
+   ],
+   "channels at one band edge": [
+    "VA EDFA Family: Fault Management Guide: extent of symptom 'channels low' of Gain tilt"
+   ],
+   "All ODUs": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: extent of symptom 'interrupted' of Fabric failure"
+   ],
+   "each": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: extent of symptom 'ODU-AIS forwarded' of Fabric failure"
+   ],
+   "One ODU": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: extent of symptom 'cross-connected to the wrong destination' of Misconnection",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: extent of symptom 'no optical symptom' of Misconnection"
+   ],
+   "Client optic": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: extent of symptom 'failed' of Port failure"
+   ],
+   "port": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: extent of symptom 'failed' of Port failure"
+   ],
+   "client service": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: extent of symptom 'down' of Port failure"
+   ],
+   "one channel": [
+    "VA ROADM (CDC): Fault Management Guide: extent of symptom 'Attenuation creeps above its setting' of WSS attenuation drift",
+    "VA ROADM (CDC): Fault Management Guide: extent of symptom 'Passband shifted' of WSS passband offset",
+    "VA ROADM (CDC): Fault Management Guide: extent of symptom 'Passband narrowed' of WSS passband offset",
+    "VA ROADM (CDC): Fault Management Guide: extent of symptom 'power normal' of WSS passband offset"
+   ],
+   "that channel": [
+    "VA ROADM (CDC): Fault Management Guide: extent of symptom 'low in power' of WSS attenuation drift"
+   ],
+   "One WSS input port": [
+    "VA ROADM (CDC): Fault Management Guide: extent of symptom 'fails' of WSS ingress port failure"
+   ],
+   "all channels arriving on that degree": [
+    "VA ROADM (CDC): Fault Management Guide: extent of symptom 'blocked' of WSS ingress port failure"
+   ],
+   "other degrees": [
+    "VA ROADM (CDC): Fault Management Guide: extent of symptom 'unaffected' of WSS ingress port failure"
+   ]
+  },
+  "Location": {
+   "the far-end receiver": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where symptom 'loss of signal' of Transmit laser failure shows"
+   ],
+   "Far-end": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where symptom 'loss of signal' of Card failure shows"
+   ],
+   "locally": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where symptom 'received traffic lost' of Card failure shows"
+   ],
+   "the receiver": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where symptom 'Slow decline of the channel's margin, usually from ageing of components along the path' of Margin erosion shows"
+   ],
+   "Far-end transmitter": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'laser failed' of OCH_LOS lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'card failed' of OCH_LOS lies"
+   ],
+   "Anywhere upstream on the channel's path": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'fibre cut' of OCH_LOS lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'EDFA dead' of OCH_LOS lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'jumper pulled' of OCH_LOS lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'ROADM ingress port blocked' of OCH_LOS lies"
+   ],
+   "Upstream on the path": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'high span loss' of OTU_LOF lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'EDFA noise figure degradation' of OTU_LOF lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'DGD increase' of OTU_LOF lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'WSS passband offset' of OTU_LOF lies"
+   ],
+   "This card": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'receiver degradation' of OTU_LOF lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'receiver degradation' of OTU_SD lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'transmit laser failure' of EQPT_TX_FAIL lies",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'card failure' of EQPT_CARD_FAIL lies"
+   ],
+   "on the path to the far end": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: where the probable cause 'Any failure' of OTU_BDI lies"
+   ],
+   "downstream": [
+    "VA EDFA Family: Fault Management Guide: where symptom 'OSNR down' of Noise figure degradation shows"
+   ],
+   "this card": [
+    "VA EDFA Family: Fault Management Guide: where symptom 'PUMP-I climbs to maintain gain' of Pump ageing shows",
+    "VA EDFA Family: Fault Management Guide: where symptom 'ends in the end-of-life alarm' of Pump ageing shows",
+    "VA EDFA Family: Fault Management Guide: where the probable cause 'EDFA dead' of AMP_FAIL lies"
+   ],
+   "one band edge": [
+    "VA EDFA Family: Fault Management Guide: where symptom 'channels low' of Gain tilt shows"
+   ],
+   "on the incoming span": [
+    "VA EDFA Family: Fault Management Guide: where the probable cause 'Fibre break' of AMP_INPUT_LOS lies",
+    "VA EDFA Family: Fault Management Guide: where the probable cause 'high span loss' of AMP_INPUT_LOS lies",
+    "VA EDFA Family: Fault Management Guide: where the probable cause 'Fibre break' of OMS_LOS_P lies",
+    "VA EDFA Family: Fault Management Guide: where the probable cause 'high span loss' of OMS_LOS_P lies"
+   ],
+   "previous EDFA": [
+    "VA EDFA Family: Fault Management Guide: where the probable cause 'previous EDFA dead' of AMP_INPUT_LOS lies",
+    "VA EDFA Family: Fault Management Guide: where the probable cause 'previous EDFA dead' of OMS_LOS_P lies"
+   ],
+   "OMS input": [
+    "VA EDFA Family: Fault Management Guide: where the probable cause 'OMS input jumper pulled' of OMS_LOS_P lies"
+   ],
+   "the incoming span": [
+    "VA EDFA Family: Fault Management Guide: what alarm OSC_LOS is reported against"
+   ],
+   "through the switch": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where symptom 'interrupted' of Fabric failure shows"
+   ],
+   "on the active ODU path": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'Any failure' of CLIENT_SF lies"
+   ],
+   "at either end": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'client port failure' of CLIENT_SF lies"
+   ],
+   "at a switch on the ODU path": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'misconnection' of CLIENT_SF lies",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'fabric failure' of CLIENT_SF lies",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'Misconnection' of ODU_TIM lies"
+   ],
+   "on the working ODU path": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'Any failure' of PROT_ACTIVE lies"
+   ],
+   "on the protection ODU path": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'Any failure' of PROT_UNAVAIL lies"
+   ],
+   "This port": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'port failure' of EQPT_PORT_FAIL lies"
+   ],
+   "This switch": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: where the probable cause 'fabric failure' of OTN_FABRIC_FAIL lies"
+   ],
+   "after the node": [
+    "VA ROADM (CDC): Fault Management Guide: where symptom 'low in power' of WSS attenuation drift shows"
+   ],
+   "at the node": [
+    "VA ROADM (CDC): Fault Management Guide: where symptom 'blocked' of WSS ingress port failure shows"
+   ]
+  },
+  "Availability": {
+   "Standard": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: availability of monitor OPR-15",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: availability of monitor ES-15",
+    "VA EDFA Family: Fault Management Guide: availability of monitor OSC-RX"
+   ],
+   "Power monitoring licence": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: availability of monitor OPR",
+    "VA EDFA Family: Fault Management Guide: availability of monitor IN-PWR",
+    "VA EDFA Family: Fault Management Guide: availability of monitor OUT-PWR"
+   ],
+   "Advanced monitoring licence": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: availability of monitor OSNR-EST",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: availability of monitor PREFEC-BER",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: availability of monitor DGD",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: availability of monitor SOP-RATE"
+   ],
+   "15-minute bins (standard)": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: availability of monitor client ES",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: availability of monitor client UAS"
+   ],
+   "OCM licence": [
+    "VA ROADM (CDC): Fault Management Guide: availability of monitor optical channel monitor (OCM licence)"
+   ]
+  },
+  "Nature": {
+   "Hard": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: character of fault Transmit laser failure",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: character of fault Card failure",
+    "VA EDFA Family: Fault Management Guide: character of fault EDFA dead",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: character of fault Fabric failure"
+   ],
+   "Soft": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: character of fault Receiver degradation",
+    "VA EDFA Family: Fault Management Guide: character of fault Gain loss",
+    "VA EDFA Family: Fault Management Guide: character of fault Noise figure degradation",
+    "VA EDFA Family: Fault Management Guide: character of fault Gain tilt"
+   ],
+   "Incipient": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: character of fault Laser ageing",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: character of fault Margin erosion",
+    "VA EDFA Family: Fault Management Guide: character of fault Pump ageing"
+   ]
+  },
+  "Severity": {
+   "Critical": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: severity of OCH_LOS",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: severity of OTU_LOF",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: severity of EQPT_TX_FAIL",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: severity of EQPT_CARD_FAIL"
+   ],
+   "Minor": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: severity of OTU_SD",
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: severity of LASER_BIAS_HIGH",
+    "VA EDFA Family: Fault Management Guide: severity of AMP_GAIN_OOR",
+    "VA EDFA Family: Fault Management Guide: severity of AMP_PUMP_EOL"
+   ],
+   "Not alarmed": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: severity of OTU_BDI",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: severity of ODU_AIS",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: severity of ODU_BDI"
+   ],
+   "Major": [
+    "VA EDFA Family: Fault Management Guide: severity of OSC_LOS",
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: severity of ODU_TIM"
+   ]
+  },
+  "Behaviour": {
+   "On loss of OTU frame, G.798 consequent actions apply: ODU-AIS is sent downstream on every ODU in the OTU, and OTU-BDI is returned to the far-end transmitter.": [
+    "VA Coherent Transponder and Line Card Family: Fault Management Guide: how channels are switched"
+   ],
+   "Every hut terminates the optical supervisory channel (OSC) and launches its own OSC onto the next span.": [
+    "VA EDFA Family: Fault Management Guide: how channels are switched"
+   ],
+   "Client services may be protected with SNCP: a working and a protection ODU path, with the selector at the receiving client port.": [
+    "VA OTN Switching and Client Interfaces: Fault Management Guide: how channels are switched"
+   ],
+   "Switching is per channel at each egress degree. A line-wide impairment on an ingress degree therefore continues as a per-channel impairment on each channel routed onward.": [
+    "VA ROADM (CDC): Fault Management Guide: how channels are switched"
+   ]
+  }
+ },
+ "effort": {
+  "surface": {
+   "calls": 22,
+   "model": "gpt-5.6",
+   "input_tokens": 25859,
+   "output_tokens": 17905,
+   "reasoning_tokens": 13054,
+   "latency_s": 323.83723497390747,
+   "merges_applied": 16,
+   "invented_dropped": 0
+  },
+  "lift": {
+   "lift_total_tokens": 29450,
+   "lift_reasoning_tokens": 89,
+   "lift_latency_s": 142.51,
+   "lift_coverage": 1.0,
+   "concepts": 179,
+   "model": "gpt-5.6"
+  }
+ }
+}

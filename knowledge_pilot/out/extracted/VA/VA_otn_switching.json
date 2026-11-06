@@ -1,0 +1,338 @@
+{
+ "vendor": "VA",
+ "document_title": "VA OTN Switching and Client Interfaces: Fault Management Guide",
+ "standards": [
+  "G.798"
+ ],
+ "unit_types": [
+  {
+   "product_code": "VA-OTNSW",
+   "unit": "OTN cross-connect switch",
+   "role_or_position": null,
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VA-CP-10GE",
+   "unit": "client interface port",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "10GE",
+   "odu_mapping": "ODU2"
+  },
+  {
+   "product_code": "VA-CP-100GE",
+   "unit": "client interface port",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "100GE",
+   "odu_mapping": "ODU4"
+  },
+  {
+   "product_code": "VA-CP-400GE",
+   "unit": "client interface port",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400GE",
+   "odu_mapping": "ODUflex"
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "Publication",
+   "value": "VA-TN-0425"
+  },
+  {
+   "item": "revision",
+   "value": "B"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "client ES",
+   "measures": [
+    "client ES"
+   ],
+   "availability": "15-minute bins (standard)",
+   "applies_to": [
+    "Client ports"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "client UAS",
+   "measures": [
+    "client UAS"
+   ],
+   "availability": "15-minute bins (standard)",
+   "applies_to": [
+    "Client ports"
+   ],
+   "location": null,
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "switch"
+   ],
+   "when": [],
+   "result": [
+    "The switch forwards ODU-AIS on each ODU it cross-connects."
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "client port"
+   ],
+   "when": [
+    "ODU-AIS",
+    "a misdirected ODU"
+   ],
+   "result": [
+    "the client service down"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "client port"
+   ],
+   "when": [
+    "ODU-AIS or a misdirected ODU",
+    "SNCP is configured",
+    "the selector has a defect-free path to choose"
+   ],
+   "result": [
+    "the service takes a hit only"
+   ],
+   "threshold": null,
+   "note": null
+  }
+ ],
+ "faults": [
+  {
+   "name": "Fabric failure",
+   "applies_to": [
+    "Switch"
+   ],
+   "description": "All ODUs through the switch interrupted; ODU-AIS forwarded on each",
+   "effects": [
+    {
+     "effect": "interrupted",
+     "scope": "All ODUs",
+     "where": "through the switch"
+    },
+    {
+     "effect": "ODU-AIS forwarded",
+     "scope": "each",
+     "where": null
+    }
+   ],
+   "character": "Hard",
+   "rate_per_year_fraction": 0.002,
+   "rate_per": "switch per year"
+  },
+  {
+   "name": "Misconnection",
+   "applies_to": [
+    "Switch"
+   ],
+   "description": "One ODU cross-connected to the wrong destination; no optical symptom",
+   "effects": [
+    {
+     "effect": "cross-connected to the wrong destination",
+     "scope": "One ODU",
+     "where": null
+    },
+    {
+     "effect": "no optical symptom",
+     "scope": "One ODU",
+     "where": null
+    }
+   ],
+   "character": "Hard",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "switch per year, mostly following provisioning activity"
+  },
+  {
+   "name": "Port failure",
+   "applies_to": [
+    "Client port"
+   ],
+   "description": "Client optic or port failed; client service down",
+   "effects": [
+    {
+     "effect": "failed",
+     "scope": "Client optic",
+     "where": null
+    },
+    {
+     "effect": "failed",
+     "scope": "port",
+     "where": null
+    },
+    {
+     "effect": "down",
+     "scope": "client service",
+     "where": null
+    }
+   ],
+   "character": "Hard",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "port per year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "CLIENT_SF",
+   "raised_by": [
+    "Client port"
+   ],
+   "severity": "Critical",
+   "monitor": null,
+   "symptom": null,
+   "raised_when": "Client service failed",
+   "probable_causes": [
+    {
+     "cause": "Any failure",
+     "where": "on the active ODU path"
+    },
+    {
+     "cause": "client port failure",
+     "where": "at either end"
+    },
+    {
+     "cause": "misconnection",
+     "where": "at a switch on the ODU path"
+    },
+    {
+     "cause": "fabric failure",
+     "where": "at a switch on the ODU path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "ODU_AIS",
+   "raised_by": [
+    "Client port"
+   ],
+   "severity": "Not alarmed",
+   "monitor": null,
+   "symptom": null,
+   "raised_when": "ODU-AIS received",
+   "probable_causes": [],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "ODU_BDI",
+   "raised_by": [
+    "Client port"
+   ],
+   "severity": "Not alarmed",
+   "monitor": null,
+   "symptom": null,
+   "raised_when": "Far end reports AIS",
+   "probable_causes": [],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "ODU_TIM",
+   "raised_by": [
+    "Client port"
+   ],
+   "severity": "Major",
+   "monitor": null,
+   "symptom": null,
+   "raised_when": "Trace identifier mismatch",
+   "probable_causes": [
+    {
+     "cause": "Misconnection",
+     "where": "at a switch on the ODU path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "PROT_ACTIVE",
+   "raised_by": [
+    "Client port"
+   ],
+   "severity": "Minor",
+   "monitor": null,
+   "symptom": null,
+   "raised_when": "Selector on the protection path",
+   "probable_causes": [
+    {
+     "cause": "Any failure",
+     "where": "on the working ODU path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "PROT_UNAVAIL",
+   "raised_by": [
+    "Client port"
+   ],
+   "severity": "Minor",
+   "monitor": null,
+   "symptom": null,
+   "raised_when": "Protection path failed",
+   "probable_causes": [
+    {
+     "cause": "Any failure",
+     "where": "on the protection ODU path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "EQPT_PORT_FAIL",
+   "raised_by": [
+    "Client port"
+   ],
+   "severity": "Critical",
+   "monitor": null,
+   "symptom": null,
+   "raised_when": "Port hardware fault",
+   "probable_causes": [
+    {
+     "cause": "port failure",
+     "where": "This port"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "OTN_FABRIC_FAIL",
+   "raised_by": [
+    "Switch"
+   ],
+   "severity": "Critical",
+   "monitor": null,
+   "symptom": null,
+   "raised_when": "Fabric fault",
+   "probable_causes": [
+    {
+     "cause": "fabric failure",
+     "where": "This switch"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  }
+ ],
+ "routing": "Client services may be protected with SNCP: a working and a protection ODU path, with the selector at the receiving client port.",
+ "troubleshooting_notes": []
+}

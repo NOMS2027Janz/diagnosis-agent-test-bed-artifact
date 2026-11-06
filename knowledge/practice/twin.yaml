@@ -1,0 +1,44 @@
+document: "Operator practice: what the network twin models"
+note: >
+  The twin computes the transmission state of the network from the records (topology, routes, recorded span
+  losses, amplifier settings, datasheet noise figures) and the line design rules. It simulates a hypothesised
+  fault only where the documentation of the equipment gives the fault a twin scenario (a kind of change it can
+  apply, with its parameter and range). It does not model equipment health signals (pump current, laser bias)
+  or slow ageing, and it cannot simulate a fault mode the documentation does not describe. Two scenarios
+  concern the monitoring rather than the equipment, and apply to any instrument.
+instrument_scenarios:
+  INSTRUMENT_MISREPORT: {kind: instrument_bias, parameter: bias, range: [-10, 10]}
+  TELEMETRY_STALE: {kind: instrument_frozen}
+physics_scenarios:                     # transmission events the operator's twin can simulate although no vendor document
+  CHANNEL_LOADING_TRANSIENT: {kind: oms_power_excursion, parameter: excursion_db, range: [-8, 8], transient: true}
+  AMP_GAIN_TILT: {kind: amp_gain_tilt, parameter: tilt_db, range: [-5, 5]}      # gain tilt across the band (C4)
+  MARGIN_EROSION: {kind: rx_penalty, parameter: penalty_db, range: [0.1, 1.0]}   # a slow loss of margin, seen at the receiver (C4)
+transient_durations_s:                 # durations tried for transient scenarios, from the documents' descriptions
+  oms_power_excursion: [0.02, 0.2, 1.0, 3.0]
+  span_sop: [0.005, 0.05, 0.5, 5.0]
+  span_added_loss: [0.2, 2.0, 20.0, 60.0]
+stated_accuracy:                       # what the operator states for the twin, and the agent allows for
+  margin_db_1sigma: 0.25               # predicted margin of a lightpath; input and calculation errors together
+  changes:                             # on a predicted change of a stream: [floor, fraction of the change]
+    power: [0.25, 0.15]
+    est_osnr: [0.4, 0.2]
+    ocm_osnr: [0.4, 0.2]
+    pre_fec_ber: [0.3, 0.2]
+    dgd: [1.0, 0.2]
+    sop_rate: [0.35, 0.0]              # on the peak polarisation rate, in decades (log10)
+check_accuracy:                        # one standard deviation, per field of a check's answer (src/adagent/accuracy.py)
+  # instrument: the instrument's accuracy, calibration included; twin: the twin's absolute accuracy (inputs and
+  # calculation); rel: proportional to the value; change: fraction of a predicted change from the no-fault answer;
+  # noise: the part of the instrument's accuracy that varies from reading to reading (the rest is its calibration),
+  # for quantities read as a series (src/adagent/accuracy.py)
+  rx_min_dbm:       {scale: lin,   instrument: 0.31, twin: 0.2,  rel: 0.0,  change: 0.15, noise: 0.1}
+  tx_power_dbm:     {scale: lin,   instrument: 0.31, twin: 0.2,  rel: 0.0,  change: 0.0}
+  input_dbm_per_ch: {scale: lin,   instrument: 0.1,  twin: 0.2,  rel: 0.0,  change: 0.15}
+  est_osnr_db:      {scale: lin,   instrument: 0.42, twin: 0.55, rel: 0.0,  change: 0.2}
+  margin_db:        {scale: lin,   instrument: 0.2,  twin: 0.25, rel: 0.0,  change: 0.2}
+  dgd_ps:           {scale: lin,   instrument: 0.3,  twin: 0.3,  rel: 0.0,  change: 0.2}
+  pre_fec_ber:      {scale: log10, instrument: 0.1,  twin: 0.2,  rel: 0.0,  change: 0.2}
+  sop_rate_rad_s:   {scale: log10, instrument: 0.04, twin: 0.15, rel: 0.0,  change: 0.0}
+  loss_db:          {scale: lin,   instrument: 0.1,  twin: 0.65, rel: 0.0,  change: 0.15}
+  errored_s:        {scale: lin,   instrument: 0.0,  twin: 2.0,  rel: 0.2,  change: 0.0}
+  cd_ps_nm:         {scale: lin,   instrument: 1.0,  twin: 50.0, rel: 0.05, change: 0.0}

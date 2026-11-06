@@ -1,0 +1,1 @@
+{"case": "x2190-s2142-maintenance", "seed": 2142, "kind": "maintenance", "candidates": 41, "rule_verdicts_agree": 164, "rule_verdicts_differ": 0, "differences": [], "overall_differ": 0, "engine_requests": [], "seconds_code": 0.94, "seconds_graph": 1.04}

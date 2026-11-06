@@ -1,0 +1,1326 @@
+{
+ "types": {
+  "PLANT-OMS-INPUT": {
+   "gaps": [
+    {
+     "fault_mode": "CONNECTOR_DIRTY",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "MECHANICAL_DISTURBANCE",
+     "description": "Handling, vibration, or transient bending of the OMS input patch causes a brief loss or fluctuation across the carried spectrum.",
+     "nature": "transient",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "POWER_EXCURSION",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "span_added_loss:transient",
+     "confidence": 0.76
+    }
+   ]
+  },
+  "PLANT-SPAN": {
+   "gaps": [
+    {
+     "fault_mode": "FIBRE_CUT",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "all_channels",
+       "where": null
+      },
+      {
+       "effect": "OSC_LOST",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CONNECTOR_DIRTY",
+     "description": "Contamination on an OMS patch connector adds insertion loss across all carried channels while the OSC may remain present.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.05,
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "oms_input_loss",
+     "confidence": 0.9
+    },
+    {
+     "fault_mode": "CONNECTOR_PULLED",
+     "description": "An OMS input patch connector is unplugged or left unseated, interrupting all traffic channels while the separately terminated OSC may remain present.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "oms_input_open",
+     "confidence": 0.9
+    }
+   ]
+  },
+  "VA-CP-100GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-10GE": {
+   "gaps": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-CP-400GE": {
+   "gaps": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-MXP-200": {
+   "gaps": [
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ]
+    },
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "MARGIN_EROSION",
+     "effects": [
+      {
+       "effect": "MARGIN_DECLINE",
+       "scope": "channel",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Failure of a client-facing port interrupts the client service carried through that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.93
+    }
+   ]
+  },
+  "VA-MXP-400": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Failure of a client-facing port interrupts the client service carried through that port while the line interface may remain operational.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.94
+    }
+   ]
+  },
+  "VA-OA-BST": {
+   "gaps": [
+    {
+     "fault_mode": "AMP_NF_RISE",
+     "effects": [
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "PUMP_CURRENT_DRIFT",
+     "effects": [
+      {
+       "effect": "PUMP_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OA-ILA": {
+   "gaps": [
+    {
+     "fault_mode": "AMP_GAIN_DROP",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "all_channels",
+       "where": null
+      },
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "PUMP_CURRENT_DRIFT",
+     "effects": [
+      {
+       "effect": "PUMP_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "AMP_GAIN_TILT",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "some_channels",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OA-PRE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-OTN-LC-200": {
+   "gaps": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": []
+  },
+  "VA-OTN-LC-400": {
+   "gaps": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Client-facing port failure interrupts the client service carried through that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.93
+    }
+   ]
+  },
+  "VA-OTNSW": {
+   "gaps": [
+    {
+     "fault_mode": "OTN_SWITCH_FAIL",
+     "effects": [
+      {
+       "effect": "ODU_AIS",
+       "scope": "every_odu_through",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "An OTN client port fails, interrupting the client service carried by that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.95
+    }
+   ]
+  },
+  "VA-ROADM-CDC": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "description": "The ROADM WSS card fails, blocking all channels routed through the unit and invalidating its monitoring data.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "unit",
+       "where": null
+      },
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "card_off",
+     "confidence": 0.95
+    },
+    {
+     "fault_mode": "CONNECTOR_DIRTY",
+     "description": "Contamination at an OMS input connector adds loss to every channel arriving on that port.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "oms_input_loss",
+     "confidence": 0.9
+    },
+    {
+     "fault_mode": "CONNECTOR_PULLED",
+     "description": "An OMS input connector is disconnected, removing every channel arriving on that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.005,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "oms_input_open",
+     "confidence": 0.95
+    }
+   ]
+  },
+  "VA-TPD-400": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Client-side port failure interrupts the client service carried through that port while the coherent line interface may remain operational.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.002,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.94
+    }
+   ]
+  },
+  "VB-CP-100GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-CP-10GE": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "description": "The client-port transmit laser fails, interrupting the transmitted client signal.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.005,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "port",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "tx_off",
+     "confidence": 0.94
+    },
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "description": "The client receiver develops reduced sensitivity or excessive internal noise, degrading reception without affecting other ports.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      },
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "rx_penalty",
+     "confidence": 0.88
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "description": "The client transmitter bias current rises with laser ageing while output is initially maintained.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.83
+    },
+    {
+     "fault_mode": "CONNECTOR_DIRTY",
+     "description": "Contamination of the client optical connector introduces loss and can degrade or interrupt the client service.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.03,
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "port",
+       "where": null
+      },
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "rx_penalty",
+     "confidence": 0.82
+    },
+    {
+     "fault_mode": "CONNECTOR_PULLED",
+     "description": "Disconnection of the client optical connector removes the optical signal and interrupts the client service.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "port",
+       "where": null
+      },
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.86
+    }
+   ]
+  },
+  "VB-CP-400GE": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "description": "The client-port transmit laser fails, interrupting the transmitted client signal.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "this_service",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "tx_off",
+     "confidence": 0.94
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "description": "The client transmit laser bias current rises gradually as the laser ages.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.84
+    },
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "description": "The client-port receiver degrades locally and reduces receive margin without necessarily losing the service immediately.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ],
+     "twin_scenario": "rx_penalty",
+     "confidence": 0.91
+    },
+    {
+     "fault_mode": "CONNECTOR_DIRTY",
+     "description": "Contamination of the client optical connector adds loss to the received client signal.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ],
+     "twin_scenario": "rx_penalty",
+     "confidence": 0.82
+    },
+    {
+     "fault_mode": "CONNECTOR_PULLED",
+     "description": "The client optical connector is unplugged, causing loss of the client signal and service.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.005,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "this_receiver",
+       "where": null
+      },
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.88
+    }
+   ]
+  },
+  "VB-MXP-200": {
+   "gaps": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Client-side port failure interrupts the client service carried through that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.94
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "description": "Transmit-laser bias current rises gradually as the laser ages while transmission initially remains available.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.9
+    },
+    {
+     "fault_mode": "MARGIN_EROSION",
+     "description": "The coherent channel's measured operating margin declines gradually toward its service threshold.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "MARGIN_DECLINE",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.86
+    }
+   ]
+  },
+  "VB-MXP-400": {
+   "gaps": [
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ]
+    },
+    {
+     "fault_mode": "CARD_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Failure of a client-facing port interrupts the client service carried through that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.96
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "description": "Ageing of the transmit laser causes its bias current to rise while maintaining optical output.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.9
+    }
+   ]
+  },
+  "VB-OA-BST": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "AMP_NF_RISE",
+     "description": "Amplifier noise figure rises while output power remains normal, degrading OSNR across the amplified band.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "amp_nf_change",
+     "confidence": 0.98
+    }
+   ]
+  },
+  "VB-OA-ILA": {
+   "gaps": [
+    {
+     "fault_mode": "AMP_PUMP_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "AMP_GAIN_DROP",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "all_channels",
+       "where": null
+      },
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ]
+    },
+    {
+     "fault_mode": "PUMP_CURRENT_DRIFT",
+     "effects": [
+      {
+       "effect": "PUMP_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "AMP_NF_RISE",
+     "description": "Amplifier noise figure rises while output power remains normal, degrading OSNR across the amplified band.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "amp_nf_change",
+     "confidence": 0.95
+    }
+   ]
+  },
+  "VB-OA-PRE": {
+   "gaps": [
+    {
+     "fault_mode": "AMP_GAIN_TILT",
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "some_channels",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "AMP_NF_RISE",
+     "description": "Amplifier noise figure rises while output power remains normal, degrading OSNR across the amplified band.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "amp_nf_change",
+     "confidence": 0.98
+    }
+   ]
+  },
+  "VB-OTN-LC-200": {
+   "gaps": [
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "A client-facing port fails, interrupting the client service carried through that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "this_service",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.86
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "description": "The coherent transmitter laser bias rises gradually with ageing while the channel remains operational.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.9
+    },
+    {
+     "fault_mode": "MARGIN_EROSION",
+     "description": "The line interface's operating margin declines gradually without an immediate loss of traffic.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.03,
+     "effects": [
+      {
+       "effect": "MARGIN_DECLINE",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.82
+    }
+   ]
+  },
+  "VB-OTN-LC-400": {
+   "gaps": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Client-port failure interrupts traffic carried through that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.9
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "description": "Transmit-laser bias current rises gradually as the line-side laser ages.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.03,
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.86
+    },
+    {
+     "fault_mode": "MARGIN_EROSION",
+     "description": "The line channel's operating margin declines gradually while traffic remains in service.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.05,
+     "effects": [
+      {
+       "effect": "MARGIN_DECLINE",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.8
+    }
+   ]
+  },
+  "VB-OTNSW": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Failure of an OTN client port interrupts the client service carried by that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.96
+    }
+   ]
+  },
+  "VB-ROADM-CDC": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "description": "The ROADM switching card fails, stopping traffic through the unit and invalidating its monitoring values.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.005,
+     "effects": [
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "unit",
+       "where": null
+      },
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "card_off",
+     "confidence": 0.9
+    },
+    {
+     "fault_mode": "CONNECTOR_DIRTY",
+     "description": "Contamination on an ingress degree connector adds loss to every channel arriving on that port.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "oms_input_loss",
+     "confidence": 0.92
+    },
+    {
+     "fault_mode": "CONNECTOR_PULLED",
+     "description": "A disconnected ingress degree connector removes every channel arriving on that port.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.003,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "oms_input_open",
+     "confidence": 0.95
+    }
+   ]
+  },
+  "VB-TPD-400": {
+   "gaps": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ]
+    }
+   ],
+   "added_modes": [
+    {
+     "fault_mode": "CLIENT_PORT_FAIL",
+     "description": "Client-facing port failure interrupts the client service carried through that port while the optical line interface may remain operational.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "CLIENT_DOWN",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "client_port_failed",
+     "confidence": 0.93
+    },
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "description": "Transmit-laser ageing causes its bias current to rise progressively while output control initially maintains the channel.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.03,
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.9
+    },
+    {
+     "fault_mode": "MARGIN_EROSION",
+     "description": "Slow degradation of the coherent line channel reduces its operating margin without immediately interrupting traffic.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.05,
+     "effects": [
+      {
+       "effect": "MARGIN_DECLINE",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 0.82
+    }
+   ]
+  }
+ },
+ "kind": "sig",
+ "draw": "dev6",
+ "degradation": {
+  "signatures_removed": 27,
+  "probable_causes_removed": 35
+ },
+ "prompt_version": "doc-completion-a20-0.1",
+ "script_sha256": "88e3f198445e455627d7f46760602b4852ec9044b0291b2af19a922f3a43b863",
+ "system": "You complete equipment documentation for the diagnosis system of an optical transport network. The documentation of one equipment type is given as its operator or vendor supplied it, in a structured form. Some of it may be missing: a fault mode may be named with no effects, and fault modes the equipment can suffer may be absent altogether. You never see a network event; you complete the documentation from what you know of such equipment and from how comparable equipment is documented.\nDo two things.\n(1) For every listed fault mode marked \"effects: MISSING\", give its effects. Where templates are shown (the same fault mode as documented for comparable equipment), follow them: give the same effects, scopes and locations unless you know this equipment differs. Give a location only where the templates or the documentation's conventions give one for such an effect; a location names where an effect is seen when that is not the unit itself, and a wrong location is worse than none.\n(2) List the fault modes this equipment type can suffer that are not documented, choosing names only from the fault-mode vocabulary given. Add a mode only when you are confident this kind of equipment suffers it and it is not already listed; an empty list is a good answer when the documentation looks complete.\nWrite effects exactly as the documentation does: each effect names an effect from the effect vocabulary, a scope from the scope vocabulary and, only where needed, a location from the location vocabulary. For an added mode give a one-sentence description, its nature, a rate of occurrence per year per unit, and the twin scenario (from the twin's catalogue) that models its physical change, or none when it has no physical effect on transmission.",
+ "model": "gpt-5.6",
+ "calls": [
+  {
+   "latency_s": 6.572271823883057,
+   "input_tokens": 1924,
+   "output_tokens": 594,
+   "reasoning_tokens": 457,
+   "ok": true
+  },
+  {
+   "latency_s": 8.515350103378296,
+   "input_tokens": 2115,
+   "output_tokens": 746,
+   "reasoning_tokens": 516,
+   "ok": true
+  },
+  {
+   "latency_s": 2.247537851333618,
+   "input_tokens": 1797,
+   "output_tokens": 157,
+   "reasoning_tokens": 139,
+   "ok": true
+  },
+  {
+   "latency_s": 3.4478671550750732,
+   "input_tokens": 1873,
+   "output_tokens": 251,
+   "reasoning_tokens": 207,
+   "ok": true
+  },
+  {
+   "latency_s": 9.698898792266846,
+   "input_tokens": 1873,
+   "output_tokens": 828,
+   "reasoning_tokens": 784,
+   "ok": true
+  },
+  {
+   "latency_s": 8.430797815322876,
+   "input_tokens": 2332,
+   "output_tokens": 863,
+   "reasoning_tokens": 654,
+   "ok": true
+  },
+  {
+   "latency_s": 5.409916162490845,
+   "input_tokens": 2022,
+   "output_tokens": 460,
+   "reasoning_tokens": 363,
+   "ok": true
+  },
+  {
+   "latency_s": 3.555959701538086,
+   "input_tokens": 2069,
+   "output_tokens": 206,
+   "reasoning_tokens": 130,
+   "ok": true
+  },
+  {
+   "latency_s": 3.283255100250244,
+   "input_tokens": 2182,
+   "output_tokens": 234,
+   "reasoning_tokens": 120,
+   "ok": true
+  },
+  {
+   "latency_s": 2.990180730819702,
+   "input_tokens": 1964,
+   "output_tokens": 152,
+   "reasoning_tokens": 134,
+   "ok": true
+  },
+  {
+   "latency_s": 5.029055118560791,
+   "input_tokens": 2171,
+   "output_tokens": 463,
+   "reasoning_tokens": 384,
+   "ok": true
+  },
+  {
+   "latency_s": 6.688499927520752,
+   "input_tokens": 2111,
+   "output_tokens": 600,
+   "reasoning_tokens": 482,
+   "ok": true
+  },
+  {
+   "latency_s": 4.745329141616821,
+   "input_tokens": 1897,
+   "output_tokens": 419,
+   "reasoning_tokens": 295,
+   "ok": true
+  },
+  {
+   "latency_s": 7.714885950088501,
+   "input_tokens": 1990,
+   "output_tokens": 766,
+   "reasoning_tokens": 509,
+   "ok": true
+  },
+  {
+   "latency_s": 4.366173028945923,
+   "input_tokens": 2023,
+   "output_tokens": 387,
+   "reasoning_tokens": 292,
+   "ok": true
+  },
+  {
+   "latency_s": 4.559386730194092,
+   "input_tokens": 1797,
+   "output_tokens": 356,
+   "reasoning_tokens": 338,
+   "ok": true
+  },
+  {
+   "latency_s": 18.212467908859253,
+   "input_tokens": 1797,
+   "output_tokens": 1811,
+   "reasoning_tokens": 1358,
+   "ok": true
+  },
+  {
+   "latency_s": 16.1616530418396,
+   "input_tokens": 1797,
+   "output_tokens": 1541,
+   "reasoning_tokens": 1118,
+   "ok": true
+  },
+  {
+   "latency_s": 11.340651988983154,
+   "input_tokens": 2057,
+   "output_tokens": 1188,
+   "reasoning_tokens": 910,
+   "ok": true
+  },
+  {
+   "latency_s": 10.820257902145386,
+   "input_tokens": 2146,
+   "output_tokens": 1051,
+   "reasoning_tokens": 811,
+   "ok": true
+  },
+  {
+   "latency_s": 2.9484550952911377,
+   "input_tokens": 1932,
+   "output_tokens": 247,
+   "reasoning_tokens": 150,
+   "ok": true
+  },
+  {
+   "latency_s": 4.159678936004639,
+   "input_tokens": 2153,
+   "output_tokens": 386,
+   "reasoning_tokens": 191,
+   "ok": true
+  },
+  {
+   "latency_s": 4.624607086181641,
+   "input_tokens": 2008,
+   "output_tokens": 409,
+   "reasoning_tokens": 285,
+   "ok": true
+  },
+  {
+   "latency_s": 9.084637880325317,
+   "input_tokens": 2045,
+   "output_tokens": 959,
+   "reasoning_tokens": 689,
+   "ok": true
+  },
+  {
+   "latency_s": 8.838520050048828,
+   "input_tokens": 2030,
+   "output_tokens": 939,
+   "reasoning_tokens": 678,
+   "ok": true
+  },
+  {
+   "latency_s": 5.74675726890564,
+   "input_tokens": 1863,
+   "output_tokens": 479,
+   "reasoning_tokens": 389,
+   "ok": true
+  },
+  {
+   "latency_s": 6.918540000915527,
+   "input_tokens": 1990,
+   "output_tokens": 653,
+   "reasoning_tokens": 401,
+   "ok": true
+  },
+  {
+   "latency_s": 11.13542890548706,
+   "input_tokens": 2028,
+   "output_tokens": 1071,
+   "reasoning_tokens": 791,
+   "ok": true
+  }
+ ]
+}

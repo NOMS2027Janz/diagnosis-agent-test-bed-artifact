@@ -1,0 +1,1 @@
+{"case": "x2190-s2084-monitoring", "seed": 2084, "kind": "monitoring", "candidates": 51, "rule_verdicts_agree": 192, "rule_verdicts_differ": 0, "differences": [], "overall_differ": 0, "engine_requests": [], "seconds_code": 1.206, "seconds_graph": 1.174}

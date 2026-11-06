@@ -1,0 +1,4 @@
+twin_fidelity.py 1:1 1:0 2:1, C4H code (manifest unchanged), day 2190, seed 9100, no fault, 31 Oct 2026
+scale 1.0 cal True: n=450 margin mean -0.066 sd 0.142 p95|.| 0.29 max 0.97; osnr mean -0.012 sd 0.523
+scale 1.0 cal False: n=450 margin mean +0.053 sd 0.283 p95|.| 0.48 max 1.77; osnr mean +1.014 sd 0.536
+scale 2.0 cal True: n=450 margin mean -0.314 sd 0.689 p95|.| 1.32 max 4.77; osnr mean -0.027 sd 1.048

@@ -1,0 +1,1 @@
+{"case": "x2190-s2219-drift", "seed": 2219, "kind": "drift", "candidates": 3, "rule_verdicts_agree": 6, "rule_verdicts_differ": 0, "differences": [], "overall_differ": 0, "engine_requests": [], "seconds_code": 0.0, "seconds_graph": 0.0}

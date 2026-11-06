@@ -1,0 +1,87 @@
+document: "VA Optical Amplifier family: Alarm and Troubleshooting Reference"
+vendor: VA
+types:
+  - {id: VA-OA-BST, class: Amplifier, role: booster}
+  - {id: VA-OA-ILA, class: Amplifier, role: inline}
+  - {id: VA-OA-PRE, class: Amplifier, role: preamp}
+datasheet:
+  gain_mode: "constant gain; gain set at commissioning to the loss of the preceding span"
+  noise_figure_db: {typical: 5.5, max: 6.5}
+  input_los_threshold_dbm_per_channel: -30
+monitoring_points:
+    - {id: input_power, observes: amp_input_power, tier: power, location: input}
+    - {id: output_power, observes: amp_output_power, tier: power, location: output}
+    - {id: pump_current, observes: pump_current_pct, tier: coherent, note: "drive current, per cent of beginning-of-life"}
+    - {id: osc_receiver, observes: [], tier: baseline, location: input, note: "alarm source only"}
+signal_behaviour:
+  - {in: OSC_LOST, out: [], note: "the OSC is terminated here and a new one sent on the next span"}
+  - {in: SIGNAL_LOST, out: [SIGNAL_LOST]}
+  - {in: POWER_LOW, out: [POWER_LOW, OSNR_LOW], note: "constant gain: low input gives low output and lower OSNR"}
+  - {in: default, out: pass}
+fault_modes:
+  - id: AMP_PUMP_FAIL
+    description: "Pump laser or unit failure; no output."
+    effects: [{effect: SIGNAL_LOST, scope: all_channels}]
+    nature: hard
+    documented_rate: {per_year: 0.01, per: unit}
+    twin_scenario: {kind: amp_failed}
+  - id: AMP_GAIN_DROP
+    description: "Gain below set point; output power low for all channels."
+    effects: [{effect: POWER_LOW, scope: all_channels}, {effect: OSNR_LOW, scope: all_channels}]
+    nature: soft
+    documented_rate: {per_year: 0.01, per: unit}
+    twin_scenario: {kind: amp_gain_change, parameter: gain_drop_db, range: [0.5, 10]}
+  - id: AMP_NF_RISE
+    description: "Noise figure degradation of the amplifier stage; output power normal, OSNR reduced for every channel downstream."
+    effects: [{effect: OSNR_LOW, scope: all_channels}]
+    nature: soft
+    documented_rate: {per_year: 0.01, per: unit}
+    twin_scenario: {kind: amp_nf_change, parameter: nf_increase_db, range: [0.5, 8]}
+  - id: PUMP_CURRENT_DRIFT
+    description: "Pump ageing: drive current rises to hold gain; leads to end-of-life alarm."
+    effects: [{effect: PUMP_AGEING, scope: unit}]
+    nature: incipient
+    documented_rate: {per_year: 0.02, per: unit}
+  - id: AMP_GAIN_TILT
+    description: "Gain tilt across the band; channels at one band edge weaker."
+    effects: [{effect: POWER_LOW, scope: some_channels}]
+    nature: soft
+    documented_rate: {per_year: 0.005, per: unit}
+alarms:
+  - id: AMP_INPUT_LOS
+    roles: [inline]
+    severity: critical
+    raised_when: {point: input_power, sees: SIGNAL_LOST}
+    suppression: "Raised only by the first unit on the OMS that loses input; later units are suppressed by the forward defect indication carried on the OSC."
+    first_on_oms: true
+    probable_causes: [{mode: FIBRE_CUT, where: upstream_span}, {mode: SPAN_LOSS_INCREASE, where: upstream_span},
+                      {mode: AMP_PUMP_FAIL, where: upstream_amplifier}]
+  - id: OMS_LOS_P
+    roles: [preamp]
+    severity: critical
+    raised_when: {point: input_power, sees: SIGNAL_LOST}
+    suppression: "As AMP_INPUT_LOS."
+    first_on_oms: true
+    probable_causes: [{mode: FIBRE_CUT, where: upstream_span}, {mode: SPAN_LOSS_INCREASE, where: upstream_span},
+                      {mode: AMP_PUMP_FAIL, where: upstream_amplifier}, {mode: CONNECTOR_PULLED, where: oms_input}]
+  - id: OSC_LOS
+    roles: [inline, preamp]
+    severity: major
+    reported_against: upstream_span
+    raised_when: {point: osc_receiver, sees: OSC_LOST}
+    probable_causes: [{mode: FIBRE_CUT, where: upstream_span}, {mode: SPAN_LOSS_INCREASE, where: upstream_span}]
+  - id: AMP_FAIL
+    roles: [booster, inline, preamp]
+    severity: critical
+    raised_when: {point: output_power, sees: SIGNAL_LOST, condition: "input present"}
+    probable_causes: [{mode: AMP_PUMP_FAIL, where: this_unit}]
+  - id: AMP_GAIN_OOR
+    roles: [inline, preamp]
+    severity: minor
+    raised_when: {point: output_power, condition: "gain deviates from set point by more than 2 dB"}
+    probable_causes: [{mode: AMP_PUMP_FAIL, where: this_unit}, {mode: AMP_GAIN_DROP, where: this_unit}, {mode: PUMP_CURRENT_DRIFT, where: this_unit}]
+  - id: AMP_PUMP_EOL
+    roles: [booster, inline, preamp]
+    severity: minor
+    raised_when: {point: pump_current, condition: "drive current above 120 per cent of beginning-of-life"}
+    probable_causes: [{mode: PUMP_CURRENT_DRIFT, where: this_unit}]

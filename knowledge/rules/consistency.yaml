@@ -1,0 +1,68 @@
+document: "Operator practice: consistency rules for candidate causes"
+note: >
+  The rules of graph consistency (C1) as data. Each rule gives verdicts in order; the first whose conditions all
+  hold is the rule's verdict. Conditions are relations over the case: the effects the documentation predicts for a
+  candidate cause, what was observed, which instruments were examined, which services are down, the records. A
+  condition "not R" may be used only where R is complete; where R is declared incomplete or "as documented", "not R"
+  is unknown, and a verdict that depends on it cannot be reached (the rule says unresolved and asks for R instead).
+  Variables are upper case.
+relations:                         # how far absence of each relation can be trusted
+  required: complete               # the documentation's predictions for this candidate, as computed
+  observed: complete               # the case's observations in the window
+  examined: complete
+  silent: complete
+  must_down: complete
+  can_down: complete
+  down: complete
+  ok: complete
+  downstream_changed: complete
+  downstream_quiet: complete
+  my_reading_changed: complete
+  span_group: complete
+  documented: as_documented        # absence means the documentation does not say
+  common_duct: incomplete          # shared-risk records are incomplete
+  common_cable: incomplete
+rules:
+  - id: R1
+    applies: equipment             # a cause on equipment, with predicted effects
+    verdicts:
+      - {verdict: contradicted, reason: "a required effect was not seen",
+         when: [[required, [K]], [observed, [K], not], [examined, [K]], [silent, [K], not]]}
+      - {verdict: unresolved, reason: "a required effect falls at a silent instrument",
+         when: [[required, [K]], [observed, [K], not], [silent, [K]]]}
+      - {verdict: supported, reason: "every required effect was seen", when: [[required, [K]]]}
+      - {verdict: unresolved, reason: "no required effects to test", when: []}
+  - id: R2
+    applies: equipment_single
+    verdicts:
+      - {verdict: contradicted, reason: "a service it requires down is up", when: [[must_down, [S]], [ok, [S]]]}
+      - {verdict: contradicted, reason: "a service down that it cannot take down", when: [[down, [S]], [can_down, [S], not]]}
+      - {verdict: supported, reason: "accounts for every service down", when: [[down, [S]]]}
+      - {verdict: unresolved, reason: "no service is down", when: []}
+  - id: R3
+    applies: equipment
+    verdicts:
+      - {verdict: unresolved, reason: "nothing observed", when: [[count, observation, "==", 0]]}
+      - {verdict: supported, reason: "explains most observations", when: [[fraction, explained, observation, ">=", 0.7]]}
+      - {verdict: unresolved, reason: "explains little; another cause may be at work", when: []}
+  - id: R4
+    applies: equipment
+    verdicts:
+      - {verdict: supported, reason: "documented for this equipment", when: [[documented, [M, O]]]}
+      - {verdict: contradicted, reason: "not documented for this equipment", when: [[documented, [M, O], not]]}
+      - {verdict: unresolved, reason: "not in this equipment's documentation", when: []}
+  - id: R5
+    applies: several_spans
+    verdicts:
+      - {verdict: supported, reason: "recorded in a common duct", when: [[span_group, [G]], [common_duct, [G]]]}
+      - {verdict: supported, reason: "recorded in a common cable", when: [[span_group, [G]], [common_cable, [G]]]}
+      - {verdict: contradicted, reason: "no common duct or cable",
+         when: [[span_group, [G]], [common_duct, [G], not], [common_cable, [G], not]]}
+      - {verdict: unresolved, reason: "no common duct or cable recorded", when: []}
+  - id: R6
+    applies: instrument
+    verdicts:
+      - {verdict: unresolved, reason: "no reading of this instrument changed", when: [[count, my_reading_changed, "==", 0]]}
+      - {verdict: contradicted, reason: "readings downstream changed with it", when: [[downstream_changed, [E]]]}
+      - {verdict: supported, reason: "instruments downstream saw no change", when: [[downstream_quiet, [E]]]}
+      - {verdict: unresolved, reason: "nothing downstream was examined", when: []}

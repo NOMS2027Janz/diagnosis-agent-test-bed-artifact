@@ -1,0 +1,426 @@
+{
+ "kind": "modes",
+ "seed": "dev",
+ "degradation": {
+  "modes_removed": 18,
+  "probable_causes_removed": 26
+ },
+ "types": {
+  "PLANT-OMS-INPUT": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "PLANT-SPAN": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-100GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-10GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-400GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-MXP-200": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "LASER_BIAS_DRIFT",
+     "description": "Transmit laser ageing; bias current rises; precedes transmitter failure.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "LASER_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 1.0
+    },
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "description": "Receiver degradation; errors at this receiver only, other channels and the optical path normal.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ],
+     "twin_scenario": "rx_penalty",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VA-MXP-400": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "RX_DEGRADATION",
+     "description": "Receiver degradation; errors at this receiver only, other channels and the optical path normal.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "RX_PENALTY",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ],
+     "twin_scenario": "rx_penalty",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VA-OA-BST": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "PUMP_CURRENT_DRIFT",
+     "description": "Pump ageing: drive current rises to hold gain; leads to end-of-life alarm.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.04,
+     "effects": [
+      {
+       "effect": "PUMP_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VA-OA-ILA": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "AMP_GAIN_DROP",
+     "description": "Gain below set point; output power low for all channels.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "all_channels",
+       "where": null
+      },
+      {
+       "effect": "OSNR_LOW",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "amp_gain_change",
+     "confidence": 1.0
+    },
+    {
+     "fault_mode": "AMP_PUMP_FAIL",
+     "description": "Pump laser or unit failure; no output.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "amp_failed",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VA-OA-PRE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-OTN-LC-200": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "description": "Card failure; the channel it transmits is lost at the far end, and the traffic it receives is lost here, with its monitoring silent and its traffic alarms masked by the equipment alarm.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ],
+     "twin_scenario": "card_off",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VA-OTN-LC-400": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "description": "Card failure; the channel it transmits is lost at the far end, and the traffic it receives is lost here, with its monitoring silent and its traffic alarms masked by the equipment alarm.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ],
+     "twin_scenario": "card_off",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VA-OTNSW": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-ROADM-CDC": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "WSS_ATTEN_DRIFT",
+     "description": "WSS attenuation for one channel drifts above its set value; that channel's power is low after the node.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "channel",
+       "where": null
+      }
+     ],
+     "twin_scenario": "wss_channel_loss",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VA-TPD-400": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "description": "Transmit laser off or failed; the far-end receiver of this channel loses signal.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ],
+     "twin_scenario": "tx_off",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VB-CP-100GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-CP-10GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-CP-400GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-MXP-200": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "CARD_FAIL",
+     "description": "Card failure; the channel it transmits is lost at the far end, and the traffic it receives is lost here, with its monitoring silent and its traffic alarms masked by the equipment alarm.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      },
+      {
+       "effect": "UNIT_DOWN",
+       "scope": "this_receiver",
+       "where": null
+      }
+     ],
+     "twin_scenario": "card_off",
+     "confidence": 1.0
+    },
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "description": "Transmit laser off or failed; the far-end receiver of this channel loses signal.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ],
+     "twin_scenario": "tx_off",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VB-MXP-400": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "TX_LASER_FAIL",
+     "description": "Transmit laser off or failed; the far-end receiver of this channel loses signal.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "channel",
+       "where": "far_end_receiver"
+      }
+     ],
+     "twin_scenario": "tx_off",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VB-OA-BST": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OA-ILA": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "AMP_PUMP_FAIL",
+     "description": "Pump laser or unit failure; no output.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.02,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "all_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "amp_failed",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VB-OA-PRE": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "AMP_GAIN_TILT",
+     "description": "Gain tilt across the band; channels at one band edge weaker.",
+     "nature": "soft",
+     "rate_per_year_per_unit": 0.01,
+     "effects": [
+      {
+       "effect": "POWER_LOW",
+       "scope": "some_channels",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 1.0
+    },
+    {
+     "fault_mode": "PUMP_CURRENT_DRIFT",
+     "description": "Pump ageing: drive current rises to hold gain; leads to end-of-life alarm.",
+     "nature": "incipient",
+     "rate_per_year_per_unit": 0.04,
+     "effects": [
+      {
+       "effect": "PUMP_AGEING",
+       "scope": "unit",
+       "where": null
+      }
+     ],
+     "twin_scenario": "none",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VB-OTN-LC-200": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OTN-LC-400": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OTNSW": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "OTN_SWITCH_FAIL",
+     "description": "Switch fabric failure; every ODU cross-connected through the switch is interrupted.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.004,
+     "effects": [
+      {
+       "effect": "ODU_AIS",
+       "scope": "every_odu_through",
+       "where": null
+      }
+     ],
+     "twin_scenario": "switch_failed",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VB-ROADM-CDC": {
+   "gaps": [],
+   "added_modes": [
+    {
+     "fault_mode": "WSS_PORT_FAIL",
+     "description": "A WSS input port fails: every channel arriving at the node on that degree is blocked there; channels arriving on other degrees are unaffected.",
+     "nature": "hard",
+     "rate_per_year_per_unit": 0.004,
+     "effects": [
+      {
+       "effect": "SIGNAL_LOST",
+       "scope": "port",
+       "where": null
+      }
+     ],
+     "twin_scenario": "wss_port_blocked",
+     "confidence": 1.0
+    }
+   ]
+  },
+  "VB-TPD-400": {
+   "gaps": [],
+   "added_modes": []
+  }
+ }
+}

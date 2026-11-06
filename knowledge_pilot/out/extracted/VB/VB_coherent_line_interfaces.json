@@ -1,0 +1,463 @@
+{
+ "vendor": "VB",
+ "document_title": "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5",
+ "standards": [
+  "ITU-T G.798"
+ ],
+ "unit_types": [
+  {
+   "product_code": "VB-TPD-400",
+   "unit": "Transponder",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VB-MXP-200",
+   "unit": "Muxponder",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "200G",
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VB-MXP-400",
+   "unit": "Muxponder",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VB-OTN-LC-200",
+   "unit": "OTN line card",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "200G",
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VB-OTN-LC-400",
+   "unit": "OTN line card",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": null
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "400G",
+   "value": "DP-16QAM at 64 GBd, OTUC4 framing."
+  },
+  {
+   "item": "200G",
+   "value": "DP-QPSK at 64 GBd, OTUC2 framing."
+  },
+  {
+   "item": "Receiver loss-of-signal threshold",
+   "value": "-25 dBm."
+  },
+  {
+   "item": "FEC",
+   "value": "Soft-decision FEC; the pre-FEC bit error ratio limit is about 2e-2."
+  },
+  {
+   "item": "Differential group delay tolerance",
+   "value": "30 ps."
+  },
+  {
+   "item": "Polarisation tracking",
+   "value": "about 1 Mrad/s. Faster changes of the state of polarisation cause errors."
+  }
+ ],
+ "monitors": [
+  {
+   "name": "Receive performance counters",
+   "measures": [
+    "Received power",
+    "errored seconds, in 15-minute bins"
+   ],
+   "availability": "All units",
+   "applies_to": [
+    "All units"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "Received power",
+   "measures": [
+    "Optical power"
+   ],
+   "availability": "Units with the power monitoring option",
+   "applies_to": [
+    "Units with the power monitoring option"
+   ],
+   "location": "the line receiver",
+   "alarm_only": false
+  },
+  {
+   "name": "Coherent DSP monitors",
+   "measures": [
+    "Estimated OSNR",
+    "pre-FEC bit error ratio",
+    "differential group delay",
+    "polarisation change rate"
+   ],
+   "availability": "Units with the advanced monitoring option",
+   "applies_to": [
+    "Units with the advanced monitoring option"
+   ],
+   "location": null,
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "the unit"
+   ],
+   "when": [
+    "no light reaches the receiver"
+   ],
+   "result": [
+    "declares loss of signal (G.798 dLOS)",
+    "loses OTU frame alignment"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "the unit"
+   ],
+   "when": [
+    "the unit itself has failed"
+   ],
+   "result": [
+    "declares an equipment defect (dEQ)",
+    "frame alignment is lost",
+    "the unit's traffic alarms are masked by the equipment alarm"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "the signal"
+   ],
+   "when": [
+    "the signal arrives but is impaired",
+    "lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin"
+   ],
+   "result": [
+    "pre-FEC errors appear"
+   ],
+   "threshold": "once the impairment exceeds the channel's margin",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "the signal"
+   ],
+   "when": [
+    "the signal arrives but is impaired",
+    "lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin"
+   ],
+   "result": [
+    "frame alignment is lost"
+   ],
+   "threshold": "once it exceeds the margin by a wide amount",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "the receiver"
+   ],
+   "when": [
+    "Polarisation changes faster than the tracking range"
+   ],
+   "result": [
+    "produce errored seconds"
+   ],
+   "threshold": "faster than the tracking range",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "every ODU the OTU carries"
+   ],
+   "when": [
+    "frame alignment is lost"
+   ],
+   "result": [
+    "an ODU alarm indication signal is inserted downstream"
+   ],
+   "threshold": null,
+   "note": "G.798 consequent actions"
+  },
+  {
+   "applies_to": [
+    "the far-end transmitter"
+   ],
+   "when": [
+    "frame alignment is lost"
+   ],
+   "result": [
+    "a backward defect indication is sent"
+   ],
+   "threshold": null,
+   "note": "G.798 consequent actions"
+  }
+ ],
+ "faults": [
+  {
+   "name": "Transmit laser failure",
+   "applies_to": [
+    "All units"
+   ],
+   "description": "The transmit laser is off or has failed.",
+   "effects": [
+    {
+     "effect": "loses the signal",
+     "scope": "this channel",
+     "where": "The receiver at the far end"
+    }
+   ],
+   "character": "Hard failure",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "about 0.5 per cent of units per year"
+  },
+  {
+   "name": "Card failure",
+   "applies_to": [
+    "All units"
+   ],
+   "description": "The card fails.",
+   "effects": [
+    {
+     "effect": "is lost",
+     "scope": "The channel it transmits",
+     "where": "at the far end"
+    },
+    {
+     "effect": "is lost",
+     "scope": "the traffic it receives",
+     "where": "here"
+    },
+    {
+     "effect": "goes silent",
+     "scope": "its monitoring",
+     "where": null
+    },
+    {
+     "effect": "are masked by the equipment alarm",
+     "scope": "its traffic alarms",
+     "where": null
+    }
+   ],
+   "character": "Hard failure",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "about 0.5 per cent of units per year"
+  },
+  {
+   "name": "Receiver degradation",
+   "applies_to": [
+    "All units"
+   ],
+   "description": "The receiver degrades.",
+   "effects": [
+    {
+     "effect": "Errors appear",
+     "scope": "this receiver only",
+     "where": "this receiver"
+    },
+    {
+     "effect": "are normal",
+     "scope": "other channels",
+     "where": null
+    },
+    {
+     "effect": "is normal",
+     "scope": "the optical path",
+     "where": null
+    }
+   ],
+   "character": "A degradation, not an outage",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "about 1 per cent of units per year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "OCH_LOS",
+   "raised_by": [
+    "All units"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "No light at the line receiver.",
+   "raised_when": "No light at the line receiver.",
+   "probable_causes": [
+    {
+     "cause": "the far-end transmitter's laser has failed",
+     "where": "the far-end transmitter"
+    },
+    {
+     "cause": "the far-end card has failed",
+     "where": "the far end"
+    },
+    {
+     "cause": "a broken fibre",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a failed amplifier",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a disconnected patch cord",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a blocked ROADM port",
+     "where": "along the channel's path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "the line receiver"
+  },
+  {
+   "id": "OTU_LOF",
+   "raised_by": [
+    "All units"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "OTU frame alignment lost while light is present.",
+   "raised_when": "OTU frame alignment lost while light is present.",
+   "probable_causes": [
+    {
+     "cause": "a rise in fibre loss",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a rise in an amplifier's noise",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a rise in differential group delay",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a misaligned ROADM passband",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a fast polarisation transient",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "degradation of this unit's own receiver",
+     "where": "this unit's own receiver"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "OTU_SD",
+   "raised_by": [
+    "All units"
+   ],
+   "severity": "minor",
+   "monitor": "pre-FEC errors",
+   "symptom": "Signal degraded: pre-FEC errors above threshold",
+   "raised_when": "the margin falls below about 1 dB",
+   "probable_causes": [
+    {
+     "cause": "a rise in fibre loss",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a rise in an amplifier's noise",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a dirty connector",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a misaligned ROADM passband",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "a rise in differential group delay",
+     "where": "along the channel's path"
+    },
+    {
+     "cause": "degradation of this unit's own receiver",
+     "where": "this unit's own receiver"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "OTU_BDI",
+   "raised_by": [
+    "All units"
+   ],
+   "severity": "not alarmed",
+   "monitor": null,
+   "symptom": "The far end reports a defect on the signal this unit transmits.",
+   "raised_when": "The far end reports a defect on the signal this unit transmits.",
+   "probable_causes": [
+    {
+     "cause": "any failure",
+     "where": "on the path to the far end"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "the signal this unit transmits"
+  },
+  {
+   "id": "EQPT_TX_FAIL",
+   "raised_by": [
+    "All units"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "The unit has detected a fault in its transmit laser.",
+   "raised_when": "The unit has detected a fault in its transmit laser.",
+   "probable_causes": [
+    {
+     "cause": "transmit laser failure",
+     "where": "on this unit"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "this unit"
+  },
+  {
+   "id": "EQPT_CARD_FAIL",
+   "raised_by": [
+    "All units"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "Card hardware fault.",
+   "raised_when": "Card hardware fault.",
+   "probable_causes": [
+    {
+     "cause": "failure",
+     "where": "this card"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "this card"
+  }
+ ],
+ "routing": "When frame alignment is lost, the unit applies the G.798 consequent actions: an ODU alarm indication signal is inserted downstream on every ODU the OTU carries, and a backward defect indication is sent to the far-end transmitter.",
+ "troubleshooting_notes": [
+  "Errors on one channel only, with the optical path and the neighbouring channels normal, point to the receiver.",
+  "Errors on every channel of a line point to the line, not to the interfaces."
+ ]
+}

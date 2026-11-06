@@ -1,0 +1,97 @@
+document: "Spectral addenda: fault modes documented when channel-shape effects are modelled (spectral mode only)"
+note: >
+  Loaded only in spectral mode (world/spectral.py; ADAGENT_SPECTRAL=1), together with the cascade physics they
+  describe. Written in the style of the vendor packages they extend. Stated assumptions, not vendor commitments.
+extends:
+- package: packages/VA/roadm.yaml
+  fault_modes:
+  - id: WSS_FILTER_NARROWING
+    description: WSS passband for one channel narrowed or its edges softened (ageing or a configuration fault); power about
+      normal, signal quality reduced, worse through a cascade.
+    effects:
+    - effect: FILTER_PENALTY
+      scope: channel
+    nature: soft
+    documented_rate:
+      per_year: 0.004
+      per: degree
+    twin_scenario:
+      kind: wss_filter_narrowing
+      parameter: narrowing_ghz
+      range:
+      - 4
+      - 20
+- package: packages/VB/roadm.yaml
+  fault_modes:
+  - id: WSS_FILTER_NARROWING
+    description: WSS passband for one channel narrowed or its edges softened; power about normal, signal quality reduced.
+    effects:
+    - effect: FILTER_PENALTY
+      scope: channel
+    nature: soft
+    documented_rate:
+      per_year: 0.004
+      per: degree
+    twin_scenario:
+      kind: wss_filter_narrowing
+      parameter: narrowing_ghz
+      range:
+      - 4
+      - 20
+- package: packages/VA/line.yaml
+  fault_modes:
+  - id: LASER_FREQ_DRIFT
+    description: Transmit laser frequency off its grid point (wavelength locker fault); the channel is clipped by every
+      filter on its path, worst where filters are narrow.
+    effects:
+    - effect: FILTER_PENALTY
+      scope: channel
+    nature: soft
+    documented_rate:
+      per_year: 0.005
+      per: unit
+    twin_scenario:
+      kind: tx_laser_offset
+      parameter: offset_ghz
+      range:
+      - 2
+      - 14
+  alarm_causes:
+    OTU_LOF:
+    - mode: WSS_FILTER_NARROWING
+      where: upstream_on_path
+    - mode: LASER_FREQ_DRIFT
+      where: far_end_transmitter
+    OTU_SD:
+    - mode: WSS_FILTER_NARROWING
+      where: upstream_on_path
+    - mode: LASER_FREQ_DRIFT
+      where: far_end_transmitter
+- package: packages/VB/line.yaml
+  fault_modes:
+  - id: LASER_FREQ_DRIFT
+    description: Transmit laser frequency off its grid point; the channel is clipped by every filter on its path.
+    effects:
+    - effect: FILTER_PENALTY
+      scope: channel
+    nature: soft
+    documented_rate:
+      per_year: 0.005
+      per: unit
+    twin_scenario:
+      kind: tx_laser_offset
+      parameter: offset_ghz
+      range:
+      - 2
+      - 14
+  alarm_causes:
+    OTU_LOF:
+    - mode: WSS_FILTER_NARROWING
+      where: upstream_on_path
+    - mode: LASER_FREQ_DRIFT
+      where: far_end_transmitter
+    OTU_SD:
+    - mode: WSS_FILTER_NARROWING
+      where: upstream_on_path
+    - mode: LASER_FREQ_DRIFT
+      where: far_end_transmitter

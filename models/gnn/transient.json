@@ -1,0 +1,76 @@
+{
+ "version": "0.1",
+ "train_cases": 8000,
+ "held_cases": 1000,
+ "epochs": 20,
+ "hidden": 32,
+ "layers": 3,
+ "loss": [
+  "epoch 18/20 loss 0.5653",
+  "epoch 19/20 loss 0.5544",
+  "epoch 20/20 loss 0.5511"
+ ],
+ "temperature": 1.3647,
+ "abstain_threshold": 0.624312,
+ "held_out": {
+  "cases": 1000,
+  "abstain_on_negatives": 0.98,
+  "by_kind": {
+   "PROTECTION_SWITCH_HIT": {
+    "n": 163,
+    "spoke": 163,
+    "kind_right": 163,
+    "loc_top1": 163,
+    "loc_top3": 163
+   },
+   "CHANNEL_LOADING_TRANSIENT": {
+    "n": 152,
+    "spoke": 135,
+    "kind_right": 134,
+    "loc_top1": 124,
+    "loc_top3": 125
+   },
+   "MECHANICAL_DISTURBANCE": {
+    "n": 166,
+    "spoke": 148,
+    "kind_right": 141,
+    "loc_top1": 125,
+    "loc_top3": 134
+   },
+   "SOP_TRANSIENT": {
+    "n": 166,
+    "spoke": 130,
+    "kind_right": 124,
+    "loc_top1": 117,
+    "loc_top3": 124
+   }
+  }
+ },
+ "reliability": [
+  {
+   "bin": "0.2-0.4",
+   "n": 1,
+   "stated": 0.348,
+   "observed": 0.0
+  },
+  {
+   "bin": "0.4-0.6",
+   "n": 22,
+   "stated": 0.527,
+   "observed": 0.409
+  },
+  {
+   "bin": "0.6-0.8",
+   "n": 235,
+   "stated": 0.743,
+   "observed": 0.732
+  },
+  {
+   "bin": "0.8-1.0",
+   "n": 742,
+   "stated": 0.955,
+   "observed": 0.969
+  }
+ ],
+ "seconds": 6729
+}

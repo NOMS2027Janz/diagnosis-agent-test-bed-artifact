@@ -1,0 +1,712 @@
+{
+ "pair": "VB-op",
+ "condition": "none",
+ "model": "gpt-5.6",
+ "correspondences": [
+  {
+   "a_id": "cause.wss_attenuation_drift",
+   "b_id": "op.WSS_ATTEN_DRIFT",
+   "confidence": 0.99,
+   "rationale": "Both denote a change in per-channel WSS attenuation that alters channel power."
+  },
+  {
+   "a_id": "cause.wss_passband_shift",
+   "b_id": "op.WSS_FILTER_SHIFT",
+   "confidence": 0.99,
+   "rationale": "Both denote frequency misalignment of a WSS passband for one channel."
+  },
+  {
+   "a_id": "cause.wss_input_port_failure",
+   "b_id": "op.WSS_PORT_FAIL",
+   "confidence": 0.95,
+   "rationale": "Both denote hard failure of a WSS port; model A specifies the degree input port and its all-channel impact."
+  },
+  {
+   "a_id": "cause.transmit_laser_failure",
+   "b_id": "op.TX_LASER_FAIL",
+   "confidence": 0.99,
+   "rationale": "Both denote failure of a coherent line transmitter's laser."
+  },
+  {
+   "a_id": "cause.card_failure",
+   "b_id": "op.CARD_FAIL",
+   "confidence": 0.99,
+   "rationale": "Both denote a complete hardware failure of a card."
+  },
+  {
+   "a_id": "cause.receiver_degradation",
+   "b_id": "op.RX_DEGRADATION",
+   "confidence": 0.99,
+   "rationale": "Both denote receiver-local degradation that adds a coherent-receiver penalty."
+  },
+  {
+   "a_id": "cause.broken_fibre",
+   "b_id": "op.FIBRE_CUT",
+   "confidence": 0.99,
+   "rationale": "Both denote a hard physical fibre break that prevents light from passing."
+  },
+  {
+   "a_id": "cause.disconnected_patch_cord",
+   "b_id": "op.CONNECTOR_PULLED",
+   "confidence": 0.99,
+   "rationale": "Both denote an unplugged connector or patch cord that opens the optical path."
+  },
+  {
+   "a_id": "cause.fibre_loss_rise",
+   "b_id": "op.SPAN_LOSS_INCREASE",
+   "confidence": 0.98,
+   "rationale": "Both denote increased attenuation in a fibre span, such as from a bend or stressed cable."
+  },
+  {
+   "a_id": "cause.amplifier_noise_rise",
+   "b_id": "op.AMP_NF_RISE",
+   "confidence": 0.98,
+   "rationale": "Both denote increased noise contribution or noise figure from an amplifier."
+  },
+  {
+   "a_id": "cause.dgd_rise",
+   "b_id": "op.DGD_RISE",
+   "confidence": 0.99,
+   "rationale": "Both denote an increase in differential group delay on the fibre path."
+  },
+  {
+   "a_id": "cause.fast_polarisation",
+   "b_id": "op.SOP_TRANSIENT",
+   "confidence": 0.98,
+   "rationale": "Both denote a rapid state-of-polarisation change that can exceed receiver tracking."
+  },
+  {
+   "a_id": "cause.dirty_connector",
+   "b_id": "op.CONNECTOR_DIRTY",
+   "confidence": 0.99,
+   "rationale": "Both denote connector contamination that adds optical loss or penalty."
+  },
+  {
+   "a_id": "cause.pump_or_unit_failure",
+   "b_id": "op.AMP_PUMP_FAIL",
+   "confidence": 0.99,
+   "rationale": "Both cover pump-laser or amplifier-unit failure resulting in no optical output."
+  },
+  {
+   "a_id": "cause.gain_loss",
+   "b_id": "op.AMP_GAIN_DROP",
+   "confidence": 0.99,
+   "rationale": "Both denote amplifier gain falling below its configured set point."
+  },
+  {
+   "a_id": "cause.pump_ageing",
+   "b_id": "op.PUMP_CURRENT_DRIFT",
+   "confidence": 0.96,
+   "rationale": "Both denote ageing of an amplifier pump manifested as upward drive-current drift."
+  },
+  {
+   "a_id": "cause.gain_tilt",
+   "b_id": "op.AMP_GAIN_TILT",
+   "confidence": 0.99,
+   "rationale": "Both denote a non-flat amplifier gain profile across the optical band."
+  },
+  {
+   "a_id": "cause.switch_fabric_failure",
+   "b_id": "op.OTN_SWITCH_FAIL",
+   "confidence": 0.99,
+   "rationale": "Both denote hard failure of an OTN switch's ODU cross-connect fabric."
+  },
+  {
+   "a_id": "cause.wrong_cross_connection",
+   "b_id": "op.XC_MISCONNECT",
+   "confidence": 0.99,
+   "rationale": "Both denote an incorrectly configured OTN cross-connect that misroutes an ODU."
+  },
+  {
+   "a_id": "cause.client_port_failure",
+   "b_id": "op.CLIENT_PORT_FAIL",
+   "confidence": 0.99,
+   "rationale": "Both denote failure of a client port or its associated optic."
+  },
+  {
+   "a_id": "condition.low_power",
+   "b_id": "op.POWER_LOW",
+   "confidence": 0.99,
+   "rationale": "Both denote optical signal power below its expected operating level."
+  },
+  {
+   "a_id": "condition.signal_quality_reduced",
+   "b_id": "op.FILTER_PENALTY",
+   "confidence": 0.93,
+   "rationale": "Model A's normal-power quality reduction is the state produced by the spectral narrowing or misalignment described in model B."
+  },
+  {
+   "a_id": "condition.no_light",
+   "b_id": "op.SIGNAL_LOST",
+   "confidence": 0.98,
+   "rationale": "Both denote absent optical energy, including power below receiver detection."
+  },
+  {
+   "a_id": "condition.frame_alignment_lost",
+   "b_id": "op.OTU_FRAME_LOST",
+   "confidence": 0.99,
+   "rationale": "Both denote loss of OTU frame alignment at a line receiver."
+  },
+  {
+   "a_id": "condition.unit_failed",
+   "b_id": "op.UNIT_DOWN",
+   "confidence": 0.94,
+   "rationale": "Both denote a failed equipment unit that cannot carry traffic; model B additionally states that monitoring values become invalid."
+  },
+  {
+   "a_id": "condition.prefec_errors",
+   "b_id": "op.OTU_ERRORED",
+   "confidence": 0.99,
+   "rationale": "Both denote pre-FEC errors above the signal-degrade threshold while OTU framing remains aligned."
+  },
+  {
+   "a_id": "condition.fast_polarisation",
+   "b_id": "op.POL_TRANSIENT",
+   "confidence": 0.98,
+   "rationale": "Both denote a rapid state-of-polarisation change."
+  },
+  {
+   "a_id": "condition.errors_appear",
+   "b_id": "op.RX_PENALTY",
+   "confidence": 0.91,
+   "rationale": "Both denote degradation confined to the local receiver rather than propagated along the optical path."
+  },
+  {
+   "a_id": "condition.snr_falls",
+   "b_id": "op.OSNR_LOW",
+   "confidence": 0.96,
+   "rationale": "Both denote reduced optical signal-to-noise ratio; model A applies it to every carried channel in its context."
+  },
+  {
+   "a_id": "condition.osc_loss",
+   "b_id": "op.OSC_LOST",
+   "confidence": 0.99,
+   "rationale": "Both denote section-local loss of the optical supervisory channel, which is regenerated at amplifier sites."
+  },
+  {
+   "a_id": "condition.drive_current_raised",
+   "b_id": "op.PUMP_AGEING",
+   "confidence": 0.99,
+   "rationale": "Both denote rising pump drive current used to maintain amplifier gain as the pump ages."
+  },
+  {
+   "a_id": "condition.odu_ais",
+   "b_id": "op.ODU_AIS",
+   "confidence": 0.96,
+   "rationale": "Both denote the ODU alarm-indication signal present on an ODU path."
+  },
+  {
+   "a_id": "condition.client_service_failed",
+   "b_id": "op.CLIENT_DOWN",
+   "confidence": 0.99,
+   "rationale": "Both denote interruption or loss of the client service."
+  },
+  {
+   "a_id": "condition.brief_hit",
+   "b_id": "op.CLIENT_HIT",
+   "confidence": 0.99,
+   "rationale": "Both denote a brief client-service interruption during protection switching."
+  },
+  {
+   "a_id": "condition.wrong_destination",
+   "b_id": "op.ODU_MISROUTED",
+   "confidence": 0.99,
+   "rationale": "Both denote an ODU delivered to an unintended destination by a cross-connect."
+  },
+  {
+   "a_id": "characteristic.channel_power",
+   "b_id": "op.ocm_channel_power",
+   "confidence": 0.99,
+   "rationale": "Both denote per-channel optical power measured by a ROADM channel monitor."
+  },
+  {
+   "a_id": "characteristic.osnr",
+   "b_id": "op.ocm_osnr",
+   "confidence": 0.98,
+   "rationale": "Both denote per-channel OSNR exposed by optical channel monitoring."
+  },
+  {
+   "a_id": "characteristic.received_power",
+   "b_id": "op.rx_power",
+   "confidence": 0.99,
+   "rationale": "Both denote optical power measured at the line receiver input."
+  },
+  {
+   "a_id": "characteristic.errored_seconds",
+   "b_id": "op.errored_seconds_pm15",
+   "confidence": 0.99,
+   "rationale": "Both denote line errored-second counts accumulated in 15-minute bins."
+  },
+  {
+   "a_id": "characteristic.prefec_ber",
+   "b_id": "op.pre_fec_ber",
+   "confidence": 0.99,
+   "rationale": "Both denote pre-FEC bit error ratio at a coherent receiver."
+  },
+  {
+   "a_id": "characteristic.dgd",
+   "b_id": "op.dgd",
+   "confidence": 0.99,
+   "rationale": "Both denote differential group delay estimated or measured at the coherent receiver."
+  },
+  {
+   "a_id": "characteristic.polarisation_rate",
+   "b_id": "op.sop_rate",
+   "confidence": 0.99,
+   "rationale": "Both denote the rate of change of received state of polarisation."
+  },
+  {
+   "a_id": "characteristic.input_power",
+   "b_id": "op.amp_input_power",
+   "confidence": 0.99,
+   "rationale": "Both denote total optical power at an amplifier input."
+  },
+  {
+   "a_id": "characteristic.output_power",
+   "b_id": "op.amp_output_power",
+   "confidence": 0.99,
+   "rationale": "Both denote total optical power at an amplifier output."
+  },
+  {
+   "a_id": "characteristic.pump_current",
+   "b_id": "op.pump_current_pct",
+   "confidence": 0.99,
+   "rationale": "Both denote pump drive current expressed as a percentage of beginning-of-life current."
+  },
+  {
+   "a_id": "characteristic.client_es",
+   "b_id": "op.client_errored_seconds_pm15",
+   "confidence": 0.99,
+   "rationale": "Both denote client errored seconds reported in 15-minute bins."
+  },
+  {
+   "a_id": "characteristic.client_uas",
+   "b_id": "op.client_unavailable_seconds_pm15",
+   "confidence": 0.99,
+   "rationale": "Both denote client unavailable seconds reported in 15-minute bins."
+  },
+  {
+   "a_id": "resource.roadm",
+   "b_id": "op.ROADM",
+   "confidence": 0.99,
+   "rationale": "Both denote a reconfigurable optical add/drop multiplexer based on WSS switching."
+  },
+  {
+   "a_id": "resource.transponder",
+   "b_id": "op.kind:transponder",
+   "confidence": 0.99,
+   "rationale": "Both denote the transponder kind of coherent line interface."
+  },
+  {
+   "a_id": "resource.muxponder",
+   "b_id": "op.kind:muxponder",
+   "confidence": 0.99,
+   "rationale": "Both denote the muxponder kind of coherent line interface."
+  },
+  {
+   "a_id": "resource.otn_line_card",
+   "b_id": "op.kind:otn_line",
+   "confidence": 0.99,
+   "rationale": "Both denote an OTN line-card implementation of a line interface."
+  },
+  {
+   "a_id": "resource.booster",
+   "b_id": "op.role:booster",
+   "confidence": 0.99,
+   "rationale": "Both denote an amplifier operating at the transmitting end of an optical multiplex section."
+  },
+  {
+   "a_id": "resource.line_amplifier",
+   "b_id": "op.role:inline",
+   "confidence": 0.99,
+   "rationale": "Both denote an inline amplifier at an intermediate amplifier site."
+  },
+  {
+   "a_id": "resource.preamplifier",
+   "b_id": "op.role:preamp",
+   "confidence": 0.99,
+   "rationale": "Both denote a preamplifier at the receiving end of an optical multiplex section."
+  },
+  {
+   "a_id": "resource.otn_switch",
+   "b_id": "op.OTNSwitch",
+   "confidence": 0.99,
+   "rationale": "Both denote an OTN switch containing an ODU cross-connect fabric."
+  },
+  {
+   "a_id": "resource.client_port",
+   "b_id": "op.ClientPort",
+   "confidence": 0.99,
+   "rationale": "Both denote a generic client-facing port that maps a client signal into an ODU."
+  },
+  {
+   "a_id": "scope.channel",
+   "b_id": "op.channel",
+   "confidence": 0.99,
+   "rationale": "Both denote one optical wavelength channel."
+  },
+  {
+   "a_id": "scope.arriving_channels",
+   "b_id": "op.port",
+   "confidence": 0.98,
+   "rationale": "Both denote every channel arriving through one ROADM degree's input port."
+  },
+  {
+   "a_id": "scope.receiver_only",
+   "b_id": "op.this_receiver",
+   "confidence": 0.99,
+   "rationale": "Both restrict impact to the particular receiver being diagnosed."
+  },
+  {
+   "a_id": "scope.unit",
+   "b_id": "op.unit",
+   "confidence": 0.99,
+   "rationale": "Both denote the equipment unit itself rather than its traffic."
+  },
+  {
+   "a_id": "scope.every_channel",
+   "b_id": "op.all_channels",
+   "confidence": 0.98,
+   "rationale": "Both denote all wavelength channels in the relevant multiplexed signal."
+  },
+  {
+   "a_id": "scope.some_channels",
+   "b_id": "op.some_channels",
+   "confidence": 0.99,
+   "rationale": "Both denote a proper subset of channels rather than all channels."
+  },
+  {
+   "a_id": "scope.cross_connected_odus",
+   "b_id": "op.every_odu_through",
+   "confidence": 0.99,
+   "rationale": "Both denote every ODU cross-connected through the referenced switch."
+  },
+  {
+   "a_id": "scope.one_odu",
+   "b_id": "op.one_odu",
+   "confidence": 0.99,
+   "rationale": "Both denote a single ODU trail or container."
+  },
+  {
+   "a_id": "scope.client_service",
+   "b_id": "op.this_service",
+   "confidence": 0.99,
+   "rationale": "Both denote the particular client service under discussion."
+  },
+  {
+   "a_id": "location.this_unit",
+   "b_id": "op.this_unit",
+   "confidence": 0.99,
+   "rationale": "Both denote the local unit that raised the alarm or experienced the change."
+  },
+  {
+   "a_id": "location.this_port",
+   "b_id": "op.this_port",
+   "confidence": 0.99,
+   "rationale": "Both denote the particular local port reporting the alarm."
+  },
+  {
+   "a_id": "location.feeding_fibre",
+   "b_id": "op.upstream_span",
+   "confidence": 0.99,
+   "rationale": "Both denote the fibre span immediately upstream of and feeding the unit."
+  },
+  {
+   "a_id": "location.preceding_amplifier",
+   "b_id": "op.upstream_amplifier",
+   "confidence": 0.98,
+   "rationale": "Both denote the immediately preceding optical amplifier on the signal path."
+  },
+  {
+   "a_id": "location.multiplex_input",
+   "b_id": "op.oms_input",
+   "confidence": 0.99,
+   "rationale": "Both denote the patch or connection at the optical multiplex-section input."
+  },
+  {
+   "a_id": "location.channel_path",
+   "b_id": "op.upstream_on_path",
+   "confidence": 0.84,
+   "rationale": "Both refer to fault locations along the optical channel path before the observing receiver, though model B enumerates the upstream components more explicitly."
+  },
+  {
+   "a_id": "location.far_end_transmitter",
+   "b_id": "op.far_end_transmitter",
+   "confidence": 0.99,
+   "rationale": "Both denote the remote line transmitter whose lightpath terminates at the local unit."
+  },
+  {
+   "a_id": "location.far_end_receiver",
+   "b_id": "op.far_end_receiver",
+   "confidence": 0.99,
+   "rationale": "Both denote the remote receiver terminating the signal sent by the local unit."
+  },
+  {
+   "a_id": "location.path_far_end",
+   "b_id": "op.path_to_far_end",
+   "confidence": 0.94,
+   "rationale": "Both denote the end-to-end path between the local unit and the far-end line interface."
+  },
+  {
+   "a_id": "location.either_end",
+   "b_id": "op.either_port",
+   "confidence": 0.94,
+   "rationale": "Both denote either endpoint of the client service, with model B explicitly identifying the endpoint client ports."
+  },
+  {
+   "a_id": "location.otn_switch_path",
+   "b_id": "op.odu_path_switch",
+   "confidence": 0.99,
+   "rationale": "Both denote an OTN switch or cross-connect located along the service's ODU path."
+  },
+  {
+   "a_id": "location.working_path",
+   "b_id": "op.working_odu_path",
+   "confidence": 0.99,
+   "rationale": "Both denote the working ODU path and the components on which it depends."
+  },
+  {
+   "a_id": "location.protection_path",
+   "b_id": "op.protection_odu_path",
+   "confidence": 0.99,
+   "rationale": "Both denote the protection ODU path and the components on which it depends."
+  },
+  {
+   "a_id": "location.current_odu_path",
+   "b_id": "op.active_odu_path",
+   "confidence": 0.99,
+   "rationale": "Both denote the ODU path currently selected to carry the service."
+  },
+  {
+   "a_id": "availability.all_units",
+   "b_id": "op.baseline",
+   "confidence": 0.96,
+   "rationale": "Both denote baseline monitoring available across applicable units without an optional telemetry package."
+  },
+  {
+   "a_id": "availability.power_monitoring",
+   "b_id": "op.power",
+   "confidence": 0.99,
+   "rationale": "Both denote availability of optical input, output, and received-power monitoring."
+  },
+  {
+   "a_id": "availability.channel_monitoring",
+   "b_id": "op.ocm",
+   "confidence": 0.99,
+   "rationale": "Both denote optional per-channel power and OSNR monitoring at ROADMs."
+  },
+  {
+   "a_id": "availability.advanced_monitoring",
+   "b_id": "op.coherent",
+   "confidence": 0.98,
+   "rationale": "Both denote advanced coherent-DSP and equipment-health telemetry."
+  },
+  {
+   "a_id": "nature.hard_failure",
+   "b_id": "op.hard",
+   "confidence": 0.99,
+   "rationale": "Both denote an abrupt hard failure causing traffic or signal outage."
+  },
+  {
+   "a_id": "nature.degradation_not_outage",
+   "b_id": "op.soft",
+   "confidence": 0.99,
+   "rationale": "Both denote reduced quality while traffic remains carried rather than a total outage."
+  },
+  {
+   "a_id": "nature.slow_incipent",
+   "b_id": "op.incipient",
+   "confidence": 0.99,
+   "rationale": "Both denote a slow precursor trend before traffic is affected."
+  },
+  {
+   "a_id": "severity.critical",
+   "b_id": "op.critical",
+   "confidence": 0.99,
+   "rationale": "Both denote critical alarm severity."
+  },
+  {
+   "a_id": "severity.major",
+   "b_id": "op.major",
+   "confidence": 0.99,
+   "rationale": "Both denote major alarm severity."
+  },
+  {
+   "a_id": "severity.minor",
+   "b_id": "op.minor",
+   "confidence": 0.99,
+   "rationale": "Both denote minor alarm severity."
+  },
+  {
+   "a_id": "severity.not_alarmed",
+   "b_id": "op.not_alarmed",
+   "confidence": 0.99,
+   "rationale": "Both denote a reported condition with no active alarm severity."
+  },
+  {
+   "a_id": "behaviour.roadm_switching",
+   "b_id": "op.routing:per channel",
+   "confidence": 0.97,
+   "rationale": "Both denote independent per-channel ROADM switching, allowing a line-wide condition to continue on each routed channel."
+  }
+ ],
+ "residual_a": [
+  "cause.failed_amplifier",
+  "cause.any_failure",
+  "cause.failure",
+  "cause.pump_laser_failure",
+  "cause.unit_failure",
+  "condition.line_impairment",
+  "condition.channel_impairment_onwards",
+  "condition.power_loss_8db",
+  "condition.relevelled",
+  "condition.not_low_power",
+  "condition.snr_loss_remains",
+  "condition.larger_loss",
+  "condition.unchanged",
+  "condition.power_normal",
+  "condition.blocked",
+  "condition.unaffected",
+  "condition.dlos",
+  "condition.equipment_defect",
+  "condition.alarms_masked",
+  "condition.signal_impaired",
+  "condition.errored_seconds",
+  "condition.odu_ais_inserted",
+  "condition.bdi_sent",
+  "condition.signal_lost",
+  "condition.lost",
+  "condition.monitoring_silent",
+  "condition.normal",
+  "condition.far_end_defect",
+  "condition.tx_fault_detected",
+  "condition.card_hardware_fault",
+  "condition.units_operate",
+  "condition.constant_gain",
+  "condition.less_light_input",
+  "condition.not_propagate",
+  "condition.no_light_output",
+  "condition.output_noisier",
+  "condition.traffic_unaffected",
+  "condition.early_warning",
+  "condition.eol_alarm",
+  "condition.weaker_channels",
+  "condition.affected",
+  "condition.input_light_no_output",
+  "condition.gain_oor",
+  "condition.pump_current_120",
+  "condition.odu_ais_onwards",
+  "condition.wrong_source",
+  "condition.service_protected",
+  "condition.path_free",
+  "condition.interrupted",
+  "condition.ais_carried",
+  "condition.no_optical_symptom",
+  "condition.fails",
+  "condition.odu_bdi",
+  "condition.odu_tim",
+  "condition.prot_active",
+  "condition.prot_unavail",
+  "condition.port_fault",
+  "condition.fabric_fault",
+  "characteristic.osc_presence",
+  "resource.all_units",
+  "resource.booster_position",
+  "resource.line_amplifier_position",
+  "resource.preamplifier_position",
+  "resource.client_port_10ge",
+  "resource.client_port_100ge",
+  "resource.client_port_400ge",
+  "alarm.och_los",
+  "alarm.otu_lof",
+  "alarm.otu_sd",
+  "alarm.otu_bdi",
+  "alarm.eqpt_tx_fail",
+  "alarm.eqpt_card_fail",
+  "alarm.amp_input_los",
+  "alarm.oms_los_p",
+  "alarm.osc_los",
+  "alarm.amp_fail",
+  "alarm.amp_gain_oor",
+  "alarm.amp_pump_eol",
+  "alarm.client_sf",
+  "alarm.odu_ais",
+  "alarm.odu_bdi",
+  "alarm.odu_tim",
+  "alarm.prot_active",
+  "alarm.prot_unavail",
+  "alarm.eqpt_port_fail",
+  "alarm.otn_fabric_fail",
+  "scope.other_degrees",
+  "scope.transmitted_channel",
+  "scope.received_traffic",
+  "scope.monitoring",
+  "scope.traffic_alarms",
+  "scope.other_channels",
+  "scope.optical_path",
+  "scope.carried_channels",
+  "scope.traffic",
+  "scope.trend",
+  "scope.band_edge_channels",
+  "scope.each",
+  "scope.client_optic",
+  "scope.port",
+  "location.after_node",
+  "location.there",
+  "location.far_end",
+  "location.here",
+  "location.this_receiver",
+  "location.line_receiver",
+  "location.own_receiver",
+  "location.transmitted_signal",
+  "location.this_card",
+  "location.output",
+  "location.downstream",
+  "location.osc_reported",
+  "location.through_switch",
+  "location.wrong_destination",
+  "location.client_port",
+  "location.switch_fabric",
+  "location.otn_switch",
+  "availability.client_es",
+  "availability.client_uas",
+  "nature.degradation",
+  "nature.gradual_step",
+  "nature.provisioning_changes",
+  "behaviour.g798_actions",
+  "behaviour.otn_ais"
+ ],
+ "residual_b": [
+  "op.LASER_BIAS_DRIFT",
+  "op.MARGIN_EROSION",
+  "op.MECHANICAL_DISTURBANCE",
+  "op.CHANNEL_LOADING_TRANSIENT",
+  "op.PROTECTION_SWITCH_HIT",
+  "op.INSTRUMENT_MISREPORT",
+  "op.TELEMETRY_STALE",
+  "op.any_upstream_failure",
+  "op.any_server_failure",
+  "op.POWER_EXCURSION",
+  "op.DGD_HIGH",
+  "op.LASER_AGEING",
+  "op.MARGIN_DECLINE",
+  "op.laser_bias_pct",
+  "op.rx_power_pm15",
+  "op.est_osnr",
+  "op.alarm_only",
+  "op.Amplifier",
+  "op.LineInterface",
+  "op.upstream_roadm_channel",
+  "op.transient",
+  "op.default",
+  "op.pass"
+ ],
+ "effort": {
+  "prompt_tokens": 26858,
+  "completion_tokens": 7086,
+  "total_tokens": 33944,
+  "reasoning_tokens": 2514,
+  "latency_s": 72.8,
+  "model": "gpt-5.6"
+ }
+}

@@ -1,0 +1,640 @@
+{
+ "vendor": "VA",
+ "document_title": "VA Coherent Transponder and Line Card Family: Fault Management Guide",
+ "standards": [
+  "ITU-T G.798"
+ ],
+ "unit_types": [
+  {
+   "product_code": "VA-TPD-400",
+   "unit": "VA-TPD-400",
+   "role_or_position": "400G transponder",
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": "OTUC4"
+  },
+  {
+   "product_code": "VA-MXP-200",
+   "unit": "VA-MXP-200",
+   "role_or_position": "200G muxponder",
+   "line_rate_or_client_rate": "200G",
+   "odu_mapping": "OTUC2"
+  },
+  {
+   "product_code": "VA-MXP-400",
+   "unit": "VA-MXP-400",
+   "role_or_position": "400G muxponder",
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": "OTUC4"
+  },
+  {
+   "product_code": "VA-OTN-LC-200",
+   "unit": "VA-OTN-LC-200",
+   "role_or_position": "200G OTN line card",
+   "line_rate_or_client_rate": "200G",
+   "odu_mapping": "OTUC2"
+  },
+  {
+   "product_code": "VA-OTN-LC-400",
+   "unit": "VA-OTN-LC-400",
+   "role_or_position": "400G OTN line card",
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": "OTUC4"
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "400G mode",
+   "value": "DP-16QAM, 64 GBd, OTUC4"
+  },
+  {
+   "item": "200G mode",
+   "value": "DP-QPSK, 64 GBd, OTUC2"
+  },
+  {
+   "item": "Receiver LOS threshold",
+   "value": "-25 dBm"
+  },
+  {
+   "item": "FEC",
+   "value": "Soft-decision; pre-FEC BER threshold approximately 2E-2"
+  },
+  {
+   "item": "DGD tolerance",
+   "value": "30 ps"
+  },
+  {
+   "item": "SOP tracking speed",
+   "value": "approximately 1 Mrad/s; faster SOP changes produce errors"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "OPR-15",
+   "measures": [
+    "Received optical power"
+   ],
+   "availability": "Standard",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "ES-15",
+   "measures": [
+    "errored seconds"
+   ],
+   "availability": "Standard",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "OPR",
+   "measures": [
+    "Received optical power"
+   ],
+   "availability": "Power monitoring licence",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "OSNR-EST",
+   "measures": [
+    "OSNR"
+   ],
+   "availability": "Advanced monitoring licence",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "PREFEC-BER",
+   "measures": [
+    "pre-FEC BER"
+   ],
+   "availability": "Advanced monitoring licence",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "DGD",
+   "measures": [
+    "DGD"
+   ],
+   "availability": "Advanced monitoring licence",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "SOP-RATE",
+   "measures": [
+    "SOP rate of change"
+   ],
+   "availability": "Advanced monitoring licence",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "LBC",
+   "measures": [
+    "Transmit laser bias current, % of beginning of life"
+   ],
+   "availability": "Advanced monitoring licence",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "location": null,
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "receiver"
+   ],
+   "when": [
+    "No light"
+   ],
+   "result": [
+    "dLOS",
+    "Loss of OTU frame"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "receiver"
+   ],
+   "when": [
+    "Card failure"
+   ],
+   "result": [
+    "dEQ",
+    "Loss of OTU frame",
+    "traffic alarms masked"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "receiver"
+   ],
+   "when": [
+    "Degraded light: low power, low OSNR, high DGD, passband penalty, receiver penalty, slow margin decline"
+   ],
+   "result": [
+    "Pre-FEC errors once the degradation is larger than the channel margin",
+    "loss of frame if much larger"
+   ],
+   "threshold": null,
+   "note": "(none until errors)"
+  },
+  {
+   "applies_to": [
+    "receiver"
+   ],
+   "when": [
+    "Fast SOP change beyond tracking speed"
+   ],
+   "result": [
+    "Errored seconds"
+   ],
+   "threshold": "approximately 1 Mrad/s",
+   "note": "(none)"
+  },
+  {
+   "applies_to": [
+    "every ODU in the OTU"
+   ],
+   "when": [
+    "loss of OTU frame"
+   ],
+   "result": [
+    "ODU-AIS is sent downstream"
+   ],
+   "threshold": null,
+   "note": "G.798 consequent actions apply"
+  },
+  {
+   "applies_to": [
+    "far-end transmitter"
+   ],
+   "when": [
+    "loss of OTU frame"
+   ],
+   "result": [
+    "OTU-BDI is returned"
+   ],
+   "threshold": null,
+   "note": "G.798 consequent actions apply"
+  }
+ ],
+ "faults": [
+  {
+   "name": "Transmit laser failure",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "description": "Laser off or failed; loss of signal at the far-end receiver of the channel",
+   "effects": [
+    {
+     "effect": "Laser off or failed",
+     "scope": "the channel",
+     "where": null
+    },
+    {
+     "effect": "loss of signal",
+     "scope": "the channel",
+     "where": "the far-end receiver"
+    }
+   ],
+   "character": "Hard",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "card per year"
+  },
+  {
+   "name": "Card failure",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "description": "Far-end loss of signal on the transmitted channel; received traffic lost locally, monitoring silent, traffic alarms masked by the equipment alarm",
+   "effects": [
+    {
+     "effect": "loss of signal",
+     "scope": "the transmitted channel",
+     "where": "Far-end"
+    },
+    {
+     "effect": "received traffic lost",
+     "scope": "received traffic",
+     "where": "locally"
+    },
+    {
+     "effect": "monitoring silent",
+     "scope": "monitoring",
+     "where": null
+    },
+    {
+     "effect": "traffic alarms masked by the equipment alarm",
+     "scope": "traffic alarms",
+     "where": null
+    }
+   ],
+   "character": "Hard",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "card per year"
+  },
+  {
+   "name": "Receiver degradation",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "description": "Errors at this receiver only; other channels and the optical path normal",
+   "effects": [
+    {
+     "effect": "Errors",
+     "scope": "this receiver only",
+     "where": null
+    },
+    {
+     "effect": "normal",
+     "scope": "other channels",
+     "where": null
+    },
+    {
+     "effect": "normal",
+     "scope": "the optical path",
+     "where": null
+    }
+   ],
+   "character": "Soft",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "card per year"
+  },
+  {
+   "name": "Laser ageing",
+   "applies_to": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "description": "LBC rising; precedes transmit laser failure",
+   "effects": [
+    {
+     "effect": "LBC rising",
+     "scope": "LBC",
+     "where": null
+    },
+    {
+     "effect": "precedes transmit laser failure",
+     "scope": "transmit laser failure",
+     "where": null
+    }
+   ],
+   "character": "Incipient",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "card per year"
+  },
+  {
+   "name": "Margin erosion",
+   "applies_to": [
+    "channel"
+   ],
+   "description": "Slow decline of the channel's margin, usually from ageing of components along the path; seen at the receiver",
+   "effects": [
+    {
+     "effect": "Slow decline of the channel's margin, usually from ageing of components along the path",
+     "scope": "the channel's margin",
+     "where": "the receiver"
+    }
+   ],
+   "character": "Incipient",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "channel per year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "OCH_LOS",
+   "raised_by": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "severity": "Critical",
+   "monitor": null,
+   "symptom": "No light at the receiver",
+   "raised_when": "No light at the receiver",
+   "probable_causes": [
+    {
+     "cause": "laser failed",
+     "where": "Far-end transmitter"
+    },
+    {
+     "cause": "card failed",
+     "where": "Far-end transmitter"
+    },
+    {
+     "cause": "fibre cut",
+     "where": "Anywhere upstream on the channel's path"
+    },
+    {
+     "cause": "EDFA dead",
+     "where": "Anywhere upstream on the channel's path"
+    },
+    {
+     "cause": "jumper pulled",
+     "where": "Anywhere upstream on the channel's path"
+    },
+    {
+     "cause": "ROADM ingress port blocked",
+     "where": "Anywhere upstream on the channel's path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "OTU_LOF",
+   "raised_by": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "severity": "Critical",
+   "monitor": null,
+   "symptom": "OTU frame lost, light present",
+   "raised_when": "OTU frame lost, light present",
+   "probable_causes": [
+    {
+     "cause": "high span loss",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "EDFA noise figure degradation",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "DGD increase",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "WSS passband offset",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "fast SOP event",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "receiver degradation",
+     "where": "This card"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "OTU_SD",
+   "raised_by": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "severity": "Minor",
+   "monitor": null,
+   "symptom": "Errors above the degrade threshold (margin under about 1 dB)",
+   "raised_when": "Errors above the degrade threshold (margin under about 1 dB)",
+   "probable_causes": [
+    {
+     "cause": "high span loss",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "EDFA noise figure degradation",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "contaminated connector",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "WSS passband offset",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "DGD increase",
+     "where": "Upstream on the path"
+    },
+    {
+     "cause": "receiver degradation",
+     "where": "This card"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "OTU_BDI",
+   "raised_by": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "severity": "Not alarmed",
+   "monitor": null,
+   "symptom": "Far end reports a defect on this card's transmitted signal",
+   "raised_when": "Far end reports a defect on this card's transmitted signal",
+   "probable_causes": [
+    {
+     "cause": "Any failure",
+     "where": "on the path to the far end"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "EQPT_TX_FAIL",
+   "raised_by": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "severity": "Critical",
+   "monitor": null,
+   "symptom": "Transmit laser fault detected",
+   "raised_when": "Transmit laser fault detected",
+   "probable_causes": [
+    {
+     "cause": "transmit laser failure",
+     "where": "This card"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "EQPT_CARD_FAIL",
+   "raised_by": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "severity": "Critical",
+   "monitor": null,
+   "symptom": "Card hardware fault",
+   "raised_when": "Card hardware fault",
+   "probable_causes": [
+    {
+     "cause": "card failure",
+     "where": "This card"
+    }
+   ],
+   "suppression": "traffic alarms masked",
+   "reported_against": null
+  },
+  {
+   "id": "LASER_BIAS_HIGH",
+   "raised_by": [
+    "VA-TPD-400",
+    "VA-MXP-200",
+    "VA-MXP-400",
+    "VA-OTN-LC-200",
+    "VA-OTN-LC-400"
+   ],
+   "severity": "Minor",
+   "monitor": "LBC",
+   "symptom": "LBC above 120 % of beginning of life (internal supervision)",
+   "raised_when": "LBC above 120 % of beginning of life (internal supervision)",
+   "probable_causes": [
+    {
+     "cause": "laser ageing",
+     "where": "This card"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  }
+ ],
+ "routing": "On loss of OTU frame, G.798 consequent actions apply: ODU-AIS is sent downstream on every ODU in the OTU, and OTU-BDI is returned to the far-end transmitter.",
+ "troubleshooting_notes": []
+}

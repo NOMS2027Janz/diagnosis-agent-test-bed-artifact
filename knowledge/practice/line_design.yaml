@@ -1,0 +1,13 @@
+document: "Operator practice: line system design rules"
+source: "Operator line engineering rules, as used by the planning tool and the network twin"
+note: >
+  Values the planning rules set network-wide. Per-element values (span lengths and recorded losses, amplifier
+  gains set at commissioning, channel slots and routes) are in the inventory and provisioning records.
+design:
+  launch_dbm_per_channel: 1.0          # per-channel launch power into each OMS, set by the booster and WSS
+  drop_target_dbm: -6.0                # per-channel power at the drop to a receiver
+  planning_channel_load: 64            # channels assumed for noise and nonlinear interference (full band)
+  slot_ghz: 75.0                       # frequency slot width
+  transceiver_snr_db: 22.0             # implementation-limited SNR of a transceiver pair, planning value
+  transmit_power_dbm: 0.0              # line interface transmit power
+  recorded_span_loss: "includes connector and splice loss at both ends"

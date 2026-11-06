@@ -1,0 +1,52 @@
+document: "Extract: OTN equipment defects, consequent actions and defect correlations"
+source: "ITU-T G.798 (OTN equipment functional blocks), ITU-T G.709 (OTN interfaces), ITU-T G.808.1 (linear protection)"
+applies_to_classes: [LineInterface, OTNSwitch, ClientPort]
+
+defects:
+  dLOS: {layer: OCh, at: line receiver, meaning: "loss of signal"}
+  dLOF: {layer: OTU, at: line receiver, meaning: "loss of frame alignment"}
+  dDEG: {layer: OTU, at: line receiver, meaning: "signal degraded: errors above threshold"}
+  dBDI_OTU: {layer: OTU, at: line transmitter end, meaning: "backward defect indication received from far end"}
+  dAIS_ODU: {layer: ODU, at: ODU path termination, meaning: "ODU alarm indication signal received"}
+  dBDI_ODU: {layer: ODU, at: ODU path source end, meaning: "ODU backward defect indication received"}
+  dTIM_ODU: {layer: ODU, at: ODU path termination, meaning: "trail trace identifier mismatch"}
+  dEQ: {layer: equipment, at: the failed unit, meaning: "equipment failure; the unit's traffic defects are masked"}
+
+consequent_actions:
+  - when: [dLOS, dLOF, dEQ]
+    at: OTU sink
+    actions:
+      - {insert: ODU_AIS, direction: downstream, on: every ODU carried by the OTU}
+      - {send: OTU_BDI, direction: upstream, to: far-end transmitter}
+  - when: [dAIS_ODU]
+    at: ODU path termination
+    actions:
+      - {send: ODU_BDI, direction: upstream, to: ODU path source}
+      - {client: replace signal, effect: CLIENT_DOWN}
+  - when: [dTIM_ODU]
+    at: ODU path termination
+    actions:
+      - {client: replace signal, effect: CLIENT_DOWN}
+  - when: [OTN switch failure]
+    at: OTN switch
+    actions:
+      - {effect: ODU_AIS, direction: downstream, on: every ODU cross-connected through the switch}
+
+# Reported fault causes (alarms) and the defects that suppress them.
+correlations:
+  OCH_LOS:  {defect: dLOS, suppressed_by: [dEQ], severity: critical}
+  OTU_LOF:  {defect: dLOF, suppressed_by: [dLOS, dEQ], severity: critical}
+  OTU_SD:   {defect: dDEG, suppressed_by: [dLOS, dLOF, dEQ], severity: minor}
+  OTU_BDI:  {defect: dBDI_OTU, suppressed_by: [], severity: not_alarmed}
+  ODU_AIS:  {defect: dAIS_ODU, suppressed_by: [], severity: not_alarmed}
+  ODU_BDI:  {defect: dBDI_ODU, suppressed_by: [], severity: not_alarmed}
+  ODU_TIM:  {defect: dTIM_ODU, suppressed_by: [dAIS_ODU], severity: major}
+
+protection:
+  scheme: "ODU SNCP, 1+1, tail-end selection, revertive"
+  behaviour:
+    - "The selector at the egress chooses the working path when it is free of defects, else the protection path."
+    - "A switch interrupts the client for less than 50 ms: a CLIENT_HIT, counted as an errored second."
+  reports:
+    PROT_ACTIVE:  {meaning: "traffic selected from the protection path", severity: minor}
+    PROT_UNAVAIL: {meaning: "protection path failed while working carries traffic", severity: minor}

@@ -1,0 +1,628 @@
+{
+ "pair": "VA-op",
+ "condition": "given",
+ "model": "gpt-5.6",
+ "correspondences": [
+  {
+   "a_id": "cause.fibre_break",
+   "b_id": "op.FIBRE_CUT",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.high_span_loss",
+   "b_id": "op.SPAN_LOSS_INCREASE",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "cause.jumper_pulled",
+   "b_id": "op.CONNECTOR_PULLED",
+   "confidence": 0.96
+  },
+  {
+   "a_id": "cause.oms_input_jumper_pulled",
+   "b_id": "op.CONNECTOR_PULLED",
+   "confidence": 0.93
+  },
+  {
+   "a_id": "cause.contaminated_connector",
+   "b_id": "op.CONNECTOR_DIRTY",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.edfa_dead",
+   "b_id": "op.AMP_PUMP_FAIL",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "cause.previous_edfa_dead",
+   "b_id": "op.AMP_PUMP_FAIL",
+   "confidence": 0.91
+  },
+  {
+   "a_id": "cause.gain_loss",
+   "b_id": "op.AMP_GAIN_DROP",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.noise_figure_degradation",
+   "b_id": "op.AMP_NF_RISE",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.gain_tilt",
+   "b_id": "op.AMP_GAIN_TILT",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.pump_ageing",
+   "b_id": "op.PUMP_CURRENT_DRIFT",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "cause.tx_laser_failure",
+   "b_id": "op.TX_LASER_FAIL",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.card_failure",
+   "b_id": "op.CARD_FAIL",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "cause.receiver_degradation",
+   "b_id": "op.RX_DEGRADATION",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "cause.laser_ageing",
+   "b_id": "op.LASER_BIAS_DRIFT",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "cause.margin_erosion",
+   "b_id": "op.MARGIN_EROSION",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.wss_attenuation_drift",
+   "b_id": "op.WSS_ATTEN_DRIFT",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.wss_passband_offset",
+   "b_id": "op.WSS_FILTER_SHIFT",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.wss_ingress_port_failure",
+   "b_id": "op.WSS_PORT_FAIL",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "cause.dgd_increase",
+   "b_id": "op.DGD_RISE",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.fast_sop_event",
+   "b_id": "op.SOP_TRANSIENT",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "cause.fabric_failure",
+   "b_id": "op.OTN_SWITCH_FAIL",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.misconnection",
+   "b_id": "op.XC_MISCONNECT",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.port_failure",
+   "b_id": "op.CLIENT_PORT_FAIL",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "cause.any_failure",
+   "b_id": "op.any_upstream_failure",
+   "confidence": 0.8
+  },
+  {
+   "a_id": "condition.no_light",
+   "b_id": "op.SIGNAL_LOST",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.no_light_receiver",
+   "b_id": "op.SIGNAL_LOST",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.loss_signal",
+   "b_id": "op.SIGNAL_LOST",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "condition.card_no_input_light",
+   "b_id": "op.SIGNAL_LOST",
+   "confidence": 0.91
+  },
+  {
+   "a_id": "condition.loss_light_in_pwr",
+   "b_id": "op.SIGNAL_LOST",
+   "confidence": 0.92
+  },
+  {
+   "a_id": "condition.low_output",
+   "b_id": "op.POWER_LOW",
+   "confidence": 0.96
+  },
+  {
+   "a_id": "condition.channels_low",
+   "b_id": "op.POWER_LOW",
+   "confidence": 0.94
+  },
+  {
+   "a_id": "condition.low_in_power",
+   "b_id": "op.POWER_LOW",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "condition.passed_low_power",
+   "b_id": "op.POWER_LOW",
+   "confidence": 0.95
+  },
+  {
+   "a_id": "condition.osc_not_received",
+   "b_id": "op.OSC_LOST",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.osnr_degrades",
+   "b_id": "op.OSNR_LOW",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "condition.osnr_down",
+   "b_id": "op.OSNR_LOW",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.osnr_penalty_stays",
+   "b_id": "op.OSNR_LOW",
+   "confidence": 0.94
+  },
+  {
+   "a_id": "condition.fast_sop_change",
+   "b_id": "op.POL_TRANSIENT",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.passband_shifted",
+   "b_id": "op.FILTER_PENALTY",
+   "confidence": 0.88
+  },
+  {
+   "a_id": "condition.passband_narrowed",
+   "b_id": "op.FILTER_PENALTY",
+   "confidence": 0.88
+  },
+  {
+   "a_id": "condition.errors",
+   "b_id": "op.RX_PENALTY",
+   "confidence": 0.81
+  },
+  {
+   "a_id": "condition.card_failure",
+   "b_id": "op.UNIT_DOWN",
+   "confidence": 0.86
+  },
+  {
+   "a_id": "condition.loss_otu_frame",
+   "b_id": "op.OTU_FRAME_LOST",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.otu_frame_lost_light",
+   "b_id": "op.OTU_FRAME_LOST",
+   "confidence": 0.95
+  },
+  {
+   "a_id": "condition.errors_degrade_threshold",
+   "b_id": "op.OTU_ERRORED",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.deq",
+   "b_id": "op.OTU_ERRORED",
+   "confidence": 0.9
+  },
+  {
+   "a_id": "condition.odu_ais",
+   "b_id": "op.ODU_AIS",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.odu_ais_sent",
+   "b_id": "op.ODU_AIS",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "condition.odu_ais_forwarded",
+   "b_id": "op.ODU_AIS",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "condition.misdirected_odu",
+   "b_id": "op.ODU_MISROUTED",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.wrong_destination",
+   "b_id": "op.ODU_MISROUTED",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.client_service_down",
+   "b_id": "op.CLIENT_DOWN",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.down",
+   "b_id": "op.CLIENT_DOWN",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "condition.service_hit",
+   "b_id": "op.CLIENT_HIT",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.pump_i_climbs",
+   "b_id": "op.PUMP_AGEING",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.lbc_rising",
+   "b_id": "op.LASER_AGEING",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "condition.slow_margin_decline",
+   "b_id": "op.MARGIN_DECLINE",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.composite_input_power",
+   "b_id": "op.amp_input_power",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.composite_output_power",
+   "b_id": "op.amp_output_power",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.pump_drive_current",
+   "b_id": "op.pump_current_pct",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.tx_laser_bias",
+   "b_id": "op.laser_bias_pct",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.per_channel_power",
+   "b_id": "op.ocm_channel_power",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.received_power",
+   "b_id": "op.rx_power",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "characteristic.errored_seconds",
+   "b_id": "op.errored_seconds_pm15",
+   "confidence": 0.96
+  },
+  {
+   "a_id": "characteristic.prefec_ber",
+   "b_id": "op.pre_fec_ber",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.dgd",
+   "b_id": "op.dgd",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.sop_rate",
+   "b_id": "op.sop_rate",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.client_es",
+   "b_id": "op.client_errored_seconds_pm15",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "characteristic.client_uas",
+   "b_id": "op.client_unavailable_seconds_pm15",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "resource.edfa_card",
+   "b_id": "op.Amplifier",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "resource.booster",
+   "b_id": "op.role:booster",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "resource.ola",
+   "b_id": "op.role:inline",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "resource.preamp",
+   "b_id": "op.role:preamp",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "resource.tpd400",
+   "b_id": "op.kind:transponder",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "resource.mxp200",
+   "b_id": "op.kind:muxponder",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "resource.mxp400",
+   "b_id": "op.kind:muxponder",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "resource.otnlc200",
+   "b_id": "op.kind:otn_line",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "resource.otnlc400",
+   "b_id": "op.kind:otn_line",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "resource.roadm",
+   "b_id": "op.ROADM",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "resource.otn_switch",
+   "b_id": "op.OTNSwitch",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "resource.client_port",
+   "b_id": "op.ClientPort",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.all_channels",
+   "b_id": "op.all_channels",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.channel",
+   "b_id": "op.channel",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.one_channel",
+   "b_id": "op.channel",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.that_channel",
+   "b_id": "op.channel",
+   "confidence": 0.95
+  },
+  {
+   "a_id": "scope.transmitted_channel",
+   "b_id": "op.channel",
+   "confidence": 0.92
+  },
+  {
+   "a_id": "scope.channels_band_edge",
+   "b_id": "op.some_channels",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.channels_degree",
+   "b_id": "op.port",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.this_card",
+   "b_id": "op.unit",
+   "confidence": 0.95
+  },
+  {
+   "a_id": "scope.this_receiver_only",
+   "b_id": "op.this_receiver",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.all_odus",
+   "b_id": "op.every_odu_through",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.one_odu",
+   "b_id": "op.one_odu",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "scope.client_service",
+   "b_id": "op.this_service",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.this_card_caps",
+   "b_id": "op.this_unit",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "location.this_card",
+   "b_id": "op.this_unit",
+   "confidence": 0.97
+  },
+  {
+   "a_id": "location.this_switch",
+   "b_id": "op.this_unit",
+   "confidence": 0.92
+  },
+  {
+   "a_id": "location.this_port",
+   "b_id": "op.this_port",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.incoming_span_on",
+   "b_id": "op.upstream_span",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.incoming_span",
+   "b_id": "op.upstream_span",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.previous_edfa",
+   "b_id": "op.upstream_amplifier",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "location.oms_input",
+   "b_id": "op.oms_input",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.anywhere_upstream",
+   "b_id": "op.upstream_on_path",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.upstream_path",
+   "b_id": "op.upstream_on_path",
+   "confidence": 0.98
+  },
+  {
+   "a_id": "location.far_end_tx",
+   "b_id": "op.far_end_transmitter",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.far_end_receiver",
+   "b_id": "op.far_end_receiver",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.path_far_end",
+   "b_id": "op.path_to_far_end",
+   "confidence": 0.84
+  },
+  {
+   "a_id": "location.either_end",
+   "b_id": "op.either_port",
+   "confidence": 0.94
+  },
+  {
+   "a_id": "location.switch_odu_path",
+   "b_id": "op.odu_path_switch",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.working_odu_path",
+   "b_id": "op.working_odu_path",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.protection_odu_path",
+   "b_id": "op.protection_odu_path",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "location.active_odu_path",
+   "b_id": "op.active_odu_path",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "availability.power_monitoring",
+   "b_id": "op.power",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "availability.ocm",
+   "b_id": "op.ocm",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "availability.advanced_monitoring",
+   "b_id": "op.coherent",
+   "confidence": 0.91
+  },
+  {
+   "a_id": "nature.hard",
+   "b_id": "op.hard",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "nature.soft",
+   "b_id": "op.soft",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "nature.incipient",
+   "b_id": "op.incipient",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "severity.critical",
+   "b_id": "op.critical",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "severity.major",
+   "b_id": "op.major",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "severity.minor",
+   "b_id": "op.minor",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "severity.not_alarmed",
+   "b_id": "op.not_alarmed",
+   "confidence": 0.99
+  },
+  {
+   "a_id": "behaviour.roadm_switching",
+   "b_id": "op.routing:per channel",
+   "confidence": 0.99
+  }
+ ],
+ "effort": {
+  "bind_total_tokens": 40373,
+  "bind_reasoning_tokens": 3659,
+  "bind_latency_s": 100.06,
+  "model": "gpt-5.6"
+ }
+}

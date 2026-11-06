@@ -1,0 +1,7 @@
+span loss dB (world - twin): n=336 mean=-0.044 sd=0.598 rms=0.599 min=-1.264 max=+1.991
+margin dB: n=450 mean=+0.066 sd=0.142 rms=0.156 min=-0.316 max=+0.965
+OSNR dB: n=450 mean=+0.012 sd=0.523 rms=0.524 min=-2.326 max=+1.919
+DGD ps: n=450 mean=+0.143 sd=0.170 rms=0.222 min=-0.312 max=+0.524
+DGD rel: n=450 mean=+0.097 sd=0.138 rms=0.169 min=-0.431 max=+0.403
+log10 pre-FEC BER (decades): n=450 mean=-0.062 sd=0.141 rms=0.154 min=-1.113 max=+0.249
+twin DGD mean ps 1.3916428050535148

@@ -1,0 +1,133 @@
+{
+ "per_kind": {
+  "hard": {
+   "agent": {
+    "right": 1.0,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.95,
+    "wrong": 0.0
+   }
+  },
+  "drift": {
+   "agent": {
+    "right": 0.925,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.0,
+    "wrong": 0.0
+   }
+  },
+  "common_cause": {
+   "agent": {
+    "right": 1.0,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.0,
+    "wrong": 0.0
+   }
+  },
+  "maintenance": {
+   "agent": {
+    "right": 0.925,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.875,
+    "wrong": 0.0
+   }
+  },
+  "soft": {
+   "agent": {
+    "right": 0.775,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.75,
+    "wrong": 0.025
+   }
+  },
+  "monitoring": {
+   "agent": {
+    "right": 0.675,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.0,
+    "wrong": 0.05
+   }
+  },
+  "coincident": {
+   "agent": {
+    "right": 0.35,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.025,
+    "wrong": 0.0
+   }
+  },
+  "transient": {
+   "agent": {
+    "right": 0.375,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.0,
+    "wrong": 0.4
+   }
+  }
+ },
+ "scenarios": {
+  "equal": {
+   "agent": {
+    "right": 0.753125,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.325,
+    "wrong": 0.059375000000000004
+   }
+  },
+  "outage-heavy (cuts and hard faults dominate)": {
+   "agent": {
+    "right": 0.8475,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.53625,
+    "wrong": 0.045
+   }
+  },
+  "degradation-heavy (soft faults, drifts, transients)": {
+   "agent": {
+    "right": 0.7625,
+    "wrong": 0.0
+   },
+   "manual": {
+    "right": 0.37125,
+    "wrong": 0.07125
+   }
+  }
+ },
+ "random_mixes": {
+  "n": 20000,
+  "agent_right_range": [
+   0.4324391859262233,
+   0.9586758811046782
+  ],
+  "manual_right_range": [
+   0.018416563735257265,
+   0.8239289711179966
+  ],
+  "agent_ahead_share": 1.0,
+  "gap_5_50_95": [
+   0.2334406486406081,
+   0.42217830628826136,
+   0.6379265985457698
+  ]
+ }
+}

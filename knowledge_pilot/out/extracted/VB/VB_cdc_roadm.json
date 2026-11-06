@@ -1,0 +1,168 @@
+{
+ "vendor": "",
+ "document_title": "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2",
+ "standards": [],
+ "unit_types": [
+  {
+   "product_code": "VB-ROADM-CDC",
+   "unit": "ROADM",
+   "role_or_position": "colourless, directionless and contentionless ROADM",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "Construction",
+   "value": "one wavelength-selective switch (WSS) per degree"
+  },
+  {
+   "item": "WSS attenuation range",
+   "value": "typically 8 dB"
+  },
+  {
+   "item": "Channel monitoring option",
+   "value": "An optical channel monitor on each ingress degree"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "optical channel monitor",
+   "measures": [
+    "the power of every channel",
+    "the OSNR of every channel"
+   ],
+   "availability": "available on nodes with the channel monitoring option",
+   "applies_to": [
+    "each ingress degree"
+   ],
+   "location": "on each ingress degree",
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "Each channel leaving a degree"
+   ],
+   "when": [
+    "An impairment affecting the whole incoming line"
+   ],
+   "result": [
+    "continues, after the node, as an impairment of each channel routed onwards"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "Each degree's WSS"
+   ],
+   "when": [
+    "A power loss upstream of up to about 8 dB"
+   ],
+   "result": [
+    "is re-levelled at the node",
+    "does not appear downstream as low power",
+    "the loss of signal-to-noise ratio it caused remains"
+   ],
+   "threshold": "up to about 8 dB",
+   "note": "equalises the channel powers to the launch target within its attenuation range, typically 8 dB"
+  },
+  {
+   "applies_to": [
+    "Each degree's WSS"
+   ],
+   "when": [
+    "A larger loss"
+   ],
+   "result": [
+    "passes on as low power"
+   ],
+   "threshold": "larger than about 8 dB",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "Other impairments"
+   ],
+   "when": [],
+   "result": [
+    "pass through the node unchanged"
+   ],
+   "threshold": null,
+   "note": null
+  }
+ ],
+ "faults": [
+  {
+   "name": "WSS attenuation drift",
+   "applies_to": [
+    "one channel"
+   ],
+   "description": "The WSS attenuation for one channel drifts above its set value.",
+   "effects": [
+    {
+     "effect": "power is low",
+     "scope": "that channel",
+     "where": "after the node"
+    }
+   ],
+   "character": "A degradation",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "degrees per year"
+  },
+  {
+   "name": "WSS passband shift",
+   "applies_to": [
+    "one channel"
+   ],
+   "description": "The WSS passband for one channel is shifted or narrowed.",
+   "effects": [
+    {
+     "effect": "power is normal",
+     "scope": "The channel",
+     "where": null
+    },
+    {
+     "effect": "signal quality is reduced",
+     "scope": "The channel",
+     "where": null
+    }
+   ],
+   "character": "A degradation",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "degrees per year"
+  },
+  {
+   "name": "WSS input port failure",
+   "applies_to": [
+    "An input port of a WSS"
+   ],
+   "description": "An input port of a WSS fails.",
+   "effects": [
+    {
+     "effect": "is blocked",
+     "scope": "Every channel arriving at the node on that degree",
+     "where": "there"
+    },
+    {
+     "effect": "are unaffected",
+     "scope": "channels arriving on the other degrees",
+     "where": null
+    }
+   ],
+   "character": "Hard failure",
+   "rate_per_year_fraction": 0.002,
+   "rate_per": "degrees per year"
+  }
+ ],
+ "alarms": [],
+ "routing": "Each channel leaving a degree is switched separately.",
+ "troubleshooting_notes": [
+  "The ROADM raises no alarms of its own for the faults below. They show in the channel monitor's readings and in the alarms of the line interfaces downstream.",
+  "A deviation in a channel's power at the channel monitors locates a single-channel fault at the node where the deviation first appears.",
+  "A port fault lies at the input port of the degree it affects.",
+  "A single-channel fault lies on that channel at the input port of the degree where it first appears."
+ ]
+}

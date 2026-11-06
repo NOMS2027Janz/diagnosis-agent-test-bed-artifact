@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "If you use this software, the case records or the technical companion, please cite it as below."
+title: "The diagnosis agent test bed: Simulator, agent, harness, sealed cases and technical companion"
+version: "1.0"
+date-released: 2026-11-06
+doi: 10.5281/zenodo.24005540
+url: "https://doi.org/10.5281/zenodo.24005540"
+type: software
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24005540
+    description: "The archive on Zenodo, version 1.0"
+license: Apache-2.0
+authors:
+  - family-names: Janz
+    given-names: Christopher
+  - family-names: Yu
+    given-names: Henry
+  - family-names: Taeb
+    given-names: Sepehr
+  - family-names: Cai
+    given-names: Ruilin
+  - family-names: You
+    given-names: Yuren
+  - family-names: Chen
+    given-names: Yixiao
+keywords:
+  - network diagnosis
+  - optical transport networks
+  - digital twin
+  - knowledge graph
+  - large language models
+  - agents
+references:
+  - type: conference-paper
+    title: "An Agent That Diagnoses the Optical Network: Measured Against Alarm-Based Troubleshooting"
+    authors:
+      - family-names: Janz
+        given-names: Christopher
+      - family-names: Yu
+        given-names: Henry
+      - family-names: Taeb
+        given-names: Sepehr
+      - family-names: Cai
+        given-names: Ruilin
+      - family-names: You
+        given-names: Yuren
+      - family-names: Chen
+        given-names: Yixiao
+    collection-title: "IEEE/IFIP Network Operations and Management Symposium (NOMS 2027)"

@@ -1,0 +1,51 @@
+document: "VA OTN Switch, OTN client ports and protection: Alarm and Troubleshooting Reference"
+vendor: VA
+types:
+  - {id: VA-OTNSW, class: OTNSwitch}
+  - {id: VA-CP-10GE, class: ClientPort, rate: 10GE, odu: ODU2}
+  - {id: VA-CP-100GE, class: ClientPort, rate: 100GE, odu: ODU4}
+  - {id: VA-CP-400GE, class: ClientPort, rate: 400GE, odu: ODUflex}
+standards: [g798_otn]
+monitoring_points:
+  - {id: client_pm15, applies_to: ClientPort, observes: [client_errored_seconds_pm15, client_unavailable_seconds_pm15], tier: baseline}
+signal_behaviour:
+  - {at: OTNSwitch, in: ODU_AIS, out: [ODU_AIS], note: "cross-connected ODUs carry AIS onwards"}
+  - {at: ClientPort, in: [ODU_AIS, ODU_MISROUTED], out: [CLIENT_DOWN], unless: "SNCP selects a defect-free path; then CLIENT_HIT"}
+fault_modes:
+  - id: OTN_SWITCH_FAIL
+    applies_to: OTNSwitch
+    description: "Switch fabric failure; every ODU cross-connected through the switch is interrupted."
+    effects: [{effect: ODU_AIS, scope: every_odu_through}]
+    nature: hard
+    documented_rate: {per_year: 0.002, per: switch}
+    twin_scenario: {kind: switch_failed}
+  - id: XC_MISCONNECT
+    applies_to: OTNSwitch
+    description: "Cross-connect provisioned wrongly; one ODU delivered to the wrong destination; no optical symptom."
+    effects: [{effect: ODU_MISROUTED, scope: one_odu}]
+    nature: hard
+    documented_rate: {per_year: 0.01, per: "switch; mostly right after provisioning changes"}
+    twin_scenario: {kind: xc_wrong}
+  - id: CLIENT_PORT_FAIL
+    applies_to: ClientPort
+    description: "Client optic or port failure."
+    effects: [{effect: CLIENT_DOWN, scope: this_service}]
+    nature: hard
+    documented_rate: {per_year: 0.01, per: port}
+    twin_scenario: {kind: client_port_failed}
+alarms:
+  - {id: CLIENT_SF, applies_to: ClientPort, severity: critical, raised_when: {sees: CLIENT_DOWN},
+     probable_causes: [{mode: any_server_failure, where: active_odu_path}, {mode: CLIENT_PORT_FAIL, where: either_port},
+                       {mode: XC_MISCONNECT, where: odu_path_switch}, {mode: OTN_SWITCH_FAIL, where: odu_path_switch}]}
+  - {id: ODU_AIS, applies_to: ClientPort, severity: not_alarmed, raised_when: {sees: ODU_AIS}}
+  - {id: ODU_BDI, applies_to: ClientPort, severity: not_alarmed, raised_when: {condition: "far end reports AIS"}}
+  - {id: ODU_TIM, applies_to: ClientPort, severity: major, raised_when: {sees: ODU_MISROUTED},
+     probable_causes: [{mode: XC_MISCONNECT, where: odu_path_switch}]}
+  - {id: PROT_ACTIVE, applies_to: ClientPort, severity: minor, raised_when: {condition: "selector on protection path"},
+     probable_causes: [{mode: any_server_failure, where: working_odu_path}]}
+  - {id: PROT_UNAVAIL, applies_to: ClientPort, severity: minor, raised_when: {condition: "protection path failed"},
+     probable_causes: [{mode: any_server_failure, where: protection_odu_path}]}
+  - {id: EQPT_PORT_FAIL, applies_to: ClientPort, severity: critical, raised_when: {condition: "port hardware fault"},
+     probable_causes: [{mode: CLIENT_PORT_FAIL, where: this_port}]}
+  - {id: OTN_FABRIC_FAIL, applies_to: OTNSwitch, severity: critical, raised_when: {condition: "fabric fault"},
+     probable_causes: [{mode: OTN_SWITCH_FAIL, where: this_unit}]}

@@ -1,0 +1,339 @@
+{
+ "vendor": "VB",
+ "document_title": "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4",
+ "standards": [
+  "ITU-T G.798"
+ ],
+ "unit_types": [
+  {
+   "product_code": "VB-OTNSW",
+   "unit": "OTN switch",
+   "role_or_position": "ODU cross-connect fabric",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VB-CP-10GE",
+   "unit": "Client port, 10GE",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "10GE",
+   "odu_mapping": "Mapped into ODU2"
+  },
+  {
+   "product_code": "VB-CP-100GE",
+   "unit": "Client port, 100GE",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "100GE",
+   "odu_mapping": "Mapped into ODU4"
+  },
+  {
+   "product_code": "VB-CP-400GE",
+   "unit": "Client port, 400GE",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400GE",
+   "odu_mapping": "Mapped into ODUflex"
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "client errored seconds",
+   "value": "15-minute bins"
+  },
+  {
+   "item": "client unavailable seconds",
+   "value": "15-minute bins"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "client errored seconds",
+   "measures": [
+    "client errored seconds"
+   ],
+   "availability": "Each client port reports client errored seconds in 15-minute bins.",
+   "applies_to": [
+    "client port"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "client unavailable seconds",
+   "measures": [
+    "client unavailable seconds"
+   ],
+   "availability": "Each client port reports client unavailable seconds in 15-minute bins.",
+   "applies_to": [
+    "client port"
+   ],
+   "location": null,
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "OTN switch"
+   ],
+   "when": [
+    "an ODU alarm indication signal"
+   ],
+   "result": [
+    "carries an ODU alarm indication signal onwards on every ODU cross-connected through it"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "client port"
+   ],
+   "when": [
+    "an ODU alarm indication signal",
+    "an ODU delivered from the wrong source"
+   ],
+   "result": [
+    "takes the client service down"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "client port"
+   ],
+   "when": [
+    "the service is protected",
+    "the selector can choose a path free of defects"
+   ],
+   "result": [
+    "the service suffers only a brief hit while the selector switches"
+   ],
+   "threshold": null,
+   "note": "Client services may be protected by subnetwork connection protection (SNCP), with a working and a protection ODU path and a selector at the receiving client port."
+  }
+ ],
+ "faults": [
+  {
+   "name": "Switch fabric failure",
+   "applies_to": [
+    "OTN switch"
+   ],
+   "description": "Every ODU cross-connected through the switch is interrupted: an alarm indication signal is carried onwards on each.",
+   "effects": [
+    {
+     "effect": "is interrupted",
+     "scope": "Every ODU cross-connected through the switch",
+     "where": "through the switch"
+    },
+    {
+     "effect": "an alarm indication signal is carried onwards",
+     "scope": "each",
+     "where": null
+    }
+   ],
+   "character": "Hard failure",
+   "rate_per_year_fraction": 0.002,
+   "rate_per": "switches per year"
+  },
+  {
+   "name": "Wrong cross-connection",
+   "applies_to": [
+    "OTN switch"
+   ],
+   "description": "A cross-connection has been provisioned wrongly, so one ODU is delivered to the wrong destination. There is no optical symptom.",
+   "effects": [
+    {
+     "effect": "is delivered to the wrong destination",
+     "scope": "one ODU",
+     "where": "the wrong destination"
+    },
+    {
+     "effect": "There is no optical symptom.",
+     "scope": "one ODU",
+     "where": null
+    }
+   ],
+   "character": "mostly just after provisioning changes",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "switches per year"
+  },
+  {
+   "name": "Client port failure",
+   "applies_to": [
+    "client port"
+   ],
+   "description": "The client optic or the port fails, and the client service is lost.",
+   "effects": [
+    {
+     "effect": "fails",
+     "scope": "The client optic",
+     "where": null
+    },
+    {
+     "effect": "fails",
+     "scope": "the port",
+     "where": null
+    },
+    {
+     "effect": "is lost",
+     "scope": "the client service",
+     "where": null
+    }
+   ],
+   "character": "Hard failure",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "ports per year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "CLIENT_SF",
+   "raised_by": [
+    "client port"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "The client service has failed.",
+   "raised_when": "The client service has failed.",
+   "probable_causes": [
+    {
+     "cause": "any failure",
+     "where": "on the ODU path currently in use"
+    },
+    {
+     "cause": "a failure of the client port",
+     "where": "at either end"
+    },
+    {
+     "cause": "a wrong cross-connection",
+     "where": "in an OTN switch along the ODU path"
+    },
+    {
+     "cause": "a fabric failure",
+     "where": "in an OTN switch along the ODU path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "client port"
+  },
+  {
+   "id": "ODU_AIS",
+   "raised_by": [
+    "client port"
+   ],
+   "severity": "not alarmed",
+   "monitor": null,
+   "symptom": "An ODU alarm indication signal is received.",
+   "raised_when": "An ODU alarm indication signal is received.",
+   "probable_causes": [],
+   "suppression": null,
+   "reported_against": "client port"
+  },
+  {
+   "id": "ODU_BDI",
+   "raised_by": [
+    "client port"
+   ],
+   "severity": "not alarmed",
+   "monitor": null,
+   "symptom": "The far end reports that it is receiving an alarm indication signal.",
+   "raised_when": "The far end reports that it is receiving an alarm indication signal.",
+   "probable_causes": [],
+   "suppression": null,
+   "reported_against": "client port"
+  },
+  {
+   "id": "ODU_TIM",
+   "raised_by": [
+    "client port"
+   ],
+   "severity": "major",
+   "monitor": null,
+   "symptom": "Trail trace identifier mismatch: the ODU received is not the one expected.",
+   "raised_when": "the ODU received is not the one expected",
+   "probable_causes": [
+    {
+     "cause": "a wrong cross-connection",
+     "where": "in an OTN switch along the ODU path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "client port"
+  },
+  {
+   "id": "PROT_ACTIVE",
+   "raised_by": [
+    "client port"
+   ],
+   "severity": "minor",
+   "monitor": null,
+   "symptom": "The selector is on the protection path.",
+   "raised_when": "The selector is on the protection path.",
+   "probable_causes": [
+    {
+     "cause": "any failure",
+     "where": "on the working ODU path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "client port"
+  },
+  {
+   "id": "PROT_UNAVAIL",
+   "raised_by": [
+    "client port"
+   ],
+   "severity": "minor",
+   "monitor": null,
+   "symptom": "The protection path has failed.",
+   "raised_when": "The protection path has failed.",
+   "probable_causes": [
+    {
+     "cause": "any failure",
+     "where": "on the protection ODU path"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "client port"
+  },
+  {
+   "id": "EQPT_PORT_FAIL",
+   "raised_by": [
+    "client port"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "Port hardware fault.",
+   "raised_when": "Port hardware fault.",
+   "probable_causes": [
+    {
+     "cause": "failure",
+     "where": "this port"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "client port"
+  },
+  {
+   "id": "OTN_FABRIC_FAIL",
+   "raised_by": [
+    "OTN switch"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "Fabric fault.",
+   "raised_when": "Fabric fault.",
+   "probable_causes": [
+    {
+     "cause": "failure",
+     "where": "this switch's fabric"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "OTN switch"
+  }
+ ],
+ "routing": "The OTN switch carries an ODU alarm indication signal onwards on every ODU cross-connected through it.",
+ "troubleshooting_notes": []
+}

@@ -1,0 +1,36 @@
+document: "VB CDC ROADM: Alarm and Troubleshooting Reference"
+vendor: VB
+types:
+  - {id: VB-ROADM-CDC, class: ROADM}
+datasheet:
+  wss_equalisation: "Each degree's WSS equalises channel powers to the launch target within its attenuation range, typically 8 dB."
+monitoring_points:
+  - {id: ocm, observes: [ocm_channel_power, ocm_osnr], tier: ocm, location: "each ingress degree, per channel"}
+routing: "per channel: each channel leaving a degree is switched separately, so effects on the whole incoming line continue as effects on each routed channel"
+signal_behaviour:
+  - {in: POWER_LOW, out: [], within_db: 8, note: "re-levelled within the WSS attenuation range; OSNR loss upstream remains"}
+  - {in: POWER_LOW, out: [POWER_LOW], beyond_db: 8}
+  - {in: default, out: pass}
+fault_modes:
+  - id: WSS_ATTEN_DRIFT
+    description: "WSS attenuation for one channel drifts above its set value; that channel's power is low after the node."
+    effects: [{effect: POWER_LOW, scope: channel}]
+    nature: soft
+    documented_rate: {per_year: 0.01, per: "degree"}
+    twin_scenario: {kind: wss_channel_loss, parameter: attenuation_db, range: [0.5, 10]}
+  - id: WSS_FILTER_SHIFT
+    description: "WSS passband shifted or narrowed for one channel; power normal, signal quality reduced."
+    effects: [{effect: FILTER_PENALTY, scope: channel}]
+    nature: soft
+    documented_rate: {per_year: 0.005, per: "degree"}
+    twin_scenario: {kind: wss_filter_offset, parameter: offset_ghz, range: [1, 15]}
+  - id: WSS_PORT_FAIL
+    description: "A WSS input port fails: every channel arriving at the node on that degree is blocked there; channels arriving on other degrees are unaffected."
+    effects: [{effect: SIGNAL_LOST, scope: port}]
+    nature: hard
+    documented_rate: {per_year: 0.002, per: "degree"}
+    twin_scenario: {kind: wss_port_blocked}
+alarms: []
+notes:
+  - "Channel power deviations at the channel monitor localise a per-channel fault to the node where it first appears."
+  - "A port fault is located at the input port of the degree it affects (written \"<OMS>|port\" for the port on which that OMS arrives); a channel fault at the channel on that port (\"<OMS>|<slot>\")."

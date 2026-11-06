@@ -1,0 +1,432 @@
+{
+ "vendor": "VB",
+ "document_title": "VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3",
+ "standards": [],
+ "unit_types": [
+  {
+   "product_code": "VB-OA-BST",
+   "unit": "Booster amplifier (BA)",
+   "role_or_position": "At the transmitting end of a multiplex section, after the ROADM",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VB-OA-ILA",
+   "unit": "Line amplifier (LA)",
+   "role_or_position": "At intermediate amplifier sites",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VB-OA-PRE",
+   "unit": "Preamplifier (PA)",
+   "role_or_position": "At the receiving end of a multiplex section, before the ROADM",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "noise figure",
+   "value": "5.5 dB typical, 6.5 dB maximum"
+  },
+  {
+   "item": "input loss-of-signal threshold",
+   "value": "-30 dBm per channel"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "Input power",
+   "measures": [
+    "Total optical power at the unit's input"
+   ],
+   "availability": "Units with the power monitoring option",
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "location": "the unit's input",
+   "alarm_only": false
+  },
+  {
+   "name": "Output power",
+   "measures": [
+    "Total optical power at the unit's output"
+   ],
+   "availability": "Units with the power monitoring option",
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "location": "the unit's output",
+   "alarm_only": false
+  },
+  {
+   "name": "Pump drive current",
+   "measures": [
+    "Drive current of the pump laser, as a percentage of its beginning-of-life value",
+    "an indicator of pump health"
+   ],
+   "availability": "Units with the advanced monitoring option",
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "OSC receiver",
+   "measures": [
+    "Presence of the supervisory channel at the input"
+   ],
+   "availability": "All units",
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "location": "at the input",
+   "alarm_only": true
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "when": [
+    "All three units operate"
+   ],
+   "result": [
+    "constant-gain mode"
+   ],
+   "threshold": null,
+   "note": "The gain is set at commissioning to match the loss of the fibre section that precedes the unit, and the unit holds that gain thereafter."
+  },
+  {
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "when": [
+    "less light arrives at the input"
+   ],
+   "result": [
+    "less light leaves the output",
+    "the optical signal-to-noise ratio of every channel falls as well"
+   ],
+   "threshold": null,
+   "note": "the amplifier adds the same noise regardless"
+  },
+  {
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "when": [
+    "Loss of the OSC on one section"
+   ],
+   "result": [
+    "does not propagate to the next"
+   ],
+   "threshold": null,
+   "note": "The optical supervisory channel (OSC) is terminated at every amplifier site and a fresh OSC is launched on the next fibre section."
+  },
+  {
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "when": [
+    "no light arrives"
+   ],
+   "result": [
+    "no light leaves"
+   ],
+   "threshold": null,
+   "note": "Apart from the OSC, the unit passes on what it receives."
+  },
+  {
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "when": [
+    "the input is weak"
+   ],
+   "result": [
+    "the output is weak",
+    "the output is noisier"
+   ],
+   "threshold": null,
+   "note": "Apart from the OSC, the unit passes on what it receives."
+  }
+ ],
+ "faults": [
+  {
+   "name": "Pump or unit failure",
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "description": "The pump laser or the unit fails and the output goes dark. Every channel carried by the unit is lost downstream. This is a hard failure. Field return rate about 1 per cent of units per year.",
+   "effects": [
+    {
+     "effect": "the output goes dark",
+     "scope": "the unit",
+     "where": "the output"
+    },
+    {
+     "effect": "is lost",
+     "scope": "Every channel carried by the unit",
+     "where": "downstream"
+    }
+   ],
+   "character": "hard failure",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "units per year"
+  },
+  {
+   "name": "Gain loss",
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "description": "The unit's gain falls below its set point. Output power is low on every channel, and, since the noise added is unchanged, the signal-to-noise ratio of every channel falls too. This is a gradual or step degradation rather than an outage. About 1 per cent of units per year.",
+   "effects": [
+    {
+     "effect": "Output power is low",
+     "scope": "every channel",
+     "where": null
+    },
+    {
+     "effect": "the signal-to-noise ratio falls",
+     "scope": "every channel",
+     "where": null
+    }
+   ],
+   "character": "gradual or step degradation rather than an outage",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "units per year"
+  },
+  {
+   "name": "Pump ageing",
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "description": "As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+   "effects": [
+    {
+     "effect": "raises its drive current to hold the gain",
+     "scope": "the unit",
+     "where": null
+    },
+    {
+     "effect": "Traffic is unaffected until the drive current reaches its limit",
+     "scope": "Traffic",
+     "where": null
+    },
+    {
+     "effect": "gives early warning",
+     "scope": "the trend",
+     "where": null
+    },
+    {
+     "effect": "leads eventually to the end-of-life alarm (AMP_PUMP_EOL)",
+     "scope": "the trend",
+     "where": null
+    }
+   ],
+   "character": "slow, incipient condition",
+   "rate_per_year_fraction": 0.02,
+   "rate_per": "units per year"
+  },
+  {
+   "name": "Gain tilt",
+   "applies_to": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "description": "The gain is no longer flat across the band, so channels at one edge of the band arrive weaker than the others. Some channels are affected, not all. This is a degradation rather than an outage. About 0.5 per cent of units per year.",
+   "effects": [
+    {
+     "effect": "arrive weaker than the others",
+     "scope": "channels at one edge of the band",
+     "where": null
+    },
+    {
+     "effect": "are affected",
+     "scope": "Some channels, not all",
+     "where": null
+    }
+   ],
+   "character": "degradation rather than an outage",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "units per year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "AMP_INPUT_LOS",
+   "raised_by": [
+    "Line amplifier (LA)"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "no light arrives at its input",
+   "raised_when": "when no light arrives at its input",
+   "probable_causes": [
+    {
+     "cause": "the fibre section feeding this unit is broken",
+     "where": "the fibre section feeding this unit"
+    },
+    {
+     "cause": "its loss has risen sharply",
+     "where": "the fibre section feeding this unit"
+    },
+    {
+     "cause": "the preceding amplifier has failed and emits no light",
+     "where": "the preceding amplifier"
+    }
+   ],
+   "suppression": "Only the first unit along the multiplex section that loses its input raises this alarm; units further downstream suppress it on receiving the forward defect indication carried by the OSC.",
+   "reported_against": null
+  },
+  {
+   "id": "OMS_LOS_P",
+   "raised_by": [
+    "Preamplifier (PA)"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "no light arrives at the input of the receiving end of the multiplex section",
+   "raised_when": "when no light arrives at the input of the receiving end of the multiplex section",
+   "probable_causes": [
+    {
+     "cause": "the fibre section feeding this unit is broken",
+     "where": "the fibre section feeding this unit"
+    },
+    {
+     "cause": "its loss has risen sharply",
+     "where": "the fibre section feeding this unit"
+    },
+    {
+     "cause": "the preceding amplifier has failed and emits no light",
+     "where": "the preceding amplifier"
+    },
+    {
+     "cause": "the patch cord may have been disconnected",
+     "where": "at the input of the multiplex section"
+    }
+   ],
+   "suppression": "Suppressed in the same way as AMP_INPUT_LOS.",
+   "reported_against": null
+  },
+  {
+   "id": "OSC_LOS",
+   "raised_by": [
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "severity": "major",
+   "monitor": "OSC receiver",
+   "symptom": "the supervisory channel is not received",
+   "raised_when": "when the supervisory channel is not received",
+   "probable_causes": [
+    {
+     "cause": "the fibre section feeding this unit is broken",
+     "where": "the fibre section feeding this unit"
+    },
+    {
+     "cause": "its loss has risen sharply",
+     "where": "the fibre section feeding this unit"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "the fibre section feeding the unit, not against the unit itself"
+  },
+  {
+   "id": "AMP_FAIL",
+   "raised_by": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "severity": "critical",
+   "monitor": null,
+   "symptom": "light is present at its input but none leaves its output",
+   "raised_when": "when light is present at its input but none leaves its output",
+   "probable_causes": [
+    {
+     "cause": "failure of this unit's pump laser",
+     "where": "this unit"
+    },
+    {
+     "cause": "failure of the unit itself",
+     "where": "this unit"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "AMP_GAIN_OOR",
+   "raised_by": [
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "severity": "minor",
+   "monitor": null,
+   "symptom": "the gain departs from its set point by more than 2 dB",
+   "raised_when": "when the gain departs from its set point by more than 2 dB",
+   "probable_causes": [
+    {
+     "cause": "gain loss",
+     "where": "this unit"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "AMP_PUMP_EOL",
+   "raised_by": [
+    "Booster amplifier (BA)",
+    "Line amplifier (LA)",
+    "Preamplifier (PA)"
+   ],
+   "severity": "minor",
+   "monitor": "Pump drive current",
+   "symptom": "the pump drive current exceeds 120 per cent of its beginning-of-life value",
+   "raised_when": "when the pump drive current exceeds 120 per cent of its beginning-of-life value",
+   "probable_causes": [
+    {
+     "cause": "pump ageing",
+     "where": "this unit"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  }
+ ],
+ "routing": null,
+ "troubleshooting_notes": [
+  "If the signal-to-noise ratio of the channels has fallen but the output power is normal, the unit may be degraded. Contact VB support."
+ ]
+}

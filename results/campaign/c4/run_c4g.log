@@ -1,0 +1,127 @@
+[Thu 19:17] waiting for run_c4f.sh to finish
+[Fri 03:07] amendment 15 code applied from _sync/s98
+[Fri 03:07] checks: full test suite
+........................................................................ [ 69%]
+................................................................         [100%]
+208 passed in 374.60s (0:06:14)
+[Fri 03:13] checks: identity of A-full-cd with results/c4d
+identity s2004: identical 
+identity s2013: identical 
+identity s2017: identical 
+identity s2021: identical 
+identity s2028: identical 
+identity s2029: identical 
+[Fri 03:22] smoke: L-full-cd2 on six development cases
+6 jobs to run on 3 workers
+[1/6 1 min] L-full-cd2 s2004  x2190-s2004-monitoring       commit_correct_ambiguous   effort=4.4h  34s
+[2/6 3 min] L-full-cd2 s2021  x2190-s2021-coincident       commit_correct             effort=0.5h  128s
+[3/6 3 min] L-full-cd2 s2028  x2190-s2028-monitoring       coarse_correct             effort=2.9h  18s
+[4/6 4 min] L-full-cd2 s2017  x2190-s2017-soft             coarse_correct             effort=3.0h  226s
+[5/6 4 min] L-full-cd2 s2013  x2190-s2013-coincident       commit_correct             effort=3.5h  259s
+[6/6 6 min] L-full-cd2 s2029  x2190-s2029-coincident       commit_partial             effort=6.3h  166s
+finished in 6 min
+[Fri 03:28] smoke: 6 results, 0 errors, 40 'none of these' groups shown
+[Fri 03:28] frozen: spec/CAMPAIGN_MANIFEST_C4G.json
+[Fri 03:28] start L-full-cd2 on the sealed cases A-full-cd planned
+99 jobs to run on 6 workers
+[1/99 1 min] L-full-cd2 s7004  x2190-s7004-monitoring       dont_know_justified        effort=2.5h  53s
+[2/99 1 min] L-full-cd2 s7001  x2190-s7001-soft             coarse_correct             effort=0.1h  74s
+[3/99 2 min] L-full-cd2 s7010  x2190-s7010-transient        coarse_correct             effort=2.7h  97s
+[4/99 3 min] L-full-cd2 s7017  x2190-s7017-soft             commit_correct_ambiguous   effort=0.2h  165s
+[5/99 3 min] L-full-cd2 s7020  x2190-s7020-monitoring       coarse_wrong               effort=5.0h  121s
+[6/99 4 min] L-full-cd2 s7026  x2190-s7026-transient        coarse_correct             effort=0.0h  138s
+[7/99 5 min] L-full-cd2 s7002  x2190-s7002-transient        dont_know_unjustified      effort=0.0h  291s
+[8/99 8 min] L-full-cd2 s7029  x2190-s7029-coincident       commit_correct             effort=5.5h  340s
+[9/99 10 min] L-full-cd2 s7036  x2190-s7036-monitoring       dont_know_unjustified      effort=7.0h  291s
+[10/99 16 min] L-full-cd2 s7045  x2190-s7045-coincident       commit_correct_ambiguous   effort=2.9h  380s
+[11/99 17 min] L-full-cd2 s7034  x2190-s7034-transient        dont_know_unjustified      effort=0.1h  811s
+[12/99 19 min] L-full-cd2 s7037  x2190-s7037-coincident       dont_know_justified        effort=3.5h  619s
+[13/99 19 min] L-full-cd2 s7013  x2190-s7013-coincident       dont_know_justified        effort=0.2h  1152s
+[14/99 22 min] L-full-cd2 s7058  x2190-s7058-transient        dont_know_unjustified      effort=3.5h  248s
+[15/99 22 min] L-full-cd2 s7068  x2190-s7068-monitoring       dont_know_justified        effort=0.0h  54s
+[16/99 23 min] L-full-cd2 s7075  x2190-s7075-drift            coarse_correct             effort=0.0h  17s
+[17/99 23 min] L-full-cd2 s7076  x2190-s7076-monitoring       coarse_correct             effort=2.4h  19s
+[18/99 24 min] L-full-cd2 s7081  x2190-s7081-soft             commit_correct             effort=0.5h  83s
+[19/99 25 min] L-full-cd2 s7021  x2190-s7021-coincident       dont_know_justified        effort=0.5h  1425s
+[20/99 25 min] L-full-cd2 s7084  x2190-s7084-monitoring       coarse_correct             effort=2.3h  19s
+[21/99 26 min] L-full-cd2 s7050  x2190-s7050-transient        coarse_correct             effort=3.6h  590s
+[22/99 27 min] L-full-cd2 s7082  x2190-s7082-transient        commit_correct             effort=0.0h  147s
+[23/99 27 min] L-full-cd2 s7089  x2190-s7089-soft             commit_correct             effort=0.6h  95s
+[24/99 28 min] L-full-cd2 s7033  x2190-s7033-soft             coarse_correct             effort=0.1h  1504s
+[25/99 30 min] L-full-cd2 s7085  x2190-s7085-coincident       commit_partial             effort=0.0h  278s
+[26/99 30 min] L-full-cd2 s7090  x2190-s7090-transient        dont_know_unjustified      effort=0.6h  192s
+[27/99 33 min] L-full-cd2 s7066  x2190-s7066-transient        dont_know_unjustified      effort=0.1h  823s
+[28/99 36 min] L-full-cd2 s7061  x2190-s7061-coincident       commit_correct             effort=0.2h  1021s
+[29/99 38 min] L-full-cd2 s7105  x2190-s7105-soft             coarse_correct             effort=7.6h  326s
+[30/99 39 min] L-full-cd2 s7101  x2190-s7101-coincident       commit_correct             effort=4.1h  507s
+[31/99 39 min] L-full-cd2 s7097  x2190-s7097-soft             dont_know_unjustified      effort=0.1h  677s
+[32/99 40 min] L-full-cd2 s7108  x2190-s7108-monitoring       dont_know_justified        effort=4.0h  87s
+[33/99 40 min] L-full-cd2 s7111  x2190-s7111-common_cause     commit_correct             effort=0.0h  116s
+[34/99 41 min] L-full-cd2 s7098  x2190-s7098-transient        dont_know_unjustified      effort=0.1h  680s
+[35/99 42 min] L-full-cd2 s7106  x2190-s7106-transient        commit_correct             effort=3.5h  366s
+[36/99 43 min] L-full-cd2 s7119  x2190-s7119-common_cause     commit_correct             effort=0.0h  115s
+[37/99 44 min] L-full-cd2 s7093  x2190-s7093-coincident       dont_know_justified        effort=7.6h  1016s
+[38/99 45 min] L-full-cd2 s7122  x2190-s7122-transient        dont_know_unjustified      effort=2.0h  103s
+[39/99 45 min] L-full-cd2 s7114  x2190-s7114-transient        dont_know_unjustified      effort=0.5h  365s
+[40/99 46 min] L-full-cd2 s7117  x2190-s7117-coincident       commit_correct_ambiguous   effort=0.0h  366s
+[41/99 46 min] L-full-cd2 s7129  x2190-s7129-soft             commit_correct             effort=0.5h  76s
+[42/99 47 min] L-full-cd2 s7138  x2190-s7138-transient        coarse_correct             effort=0.0h  95s
+[43/99 52 min] L-full-cd2 s7121  x2190-s7121-soft             coarse_correct             effort=0.1h  596s
+[44/99 52 min] L-full-cd2 s7155  x2190-s7155-drift            coarse_correct             effort=3.4h  17s
+[45/99 52 min] L-full-cd2 s7118  x2190-s7118-maintenance      coarse_correct             effort=2.6h  701s
+[46/99 53 min] L-full-cd2 s7161  x2190-s7161-soft             commit_correct             effort=0.5h  29s
+[47/99 53 min] L-full-cd2 s7158  x2190-s7158-maintenance      commit_correct             effort=0.5h  42s
+[48/99 53 min] L-full-cd2 s7146  x2190-s7146-transient        dont_know_unjustified      effort=2.9h  410s
+[49/99 55 min] L-full-cd2 s7167  x2190-s7167-common_cause     commit_correct             effort=0.0h  119s
+[50/99 56 min] L-full-cd2 s7141  x2190-s7141-coincident       non_convergence            effort=0.4h  612s
+[51/99 56 min] L-full-cd2 s7149  x2190-s7149-coincident       commit_partial             effort=0.3h  572s
+[52/99 57 min] L-full-cd2 s7179  x2190-s7179-drift            coarse_correct             effort=0.0h  15s
+[53/99 57 min] L-full-cd2 s7180  x2190-s7180-monitoring       dont_know_unjustified      effort=0.0h  46s
+[54/99 58 min] L-full-cd2 s7170  x2190-s7170-transient        dont_know_justified        effort=4.4h  272s
+[55/99 58 min] L-full-cd2 s7185  x2190-s7185-soft             commit_correct             effort=0.5h  39s
+[56/99 59 min] L-full-cd2 s7125  x2190-s7125-coincident       dont_know_justified        effort=0.5h  855s
+[57/99 60 min] L-full-cd2 s7186  x2190-s7186-transient        coarse_correct             effort=0.0h  88s
+[58/99 62 min] L-full-cd2 s7178  x2190-s7178-transient        dont_know_unjustified      effort=0.0h  349s
+[59/99 65 min] L-full-cd2 s7181  x2190-s7181-coincident       dont_know_unjustified      effort=0.3h  461s
+[60/99 65 min] L-full-cd2 s7188  x2190-s7188-monitoring       dont_know_justified        effort=4.1h  392s
+[61/99 66 min] L-full-cd2 s7169  x2190-s7169-soft             coarse_correct             effort=0.1h  803s
+[62/99 67 min] L-full-cd2 s7209  x2190-s7209-soft             commit_correct             effort=0.5h  120s
+[63/99 68 min] L-full-cd2 s7194  x2190-s7194-transient        dont_know_unjustified      effort=0.0h  482s
+[64/99 68 min] L-full-cd2 s7202  x2190-s7202-transient        dont_know_unjustified      effort=3.2h  363s
+[65/99 69 min] L-full-cd2 s7218  x2190-s7218-transient        dont_know_unjustified      effort=0.5h  201s
+[66/99 69 min] L-full-cd2 s7222  x2190-s7222-maintenance      coarse_correct             effort=0.5h  82s
+[67/99 69 min] L-full-cd2 s7225  x2190-s7225-soft             coarse_correct             effort=0.5h  66s
+[68/99 70 min] L-full-cd2 s7220  x2190-s7220-monitoring       non_convergence            effort=7.1h  240s
+[69/99 72 min] L-full-cd2 s7230  x2190-s7230-maintenance      coarse_correct             effort=0.5h  180s
+[70/99 72 min] L-full-cd2 s7236  x2190-s7236-monitoring       coarse_correct             effort=2.0h  20s
+[71/99 72 min] L-full-cd2 s7226  x2190-s7226-transient        dont_know_unjustified      effort=0.0h  234s
+[72/99 74 min] L-full-cd2 s7221  x2190-s7221-coincident       commit_correct             effort=3.8h  418s
+[73/99 74 min] L-full-cd2 s7233  x2190-s7233-soft             coarse_correct             effort=0.5h  244s
+[74/99 77 min] L-full-cd2 s7242  x2190-s7242-transient        dont_know_justified        effort=0.0h  248s
+[75/99 77 min] L-full-cd2 s7229  x2190-s7229-coincident       commit_correct             effort=0.2h  501s
+[76/99 78 min] L-full-cd2 s7173  x2190-s7173-coincident       coarse_correct             effort=0.2h  1421s
+[77/99 79 min] L-full-cd2 s7255  x2190-s7255-common_cause     commit_correct             effort=0.0h  120s
+[78/99 80 min] L-full-cd2 s7250  x2190-s7250-transient        commit_correct             effort=0.1h  374s
+[79/99 81 min] L-full-cd2 s7257  x2190-s7257-soft             commit_correct             effort=0.2h  161s
+[80/99 84 min] L-full-cd2 s7258  x2190-s7258-transient        dont_know_unjustified      effort=0.0h  263s
+[81/99 84 min] L-full-cd2 s7266  x2190-s7266-transient        coarse_correct             effort=2.5h  181s
+[82/99 86 min] L-full-cd2 s7237  x2190-s7237-coincident       commit_correct_ambiguous   effort=0.2h  835s
+[83/99 89 min] L-full-cd2 s7245  x2190-s7245-coincident       dont_know_unjustified      effort=6.9h  911s
+[84/99 90 min] L-full-cd2 s7293  x2190-s7293-coincident       commit_correct             effort=0.0h  247s
+[85/99 91 min] L-full-cd2 s7295  x2190-s7295-common_cause     commit_correct             effort=0.0h  116s
+[86/99 93 min] L-full-cd2 s7297  x2190-s7297-soft             commit_correct             effort=3.5h  168s
+[87/99 93 min] L-full-cd2 s7253  x2190-s7253-coincident       dont_know_justified        effort=0.2h  1002s
+[88/99 94 min] L-full-cd2 s7300  x2190-s7300-monitoring       dont_know_unjustified      effort=0.0h  39s
+[89/99 95 min] L-full-cd2 s7305  x2190-s7305-soft             commit_correct             effort=1.0h  53s
+[90/99 96 min] L-full-cd2 s7282  x2190-s7282-transient        commit_correct             effort=0.0h  742s
+[91/99 96 min] L-full-cd2 s7261  x2190-s7261-coincident       dont_know_justified        effort=3.5h  944s
+[92/99 97 min] L-full-cd2 s7316  x2190-s7316-monitoring       coarse_correct             effort=2.5h  20s
+[93/99 98 min] L-full-cd2 s7290  x2190-s7290-transient        dont_know_justified        effort=3.0h  812s
+[94/99 100 min] L-full-cd2 s7319  x2190-s7319-common_cause     commit_correct             effort=0.0h  116s
+[95/99 102 min] L-full-cd2 s7310  x2190-s7310-maintenance      commit_correct             effort=0.2h  334s
+[96/99 102 min] L-full-cd2 s7301  x2190-s7301-coincident       dont_know_justified        effort=0.2h  549s
+[97/99 103 min] L-full-cd2 s7298  x2190-s7298-transient        dont_know_unjustified      effort=0.1h  696s
+[98/99 103 min] L-full-cd2 s7317  x2190-s7317-coincident       commit_correct             effort=2.2h  405s
+[99/99 106 min] L-full-cd2 s7309  x2190-s7309-coincident       dont_know_justified        effort=0.1h  641s
+finished in 106 min
+[Fri 05:14] amendment 15 run finished

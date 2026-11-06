@@ -1,0 +1,131 @@
+document: "Telemetry capabilities beyond the deployed tiers: what each reports and what it means (the capability ladder)"
+kind: operator_practice
+note: >
+  Read only by the arms of the capability ladder (spec/PROTOCOL_CAMPAIGN.md, amendment "the capability ladder");
+  not loaded by knowledge/ sources otherwise, so the agent as built and manual troubleshooting are unchanged. Each
+  rung is a capability as a vendor or the management system would document it: what it observes, at what grain and
+  accuracy, and the meaning an operator gives its readings. Nothing here is derived from the world simulator's code;
+  the thresholds are the documented ones of the capability.
+
+rungs:
+  L1:
+    title: "Measurement liveness: a counter of measurements taken, carried with every reading"
+    observes: "each sampled telemetry stream (amplifier powers, received power, channel monitor, coherent receiver
+      quantities, health) carries a per-sample counter that advances with every new measurement"
+    meaning: >
+      A unit's instruments report through one telemetry agent. A counter that has not advanced for three sample
+      periods, and at least 120 s, means the unit's telemetry is stale: the collector keeps repeating the last
+      value it received. A counter that keeps advancing means the stream is live, whatever its values show: the
+      readings are new measurements (they may still be wrong, as a misreporting instrument's are).
+    hold_s: 120
+    hold_samples: 3
+    evidence:
+      stopped_unexplained_nats: 8.0     # a stopped counter not accounted for by stale telemetry at that unit
+      live_contradicts_stale_nats: 8.0  # stale telemetry hypothesised at a unit whose counter advances
+    alarm: {type: TELEMETRY_STREAM_LOST, raised_by: management system, when: "counter stopped (the hold above)",
+            probable_cause: "TELEMETRY_STALE at the unit's instruments"}
+  L2:
+    title: "Per-span DGD"
+    observes: "a differential group delay estimate for every span, as a per-section estimate gives, every 60 s"
+    observable: span_dgd
+    accuracy: {instrument_ps: 1.0}
+    use: "through the twin: the twin predicts each span's DGD under each hypothesis and compares the change"
+    twin_error: {floor: 1.0, fraction: 0.2}
+  L3:
+    title: "Per-port WSS channel monitoring"
+    observes: >
+      high-resolution channel monitoring at each WSS output port: the channel's power leaving the port, and the
+      offset of the channel filter's centre from the channel's centre frequency, every 60 s, per channel ("oms|slot":
+      the WSS channel at the ROADM the OMS ends at)
+    observables: [wss_port_power, wss_filter_offset]
+    accuracy: {power_db: 0.2, offset_ghz: 0.5}
+    use: >
+      by the readings' documented meaning (an evidence term of their own; the twin does not also compare them, so
+      no reading counts twice): a filter centre offset of more than offset_ghz since the onset is a filter shift
+      at that port, and a port's power falling by more than drop_db while the channel's power arriving at that
+      degree (the channel monitor before the WSS) holds within steady_db is a loss in that port (attenuation drift)
+    thresholds: {offset_ghz: 2.0, drop_db: 1.0, steady_db: 0.5}
+    window_s: 120
+    evidence:
+      entry_unexplained_nats: 6.0     # a port reading of a filter shift or a port loss the hypothesis does not place there
+      no_entry_nats: 3.0              # a filter shift or port loss hypothesised at a port whose readings show none
+  L4:
+    title: "Located events: per-span polarisation sensing and coordinated transient capture"
+    observes: >
+      on every span, a capture of each brief excursion, over within 60 s: a polarisation change faster than
+      5000 rad/s ("sop") or a loss excursion above 0.3 dB ("loss"), with its time, duration and size
+    observable: span_transient_capture
+    miss_probability: 0.02
+    window_s: 120          # a capture belongs to the anomaly if it starts within this of the onset
+    evidence:
+      capture_unexplained_nats: 6.0   # a capture near the onset that the hypothesis does not place on that span
+      no_capture_nats: 3.9            # a transient on a span hypothesised where no capture was made (ln 0.02)
+    meaning: >
+      A "sop" capture on a span is a polarisation transient on that span; a "loss" capture is a mechanical
+      disturbance of that span. Every span is sensed, so a transient hypothesised on a span that captured nothing
+      is unlikely (the capture is missed about 2 per cent of the time).
+  L5:
+    title: "Equipment event logs"
+    observes: >
+      the equipment's logs of line protection switches (LINE_PROTECTION_SWITCH, against the lightpath) and of
+      channel add/drop actions that change an OMS's channel loading (CHANNEL_ADD_DROP, against the OMS),
+      timestamped to the second; an entry reaches the management system after a delay of typically 20 s, and about
+      10 per cent of entries are lost
+    observables: [LINE_PROTECTION_SWITCH, CHANNEL_ADD_DROP]
+    loss_probability: 0.10
+    window_s: 120
+    explains: {LINE_PROTECTION_SWITCH: PROTECTION_SWITCH_HIT, CHANNEL_ADD_DROP: CHANNEL_LOADING_TRANSIENT}
+    evidence:
+      entry_unexplained_nats: 6.0     # an entry near the onset the hypothesis does not account for
+      no_entry_nats: 2.3              # the logged action hypothesised with no entry (ln 0.10: the entry may be lost)
+  L6:
+    title: "Instrument cross-check"
+    check: {id: xcheck_reading, class: remote, minutes: 5,
+            available: "any amplifier (input power) or line receiver (received power)",
+            shows: "whether the change the unit's own instrument reports since 15 minutes before the question agrees, within 1 dB, with the change an independent instrument at the same point measures"}
+    meaning: >
+      Disagreement means the unit's instrument is at fault (misreporting, or frozen while the signal changed); a
+      real change of the signal would be seen alike by both. Agreement means the unit's instrument reports
+      truly, which rules out a misreporting instrument there.
+  S:
+    title: "Span-end channel spectra"
+    observes: >
+      a channel spectrum monitor at the end of every span (before the next amplifier): for each channel, its peak
+      power and a medium-resolution view of its shape: the offset of the spectrum's centre from the grid point and
+      its -3 dB width, every 60 s; element "span|slot". The shape at a point carries the filtering of every WSS the
+      channel has passed and the offset of its laser. Modelling note: every span end of an OMS sees the same cascade
+      (filters sit only at the ROADMs), so the test bed reads the first span end of each OMS; the other span ends'
+      powers are not used by this experiment's faults.
+    observables: [sp_power, sp_offset, sp_width]
+    accuracy: {power_db: 0.3, offset_ghz: 0.5, width_ghz: 1.0}
+    use: >
+      generation: along each channel's path, the first OMS whose span-end shape changed since the onset by more
+      than the thresholds, and changed again at the next OMS (a change persists downstream; noise does not), places
+      the cause at the WSS just before it (filter shift if the centre moved, narrowing if the
+      width fell); a change from the first span end on places it at the transmitter (laser frequency); evidence:
+      through the twin, which predicts each reading under each hypothesis (spectral mode)
+    thresholds: {offset_ghz: 1.0, width_ghz: 2.5}
+    window_s: 600
+    twin_error_by_stream:
+      sp_power: {floor: 0.25, fraction: 0.15}
+      sp_offset: {floor: 0.3, fraction: 0.15}
+      sp_width: {floor: 0.6, fraction: 0.15}
+  R:
+    title: "Receiver channel shape, with a learned penalty model"
+    observes: >
+      at each coherent receiver, a high-resolution estimate of the received channel's effective response: the
+      offset of its centre, its -3 dB width and its asymmetry, every 60 s; and a learned model's estimate of the
+      effective GSNR penalty that shape implies (its error about 0.2 dB, fixed for a receiver)
+    observables: [rx_offset, rx_width, rx_asym, rx_filter_penalty]
+    accuracy: {offset_ghz: 0.1, width_ghz: 0.2, asym: 0.01, penalty_db: 0.2}
+    use: >
+      generation: a receiver whose shape changed since the onset by more than the thresholds names every WSS on its
+      path (filter shift or narrowing) and its transmitter (laser frequency); evidence: through the twin; the
+      penalty estimate gives the twin the filtering share of a loss of signal quality
+    thresholds: {offset_ghz: 0.3, width_ghz: 0.6}
+    window_s: 600
+    twin_error_by_stream:
+      rx_offset: {floor: 0.15, fraction: 0.1}
+      rx_width: {floor: 0.3, fraction: 0.1}
+      rx_asym: {floor: 0.01, fraction: 0.15}
+      rx_filter_penalty: {floor: 0.2, fraction: 0.2}

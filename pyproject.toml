@@ -1,0 +1,13 @@
+[project]
+name = "adagent"
+version = "0.1.0"
+description = "LLM-orchestrated anomaly diagnosis agent for optical and OTN networks: framework implementation"
+requires-python = ">=3.9"
+dependencies = ["pydantic>=2", "numpy", "scipy", "networkx", "openai>=1.40", "pyyaml>=6"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,18 @@
+document: "Alarm-clearing procedures for the capability ladder's alarms"
+kind: operator_practice
+note: >
+  Added to the operator's procedures (knowledge/procedures/alarm_clearing.yaml) only in the ladder's manual
+  troubleshooting arms, ahead of its selection order. Same form and vocabulary as the operator's procedures.
+
+selection_order:
+  - {alarm: TELEMETRY_STREAM_LOST, procedure: P-TELEMETRY-LOST, rung: L1}
+
+procedures:
+  - id: P-TELEMETRY-LOST
+    rung: L1
+    title: "Telemetry stream lost (the stream's sample counter stopped)"
+    start: l_stale
+    steps: {}
+    leaves:
+      l_stale: {causes: [{mode: TELEMETRY_STALE, where: instrument_of_this_unit}],
+                advice: "Restart the unit's telemetry agent or its collector session; readings since the alarm are not new measurements."}

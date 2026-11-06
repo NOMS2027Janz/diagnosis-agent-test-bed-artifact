@@ -1,0 +1,9 @@
+{
+ "kind": "modes",
+ "seed": "dev",
+ "degradation": {
+  "modes_removed": 18,
+  "probable_causes_removed": 26
+ },
+ "types": {}
+}

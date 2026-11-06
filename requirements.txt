@@ -1,0 +1,8 @@
+pydantic>=2
+numpy
+scipy
+networkx
+openai>=1.40
+pytest
+pyyaml>=6
+rdflib>=7      # only for scripts/export_kg.py

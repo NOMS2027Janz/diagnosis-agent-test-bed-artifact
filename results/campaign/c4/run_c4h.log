@@ -1,0 +1,520 @@
+[Fri 18:53] checks: full test suite
+=========================== short test summary info ============================
+FAILED tests/test_equivalence.py::test_the_agent_side_never_imports_the_equivalence_module
+1 failed, 211 passed in 375.76s (0:06:15)
+[Fri 18:59] tests failed: stopped
+[Fri 19:10] checks: full test suite
+........................................................................ [ 67%]
+.....................................................................    [100%]
+213 passed in 373.67s (0:06:13)
+[Fri 19:17] checks: identity of A-full-cd with results/c4d
+identity s2004: identical 
+identity s2013: identical 
+identity s2017: identical 
+identity s2021: identical 
+identity s2028: identical 
+identity s2029: identical 
+[Fri 19:24] smoke: A-full-cd-lf on three development cases
+3 jobs to run on 3 workers
+[1/3 2 min] A-full-cd-lf s2001  x2190-s2001-soft             commit_correct             effort=0.0h  94s
+[2/3 2 min] A-full-cd-lf s2004  x2190-s2004-monitoring       commit_correct_ambiguous   effort=0.0h  102s
+[3/3 4 min] A-full-cd-lf s2013  x2190-s2013-coincident       commit_correct             effort=3.5h  247s
+finished in 4 min
+[Fri 19:28] smoke framer: 3 of 3
+[Fri 19:28] smoke: question reading and answer writing on three sealed cases
+qi: 3 jobs to run on 3 workers
+[1/3 0 min] qi s7002  controlled coded=True llm=True  free coded=True llm=True  20s
+[2/3 0 min] qi s7001  controlled coded=True llm=True  free coded=True llm=True  20s
+[3/3 0 min] qi s7000  controlled coded=True llm=True  free coded=True llm=True  24s
+finished in 0 min
+ae: 3 jobs to run on 3 workers
+[1/3 0 min] ae s7001  faithful=True  5s
+[2/3 0 min] ae s7002  faithful=True  6s
+[3/3 0 min] ae s7000  faithful=True  6s
+finished in 0 min
+[Fri 19:29] smoke: question 3 of 3, answer 3 of 3
+[Fri 19:29] frozen: spec/CAMPAIGN_MANIFEST_C4H.json
+[Fri 19:29] start the answer writer on 7000-7079
+ae: 77 jobs to run on 6 workers
+[1/77 0 min] ae s7008  faithful=True  6s
+[2/77 0 min] ae s7006  faithful=True  6s
+[3/77 0 min] ae s7005  faithful=True  7s
+[4/77 0 min] ae s7007  faithful=True  7s
+[5/77 0 min] ae s7003  faithful=True  9s
+[6/77 0 min] ae s7012  faithful=True  4s
+[7/77 0 min] ae s7009  faithful=True  6s
+[8/77 0 min] ae s7004  faithful=True  13s
+[9/77 0 min] ae s7011  faithful=True  8s
+[10/77 0 min] ae s7014  faithful=True  5s
+[11/77 0 min] ae s7010  faithful=True  10s
+[12/77 0 min] ae s7015  faithful=True  7s
+[13/77 0 min] ae s7016  faithful=True  8s
+[14/77 0 min] ae s7013  faithful=False  12s
+[15/77 0 min] ae s7018  faithful=True  5s
+[16/77 0 min] ae s7019  faithful=True  7s
+[17/77 0 min] ae s7017  faithful=True  9s
+[18/77 0 min] ae s7022  faithful=True  5s
+[19/77 0 min] ae s7023  faithful=True  6s
+[20/77 0 min] ae s7021  faithful=True  7s
+[21/77 0 min] ae s7020  faithful=True  10s
+[22/77 0 min] ae s7024  faithful=True  5s
+[23/77 1 min] ae s7025  faithful=True  5s
+[24/77 1 min] ae s7026  faithful=True  6s
+[25/77 1 min] ae s7028  faithful=True  5s
+[26/77 1 min] ae s7030  faithful=True  6s
+[27/77 1 min] ae s7031  faithful=True  5s
+[28/77 1 min] ae s7027  faithful=True  9s
+[29/77 1 min] ae s7029  faithful=True  8s
+[30/77 1 min] ae s7032  faithful=True  5s
+[31/77 1 min] ae s7035  faithful=True  6s
+[32/77 1 min] ae s7037  faithful=True  6s
+[33/77 1 min] ae s7038  faithful=True  6s
+[34/77 1 min] ae s7033  faithful=False  10s
+[35/77 1 min] ae s7034  faithful=False  10s
+[36/77 1 min] ae s7039  faithful=True  6s
+[37/77 1 min] ae s7036  faithful=True  12s
+[38/77 1 min] ae s7040  faithful=True  6s
+[39/77 1 min] ae s7042  faithful=True  6s
+[40/77 1 min] ae s7041  faithful=True  7s
+[41/77 1 min] ae s7043  faithful=True  5s
+[42/77 1 min] ae s7044  faithful=True  6s
+[43/77 1 min] ae s7046  faithful=True  6s
+[44/77 1 min] ae s7048  faithful=True  5s
+[45/77 1 min] ae s7047  faithful=True  7s
+[46/77 1 min] ae s7049  faithful=True  7s
+[47/77 1 min] ae s7045  faithful=True  10s
+[48/77 1 min] ae s7053  faithful=True  5s
+[49/77 1 min] ae s7052  faithful=True  6s
+[50/77 1 min] ae s7051  faithful=True  8s
+[51/77 1 min] ae s7054  faithful=True  7s
+[52/77 1 min] ae s7050  faithful=True  14s
+[53/77 1 min] ae s7055  faithful=True  9s
+[54/77 1 min] ae s7057  faithful=True  6s
+[55/77 1 min] ae s7056  faithful=True  7s
+[56/77 1 min] ae s7058  faithful=True  10s
+[57/77 1 min] ae s7060  faithful=True  6s
+[58/77 1 min] ae s7059  faithful=True  8s
+[59/77 1 min] ae s7062  faithful=True  6s
+[60/77 1 min] ae s7063  faithful=True  6s
+[61/77 1 min] ae s7064  faithful=True  5s
+[62/77 1 min] ae s7065  faithful=True  6s
+[63/77 1 min] ae s7067  faithful=True  6s
+[64/77 1 min] ae s7061  faithful=True  14s
+[65/77 1 min] ae s7066  faithful=True  11s
+[66/77 1 min] ae s7069  faithful=True  8s
+[67/77 1 min] ae s7068  faithful=True  10s
+[68/77 1 min] ae s7070  faithful=True  8s
+[69/77 1 min] ae s7071  faithful=True  7s
+[70/77 1 min] ae s7072  faithful=True  7s
+[71/77 2 min] ae s7073  faithful=True  6s
+[72/77 2 min] ae s7074  faithful=True  5s
+[73/77 2 min] ae s7077  faithful=True  5s
+[74/77 2 min] ae s7078  faithful=True  5s
+[75/77 2 min] ae s7075  faithful=True  9s
+[76/77 2 min] ae s7076  faithful=True  9s
+[77/77 2 min] ae s7079  faithful=True  6s
+finished in 2 min
+[Fri 19:31] start question reading on 7000-7319
+qi: 317 jobs to run on 6 workers
+[1/317 0 min] qi s7007  controlled coded=True llm=True  free coded=True llm=True  24s
+[2/317 0 min] qi s7006  controlled coded=True llm=True  free coded=True llm=True  28s
+[3/317 0 min] qi s7005  controlled coded=True llm=True  free coded=True llm=True  28s
+[4/317 1 min] qi s7004  controlled coded=True llm=True  free coded=True llm=True  31s
+[5/317 1 min] qi s7003  controlled coded=True llm=False  free coded=True llm=True  31s
+[6/317 1 min] qi s7008  controlled coded=True llm=True  free coded=True llm=True  34s
+[7/317 1 min] qi s7009  controlled coded=True llm=True  free coded=True llm=True  25s
+[8/317 1 min] qi s7012  controlled coded=False llm=True  free coded=True llm=True  24s
+[9/317 1 min] qi s7010  controlled coded=True llm=True  free coded=True llm=True  28s
+[10/317 1 min] qi s7013  controlled coded=True llm=True  free coded=True llm=True  25s
+[11/317 1 min] qi s7014  controlled coded=True llm=True  free coded=True llm=True  24s
+[12/317 1 min] qi s7011  controlled coded=True llm=False  free coded=True llm=False  33s
+[13/317 1 min] qi s7015  controlled coded=True llm=True  free coded=True llm=True  28s
+[14/317 1 min] qi s7016  controlled coded=True llm=True  free coded=True llm=True  27s
+[15/317 1 min] qi s7017  controlled coded=True llm=True  free coded=True llm=True  26s
+[16/317 1 min] qi s7018  controlled coded=True llm=True  free coded=True llm=False  26s
+[17/317 1 min] qi s7019  controlled coded=True llm=False  free coded=True llm=False  29s
+[18/317 1 min] qi s7020  controlled coded=True llm=True  free coded=True llm=True  26s
+[19/317 2 min] qi s7021  controlled coded=True llm=True  free coded=True llm=True  25s
+[20/317 2 min] qi s7022  controlled coded=True llm=True  free coded=True llm=False  24s
+[21/317 2 min] qi s7023  controlled coded=True llm=True  free coded=True llm=True  26s
+[22/317 2 min] qi s7024  controlled coded=True llm=True  free coded=True llm=True  26s
+[23/317 2 min] qi s7026  controlled coded=True llm=True  free coded=True llm=True  30s
+[24/317 2 min] qi s7025  controlled coded=False llm=False  free coded=True llm=True  31s
+[25/317 2 min] qi s7027  controlled coded=True llm=False  free coded=True llm=True  23s
+[26/317 2 min] qi s7028  controlled coded=False llm=False  free coded=True llm=True  27s
+[27/317 2 min] qi s7029  controlled coded=True llm=True  free coded=True llm=False  27s
+[28/317 2 min] qi s7030  controlled coded=True llm=True  free coded=True llm=True  28s
+[29/317 2 min] qi s7031  controlled coded=True llm=True  free coded=True llm=True  22s
+[30/317 2 min] qi s7032  controlled coded=True llm=True  free coded=True llm=True  23s
+[31/317 2 min] qi s7033  controlled coded=True llm=True  free coded=True llm=True  22s
+[32/317 3 min] qi s7036  controlled coded=False llm=False  free coded=True llm=True  20s
+[33/317 3 min] qi s7034  controlled coded=True llm=True  free coded=True llm=True  26s
+[34/317 3 min] qi s7037  controlled coded=True llm=True  free coded=True llm=True  20s
+[35/317 3 min] qi s7035  controlled coded=True llm=False  free coded=True llm=False  28s
+[36/317 3 min] qi s7038  controlled coded=True llm=True  free coded=True llm=True  24s
+[37/317 3 min] qi s7039  controlled coded=True llm=True  free coded=False llm=True  23s
+[38/317 3 min] qi s7040  controlled coded=True llm=True  free coded=True llm=True  18s
+[39/317 3 min] qi s7041  controlled coded=True llm=True  free coded=True llm=False  21s
+[40/317 3 min] qi s7042  controlled coded=True llm=True  free coded=True llm=True  24s
+[41/317 3 min] qi s7044  controlled coded=True llm=True  free coded=True llm=True  20s
+[42/317 3 min] qi s7043  controlled coded=True llm=False  free coded=True llm=False  26s
+[43/317 3 min] qi s7045  controlled coded=True llm=True  free coded=True llm=False  25s
+[44/317 3 min] qi s7046  controlled coded=True llm=True  free coded=True llm=True  23s
+[45/317 3 min] qi s7047  controlled coded=True llm=True  free coded=False llm=True  23s
+[46/317 3 min] qi s7048  controlled coded=True llm=True  free coded=True llm=True  23s
+[47/317 4 min] qi s7050  controlled coded=True llm=True  free coded=True llm=True  23s
+[48/317 4 min] qi s7049  controlled coded=True llm=True  free coded=True llm=False  27s
+[49/317 4 min] qi s7052  controlled coded=True llm=True  free coded=True llm=True  22s
+[50/317 4 min] qi s7051  controlled coded=True llm=False  free coded=True llm=True  27s
+[51/317 4 min] qi s7053  controlled coded=True llm=True  free coded=True llm=True  25s
+[52/317 4 min] qi s7054  controlled coded=True llm=True  free coded=True llm=True  23s
+[53/317 4 min] qi s7056  controlled coded=True llm=True  free coded=True llm=True  20s
+[54/317 4 min] qi s7055  controlled coded=True llm=True  free coded=True llm=True  24s
+[55/317 4 min] qi s7057  controlled coded=True llm=True  free coded=True llm=True  22s
+[56/317 4 min] qi s7058  controlled coded=True llm=True  free coded=True llm=True  20s
+[57/317 4 min] qi s7060  controlled coded=True llm=True  free coded=True llm=True  22s
+[58/317 4 min] qi s7059  controlled coded=True llm=False  free coded=True llm=False  24s
+[59/317 4 min] qi s7061  controlled coded=True llm=True  free coded=True llm=True  23s
+[60/317 4 min] qi s7062  controlled coded=True llm=True  free coded=True llm=True  23s
+[61/317 4 min] qi s7064  controlled coded=True llm=True  free coded=True llm=True  19s
+[62/317 4 min] qi s7063  controlled coded=True llm=True  free coded=True llm=True  19s
+[63/317 5 min] qi s7066  controlled coded=True llm=True  free coded=True llm=True  20s
+[64/317 5 min] qi s7065  controlled coded=True llm=True  free coded=True llm=True  25s
+[65/317 5 min] qi s7068  controlled coded=False llm=True  free coded=True llm=True  21s
+[66/317 5 min] qi s7069  controlled coded=True llm=True  free coded=True llm=True  20s
+[67/317 5 min] qi s7067  controlled coded=True llm=False  free coded=True llm=False  28s
+[68/317 5 min] qi s7070  controlled coded=True llm=True  free coded=True llm=True  22s
+[69/317 5 min] qi s7071  controlled coded=True llm=True  free coded=True llm=True  23s
+[70/317 5 min] qi s7074  controlled coded=True llm=True  free coded=True llm=True  20s
+[71/317 5 min] qi s7072  controlled coded=True llm=True  free coded=True llm=True  25s
+[72/317 5 min] qi s7073  controlled coded=True llm=True  free coded=True llm=False  23s
+[73/317 5 min] qi s7075  controlled coded=True llm=False  free coded=True llm=False  23s
+[74/317 5 min] qi s7076  controlled coded=True llm=True  free coded=True llm=True  24s
+[75/317 5 min] qi s7077  controlled coded=True llm=True  free coded=True llm=True  23s
+[76/317 5 min] qi s7079  controlled coded=True llm=True  free coded=True llm=True  24s
+[77/317 5 min] qi s7080  controlled coded=True llm=True  free coded=True llm=True  24s
+[78/317 5 min] qi s7081  controlled coded=True llm=True  free coded=True llm=False  21s
+[79/317 5 min] qi s7082  controlled coded=False llm=True  free coded=True llm=True  19s
+[80/317 5 min] qi s7078  controlled coded=True llm=True  free coded=True llm=True  28s
+[81/317 6 min] qi s7083  controlled coded=True llm=False  free coded=True llm=True  20s
+[82/317 6 min] qi s7085  controlled coded=True llm=True  free coded=True llm=True  20s
+[83/317 6 min] qi s7087  controlled coded=True llm=True  free coded=True llm=True  21s
+[84/317 6 min] qi s7088  controlled coded=True llm=True  free coded=True llm=True  21s
+[85/317 6 min] qi s7086  controlled coded=True llm=True  free coded=True llm=False  24s
+[86/317 6 min] qi s7084  controlled coded=True llm=True  free coded=True llm=True  27s
+[87/317 6 min] qi s7089  controlled coded=True llm=True  free coded=True llm=False  21s
+[88/317 6 min] qi s7090  controlled coded=True llm=True  free coded=True llm=True  22s
+[89/317 6 min] qi s7092  controlled coded=True llm=True  free coded=True llm=True  22s
+[90/317 6 min] qi s7091  controlled coded=True llm=False  free coded=True llm=True  24s
+[91/317 6 min] qi s7093  controlled coded=True llm=True  free coded=True llm=True  21s
+[92/317 6 min] qi s7094  controlled coded=True llm=True  free coded=True llm=True  26s
+[93/317 6 min] qi s7095  controlled coded=True llm=True  free coded=True llm=True  20s
+[94/317 6 min] qi s7096  controlled coded=True llm=True  free coded=True llm=True  20s
+[95/317 7 min] qi s7097  controlled coded=True llm=True  free coded=True llm=True  22s
+[96/317 7 min] qi s7098  controlled coded=True llm=True  free coded=True llm=True  22s
+[97/317 7 min] qi s7100  controlled coded=False llm=True  free coded=True llm=True  18s
+[98/317 7 min] qi s7099  controlled coded=True llm=False  free coded=True llm=False  25s
+[99/317 7 min] qi s7101  controlled coded=True llm=True  free coded=True llm=True  21s
+[100/317 7 min] qi s7102  controlled coded=True llm=True  free coded=True llm=True  21s
+[101/317 7 min] qi s7104  controlled coded=True llm=True  free coded=True llm=True  22s
+[102/317 7 min] qi s7103  controlled coded=True llm=True  free coded=True llm=True  24s
+[103/317 7 min] qi s7105  controlled coded=True llm=True  free coded=True llm=False  23s
+[104/317 7 min] qi s7106  controlled coded=True llm=True  free coded=True llm=True  23s
+[105/317 7 min] qi s7107  controlled coded=True llm=False  free coded=True llm=False  20s
+[106/317 7 min] qi s7108  controlled coded=True llm=True  free coded=True llm=True  21s
+[107/317 7 min] qi s7109  controlled coded=True llm=True  free coded=True llm=True  20s
+[108/317 7 min] qi s7111  controlled coded=True llm=True  free coded=True llm=True  19s
+[109/317 7 min] qi s7112  controlled coded=True llm=True  free coded=True llm=True  19s
+[110/317 7 min] qi s7113  controlled coded=True llm=True  free coded=True llm=True  19s
+[111/317 7 min] qi s7110  controlled coded=True llm=True  free coded=True llm=True  24s
+[112/317 8 min] qi s7114  controlled coded=True llm=True  free coded=False llm=True  20s
+[113/317 8 min] qi s7115  controlled coded=True llm=False  free coded=True llm=True  19s
+[114/317 8 min] qi s7118  controlled coded=True llm=True  free coded=True llm=True  17s
+[115/317 8 min] qi s7116  controlled coded=True llm=True  free coded=True llm=True  20s
+[116/317 8 min] qi s7117  controlled coded=True llm=True  free coded=True llm=True  21s
+[117/317 8 min] qi s7119  controlled coded=True llm=True  free coded=False llm=True  22s
+[118/317 8 min] qi s7120  controlled coded=True llm=True  free coded=True llm=True  19s
+[119/317 8 min] qi s7121  controlled coded=True llm=True  free coded=True llm=True  19s
+[120/317 8 min] qi s7124  controlled coded=True llm=True  free coded=True llm=True  19s
+[121/317 8 min] qi s7122  controlled coded=True llm=True  free coded=True llm=True  21s
+[122/317 8 min] qi s7123  controlled coded=True llm=False  free coded=True llm=True  25s
+[123/317 8 min] qi s7125  controlled coded=True llm=True  free coded=True llm=True  21s
+[124/317 8 min] qi s7126  controlled coded=True llm=True  free coded=True llm=True  17s
+[125/317 8 min] qi s7127  controlled coded=True llm=True  free coded=True llm=True  18s
+[126/317 8 min] qi s7128  controlled coded=True llm=True  free coded=True llm=True  19s
+[127/317 8 min] qi s7129  controlled coded=True llm=True  free coded=True llm=True  20s
+[128/317 8 min] qi s7130  controlled coded=True llm=True  free coded=True llm=True  20s
+[129/317 8 min] qi s7132  controlled coded=True llm=True  free coded=True llm=True  19s
+[130/317 8 min] qi s7131  controlled coded=True llm=False  free coded=True llm=True  24s
+[131/317 9 min] qi s7133  controlled coded=True llm=True  free coded=True llm=False  22s
+[132/317 9 min] qi s7134  controlled coded=True llm=True  free coded=False llm=True  21s
+[133/317 9 min] qi s7135  controlled coded=True llm=True  free coded=True llm=True  19s
+[134/317 9 min] qi s7136  controlled coded=True llm=True  free coded=True llm=True  19s
+[135/317 9 min] qi s7137  controlled coded=False llm=True  free coded=False llm=True  22s
+[136/317 9 min] qi s7138  controlled coded=True llm=True  free coded=True llm=True  21s
+[137/317 9 min] qi s7140  controlled coded=False llm=True  free coded=True llm=True  21s
+[138/317 9 min] qi s7139  controlled coded=True llm=False  free coded=True llm=True  23s
+[139/317 9 min] qi s7141  controlled coded=True llm=True  free coded=True llm=True  20s
+[140/317 9 min] qi s7142  controlled coded=True llm=True  free coded=True llm=True  21s
+[141/317 9 min] qi s7143  controlled coded=True llm=True  free coded=True llm=True  21s
+[142/317 9 min] qi s7144  controlled coded=True llm=True  free coded=True llm=True  23s
+[143/317 9 min] qi s7145  controlled coded=False llm=True  free coded=False llm=True  22s
+[144/317 9 min] qi s7147  controlled coded=True llm=False  free coded=True llm=True  22s
+[145/317 9 min] qi s7146  controlled coded=True llm=True  free coded=True llm=True  23s
+[146/317 9 min] qi s7148  controlled coded=True llm=True  free coded=True llm=True  23s
+[147/317 10 min] qi s7149  controlled coded=True llm=True  free coded=True llm=True  23s
+[148/317 10 min] qi s7150  controlled coded=True llm=True  free coded=True llm=True  20s
+[149/317 10 min] qi s7153  controlled coded=True llm=True  free coded=True llm=True  21s
+[150/317 10 min] qi s7151  controlled coded=True llm=True  free coded=True llm=True  22s
+[151/317 10 min] qi s7152  controlled coded=True llm=True  free coded=True llm=True  23s
+[152/317 10 min] qi s7154  controlled coded=True llm=True  free coded=True llm=True  20s
+[153/317 10 min] qi s7156  controlled coded=True llm=True  free coded=True llm=True  22s
+[154/317 10 min] qi s7155  controlled coded=True llm=False  free coded=True llm=False  24s
+[155/317 10 min] qi s7157  controlled coded=True llm=True  free coded=True llm=True  19s
+[156/317 10 min] qi s7158  controlled coded=True llm=True  free coded=True llm=False  21s
+[157/317 10 min] qi s7159  controlled coded=True llm=True  free coded=True llm=True  21s
+[158/317 10 min] qi s7160  controlled coded=True llm=True  free coded=True llm=True  23s
+[159/317 10 min] qi s7161  controlled coded=True llm=True  free coded=True llm=False  18s
+[160/317 10 min] qi s7162  controlled coded=True llm=True  free coded=True llm=False  23s
+[161/317 10 min] qi s7164  controlled coded=False llm=True  free coded=True llm=True  19s
+[162/317 10 min] qi s7165  controlled coded=True llm=True  free coded=True llm=True  20s
+[163/317 10 min] qi s7163  controlled coded=True llm=False  free coded=True llm=False  25s
+[164/317 11 min] qi s7166  controlled coded=True llm=True  free coded=True llm=True  24s
+[165/317 11 min] qi s7167  controlled coded=True llm=True  free coded=True llm=True  23s
+[166/317 11 min] qi s7168  controlled coded=True llm=True  free coded=True llm=True  23s
+[167/317 11 min] qi s7169  controlled coded=True llm=True  free coded=True llm=True  22s
+[168/317 11 min] qi s7170  controlled coded=True llm=True  free coded=True llm=True  23s
+[169/317 11 min] qi s7171  controlled coded=True llm=False  free coded=False llm=False  24s
+[170/317 11 min] qi s7172  controlled coded=True llm=True  free coded=True llm=True  22s
+[171/317 11 min] qi s7173  controlled coded=True llm=True  free coded=True llm=True  20s
+[172/317 11 min] qi s7174  controlled coded=True llm=True  free coded=True llm=True  21s
+[173/317 11 min] qi s7175  controlled coded=True llm=True  free coded=True llm=True  20s
+[174/317 11 min] qi s7176  controlled coded=True llm=True  free coded=True llm=True  21s
+[175/317 11 min] qi s7177  controlled coded=True llm=True  free coded=True llm=True  24s
+[176/317 11 min] qi s7178  controlled coded=True llm=True  free coded=True llm=True  22s
+[177/317 11 min] qi s7179  controlled coded=True llm=False  free coded=True llm=True  22s
+[178/317 11 min] qi s7180  controlled coded=True llm=True  free coded=True llm=True  22s
+[179/317 11 min] qi s7181  controlled coded=True llm=True  free coded=True llm=True  22s
+[180/317 11 min] qi s7182  controlled coded=True llm=True  free coded=True llm=True  19s
+[181/317 12 min] qi s7184  controlled coded=True llm=True  free coded=True llm=True  19s
+[182/317 12 min] qi s7185  controlled coded=True llm=True  free coded=True llm=True  19s
+[183/317 12 min] qi s7183  controlled coded=True llm=True  free coded=True llm=True  21s
+[184/317 12 min] qi s7186  controlled coded=True llm=True  free coded=True llm=True  20s
+[185/317 12 min] qi s7187  controlled coded=False llm=False  free coded=True llm=True  21s
+[186/317 12 min] qi s7188  controlled coded=True llm=True  free coded=True llm=True  22s
+[187/317 12 min] qi s7189  controlled coded=True llm=True  free coded=True llm=False  21s
+[188/317 12 min] qi s7190  controlled coded=True llm=True  free coded=True llm=True  22s
+[189/317 12 min] qi s7191  controlled coded=True llm=True  free coded=True llm=True  25s
+[190/317 12 min] qi s7192  controlled coded=True llm=True  free coded=False llm=True  21s
+[191/317 12 min] qi s7193  controlled coded=True llm=True  free coded=True llm=False  24s
+[192/317 12 min] qi s7194  controlled coded=True llm=True  free coded=True llm=True  24s
+[193/317 12 min] qi s7196  controlled coded=True llm=True  free coded=True llm=True  19s
+[194/317 12 min] qi s7195  controlled coded=True llm=False  free coded=True llm=True  24s
+[195/317 12 min] qi s7197  controlled coded=True llm=True  free coded=True llm=True  21s
+[196/317 13 min] qi s7198  controlled coded=True llm=True  free coded=True llm=False  24s
+[197/317 13 min] qi s7199  controlled coded=True llm=True  free coded=True llm=True  19s
+[198/317 13 min] qi s7200  controlled coded=True llm=True  free coded=True llm=True  20s
+[199/317 13 min] qi s7201  controlled coded=True llm=True  free coded=True llm=True  20s
+[200/317 13 min] qi s7202  controlled coded=True llm=True  free coded=False llm=True  20s
+[201/317 13 min] qi s7203  controlled coded=True llm=False  free coded=True llm=True  23s
+[202/317 13 min] qi s7204  controlled coded=True llm=True  free coded=True llm=True  20s
+[203/317 13 min] qi s7205  controlled coded=True llm=True  free coded=True llm=True  18s
+[204/317 13 min] qi s7206  controlled coded=True llm=True  free coded=True llm=True  20s
+[205/317 13 min] qi s7208  controlled coded=True llm=True  free coded=True llm=True  15s
+[206/317 13 min] qi s7207  controlled coded=True llm=True  free coded=True llm=True  21s
+[207/317 13 min] qi s7209  controlled coded=True llm=True  free coded=True llm=True  19s
+[208/317 13 min] qi s7210  controlled coded=True llm=True  free coded=True llm=False  18s
+[209/317 13 min] qi s7212  controlled coded=True llm=True  free coded=True llm=True  20s
+[210/317 13 min] qi s7211  controlled coded=True llm=False  free coded=True llm=False  25s
+[211/317 13 min] qi s7213  controlled coded=True llm=True  free coded=True llm=True  18s
+[212/317 13 min] qi s7214  controlled coded=True llm=True  free coded=True llm=True  20s
+[213/317 13 min] qi s7215  controlled coded=True llm=True  free coded=True llm=True  16s
+[214/317 13 min] qi s7216  controlled coded=True llm=True  free coded=True llm=True  17s
+[215/317 14 min] qi s7218  controlled coded=True llm=True  free coded=True llm=True  16s
+[216/317 14 min] qi s7217  controlled coded=True llm=True  free coded=True llm=True  18s
+[217/317 14 min] qi s7219  controlled coded=True llm=False  free coded=True llm=True  20s
+[218/317 14 min] qi s7221  controlled coded=True llm=True  free coded=False llm=True  18s
+[219/317 14 min] qi s7220  controlled coded=False llm=True  free coded=True llm=True  21s
+[220/317 14 min] qi s7222  controlled coded=True llm=True  free coded=True llm=True  19s
+[221/317 14 min] qi s7223  controlled coded=True llm=True  free coded=True llm=True  16s
+[222/317 14 min] qi s7224  controlled coded=True llm=True  free coded=False llm=True  20s
+[223/317 14 min] qi s7225  controlled coded=True llm=True  free coded=True llm=True  18s
+[224/317 14 min] qi s7226  controlled coded=True llm=True  free coded=False llm=True  20s
+[225/317 14 min] qi s7227  controlled coded=True llm=False  free coded=True llm=False  20s
+[226/317 14 min] qi s7228  controlled coded=True llm=True  free coded=True llm=True  17s
+[227/317 14 min] qi s7229  controlled coded=True llm=True  free coded=True llm=True  20s
+[228/317 14 min] qi s7230  controlled coded=True llm=True  free coded=True llm=True  18s
+[229/317 14 min] qi s7231  controlled coded=True llm=True  free coded=True llm=True  17s
+[230/317 14 min] qi s7232  controlled coded=True llm=True  free coded=True llm=True  18s
+[231/317 14 min] qi s7234  controlled coded=True llm=True  free coded=True llm=True  18s
+[232/317 14 min] qi s7233  controlled coded=True llm=True  free coded=True llm=False  18s
+[233/317 14 min] qi s7236  controlled coded=True llm=True  free coded=True llm=True  17s
+[234/317 14 min] qi s7235  controlled coded=True llm=False  free coded=True llm=True  20s
+[235/317 14 min] qi s7237  controlled coded=True llm=True  free coded=True llm=True  18s
+[236/317 15 min] qi s7239  controlled coded=True llm=True  free coded=False llm=True  17s
+[237/317 15 min] qi s7238  controlled coded=True llm=True  free coded=True llm=True  20s
+[238/317 15 min] qi s7240  controlled coded=True llm=True  free coded=True llm=True  20s
+[239/317 15 min] qi s7241  controlled coded=True llm=True  free coded=True llm=True  20s
+[240/317 15 min] qi s7242  controlled coded=True llm=True  free coded=True llm=True  21s
+[241/317 15 min] qi s7245  controlled coded=True llm=True  free coded=True llm=True  17s
+[242/317 15 min] qi s7243  controlled coded=True llm=False  free coded=True llm=True  26s
+[243/317 15 min] qi s7244  controlled coded=True llm=True  free coded=True llm=True  19s
+[244/317 15 min] qi s7246  controlled coded=True llm=True  free coded=True llm=True  20s
+[245/317 15 min] qi s7247  controlled coded=True llm=True  free coded=True llm=True  16s
+[246/317 15 min] qi s7248  controlled coded=True llm=True  free coded=True llm=True  20s
+[247/317 15 min] qi s7249  controlled coded=False llm=True  free coded=True llm=True  18s
+[248/317 15 min] qi s7250  controlled coded=True llm=True  free coded=True llm=True  21s
+[249/317 15 min] qi s7251  controlled coded=True llm=False  free coded=True llm=True  25s
+[250/317 15 min] qi s7252  controlled coded=False llm=False  free coded=True llm=True  22s
+[251/317 15 min] qi s7253  controlled coded=True llm=True  free coded=False llm=True  18s
+[252/317 15 min] qi s7254  controlled coded=True llm=True  free coded=True llm=True  19s
+[253/317 16 min] qi s7256  controlled coded=True llm=True  free coded=True llm=True  18s
+[254/317 16 min] qi s7255  controlled coded=True llm=True  free coded=True llm=True  22s
+[255/317 16 min] qi s7258  controlled coded=True llm=True  free coded=True llm=True  18s
+[256/317 16 min] qi s7257  controlled coded=True llm=True  free coded=True llm=True  19s
+[257/317 16 min] qi s7259  controlled coded=True llm=False  free coded=True llm=True  24s
+[258/317 16 min] qi s7260  controlled coded=False llm=True  free coded=True llm=True  21s
+[259/317 16 min] qi s7262  controlled coded=True llm=True  free coded=True llm=True  18s
+[260/317 16 min] qi s7261  controlled coded=True llm=True  free coded=False llm=True  20s
+[261/317 16 min] qi s7263  controlled coded=True llm=True  free coded=True llm=True  19s
+[262/317 16 min] qi s7264  controlled coded=True llm=True  free coded=True llm=True  20s
+[263/317 16 min] qi s7266  controlled coded=True llm=True  free coded=True llm=True  17s
+[264/317 16 min] qi s7265  controlled coded=True llm=True  free coded=True llm=False  20s
+[265/317 16 min] qi s7268  controlled coded=True llm=True  free coded=True llm=True  16s
+[266/317 16 min] qi s7267  controlled coded=False llm=False  free coded=True llm=True  26s
+[267/317 16 min] qi s7270  controlled coded=True llm=True  free coded=False llm=True  19s
+[268/317 16 min] qi s7269  controlled coded=True llm=True  free coded=True llm=True  21s
+[269/317 16 min] qi s7272  controlled coded=True llm=True  free coded=True llm=True  16s
+[270/317 16 min] qi s7271  controlled coded=True llm=True  free coded=True llm=True  21s
+[271/317 17 min] qi s7273  controlled coded=False llm=False  free coded=True llm=True  21s
+[272/317 17 min] qi s7276  controlled coded=True llm=True  free coded=True llm=True  20s
+[273/317 17 min] qi s7274  controlled coded=True llm=True  free coded=True llm=False  22s
+[274/317 17 min] qi s7275  controlled coded=True llm=False  free coded=True llm=False  22s
+[275/317 17 min] qi s7277  controlled coded=True llm=True  free coded=True llm=True  19s
+[276/317 17 min] qi s7278  controlled coded=True llm=True  free coded=False llm=True  18s
+[277/317 17 min] qi s7279  controlled coded=True llm=True  free coded=True llm=True  19s
+[278/317 17 min] qi s7282  controlled coded=True llm=True  free coded=True llm=True  18s
+[279/317 17 min] qi s7280  controlled coded=True llm=True  free coded=True llm=True  20s
+[280/317 17 min] qi s7283  controlled coded=True llm=False  free coded=True llm=True  20s
+[281/317 17 min] qi s7281  controlled coded=True llm=True  free coded=True llm=False  22s
+[282/317 17 min] qi s7284  controlled coded=True llm=True  free coded=True llm=True  21s
+[283/317 17 min] qi s7285  controlled coded=True llm=True  free coded=False llm=True  18s
+[284/317 17 min] qi s7287  controlled coded=True llm=True  free coded=True llm=True  20s
+[285/317 17 min] qi s7288  controlled coded=True llm=True  free coded=True llm=True  20s
+[286/317 17 min] qi s7286  controlled coded=True llm=True  free coded=True llm=True  22s
+[287/317 17 min] qi s7289  controlled coded=False llm=False  free coded=True llm=True  23s
+[288/317 17 min] qi s7290  controlled coded=True llm=True  free coded=False llm=True  21s
+[289/317 18 min] qi s7291  controlled coded=True llm=False  free coded=True llm=True  22s
+[290/317 18 min] qi s7292  controlled coded=True llm=True  free coded=True llm=True  19s
+[291/317 18 min] qi s7293  controlled coded=True llm=True  free coded=True llm=True  21s
+[292/317 18 min] qi s7295  controlled coded=True llm=True  free coded=True llm=True  21s
+[293/317 18 min] qi s7296  controlled coded=True llm=True  free coded=True llm=True  19s
+[294/317 18 min] qi s7294  controlled coded=True llm=True  free coded=True llm=True  27s
+[295/317 18 min] qi s7297  controlled coded=True llm=True  free coded=True llm=True  20s
+[296/317 18 min] qi s7298  controlled coded=True llm=True  free coded=True llm=True  21s
+[297/317 18 min] qi s7301  controlled coded=True llm=True  free coded=False llm=True  19s
+[298/317 18 min] qi s7299  controlled coded=True llm=False  free coded=True llm=True  25s
+[299/317 18 min] qi s7303  controlled coded=True llm=True  free coded=True llm=True  17s
+[300/317 18 min] qi s7302  controlled coded=True llm=True  free coded=True llm=True  20s
+[301/317 18 min] qi s7300  controlled coded=True llm=True  free coded=True llm=True  22s
+[302/317 18 min] qi s7304  controlled coded=True llm=True  free coded=True llm=True  22s
+[303/317 18 min] qi s7305  controlled coded=True llm=True  free coded=True llm=False  19s
+[304/317 18 min] qi s7306  controlled coded=True llm=True  free coded=True llm=False  19s
+[305/317 19 min] qi s7309  controlled coded=True llm=True  free coded=True llm=True  20s
+[306/317 19 min] qi s7307  controlled coded=True llm=False  free coded=True llm=True  21s
+[307/317 19 min] qi s7308  controlled coded=True llm=True  free coded=True llm=True  21s
+[308/317 19 min] qi s7310  controlled coded=True llm=True  free coded=True llm=True  22s
+[309/317 19 min] qi s7312  controlled coded=True llm=True  free coded=True llm=True  18s
+[310/317 19 min] qi s7313  controlled coded=True llm=True  free coded=True llm=True  19s
+[311/317 19 min] qi s7311  controlled coded=True llm=True  free coded=False llm=True  22s
+[312/317 19 min] qi s7314  controlled coded=True llm=True  free coded=True llm=True  19s
+[313/317 19 min] qi s7315  controlled coded=True llm=False  free coded=True llm=True  23s
+[314/317 19 min] qi s7316  controlled coded=True llm=True  free coded=True llm=True  21s
+[315/317 19 min] qi s7317  controlled coded=True llm=True  free coded=True llm=True  22s
+[316/317 19 min] qi s7318  controlled coded=True llm=True  free coded=True llm=True  19s
+[317/317 19 min] qi s7319  controlled coded=True llm=True  free coded=True llm=True  22s
+finished in 19 min
+[Fri 19:50] start A-full-cd-lf on 7000-7079
+80 jobs to run on 6 workers
+[1/80 2 min] A-full-cd-lf s7001  x2190-s7001-soft             coarse_correct             effort=0.0h  122s
+[2/80 3 min] A-full-cd-lf s7004  x2190-s7004-monitoring       coarse_correct             effort=2.9h  170s
+[3/80 3 min] A-full-cd-lf s7003  x2190-s7003-drift            dont_know_unjustified      effort=0.0h  178s
+[4/80 4 min] A-full-cd-lf s7005  x2190-s7005-coincident       commit_partial             effort=0.0h  225s
+[5/80 5 min] A-full-cd-lf s7006  x2190-s7006-maintenance      commit_correct             effort=0.0h  190s
+[6/80 6 min] A-full-cd-lf s7000  x2190-s7000-hard             commit_correct             effort=0.0h  355s
+[7/80 6 min] A-full-cd-lf s7008  x2190-s7008-hard             commit_correct             effort=0.0h  186s
+[8/80 6 min] A-full-cd-lf s7009  x2190-s7009-soft             commit_correct             effort=0.0h  161s
+[9/80 6 min] A-full-cd-lf s7007  x2190-s7007-common_cause     commit_correct             effort=0.0h  218s
+[10/80 7 min] A-full-cd-lf s7012  x2190-s7012-monitoring       commit_correct             effort=0.0h  67s
+[11/80 8 min] A-full-cd-lf s7010  x2190-s7010-transient        coarse_correct             effort=0.0h  156s
+[12/80 8 min] A-full-cd-lf s7014  x2190-s7014-maintenance      commit_correct             effort=0.0h  101s
+[13/80 9 min] A-full-cd-lf s7011  x2190-s7011-drift            dont_know_justified        effort=0.0h  184s
+[14/80 12 min] A-full-cd-lf s7016  x2190-s7016-hard             commit_correct             effort=0.0h  237s
+[15/80 12 min] A-full-cd-lf s7002  x2190-s7002-transient        dont_know_unjustified      effort=0.1h  707s
+[16/80 12 min] A-full-cd-lf s7017  x2190-s7017-soft             commit_correct_ambiguous   effort=0.2h  219s
+[17/80 12 min] A-full-cd-lf s7015  x2190-s7015-common_cause     commit_correct             effort=0.0h  311s
+[18/80 15 min] A-full-cd-lf s7020  x2190-s7020-monitoring       dont_know_unjustified      effort=7.8h  217s
+[19/80 15 min] A-full-cd-lf s7019  x2190-s7019-drift            dont_know_justified        effort=0.0h  222s
+[20/80 19 min] A-full-cd-lf s7024  x2190-s7024-hard             commit_correct             effort=0.0h  234s
+[21/80 21 min] A-full-cd-lf s7018  x2190-s7018-transient        dont_know_justified        effort=0.0h  710s
+[22/80 21 min] A-full-cd-lf s7025  x2190-s7025-soft             commit_correct             effort=0.0h  96s
+[23/80 21 min] A-full-cd-lf s7013  x2190-s7013-coincident       dont_know_justified        effort=0.1h  903s
+[24/80 22 min] A-full-cd-lf s7022  x2190-s7022-maintenance      commit_correct             effort=0.0h  566s
+[25/80 22 min] A-full-cd-lf s7023  x2190-s7023-common_cause     commit_correct             effort=0.0h  417s
+[26/80 25 min] A-full-cd-lf s7027  x2190-s7027-drift            dont_know_unjustified      effort=0.0h  211s
+[27/80 25 min] A-full-cd-lf s7026  x2190-s7026-transient        coarse_correct             effort=0.0h  240s
+[28/80 25 min] A-full-cd-lf s7028  x2190-s7028-monitoring       commit_correct_ambiguous   effort=0.0h  217s
+[29/80 29 min] A-full-cd-lf s7030  x2190-s7030-maintenance      commit_correct             effort=0.0h  427s
+[30/80 30 min] A-full-cd-lf s7032  x2190-s7032-hard             commit_correct             effort=0.0h  294s
+[31/80 31 min] A-full-cd-lf s7021  x2190-s7021-coincident       dont_know_unjustified      effort=0.0h  1165s
+[32/80 34 min] A-full-cd-lf s7035  x2190-s7035-drift            commit_correct             effort=2.5h  249s
+[33/80 37 min] A-full-cd-lf s7036  x2190-s7036-monitoring       dont_know_justified        effort=6.0h  330s
+[34/80 39 min] A-full-cd-lf s7031  x2190-s7031-common_cause     commit_correct             effort=0.0h  854s
+[35/80 42 min] A-full-cd-lf s7038  x2190-s7038-maintenance      commit_correct             effort=0.0h  311s
+[36/80 43 min] A-full-cd-lf s7037  x2190-s7037-coincident       dont_know_justified        effort=0.0h  554s
+[37/80 43 min] A-full-cd-lf s7033  x2190-s7033-soft             coarse_correct             effort=0.1h  1082s
+[38/80 45 min] A-full-cd-lf s7040  x2190-s7040-hard             commit_correct             effort=0.0h  203s
+[39/80 47 min] A-full-cd-lf s7042  x2190-s7042-transient        commit_correct             effort=0.0h  213s
+[40/80 49 min] A-full-cd-lf s7029  x2190-s7029-coincident       commit_correct             effort=5.5h  1629s
+[41/80 50 min] A-full-cd-lf s7043  x2190-s7043-drift            commit_correct             effort=3.5h  285s
+[42/80 51 min] A-full-cd-lf s7044  x2190-s7044-monitoring       commit_correct             effort=0.0h  270s
+[43/80 53 min] A-full-cd-lf s7041  x2190-s7041-soft             commit_correct             effort=0.0h  566s
+[44/80 53 min] A-full-cd-lf s7039  x2190-s7039-common_cause     commit_correct             effort=0.0h  880s
+[45/80 55 min] A-full-cd-lf s7045  x2190-s7045-coincident       commit_correct_ambiguous   effort=2.4h  375s
+[46/80 56 min] A-full-cd-lf s7049  x2190-s7049-soft             commit_correct             effort=0.0h  133s
+[47/80 56 min] A-full-cd-lf s7046  x2190-s7046-maintenance      commit_correct             effort=0.0h  355s
+[48/80 57 min] A-full-cd-lf s7048  x2190-s7048-hard             commit_correct             effort=0.0h  238s
+[49/80 57 min] A-full-cd-lf s7034  x2190-s7034-transient        dont_know_unjustified      effort=2.4h  1654s
+[50/80 58 min] A-full-cd-lf s7053  x2190-s7053-coincident       commit_partial             effort=0.0h  112s
+[51/80 59 min] A-full-cd-lf s7052  x2190-s7052-monitoring       commit_correct             effort=0.0h  175s
+[52/80 59 min] A-full-cd-lf s7047  x2190-s7047-common_cause     commit_correct             effort=0.0h  476s
+[53/80 59 min] A-full-cd-lf s7054  x2190-s7054-maintenance      commit_correct             effort=0.0h  128s
+[54/80 59 min] A-full-cd-lf s7051  x2190-s7051-drift            dont_know_unjustified      effort=0.0h  224s
+[55/80 61 min] A-full-cd-lf s7057  x2190-s7057-soft             commit_correct             effort=0.0h  105s
+[56/80 62 min] A-full-cd-lf s7060  x2190-s7060-monitoring       commit_correct             effort=0.0h  94s
+[57/80 63 min] A-full-cd-lf s7059  x2190-s7059-drift            dont_know_unjustified      effort=0.0h  232s
+[58/80 64 min] A-full-cd-lf s7056  x2190-s7056-hard             commit_correct             effort=0.0h  285s
+[59/80 64 min] A-full-cd-lf s7055  x2190-s7055-common_cause     commit_correct             effort=0.0h  365s
+[60/80 65 min] A-full-cd-lf s7062  x2190-s7062-maintenance      commit_correct             effort=0.0h  106s
+[61/80 66 min] A-full-cd-lf s7050  x2190-s7050-transient        coarse_correct             effort=5.8h  619s
+[62/80 66 min] A-full-cd-lf s7064  x2190-s7064-hard             commit_correct             effort=0.0h  95s
+[63/80 66 min] A-full-cd-lf s7058  x2190-s7058-transient        dont_know_unjustified      effort=0.1h  415s
+[64/80 68 min] A-full-cd-lf s7065  x2190-s7065-soft             commit_correct_ambiguous   effort=0.0h  156s
+[65/80 70 min] A-full-cd-lf s7067  x2190-s7067-drift            dont_know_unjustified      effort=0.0h  223s
+[66/80 71 min] A-full-cd-lf s7068  x2190-s7068-monitoring       coarse_correct             effort=5.7h  312s
+[67/80 73 min] A-full-cd-lf s7070  x2190-s7070-maintenance      commit_correct             effort=0.0h  180s
+[68/80 73 min] A-full-cd-lf s7063  x2190-s7063-common_cause     commit_correct             effort=0.0h  552s
+[69/80 73 min] A-full-cd-lf s7069  x2190-s7069-coincident       commit_partial             effort=0.0h  337s
+[70/80 75 min] A-full-cd-lf s7072  x2190-s7072-hard             commit_correct             effort=0.0h  106s
+[71/80 75 min] A-full-cd-lf s7074  x2190-s7074-transient        commit_correct             effort=0.0h  129s
+[72/80 76 min] A-full-cd-lf s7076  x2190-s7076-monitoring       coarse_correct             effort=0.0h  62s
+[73/80 77 min] A-full-cd-lf s7071  x2190-s7071-common_cause     commit_correct             effort=0.0h  345s
+[74/80 77 min] A-full-cd-lf s7073  x2190-s7073-soft             commit_correct             effort=0.0h  269s
+[75/80 78 min] A-full-cd-lf s7075  x2190-s7075-drift            dont_know_unjustified      effort=0.0h  227s
+[76/80 80 min] A-full-cd-lf s7078  x2190-s7078-maintenance      commit_correct             effort=0.0h  146s
+[77/80 82 min] A-full-cd-lf s7077  x2190-s7077-coincident       commit_correct_ambiguous   effort=0.0h  364s
+[78/80 83 min] A-full-cd-lf s7079  x2190-s7079-common_cause     commit_correct             effort=0.0h  353s
+[79/80 84 min] A-full-cd-lf s7061  x2190-s7061-coincident       commit_correct             effort=0.5h  1263s
+[80/80 86 min] A-full-cd-lf s7066  x2190-s7066-transient        dont_know_unjustified      effort=5.5h  1225s
+finished in 86 min
+[Fri 21:16] amendment 16 runs finished

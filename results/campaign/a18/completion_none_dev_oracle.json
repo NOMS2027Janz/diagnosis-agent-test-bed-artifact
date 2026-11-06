@@ -1,0 +1,119 @@
+{
+ "kind": "none",
+ "seed": "dev",
+ "degradation": {},
+ "types": {
+  "PLANT-OMS-INPUT": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "PLANT-SPAN": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-100GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-10GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-CP-400GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-MXP-200": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-MXP-400": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-OA-BST": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-OA-ILA": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-OA-PRE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-OTN-LC-200": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-OTN-LC-400": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-OTNSW": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-ROADM-CDC": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VA-TPD-400": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-CP-100GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-CP-10GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-CP-400GE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-MXP-200": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-MXP-400": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OA-BST": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OA-ILA": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OA-PRE": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OTN-LC-200": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OTN-LC-400": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-OTNSW": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-ROADM-CDC": {
+   "gaps": [],
+   "added_modes": []
+  },
+  "VB-TPD-400": {
+   "gaps": [],
+   "added_modes": []
+  }
+ }
+}

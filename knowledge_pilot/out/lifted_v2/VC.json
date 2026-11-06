@@ -1,0 +1,4019 @@
+{
+ "system": "vendor VC",
+ "dialect": "VC manuals",
+ "modules": [],
+ "note": "agent-lifted from VC's manuals (pilot steps 2 and 3)",
+ "concepts": [
+  {
+   "id": "dxc",
+   "label": "the digital cross-connect",
+   "synonyms": [
+    "VC-DXC"
+   ],
+   "kind": "Resource",
+   "gloss": "A VC digital cross-connect is the network resource that digitally switches ODU connections between line modules and tributary interfaces and can suffer fabric, hardware, or provisioning faults.",
+   "example": "A VC-DXC switches an ODU from a VC-WT-400D line module to a VC-TRIB-400 tributary port.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "fabric_outage"
+    },
+    {
+     "rel": "has-fault",
+     "target": "misprovisioned_connection"
+    },
+    {
+     "rel": "has-fault",
+     "target": "fabric_hardware_fault"
+    }
+   ],
+   "instances": [
+    "VC-DXC"
+   ]
+  },
+  {
+   "id": "dxc_role",
+   "label": "switches ODUs between line modules and tributaries",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "The digital-cross-connect switching function maps and transfers ODUs between optical line modules and customer-facing tributary interfaces.",
+   "example": "The function takes an ODU arriving from a line module and switches it to the provisioned tributary.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "tributary_port",
+   "label": "tributary port",
+   "synonyms": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ],
+   "kind": "Resource",
+   "gloss": "A tributary port is a customer-facing VC interface that terminates or originates client service, reports tributary faults, and measures customer errored and unavailable seconds.",
+   "example": "A VC-TRIB-100 carries a 100-Gbit/s customer service and raises TRIB-FAIL when that service fails.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "tributary_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "tributary_hardware_fault"
+    },
+    {
+     "rel": "measures",
+     "target": "customer_errored_seconds"
+    },
+    {
+     "rel": "measures",
+     "target": "customer_unavailable_seconds"
+    }
+   ],
+   "instances": [
+    "VC-TRIB-10",
+    "VC-TRIB-100",
+    "VC-TRIB-400"
+   ]
+  },
+  {
+   "id": "launch_ofa",
+   "label": "launch OFA",
+   "synonyms": [
+    "VC-OFA-T"
+   ],
+   "kind": "Resource",
+   "gloss": "A launch optical fibre amplifier is the VC-OFA-T resource placed where a wavelength section leaves a wavelength router to establish outbound optical power.",
+   "example": "A VC-OFA-T amplifies the outgoing wavelength band before it enters the first fibre span.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "amplifier_outage"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_sag"
+    },
+    {
+     "rel": "has-fault",
+     "target": "excess_noise"
+    },
+    {
+     "rel": "has-fault",
+     "target": "pump_wearout"
+    },
+    {
+     "rel": "has-fault",
+     "target": "spectral_tilt"
+    },
+    {
+     "rel": "lies-at",
+     "target": "wavelength_section_leaves"
+    }
+   ],
+   "instances": [
+    "VC-OFA-T"
+   ]
+  },
+  {
+   "id": "wavelength_section_leaves",
+   "label": "where a wavelength section leaves the wavelength router",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "This is the egress boundary at a wavelength router where a routed wavelength section begins and enters its outbound optical path.",
+   "example": "The launch OFA is installed between the router output and the fibre section leaving the site.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "midspan_ofa",
+   "label": "mid-span OFA",
+   "synonyms": [
+    "VC-OFA-M"
+   ],
+   "kind": "Resource",
+   "gloss": "A mid-span optical fibre amplifier is a VC-OFA-M resource in a repeater shelter that restores optical power between terminal sites without terminating wavelengths.",
+   "example": "A VC-OFA-M in a shelter amplifies all wavelengths after an 80-km fibre span.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "amplifier_outage"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_sag"
+    },
+    {
+     "rel": "has-fault",
+     "target": "excess_noise"
+    },
+    {
+     "rel": "has-fault",
+     "target": "pump_wearout"
+    },
+    {
+     "rel": "has-fault",
+     "target": "spectral_tilt"
+    },
+    {
+     "rel": "lies-at",
+     "target": "repeater_shelters"
+    }
+   ],
+   "instances": [
+    "VC-OFA-M"
+   ]
+  },
+  {
+   "id": "repeater_shelters",
+   "label": "in repeater shelters between terminals",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "Repeater shelters are intermediate sites between terminals that house mid-span amplifiers and terminate and regenerate supervisory links for adjacent fibre spans.",
+   "example": "A shelter halfway between two terminals contains a VC-OFA-M and starts a new supervisory link for the next span.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "landing_ofa",
+   "label": "landing OFA",
+   "synonyms": [
+    "VC-OFA-R"
+   ],
+   "kind": "Resource",
+   "gloss": "A landing optical fibre amplifier is the VC-OFA-R resource at the receiving end of a wavelength section, where that section arrives at the next router.",
+   "example": "A VC-OFA-R boosts wavelengths arriving from the line before they enter the destination wavelength router.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "amplifier_outage"
+    },
+    {
+     "rel": "has-fault",
+     "target": "gain_sag"
+    },
+    {
+     "rel": "has-fault",
+     "target": "excess_noise"
+    },
+    {
+     "rel": "has-fault",
+     "target": "pump_wearout"
+    },
+    {
+     "rel": "has-fault",
+     "target": "spectral_tilt"
+    },
+    {
+     "rel": "lies-at",
+     "target": "wavelength_section_arrives"
+    }
+   ],
+   "instances": [
+    "VC-OFA-R"
+   ]
+  },
+  {
+   "id": "wavelength_section_arrives",
+   "label": "where a wavelength section arrives at the next wavelength router",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "This is the ingress boundary at the next wavelength router where an incoming wavelength section ends.",
+   "example": "The landing OFA sits at the point where the intersite fibre section reaches the receiving router.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "wavelength_router",
+   "label": "wavelength router",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "A wavelength router is a VC-WR-X optical resource that independently steers wavelengths between directions while monitoring each wavelength's level and OSNR.",
+   "example": "A VC-WR-X routes wavelength \u03bb7 from the west input to the south output and reports its optical level.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "over_attenuation"
+    },
+    {
+     "rel": "has-fault",
+     "target": "passband_misalignment"
+    },
+    {
+     "rel": "has-fault",
+     "target": "direction_input_fault"
+    },
+    {
+     "rel": "measures",
+     "target": "per_wavelength_level"
+    },
+    {
+     "rel": "measures",
+     "target": "per_wavelength_osnr"
+    }
+   ],
+   "instances": [
+    "VC-WR-X"
+   ]
+  },
+  {
+   "id": "single_client_terminal",
+   "label": "single-client wavelength terminal",
+   "synonyms": [
+    "VC-WT-400T"
+   ],
+   "kind": "Resource",
+   "gloss": "A single-client wavelength terminal is a VC-WT-400T transponder that maps one client service onto one optical wavelength and terminates that wavelength at the far end.",
+   "example": "A VC-WT-400T carries one 400-Gbit/s client over a dedicated wavelength.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "transmitter_dark"
+    },
+    {
+     "rel": "has-fault",
+     "target": "module_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "receiver_impairment"
+    },
+    {
+     "rel": "has-fault",
+     "target": "transmitter_wearout"
+    },
+    {
+     "rel": "has-fault",
+     "target": "margin_creep"
+    }
+   ],
+   "instances": [
+    "VC-WT-400T"
+   ]
+  },
+  {
+   "id": "aggregating_terminal",
+   "label": "aggregating wavelength terminal",
+   "synonyms": [
+    "VC-WT-200A",
+    "VC-WT-400A"
+   ],
+   "kind": "Resource",
+   "gloss": "An aggregating wavelength terminal combines several lower-rate client services onto one line wavelength and is realised by VC-WT-200A or VC-WT-400A equipment.",
+   "example": "A VC-WT-400A aggregates four client ODUs into one 400-Gbit/s wavelength.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "transmitter_dark"
+    },
+    {
+     "rel": "has-fault",
+     "target": "module_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "receiver_impairment"
+    },
+    {
+     "rel": "has-fault",
+     "target": "transmitter_wearout"
+    },
+    {
+     "rel": "has-fault",
+     "target": "margin_creep"
+    }
+   ],
+   "instances": [
+    "VC-WT-200A",
+    "VC-WT-400A"
+   ]
+  },
+  {
+   "id": "several_clients",
+   "label": "several clients on one wavelength",
+   "synonyms": [],
+   "kind": "Resource",
+   "gloss": "This denotes the aggregation arrangement in which multiple client services share the capacity of a single line wavelength.",
+   "example": "Four 100-Gbit/s clients are multiplexed onto one 400-Gbit/s wavelength.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "digital_switching_line_module",
+   "label": "digital-switching line module",
+   "synonyms": [
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "kind": "Resource",
+   "gloss": "A digital-switching line module is a VC-WT-200D or VC-WT-400D terminal module that provides an optical wavelength interface to the digital cross-connect.",
+   "example": "A VC-WT-400D receives an ODU from the VC-DXC and transmits it on a 400-Gbit/s line wavelength.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "has-fault",
+     "target": "transmitter_dark"
+    },
+    {
+     "rel": "has-fault",
+     "target": "module_failure"
+    },
+    {
+     "rel": "has-fault",
+     "target": "receiver_impairment"
+    },
+    {
+     "rel": "has-fault",
+     "target": "transmitter_wearout"
+    },
+    {
+     "rel": "has-fault",
+     "target": "margin_creep"
+    }
+   ],
+   "instances": [
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ]
+  },
+  {
+   "id": "fabric_outage",
+   "label": "Fabric outage",
+   "synonyms": [
+    "a fabric outage"
+   ],
+   "kind": "Cause",
+   "gloss": "A fabric outage is failure of a digital cross-connect's switching fabric that cuts every ODU switched through that cross-connect.",
+   "example": "When the VC-DXC fabric loses power, all ODUs traversing it are interrupted together.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "dies"
+    },
+    {
+     "rel": "produces",
+     "target": "is_cut"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "misprovisioned_connection",
+   "label": "Mis-provisioned connection",
+   "synonyms": [
+    "a mis-provisioned connection"
+   ],
+   "kind": "Cause",
+   "gloss": "A mis-provisioned connection is an incorrect digital cross-connect mapping that sends one ODU to the wrong destination while leaving the optical layer apparently normal.",
+   "example": "An operator maps customer A's ODU to customer B's tributary, causing TRACE-MISMATCH without an optical alarm.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "set_up_wrongly"
+    },
+    {
+     "rel": "produces",
+     "target": "wrong_destination"
+    },
+    {
+     "rel": "produces",
+     "target": "nothing_shows"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "tributary_failure",
+   "label": "Tributary failure",
+   "synonyms": [
+    "the tributary"
+   ],
+   "kind": "Cause",
+   "gloss": "A tributary failure is loss or malfunction of the customer-facing optic or tributary interface that causes the associated customer service to fail.",
+   "example": "Failure of a VC-TRIB-100 optic drops its customer service and raises TRIB-FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "fails"
+    },
+    {
+     "rel": "produces",
+     "target": "customer_service_failed"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "any_fault",
+   "label": "any fault",
+   "synonyms": [
+    "Any fault"
+   ],
+   "kind": "Cause",
+   "gloss": "Any fault is a deliberately non-specific probable-cause category used when an alarm indicates an affected route or service but does not identify the underlying defect.",
+   "example": "ON-STANDBY may cite any fault because many unrelated primary-route failures can trigger protection switching.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "tributary_hardware_fault",
+   "label": "tributary hardware fault",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A tributary hardware fault is a physical equipment defect localized within the identified tributary port.",
+   "example": "A failed component on VC-TRIB-400 raises TRIB-HW for that tributary.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "this_tributary"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "fabric_hardware_fault",
+   "label": "fabric hardware fault",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A fabric hardware fault is a physical defect within the specified digital cross-connect's switching fabric hardware.",
+   "example": "A failed switching-fabric card in VC-DXC raises FABRIC-HW.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "this_cross_connect"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "amplifier_outage",
+   "label": "Amplifier outage",
+   "synonyms": [
+    "may be out of service",
+    "is out of service",
+    "the module is out of service",
+    "an amplifier out of service"
+   ],
+   "kind": "Cause",
+   "gloss": "An amplifier outage is an OFA being out of service so that no optical signal leaves the module and all wavelengths it carried disappear.",
+   "example": "Loss of power to a VC-OFA-M makes its output dark and removes every wavelength on the span.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "nothing_leaves_module"
+    },
+    {
+     "rel": "produces",
+     "target": "wavelength_gone"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "gain_sag",
+   "label": "Gain sag",
+   "synonyms": [
+    "its gain has sagged"
+   ],
+   "kind": "Cause",
+   "gloss": "Gain sag is an amplifier degradation in which actual optical gain falls below its intended value, making every carried wavelength weaker and noisier.",
+   "example": "A VC-OFA-R set for 20 dB gain delivers only 16 dB, lowering all output channels.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "module_weaker"
+    },
+    {
+     "rel": "produces",
+     "target": "module_noisier"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "excess_noise",
+   "label": "Excess noise",
+   "synonyms": [
+    "excess amplifier noise"
+   ],
+   "kind": "Cause",
+   "gloss": "Excess noise is an amplifier impairment that worsens every wavelength's OSNR even though aggregate output levels can remain normal.",
+   "example": "A faulty OFA preserves channel power but adds ASE noise, causing downstream OSNR to fall.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "output_levels_normal"
+    },
+    {
+     "rel": "produces",
+     "target": "wavelength_noisier"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "pump_wearout",
+   "label": "Pump wear-out",
+   "synonyms": [
+    "its pump is wearing out",
+    "pump wear-out"
+   ],
+   "kind": "Cause",
+   "gloss": "Pump wear-out is gradual ageing of an OFA pump that requires increasing drive current and ultimately reaches the PUMP-EOL threshold, usually before service is affected.",
+   "example": "An amplifier's I-PUMP rises from 100% to 121% of commissioning value and raises PUMP-EOL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "pump_creeps_up"
+    },
+    {
+     "rel": "produces",
+     "target": "ends_pump_eol"
+    },
+    {
+     "rel": "produces",
+     "target": "no_service_effect"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "spectral_tilt",
+   "label": "Spectral tilt",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "Spectral tilt is unequal amplification across the optical band that leaves wavelengths at one band edge weaker than others.",
+   "example": "Channels near the long-wavelength edge emerge 3 dB below the centre channels.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "come_out_weaker"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "severed_fibre",
+   "label": "a severed fibre",
+   "synonyms": [
+    "it may be severed",
+    "is severed"
+   ],
+   "kind": "Cause",
+   "gloss": "A severed fibre is a complete physical break in an optical span that prevents signal and supervisory light from reaching the downstream equipment.",
+   "example": "Excavation cuts the intersite cable, causing IN-DARK and SV-LOSS at the next shelter.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "attenuation_jump",
+   "label": "fibre attenuation that has jumped",
+   "synonyms": [
+    "its attenuation may have jumped",
+    "its attenuation has jumped"
+   ],
+   "kind": "Cause",
+   "gloss": "An attenuation jump is a sudden increase in fibre-path loss that sharply reduces or extinguishes received optical power.",
+   "example": "A bent cable adds 12 dB of loss and causes the downstream amplifier input to go dark.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "unplugged_patch_lead",
+   "label": "an unplugged patch lead",
+   "synonyms": [
+    "may have been unplugged"
+   ],
+   "kind": "Cause",
+   "gloss": "An unplugged patch lead is a disconnected local optical jumper that opens the wavelength path at a terminal or section head.",
+   "example": "A technician removes the launch-site patch cord, and the landing OFA raises SEC-IN-DARK.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "over_attenuation",
+   "label": "Over-attenuation",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "Over-attenuation is wavelength-specific loss beyond the router's compensation range, leaving that wavelength weak at the router output.",
+   "example": "A channel arrives 12 dB low where the router can correct only 8 dB, so it exits weak.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "router_weak"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "passband_misalignment",
+   "label": "Passband misalignment",
+   "synonyms": [
+    "a misaligned router passband"
+   ],
+   "kind": "Cause",
+   "gloss": "Passband misalignment is incorrect alignment of a router filter to a wavelength, allowing normal measured level while clipping the signal and degrading quality.",
+   "example": "A filter is offset from \u03bb12, so \u03bb12 has normal power but excessive pre-FEC errors.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "level_fine"
+    },
+    {
+     "rel": "produces",
+     "target": "quality_suffers"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "direction_input_fault",
+   "label": "Direction input fault",
+   "synonyms": [
+    "a router input that has failed"
+   ],
+   "kind": "Cause",
+   "gloss": "A direction input fault is failure of one wavelength-router ingress direction that stops all light entering there while traffic from other directions continues.",
+   "example": "Failure of the west input blocks every westbound incoming channel but leaves north-input channels operating.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "stops_at_router"
+    },
+    {
+     "rel": "produces",
+     "target": "carries_on"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "transmitter_dark",
+   "label": "Transmitter dark",
+   "synonyms": [
+    "The transmitter has gone dark"
+   ],
+   "kind": "Cause",
+   "gloss": "A dark transmitter is a terminal failure in which the transmit laser stops producing optical light.",
+   "example": "A VC-WT-400T laser shuts down, and the far-end terminal raises RX-DARK.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "transmit_laser_stops"
+    },
+    {
+     "rel": "produces",
+     "target": "no_light"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "module_failure",
+   "label": "Module failure",
+   "synonyms": [
+    "its module has failed"
+   ],
+   "kind": "Cause",
+   "gloss": "A module failure is loss of a wavelength-terminal module that removes its transmitted and received traffic, stops telemetry, and masks traffic alarms behind a hardware alarm.",
+   "example": "A failed VC-WT-400D card raises MOD-HW, stops telemetry, and loses both directions of its wavelength.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "loses_wavelength"
+    },
+    {
+     "rel": "produces",
+     "target": "module_receive_lost"
+    },
+    {
+     "rel": "produces",
+     "target": "telemetry_stops"
+    },
+    {
+     "rel": "produces",
+     "target": "traffic_alarms_hidden"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "receiver_impairment",
+   "label": "Receiver impairment",
+   "synonyms": [
+    "this terminal's own receiver impairment"
+   ],
+   "kind": "Cause",
+   "gloss": "Receiver impairment is a defect local to one terminal receiver that creates errors there while the route and other wavelengths remain healthy.",
+   "example": "A faulty coherent receiver reports high pre-FEC errors although OSNR and peer channels are normal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "errors_appear"
+    },
+    {
+     "rel": "produces",
+     "target": "stay_healthy"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "transmitter_wearout",
+   "label": "Transmitter wear-out",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "Transmitter wear-out is progressive laser ageing evidenced by rising bias current and ending in a dark transmitter.",
+   "example": "A terminal laser's bias climbs to 125% of commissioning value before it eventually fails.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "laser_bias_climbs"
+    },
+    {
+     "rel": "produces",
+     "target": "eventual_dark_transmitter"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "margin_creep",
+   "label": "Margin creep",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "Margin creep is a slow reduction in a wavelength's performance margin accumulated along its route and observed at the receiving terminal.",
+   "example": "Over several months, estimated OSNR margin falls from 5 dB to 2 dB at the receiver.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "produces",
+     "target": "margin_shrinks"
+    },
+    {
+     "rel": "produces",
+     "target": "it_is_seen"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "dgd_growth",
+   "label": "DGD growth",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "DGD growth is an increase in differential group delay on a wavelength until polarization-mode dispersion degrades or destroys frame recovery.",
+   "example": "Measured DGD rises from 8 ps to 35 ps and triggers DEGRADE at the terminal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "polarisation_swing",
+   "label": "a polarisation swing",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A polarisation swing is a rapid change in optical state of polarization that may outrun the receiver's tracking system.",
+   "example": "A cable disturbance causes polarization to rotate faster than the coherent receiver can follow, producing frame loss.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "soiled_connector",
+   "label": "a soiled connector end-face",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A soiled connector end-face is contamination on an optical mating surface that introduces loss, reflection, or noise and degrades the wavelength.",
+   "example": "Dust on a terminal connector raises pre-FEC errors until the end-face is cleaned.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "transmit_laser_fault",
+   "label": "transmit laser fault",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A transmit laser fault is a hardware defect localized to the transmitter of the current wavelength terminal.",
+   "example": "Failure of the laser driver in a VC-WT-400A raises TX-HW on that terminal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "terminal_transmitter"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "module_hardware_fault",
+   "label": "Module hardware fault",
+   "synonyms": [],
+   "kind": "Cause",
+   "gloss": "A module hardware fault is a physical equipment failure localized within the current wavelength-terminal module.",
+   "example": "A failed module processor raises MOD-HW and stops the card's telemetry.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "lies-at",
+     "target": "this_module"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "odu_ais_received",
+   "label": "receives an ODU AIS",
+   "synonyms": [
+    "an ODU AIS is received on an ODU it switches",
+    "an ODU AIS is arriving"
+   ],
+   "kind": "Condition",
+   "gloss": "This condition means a tributary or cross-connect is receiving ODU Alarm Indication Signal on an ODU it handles, indicating an upstream failure replacement signal.",
+   "example": "A VC-TRIB-100 receives ODU AIS from the network and raises AIS-IN.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "passes_odu_ais",
+   "label": "passes an ODU AIS along on every ODU it switches",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the digital cross-connect transparently forwards received ODU AIS on each affected switched ODU rather than terminating it.",
+   "example": "AIS entering a VC-DXC on ODU2 is passed to the provisioned egress tributary.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "odu_wrong_recipient",
+   "label": "receives an ODU meant for someone else",
+   "synonyms": [
+    "the ODU arriving is not the expected one"
+   ],
+   "kind": "Condition",
+   "gloss": "This condition means the arriving ODU trace identifies a destination other than the one expected by the receiving tributary.",
+   "example": "A tributary expecting customer A's trace receives customer B's ODU and raises TRACE-MISMATCH.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "customer_service_failed",
+   "label": "the customer service on this tributary has failed",
+   "synonyms": [
+    "drops the customer's service",
+    "drops"
+   ],
+   "kind": "Condition",
+   "gloss": "This condition is loss of the customer service carried on the specified tributary, regardless of whether the cause is local, routed, or upstream.",
+   "example": "The Ethernet service on VC-TRIB-400 drops and the port raises TRIB-FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "customer_service_scope"
+    },
+    {
+     "rel": "shows-at",
+     "target": "customer_service_tributary"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "dual_homed_service",
+   "label": "the service is dual-homed, with a primary and a standby ODU route",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a service has both a primary ODU route and a standby ODU route for protection.",
+   "example": "A customer ODU is provisioned over route A with route B reserved as standby.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "selector_receiving_tributary",
+   "label": "the selector is at the receiving tributary",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition places the protection selector at the receiving tributary, where it chooses between primary and standby ODU inputs.",
+   "example": "The destination VC-TRIB-100 selects whichever of the two incoming routes is healthy.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "standby_clean",
+   "label": "the standby route is clean",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the standby ODU route is healthy and suitable for selection when the primary route fails.",
+   "example": "Route B carries no AIS or defects, so the selector can switch to it.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "short_interruption",
+   "label": "the customer only sees a short interruption while the selector moves",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is the brief customer-visible traffic break that occurs while a protection selector changes from one ODU route to another.",
+   "example": "A primary failure causes a 50-ms interruption before the receiving tributary selects standby.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "dies",
+   "label": "dies",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is complete loss of operation of the switching fabric in the current cross-connect.",
+   "example": "The fabric controller and switching matrix stop, so the VC-DXC can no longer switch ODUs.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "switching_fabric"
+    },
+    {
+     "rel": "shows-at",
+     "target": "this_cross_connect"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "is_cut",
+   "label": "is cut",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means every ODU traversing the failed cross-connect is interrupted by the fabric outage.",
+   "example": "All 40 ODUs switched through the site drop simultaneously.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "every_odu"
+    },
+    {
+     "rel": "shows-at",
+     "target": "switched_through_cross_connect"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "set_up_wrongly",
+   "label": "is set up wrongly",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the logical cross-connect mapping for a connection has been provisioned incorrectly.",
+   "example": "The ingress ODU is configured to the wrong egress port.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "connection"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "wrong_destination",
+   "label": "ends up at the wrong destination",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means one affected ODU is delivered to an endpoint other than its intended recipient.",
+   "example": "Customer A's ODU arrives on customer B's tributary.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "one_odu"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "nothing_shows",
+   "label": "Nothing shows",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means an ODU provisioning error has no corresponding symptom on the optical transport side because optical power and wavelengths remain present.",
+   "example": "The wavelength remains healthy even though the DXC maps the ODU to the wrong tributary.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "optical_side"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "fails",
+   "label": "fails",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the customer-facing optic or the tributary interface itself has ceased to provide its intended service.",
+   "example": "A failed tributary receiver can no longer deliver the customer's signal.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "customer_facing_optic"
+    },
+    {
+     "rel": "affects",
+     "target": "tributary_itself"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "remote_ais_condition",
+   "label": "the other end says it is receiving ODU AIS",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the far endpoint reports that it is receiving ODU AIS from the local direction.",
+   "example": "The local tributary raises REMOTE-AIS after the peer reports AIS on the ODU sent to it.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "selector_on_standby",
+   "label": "the selector has moved to the standby route",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the receiving protection selector is currently forwarding traffic from the standby ODU route.",
+   "example": "After route A fails, the selector chooses route B and ON-STANDBY is raised.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "shows-at",
+     "target": "selector"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "standby_failed",
+   "label": "the standby route has failed",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the configured standby ODU route is unavailable or defective and cannot provide protection.",
+   "example": "Route B begins receiving AIS, causing STANDBY-LOST while traffic remains on route A.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "shows-at",
+     "target": "standby_route"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "at_installation",
+   "label": "At installation",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This is the commissioning-time context in which an amplifier's reference gain and drive values are established.",
+   "example": "At installation, the technician records pump drive as the 100% reference.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "gain_set",
+   "label": "the gain is set to cancel the attenuation of the fibre length that feeds the module",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means an OFA's gain is commissioned to offset the attenuation of the fibre span feeding it.",
+   "example": "For a span measured at 18 dB loss, the receiving OFA is set to 18 dB gain.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "gain_kept",
+   "label": "the module keeps that gain from then on",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the OFA subsequently maintains its commissioned gain rather than automatically compensating for later upstream power changes.",
+   "example": "An OFA remains at 18 dB gain after the incoming signal falls by 3 dB.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "incoming_weakens",
+   "label": "When the incoming light weakens",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is a reduction in aggregate optical power entering an amplifier.",
+   "example": "A fibre bend reduces the amplifier's input power by 4 dB.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "outgoing_weakens",
+   "label": "the outgoing light weakens by the same amount",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means fixed-gain amplification causes output power to fall by the same amount as input power.",
+   "example": "With gain unchanged, a 4-dB input drop produces a 4-dB output drop.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "carried_noisier",
+   "label": "every wavelength carried gets noisier",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means all wavelengths transported through the affected path experience worsened signal-to-noise quality.",
+   "example": "After input power falls, every channel downstream shows lower OSNR.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "incoming_disappears",
+   "label": "When the incoming light disappears",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is total loss of optical light at an amplifier's input.",
+   "example": "A fibre cut makes the mid-span OFA input power fall below detection.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "outgoing_disappears",
+   "label": "the outgoing light disappears too",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means an amplifier produces no carried optical output because its incoming light has vanished.",
+   "example": "After the input fibre is cut, no wavelengths leave the otherwise operating OFA.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "anything_else_received",
+   "label": "Anything else the module receives",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition denotes non-supervisory optical traffic or information received by an intermediate amplifier module.",
+   "example": "The module receives the full set of customer wavelengths in addition to the supervisory channel.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "sends_on",
+   "label": "it sends on as it is",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the module forwards received carried content transparently without terminating or altering it logically.",
+   "example": "A mid-span OFA amplifies and forwards each customer wavelength unchanged.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "every_shelter",
+   "label": "Every shelter",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition applies the stated supervisory-link behavior at each repeater shelter along the route.",
+   "example": "Each of five shelters terminates the incoming supervisory span and originates the next one.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "ends_supervisory_link",
+   "label": "ends the supervisory link it receives",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a repeater shelter terminates the supervisory communication link received over the preceding fibre span.",
+   "example": "Shelter 3 receives and terminates the supervisory channel from shelter 2.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "starts_fresh_link",
+   "label": "starts a fresh one on the next fibre length",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a repeater shelter originates a new supervisory link for the following fibre span.",
+   "example": "Shelter 3 starts a new supervisory channel toward shelter 4.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "supervisory_outage",
+   "label": "a supervisory outage",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "A supervisory outage is loss of management or monitoring communication over one amplifier-to-amplifier fibre span.",
+   "example": "The supervisory channel fails between shelters 2 and 3 while adjacent supervisory spans remain up.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "never_spreads",
+   "label": "never spreads beyond the fibre length where it occurs",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a supervisory-link failure remains confined to the fibre span on which it occurs because each shelter terminates and regenerates the link.",
+   "example": "Loss between shelters 2 and 3 does not interrupt supervision between shelters 3 and 4.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "nothing_leaves_module",
+   "label": "nothing leaves the module",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is complete absence of optical output from the affected amplifier module.",
+   "example": "An out-of-service VC-OFA-T emits no light on its line output.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "module_scope"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "wavelength_gone",
+   "label": "is gone",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means all wavelengths formerly carried by the failed amplifier are absent downstream.",
+   "example": "The eight channels through a failed OFA disappear at the next site.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "wavelengths_carried"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "module_weaker",
+   "label": "leaves the module weaker",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means every wavelength exits the affected amplifier at a lower level than intended.",
+   "example": "Gain sag lowers each output channel by 3 dB.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "every_wavelength"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "module_noisier",
+   "label": "leaves the module noisier",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means every wavelength leaving the affected amplifier has poorer OSNR than intended.",
+   "example": "A degraded pump causes all output channels to lose 1 dB of OSNR.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "every_wavelength"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "output_levels_normal",
+   "label": "look normal",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means measured optical output powers remain within normal limits despite an underlying noise impairment.",
+   "example": "Channel powers remain at -2 dBm while OSNR falls because of excess amplifier noise.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "output_levels"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "wavelength_noisier",
+   "label": "is noisier",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means each wavelength shows increased noise at downstream observation points.",
+   "example": "Every channel measured at the next router has 2 dB lower OSNR.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "every_wavelength"
+    },
+    {
+     "rel": "shows-at",
+     "target": "downstream"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "pump_creeps_up",
+   "label": "creeps up",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is a gradual rise in the module's normalized I-PUMP value as the amplifier pump ages.",
+   "example": "I-PUMP increases from 100% to 115% over two years.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "ipump_scope"
+    },
+    {
+     "rel": "shows-at",
+     "target": "this_module"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "ends_pump_eol",
+   "label": "ends in PUMP-EOL",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the rising pump-drive trend eventually crosses the threshold that raises PUMP-EOL on the module.",
+   "example": "The trend reaches 120% and the OFA reports PUMP-EOL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "trend"
+    },
+    {
+     "rel": "shows-at",
+     "target": "this_module"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "no_service_effect",
+   "label": "no service effect until late",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means pump ageing initially leaves transported service unaffected until the degradation becomes advanced.",
+   "example": "Traffic remains error-free while I-PUMP rises from 105% to 115%.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "service"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "come_out_weaker",
+   "label": "come out weaker",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means wavelengths at one edge of the optical band leave the amplifier below the level of the rest of the band.",
+   "example": "The highest-frequency channels exit 2 dB weaker because of spectral tilt.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "band_end_wavelengths"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "no_light",
+   "label": "no light",
+   "synonyms": [
+    "Darkness at the receiver",
+    "sees no light",
+    "The receiver sees no light"
+   ],
+   "kind": "Condition",
+   "gloss": "This condition is absence of detectable optical signal at a receiving interface.",
+   "example": "The terminal measures no receive power and raises RX-DARK.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "receives_nothing",
+   "label": "receives nothing",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is absence of the expected supervisory signal at an OFA receiver.",
+   "example": "A mid-span amplifier receives no supervisory channel from the preceding shelter and raises SV-LOSS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "no_light_entering",
+   "label": "no light although light is entering",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means an amplifier output is dark even though valid optical light is present at its input.",
+   "example": "The OFA input measures -10 dBm but its output is absent, causing OUT-DARK.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "gain_deviation",
+   "label": "the gain strays more than 2 dB from its setting",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition occurs when an amplifier's actual gain differs from its configured gain by more than 2 dB.",
+   "example": "An OFA configured for 18 dB delivers 15.5 dB and raises GAIN-DEV.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "pump_120",
+   "label": "I-PUMP passes 120 per cent of its commissioning value",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition occurs when normalized OFA pump drive exceeds 120 percent of its commissioning value.",
+   "example": "I-PUMP reaches 121%, causing PUMP-EOL.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "leaves_direction",
+   "label": "as it leaves a direction",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition identifies the router egress stage at which an individually selected wavelength exits an input direction toward its chosen output.",
+   "example": "Wavelength \u03bb5 is independently steered as it leaves the west direction.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "router_steers",
+   "label": "The router steers every wavelength on its own.",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the wavelength router makes an independent forwarding decision for every wavelength rather than switching the input band as one unit.",
+   "example": "The router sends \u03bb1 south and \u03bb2 east although both arrived from the west.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "direction_problem",
+   "label": "A problem hits all the light entering on one direction",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is an impairment shared by all optical light entering one router direction.",
+   "example": "Failure of the west ingress attenuates every wavelength arriving from the west.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "problem_reappears",
+   "label": "the problem reappears, after the router, on each wavelength steered onwards from it",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a shared ingress-direction impairment remains observable after the router on every wavelength forwarded from that input.",
+   "example": "Low OSNR on west-input channels is seen on both south and east outputs after routing.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "attenuation_range_allows",
+   "label": "as long as its attenuation range allows",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition limits router level equalization to input loss that falls within the router's available attenuation or compensation range.",
+   "example": "The router corrects a 6-dB drop because its equalization range is 8 dB.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "levels_launch",
+   "label": "brings the wavelength levels back to the launch level",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the wavelength router equalizes outgoing channel powers back to their configured launch level.",
+   "example": "A channel arriving 5 dB low is restored to the standard output level.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "drop_8db",
+   "label": "A drop in level of up to about 8 dB before the router",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is an upstream wavelength-level reduction of no more than about 8 dB before the router.",
+   "example": "A channel loses 7 dB on the preceding span before entering the router.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "evened_out",
+   "label": "is evened out at the router",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the router compensates a within-range input-level drop so the wavelength leaves at normal launch power.",
+   "example": "The router restores a channel from -9 dBm input to its normal -2 dBm output.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "noise_penalty_remains",
+   "label": "the noise penalty the drop caused does not go away",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means power equalization restores level but cannot remove the OSNR degradation caused by the preceding loss.",
+   "example": "The router restores channel power, but the channel remains 3 dB worse in OSNR.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "bigger_drop",
+   "label": "A bigger drop",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is an upstream wavelength-level reduction greater than the router can compensate.",
+   "example": "A 12-dB loss exceeds an 8-dB equalization range.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "router_weak",
+   "label": "leaves the router weak",
+   "synonyms": [
+    "leaves the router as a weak wavelength"
+   ],
+   "kind": "Condition",
+   "gloss": "This condition means one wavelength leaves the router below its required output level because excessive attenuation could not be corrected.",
+   "example": "After a 12-dB pre-router loss, \u03bb8 exits the router 4 dB weak.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "one_wavelength"
+    },
+    {
+     "rel": "shows-at",
+     "target": "router_location"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "crosses_router",
+   "label": "crosses the router as it arrived",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a wavelength passes through the router with the impairment it already had on arrival.",
+   "example": "A noisy channel retains its poor OSNR while being routed to the east output.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "level_fine",
+   "label": "level is fine",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the affected wavelength's measured optical power remains acceptable despite another quality impairment.",
+   "example": "A passband-clipped channel measures -2 dBm, its expected level.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "one_wavelength"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "quality_suffers",
+   "label": "quality suffers",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means one wavelength has impaired signal quality, such as reduced OSNR or increased errors, despite adequate power.",
+   "example": "The channel level is normal but pre-FEC errors rise sharply.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "one_wavelength"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "stops_at_router",
+   "label": "stops at the router",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means all optical light entering the failed router direction is blocked at that router.",
+   "example": "A west-input fault prevents every west-arriving wavelength from leaving the router.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "direction_light"
+    },
+    {
+     "rel": "shows-at",
+     "target": "router_location"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "carries_on",
+   "label": "carries on",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means light arriving on unaffected router directions continues to be routed normally.",
+   "example": "North-input channels remain in service while the west input has failed.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "other_direction_light"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "declares_dlos",
+   "label": "the terminal declares a loss-of-signal defect (dLOS in G.798 terms)",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a terminal raises the G.798 loss-of-signal defect when it detects no usable incoming optical signal.",
+   "example": "After a fibre cut, the receiver declares dLOS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "cannot_find_frame",
+   "label": "can no longer find its OTU frame",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a receiving terminal cannot detect or synchronize to the expected OTU frame in the incoming signal.",
+   "example": "Severe noise prevents the framer from locating OTU frame boundaries.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "declares_deq",
+   "label": "the terminal declares an equipment defect (dEQ)",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a terminal raises the G.798 equipment defect when its own module hardware is unable to operate correctly.",
+   "example": "A failed terminal card declares dEQ and raises MOD-HW.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "otu_frame_lost",
+   "label": "the OTU frame is lost",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is loss of OTU frame synchronization at the receiving terminal.",
+   "example": "The receiver has light but cannot maintain OTU framing and raises FRAME-LOSS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "poor_light",
+   "label": "Light that arrives in poor shape",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition denotes received optical light whose power, noise, dispersion, filtering, or margin is inadequate for reliable decoding.",
+   "example": "A channel arrives with low OSNR and excessive DGD even though light is present.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "weak",
+   "label": "weak",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means received optical power is below the level required for reliable terminal operation.",
+   "example": "The receiver sees -24 dBm where at least -18 dBm is required.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "noisy",
+   "label": "noisy",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the optical signal has insufficient signal-to-noise ratio for reliable decoding.",
+   "example": "OSNR falls to 10 dB and pre-FEC errors increase.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "too_much_dgd",
+   "label": "with too much differential group delay",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means differential group delay exceeds the receiver's tolerance.",
+   "example": "DGD reaches 40 ps on a receiver rated for 25 ps.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "filter_clipped",
+   "label": "clipped by a filter",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means part of a wavelength's modulation spectrum is cut off by a misaligned or overly narrow optical filter.",
+   "example": "A shifted router passband removes one edge of the coherent signal spectrum.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "receiver_spoiled",
+   "label": "spoiled by the receiver itself",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means otherwise usable incoming light is degraded by a fault inside the receiving terminal itself.",
+   "example": "A defective receiver front end creates errors while an external analyzer shows a healthy signal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "margin_worn",
+   "label": "with its margin slowly worn away",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a wavelength's tolerance to additional impairment has been progressively consumed.",
+   "example": "The channel margin falls from 6 dB to 1 dB after gradual route degradation.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "prefec_errors_begin",
+   "label": "pre-FEC errors begin once the damage exceeds the wavelength's margin",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means pre-FEC errors appear once accumulated impairment exceeds the wavelength's available performance margin.",
+   "example": "When OSNR drops below the margin threshold, the terminal begins counting corrected bit errors.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "frame_margin_far",
+   "label": "the frame is lost once it exceeds the margin by far",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means OTU framing is lost when impairment exceeds the wavelength's margin by a large amount.",
+   "example": "A further 6-dB OSNR loss turns a degraded channel into FRAME-LOSS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "polarisation_too_fast",
+   "label": "Polarisation swings faster than the tracker can follow",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means polarization changes more rapidly than the coherent receiver's tracking loop can follow.",
+   "example": "Fast polarization rotation causes bursts of uncorrectable errors and frame loss.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "otu_frame_gone",
+   "label": "Once the OTU frame is gone",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition marks the state after the receiving terminal has completely lost the OTU frame.",
+   "example": "Following severe DGD, the framer transitions from high errors to no frame lock.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "follows_g798",
+   "label": "the terminal follows G.798",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the terminal applies the G.798-defined defect and consequent-action behavior after OTU frame loss.",
+   "example": "On frame loss, the terminal declares the prescribed defect and inserts downstream AIS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "inserts_odu_ais",
+   "label": "It inserts ODU AIS towards every ODU it carries downstream",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the terminal replaces affected downstream ODU payloads with ODU AIS after losing the upstream OTU frame.",
+   "example": "A line terminal with FRAME-LOSS sends ODU AIS toward every carried tributary ODU.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "backward_defect",
+   "label": "returns a backward defect indication to the terminal at the other end",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the terminal sends a backward defect indication to inform the far-end transmitter of a receive-side failure.",
+   "example": "After losing the OTU frame, the receiver reports the defect back to the remote terminal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "transmit_laser_stops",
+   "label": "The transmit laser stops or fails",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is cessation or failure of the terminal's transmit laser output.",
+   "example": "The local laser emits zero power after its driver fails.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "transmit_laser"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "loses_wavelength",
+   "label": "loses the wavelength this module sends",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the remote terminal no longer receives the wavelength sent by the failed local module.",
+   "example": "A local MOD-HW failure makes the far end lose the line wavelength and raise RX-DARK.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "terminal_other_end"
+    },
+    {
+     "rel": "shows-at",
+     "target": "other_end"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "module_receive_lost",
+   "label": "what the module receives is lost",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means all traffic received by the failed module is lost on the local side.",
+   "example": "The module failure prevents locally received ODU traffic from reaching the DXC.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "module_receives"
+    },
+    {
+     "rel": "shows-at",
+     "target": "this_side"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "telemetry_stops",
+   "label": "its telemetry stops",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the failed module ceases reporting management measurements and status on the local side.",
+   "example": "After MOD-HW, receive power and temperature updates stop.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "telemetry"
+    },
+    {
+     "rel": "shows-at",
+     "target": "this_side"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "traffic_alarms_hidden",
+   "label": "its traffic alarms are hidden behind the hardware alarm",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a module hardware alarm suppresses or masks lower-level traffic alarms from the same failed module.",
+   "example": "MOD-HW is shown while derivative FRAME-LOSS alarms from the card are hidden.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "traffic_alarms"
+    },
+    {
+     "rel": "shows-at",
+     "target": "this_side"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "errors_appear",
+   "label": "errors appear",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means traffic errors are observed only at the impaired receiver.",
+   "example": "One terminal reports pre-FEC errors while the peer receiver and other wavelengths remain clean.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "receiver_alone"
+    },
+    {
+     "rel": "shows-at",
+     "target": "receiver_alone"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "stay_healthy",
+   "label": "stay healthy",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the route and other wavelengths remain normal when a defect is confined to one receiver.",
+   "example": "Only \u03bb6 has errors at one receiver; \u03bb5, \u03bb7, and the fibre route test healthy.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "other_wavelengths"
+    },
+    {
+     "rel": "affects",
+     "target": "route"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "laser_bias_climbs",
+   "label": "The laser bias climbs as the laser ages",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is a gradual increase in laser bias current needed to maintain output as the laser ages.",
+   "example": "Transmit bias rises from 100% to 118% of its commissioning value over a year.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "laser"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "eventual_dark_transmitter",
+   "label": "an eventual dark transmitter",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is the final transmitter failure state reached after progressive laser ageing.",
+   "example": "After months of rising bias, the laser stops emitting and the far end raises RX-DARK.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "transmitter"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "margin_shrinks",
+   "label": "The wavelength's margin shrinks slowly",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means a wavelength's performance margin gradually decreases because of accumulated impairment along its route.",
+   "example": "Estimated margin declines by 0.2 dB per month across the optical path.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "wavelength_margin"
+    },
+    {
+     "rel": "shows-at",
+     "target": "along_route"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "it_is_seen",
+   "label": "it is seen",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the route-wide loss of wavelength margin is observed in measurements at the receiving terminal.",
+   "example": "The receiver's estimated OSNR trend reveals a margin decrease caused upstream.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "affects",
+     "target": "wavelength_margin"
+    },
+    {
+     "rel": "shows-at",
+     "target": "receiver_location"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "frame_loss_light",
+   "label": "The OTU frame is lost though light arrives",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition is loss of OTU framing while optical light is still present at the receiver.",
+   "example": "The terminal measures normal receive power but raises FRAME-LOSS because it cannot decode the OTU frame.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "degrade_level",
+   "label": "Pre-FEC errors exceed the degrade level",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition occurs when the measured pre-FEC error rate exceeds the configured degradation threshold while framing remains available.",
+   "example": "Pre-FEC BER rises above 1\u00d710^-3 and the terminal raises DEGRADE.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "remote_defect_condition",
+   "label": "The other end reports a defect in what this terminal sends",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition means the far-end terminal reports a defect in the signal transmitted by the local terminal.",
+   "example": "The peer detects errors on the local wavelength and returns an indication that raises REMOTE-DEFECT locally.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "laser_bias_120",
+   "label": "Laser bias above 120 per cent of its commissioning value",
+   "synonyms": [],
+   "kind": "Condition",
+   "gloss": "This condition occurs when transmit laser bias exceeds 120 percent of its commissioning reference value.",
+   "example": "Bias reaches 123%, causing the terminal to raise TX-BIAS.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "customer_errored_seconds",
+   "label": "customer errored seconds",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Customer errored seconds is a base-available tributary performance count of one-second intervals containing errors in the customer service.",
+   "example": "If errors occur during 12 distinct seconds, the tributary records 12 customer errored seconds.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "base"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "customer_unavailable_seconds",
+   "label": "customer unavailable seconds",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Customer unavailable seconds is a base-available tributary performance count of seconds during which the customer service is declared unavailable.",
+   "example": "A 90-second tributary outage adds 90 customer unavailable seconds.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "base"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "aggregate_power_in",
+   "label": "Aggregate optical power entering the module",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Aggregate power in is the total optical power of all wavelengths entering an amplifier module, available with the Optical Power pack.",
+   "example": "The Optical Power pack reports -4 dBm total input power across 40 channels.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "optical_power_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "aggregate_power_out",
+   "label": "Aggregate optical power leaving the module",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Aggregate power out is the total optical power of all wavelengths leaving an amplifier module, available with the Optical Power pack.",
+   "example": "The OFA reports +16 dBm aggregate output power after amplification.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "optical_power_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "pump_drive",
+   "label": "Pump drive, as a share of the value at commissioning",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Pump drive is an Insight-pack measurement expressing OFA pump current or drive as a percentage of its commissioning value.",
+   "example": "A reading of 115% means the pump is driven 15% harder than at commissioning.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "insight_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "supervisory_received",
+   "label": "Whether the supervisory link is being received",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Supervisory received is a base status indicating whether an OFA is receiving the supervisory link from the preceding fibre span.",
+   "example": "The status changes to false after the supervisory fibre is cut.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "base"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "per_wavelength_level",
+   "label": "per wavelength, the level",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Per-wavelength level is a Spectrum-pack measurement of optical power separately for each wavelength at the router.",
+   "example": "The router reports \u03bb1 at -2.1 dBm and \u03bb2 at -5.4 dBm.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "spectrum_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "per_wavelength_osnr",
+   "label": "per wavelength, the OSNR",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Per-wavelength OSNR is a Spectrum-pack measurement of optical signal-to-noise ratio separately for each wavelength at the router.",
+   "example": "The router reports 18 dB OSNR for \u03bb7.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "spectrum_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "received_light_level",
+   "label": "Received light level",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Received light level is the optical power measured at a receiver and is exposed through base or Optical Power telemetry.",
+   "example": "A terminal reports -12.5 dBm receive power.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "base"
+    },
+    {
+     "rel": "available-with",
+     "target": "optical_power_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "errored_seconds",
+   "label": "errored seconds",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Errored seconds is a base performance count of one-second intervals in which the monitored terminal signal contains one or more errors.",
+   "example": "Errors in five separate seconds increment the counter by five.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "base"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "estimated_osnr",
+   "label": "estimated OSNR",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Estimated OSNR is an Insight-pack receiver estimate of the wavelength's optical signal-to-noise ratio.",
+   "example": "The terminal estimates 14.8 dB OSNR without an external spectrum analyzer.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "insight_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "prefec_error_ratio",
+   "label": "pre-FEC error ratio",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Pre-FEC error ratio is the Insight-pack measurement of errored bits before forward-error correction is applied.",
+   "example": "The receiver reports a pre-FEC error ratio of 2\u00d710^-4.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "insight_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "dgd",
+   "label": "DGD",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "DGD is the Insight-pack measurement of differential group delay experienced by the received wavelength.",
+   "example": "The coherent receiver reports 18 ps of DGD.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "insight_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "polarisation_drift",
+   "label": "polarisation drift rate",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Polarisation drift rate is the Insight-pack measurement of how quickly the received state of polarization changes.",
+   "example": "A sudden increase to 50 krad/s indicates rapid polarization movement.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "insight_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "transmit_laser_bias",
+   "label": "Transmit laser bias, as a share of its value at commissioning",
+   "synonyms": [],
+   "kind": "Characteristic",
+   "gloss": "Transmit laser bias is an Insight-pack measurement expressing laser bias current as a percentage of its commissioning reference.",
+   "example": "A value of 122% accompanies a TX-BIAS alarm.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "available-with",
+     "target": "insight_pack"
+    }
+   ],
+   "instances": []
+  },
+  {
+   "id": "trib_fail",
+   "label": "TRIB-FAIL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "TRIB-FAIL is a tributary-port alarm raised when the customer service on that tributary has failed, with possible causes including local tributary failure, misprovisioning, or a fabric outage.",
+   "example": "A failed VC-TRIB-100 optic drops service and raises TRIB-FAIL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "tributary_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "customer_service_failed"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "any_fault"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "tributary_failure"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "misprovisioned_connection"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "fabric_outage"
+    }
+   ],
+   "instances": [
+    "TRIB-FAIL"
+   ]
+  },
+  {
+   "id": "ais_in",
+   "label": "AIS-IN",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "AIS-IN is a tributary-port alarm indicating that ODU AIS is being received on an ODU handled by the port.",
+   "example": "An upstream line failure inserts AIS, and the destination tributary raises AIS-IN.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "tributary_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "odu_ais_received"
+    }
+   ],
+   "instances": [
+    "AIS-IN"
+   ]
+  },
+  {
+   "id": "remote_ais",
+   "label": "REMOTE-AIS",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "REMOTE-AIS is a tributary-port alarm indicating that the far endpoint reports receiving ODU AIS.",
+   "example": "The peer sees AIS on the transmitted ODU, so the local port raises REMOTE-AIS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "tributary_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "remote_ais_condition"
+    }
+   ],
+   "instances": [
+    "REMOTE-AIS"
+   ]
+  },
+  {
+   "id": "trace_mismatch",
+   "label": "TRACE-MISMATCH",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "TRACE-MISMATCH is a tributary-port alarm indicating that the arriving ODU identity or trace does not match the expected recipient, commonly because of misprovisioning.",
+   "example": "Customer B's trace arrives at customer A's port and triggers TRACE-MISMATCH.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "tributary_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "odu_wrong_recipient"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "misprovisioned_connection"
+    }
+   ],
+   "instances": [
+    "TRACE-MISMATCH"
+   ]
+  },
+  {
+   "id": "on_standby",
+   "label": "ON-STANDBY",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "ON-STANDBY is a tributary-port alarm or status indicating that the protection selector is currently using the standby ODU route.",
+   "example": "The primary route fails and the port raises ON-STANDBY after selecting route B.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "tributary_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "selector_on_standby"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "any_fault"
+    }
+   ],
+   "instances": [
+    "ON-STANDBY"
+   ]
+  },
+  {
+   "id": "standby_lost",
+   "label": "STANDBY-LOST",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "STANDBY-LOST is a tributary-port alarm indicating failure of the standby ODU route and consequent loss of protection redundancy.",
+   "example": "The standby route receives AIS while primary remains active, causing STANDBY-LOST.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "tributary_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "standby_failed"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "any_fault"
+    }
+   ],
+   "instances": [
+    "STANDBY-LOST"
+   ]
+  },
+  {
+   "id": "trib_hw",
+   "label": "TRIB-HW",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "TRIB-HW is a tributary-port hardware alarm that localizes a physical fault to that tributary.",
+   "example": "A failed interface ASIC on VC-TRIB-400 raises TRIB-HW.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "tributary_port"
+    },
+    {
+     "rel": "raised-on",
+     "target": "tributary_hardware_fault"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "tributary_hardware_fault"
+    }
+   ],
+   "instances": [
+    "TRIB-HW"
+   ]
+  },
+  {
+   "id": "fabric_hw",
+   "label": "FABRIC-HW",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "FABRIC-HW is a digital-cross-connect alarm that localizes a physical hardware defect to the switching fabric.",
+   "example": "A failed fabric card in the VC-DXC raises FABRIC-HW.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "dxc"
+    },
+    {
+     "rel": "raised-on",
+     "target": "fabric_hardware_fault"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "fabric_hardware_fault"
+    }
+   ],
+   "instances": [
+    "FABRIC-HW"
+   ]
+  },
+  {
+   "id": "in_dark",
+   "label": "IN-DARK",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "IN-DARK is a mid-span OFA alarm indicating no optical light at its input, potentially due to a preceding fibre break, attenuation jump, or amplifier outage.",
+   "example": "A cut before a VC-OFA-M removes its input light and raises IN-DARK.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "midspan_ofa"
+    },
+    {
+     "rel": "raised-on",
+     "target": "no_light"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "severed_fibre"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "attenuation_jump"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "amplifier_outage"
+    }
+   ],
+   "instances": [
+    "IN-DARK"
+   ]
+  },
+  {
+   "id": "sec_in_dark",
+   "label": "SEC-IN-DARK",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "SEC-IN-DARK is a landing OFA alarm indicating that the wavelength section arrives with no optical light.",
+   "example": "An unplugged launch-site patch lead makes the VC-OFA-R raise SEC-IN-DARK.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "landing_ofa"
+    },
+    {
+     "rel": "raised-on",
+     "target": "no_light"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "severed_fibre"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "attenuation_jump"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "amplifier_outage"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "unplugged_patch_lead"
+    }
+   ],
+   "instances": [
+    "SEC-IN-DARK"
+   ]
+  },
+  {
+   "id": "sv_loss",
+   "label": "SV-LOSS",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "SV-LOSS is a mid-span or landing OFA alarm indicating loss of the incoming supervisory link, typically from fibre loss or excessive attenuation.",
+   "example": "A span cut prevents the next shelter from receiving supervision and raises SV-LOSS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "midspan_ofa"
+    },
+    {
+     "rel": "raised-by",
+     "target": "landing_ofa"
+    },
+    {
+     "rel": "raised-on",
+     "target": "receives_nothing"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "severed_fibre"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "attenuation_jump"
+    }
+   ],
+   "instances": [
+    "SV-LOSS"
+   ]
+  },
+  {
+   "id": "out_dark",
+   "label": "OUT-DARK",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "OUT-DARK is an OFA alarm indicating no optical output despite optical light being present at the module input, pointing to amplifier outage.",
+   "example": "A VC-OFA-T has valid input power but zero output and raises OUT-DARK.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "launch_ofa"
+    },
+    {
+     "rel": "raised-by",
+     "target": "midspan_ofa"
+    },
+    {
+     "rel": "raised-by",
+     "target": "landing_ofa"
+    },
+    {
+     "rel": "raised-on",
+     "target": "no_light_entering"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "amplifier_outage"
+    }
+   ],
+   "instances": [
+    "OUT-DARK"
+   ]
+  },
+  {
+   "id": "gain_dev",
+   "label": "GAIN-DEV",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "GAIN-DEV is a mid-span or landing OFA alarm raised when actual gain differs from its setting by more than 2 dB.",
+   "example": "A VC-OFA-R set to 20 dB produces 17 dB and raises GAIN-DEV.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "midspan_ofa"
+    },
+    {
+     "rel": "raised-by",
+     "target": "landing_ofa"
+    },
+    {
+     "rel": "raised-on",
+     "target": "gain_deviation"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "amplifier_outage"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "gain_sag"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "pump_wearout"
+    }
+   ],
+   "instances": [
+    "GAIN-DEV"
+   ]
+  },
+  {
+   "id": "pump_eol",
+   "label": "PUMP-EOL",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "PUMP-EOL is an OFA end-of-life alarm raised when pump drive exceeds 120 percent of its commissioning value.",
+   "example": "A VC-OFA-M reaches 121% I-PUMP and raises PUMP-EOL.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "launch_ofa"
+    },
+    {
+     "rel": "raised-by",
+     "target": "midspan_ofa"
+    },
+    {
+     "rel": "raised-by",
+     "target": "landing_ofa"
+    },
+    {
+     "rel": "raised-on",
+     "target": "pump_120"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "pump_wearout"
+    }
+   ],
+   "instances": [
+    "PUMP-EOL"
+   ]
+  },
+  {
+   "id": "rx_dark",
+   "label": "RX-DARK",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "RX-DARK is a wavelength-terminal alarm indicating that its receiver detects no optical light, with possible causes anywhere from the remote transmitter through the intervening path.",
+   "example": "A remote transmitter fails and the receiving VC-WT-400T raises RX-DARK.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "single_client_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "aggregating_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "digital_switching_line_module"
+    },
+    {
+     "rel": "raised-on",
+     "target": "no_light"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "transmitter_dark"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "module_failure"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "severed_fibre"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "amplifier_outage"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "unplugged_patch_lead"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "direction_input_fault"
+    }
+   ],
+   "instances": [
+    "RX-DARK"
+   ]
+  },
+  {
+   "id": "frame_loss",
+   "label": "FRAME-LOSS",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "FRAME-LOSS is a wavelength-terminal alarm indicating loss of OTU framing even though optical light is present.",
+   "example": "Excess noise prevents frame synchronization while receive power remains normal, causing FRAME-LOSS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "single_client_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "aggregating_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "digital_switching_line_module"
+    },
+    {
+     "rel": "raised-on",
+     "target": "frame_loss_light"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "attenuation_jump"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "excess_noise"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "dgd_growth"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "passband_misalignment"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "polarisation_swing"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "receiver_impairment"
+    }
+   ],
+   "instances": [
+    "FRAME-LOSS"
+   ]
+  },
+  {
+   "id": "degrade",
+   "label": "DEGRADE",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "DEGRADE is a wavelength-terminal alarm raised when pre-FEC errors exceed the configured degradation level.",
+   "example": "A dirty connector raises pre-FEC BER above threshold and the VC-WT-400A raises DEGRADE.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "single_client_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "aggregating_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "digital_switching_line_module"
+    },
+    {
+     "rel": "raised-on",
+     "target": "degrade_level"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "attenuation_jump"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "excess_noise"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "soiled_connector"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "passband_misalignment"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "dgd_growth"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "receiver_impairment"
+    }
+   ],
+   "instances": [
+    "DEGRADE"
+   ]
+  },
+  {
+   "id": "remote_defect",
+   "label": "REMOTE-DEFECT",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "REMOTE-DEFECT is a wavelength-terminal alarm indicating that the far endpoint reports a defect in the signal sent by the local terminal.",
+   "example": "The peer cannot decode the local transmission and returns a defect indication that raises REMOTE-DEFECT.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "single_client_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "aggregating_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "digital_switching_line_module"
+    },
+    {
+     "rel": "raised-on",
+     "target": "remote_defect_condition"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "any_fault"
+    }
+   ],
+   "instances": [
+    "REMOTE-DEFECT"
+   ]
+  },
+  {
+   "id": "tx_hw",
+   "label": "TX-HW",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "TX-HW is a wavelength-terminal alarm for a hardware fault localized to its transmit laser or laser circuitry.",
+   "example": "A laser-driver failure on a VC-WT-200D raises TX-HW.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "single_client_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "aggregating_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "digital_switching_line_module"
+    },
+    {
+     "rel": "raised-on",
+     "target": "transmit_laser_fault"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "transmit_laser_fault"
+    }
+   ],
+   "instances": [
+    "TX-HW"
+   ]
+  },
+  {
+   "id": "mod_hw",
+   "label": "MOD-HW",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "MOD-HW is a wavelength-terminal alarm for a hardware failure of the terminal module as a whole.",
+   "example": "A failed module controller stops telemetry and raises MOD-HW.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "single_client_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "aggregating_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "digital_switching_line_module"
+    },
+    {
+     "rel": "raised-on",
+     "target": "module_hardware_fault"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "module_hardware_fault"
+    }
+   ],
+   "instances": [
+    "MOD-HW"
+   ]
+  },
+  {
+   "id": "tx_bias",
+   "label": "TX-BIAS",
+   "synonyms": [],
+   "kind": "Alarm",
+   "gloss": "TX-BIAS is a wavelength-terminal ageing alarm raised when laser bias exceeds 120 percent of its commissioning value.",
+   "example": "A VC-WT-400T reports 124% transmit bias and raises TX-BIAS.",
+   "ref": null,
+   "relations": [
+    {
+     "rel": "raised-by",
+     "target": "single_client_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "aggregating_terminal"
+    },
+    {
+     "rel": "raised-by",
+     "target": "digital_switching_line_module"
+    },
+    {
+     "rel": "raised-on",
+     "target": "laser_bias_120"
+    },
+    {
+     "rel": "probable-cause",
+     "target": "transmitter_wearout"
+    }
+   ],
+   "instances": [
+    "TX-BIAS"
+   ]
+  },
+  {
+   "id": "switching_fabric",
+   "label": "The switching fabric",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The switching-fabric scope comprises the internal digital matrix and control elements that switch ODUs within a cross-connect.",
+   "example": "A fabric outage affects the matrix carrying all ODUs through VC-DXC.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "every_odu",
+   "label": "every ODU",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The every-ODU scope denotes all ODU connections traversing the relevant cross-connect rather than one selected ODU.",
+   "example": "A fabric outage cuts all 40 ODUs switched at the node.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "connection",
+   "label": "A connection",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The connection scope is one provisioned logical mapping through the digital cross-connect.",
+   "example": "The mapping from line ODU2 to tributary port 7 is one connection.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "one_odu",
+   "label": "one ODU",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The one-ODU scope limits an effect to a single Optical Data Unit rather than the full fabric or wavelength set.",
+   "example": "A wrong mapping sends only customer A's ODU to the wrong destination.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "optical_side",
+   "label": "the optical side",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The optical-side scope is the wavelength and photonic transport layer outside the digital ODU switching function.",
+   "example": "A DXC misconfiguration leaves optical power and line alarms normal on the optical side.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "customer_facing_optic",
+   "label": "The customer-facing optic",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The customer-facing-optic scope is the optical transceiver that connects a tributary port to customer equipment.",
+   "example": "Failure of the client-side SFP affects the customer-facing optic.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "tributary_itself",
+   "label": "the tributary itself",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The tributary-itself scope is the tributary port's internal interface and processing hardware, excluding the wider cross-connect fabric.",
+   "example": "A failed tributary ASIC affects the tributary itself.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "customer_service_scope",
+   "label": "the customer service",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The customer-service scope is the end-user traffic service carried by the specified tributary.",
+   "example": "TRIB-FAIL affects the customer's 100-Gbit/s Ethernet service.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "module_scope",
+   "label": "the module",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The module scope is the complete amplifier or terminal module whose inputs, outputs, and internal operation are under discussion.",
+   "example": "An amplifier outage means nothing leaves that VC-OFA-M module.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "wavelengths_carried",
+   "label": "every wavelength it carried",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The wavelengths-carried scope comprises all optical channels that were passing through the affected amplifier.",
+   "example": "Failure of an OFA removes all 32 wavelengths it carried.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "every_wavelength",
+   "label": "every wavelength",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The every-wavelength scope denotes all channels traversing the affected component, not merely one channel.",
+   "example": "Gain sag lowers every wavelength through the amplifier.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "output_levels",
+   "label": "Output levels",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The output-levels scope comprises the measured optical powers at a module's output.",
+   "example": "Output levels remain normal despite excess amplifier noise.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "ipump_scope",
+   "label": "I-PUMP",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The I-PUMP scope is the amplifier telemetry value representing normalized optical-pump drive.",
+   "example": "Pump wear-out causes I-PUMP to creep from 100% to 120%.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "trend",
+   "label": "the trend",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The trend scope is the time-series progression of a monitored value rather than a single instantaneous reading.",
+   "example": "The upward I-PUMP trend ends at the PUMP-EOL threshold.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "service",
+   "label": "service",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The service scope is the transported customer traffic whose availability or quality may be affected.",
+   "example": "Early pump wear has no effect on the carried service.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "band_end_wavelengths",
+   "label": "the wavelengths at one end of the band",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The band-end-wavelength scope comprises channels near one edge of the amplifier's supported optical spectrum.",
+   "example": "Spectral tilt makes the highest-frequency four channels weaker.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "one_wavelength",
+   "label": "one wavelength",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The one-wavelength scope limits an effect to a single optical channel independently routed through the wavelength router.",
+   "example": "Passband misalignment degrades \u03bb12 while neighboring channels remain healthy.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "direction_light",
+   "label": "All the light coming in on that direction",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The direction-light scope comprises all wavelengths entering a router through one specified directional input.",
+   "example": "A west-input failure stops every channel arriving from the west.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "other_direction_light",
+   "label": "light entering on the other directions",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The other-direction-light scope comprises wavelengths entering the router through ingress directions other than the failed one.",
+   "example": "North and east input traffic continues after the west input fails.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "transmit_laser",
+   "label": "the transmit laser",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The transmit-laser scope is the optical source within a wavelength terminal that generates its outgoing carrier.",
+   "example": "A TX-HW defect stops the VC-WT-400T transmit laser.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "terminal_other_end_wavelength",
+   "label": "the terminal at the other end of the wavelength",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "This scope is the remote wavelength terminal paired with the local terminal across the same optical channel.",
+   "example": "The terminal at the other end of \u03bb7 raises RX-DARK when the local laser fails.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "terminal_other_end",
+   "label": "the terminal at the other end",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "This scope is the peer terminal at the remote endpoint of the connection.",
+   "example": "A local module failure causes the terminal at the other end to lose the transmitted wavelength.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "module_receives",
+   "label": "what the module receives",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "This scope is all signal and traffic entering the receive side of the affected terminal module.",
+   "example": "A MOD-HW failure discards what the module receives from the line.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "telemetry",
+   "label": "its telemetry",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The telemetry scope comprises operational measurements and status reports produced by the module.",
+   "example": "Module temperature and optical-power updates stop after hardware failure.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "traffic_alarms",
+   "label": "its traffic alarms",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The traffic-alarms scope comprises signal and service alarms derived from traffic handled by the module.",
+   "example": "FRAME-LOSS is hidden while the more fundamental MOD-HW alarm is active.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "receiver_alone",
+   "label": "this receiver alone",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The receiver-alone scope limits an impairment and its observed errors to one terminal receiver rather than the route or transmitted signal.",
+   "example": "Only the destination receiver reports errors while the route tests clean.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "other_wavelengths",
+   "label": "the other wavelengths",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The other-wavelengths scope comprises all channels on the route except the specifically impaired wavelength.",
+   "example": "\u03bb6 is degraded, but \u03bb1 through \u03bb5 and \u03bb7 remain healthy.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "route",
+   "label": "the route",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The route scope is the end-to-end optical path and intervening equipment traversed by a wavelength.",
+   "example": "Testing shows the route is healthy despite a fault in one receiver.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "laser",
+   "label": "the laser",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The laser scope is the semiconductor optical source whose ageing is reflected by increasing bias current.",
+   "example": "The laser requires progressively more bias to maintain output power.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "transmitter",
+   "label": "transmitter",
+   "synonyms": [],
+   "kind": "Scope",
+   "gloss": "The transmitter scope is the complete terminal function that generates and launches an outgoing wavelength.",
+   "example": "Continued laser wear eventually leaves the transmitter dark.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "wavelength_margin",
+   "label": "the wavelength's margin",
+   "synonyms": [
+    "The wavelength's margin"
+   ],
+   "kind": "Scope",
+   "gloss": "Wavelength margin is the remaining tolerance between current signal quality and the point at which errors or frame loss occur.",
+   "example": "A wavelength with 2 dB margin can tolerate roughly 2 dB more impairment before degrading.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_cross_connect",
+   "label": "this cross-connect",
+   "synonyms": [
+    "in this cross-connect"
+   ],
+   "kind": "Location",
+   "gloss": "This location is the particular digital cross-connect currently being monitored or diagnosed.",
+   "example": "FABRIC-HW localizes the fault inside VC-DXC at the current site.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "switched_through_cross_connect",
+   "label": "switched through this cross-connect",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location qualifier identifies ODUs whose path traverses the current digital cross-connect.",
+   "example": "Only ODUs switched through the failed node are cut by its fabric outage.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "odu_route_in_use",
+   "label": "on the ODU route in use",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the currently selected end-to-end ODU path carrying the service.",
+   "example": "A fault on the ODU route in use causes the selector to choose standby.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "either_end",
+   "label": "at either end",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location denotes either endpoint of the ODU or wavelength connection.",
+   "example": "A tributary failure at either end can drop the customer service.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "cross_connect_along_route",
+   "label": "at a cross-connect along the ODU route",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is any digital cross-connect traversed by the service's ODU route.",
+   "example": "A fabric outage at an intermediate cross-connect interrupts the routed ODU.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "customer_service_tributary",
+   "label": "the customer service on this tributary",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the customer service as presented on the specifically referenced tributary port.",
+   "example": "TRIB-FAIL is shown on the customer service attached to VC-TRIB-100.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "odu_arriving",
+   "label": "the ODU arriving",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the incoming ODU at the receiving interface before it is accepted or switched.",
+   "example": "Trace checking finds that the ODU arriving belongs to another customer.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "primary_route",
+   "label": "on the primary route",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the preferred ODU path used under normal dual-homed operation.",
+   "example": "Traffic normally travels on the primary route until a defect is detected.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "selector",
+   "label": "the selector",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the protection-selection function that chooses between primary and standby ODU routes.",
+   "example": "ON-STANDBY is displayed at the receiving tributary's selector.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "standby_route_on",
+   "label": "on the standby route",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location denotes an event or condition occurring on the alternate ODU protection path.",
+   "example": "AIS on the standby route causes STANDBY-LOST.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "standby_route",
+   "label": "the standby route",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the alternate ODU path reserved to carry service when the primary path fails.",
+   "example": "The selector moves traffic to the standby route after a primary outage.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_tributary",
+   "label": "this tributary",
+   "synonyms": [
+    "in this tributary"
+   ],
+   "kind": "Location",
+   "gloss": "This location is the particular tributary port currently being monitored or diagnosed.",
+   "example": "TRIB-HW identifies a hardware defect in this VC-TRIB-400.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "downstream",
+   "label": "downstream",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location denotes points reached after the affected component in the direction of signal propagation.",
+   "example": "Excess amplifier noise is observed at the downstream router.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_module",
+   "label": "this module",
+   "synonyms": [
+    "The module itself",
+    "in this module",
+    "This module"
+   ],
+   "kind": "Location",
+   "gloss": "This location is the specific amplifier or terminal module currently under observation.",
+   "example": "PUMP-EOL is raised on this VC-OFA-M rather than on the preceding amplifier.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "feeding_fibre",
+   "label": "the fibre length feeding the module",
+   "synonyms": [
+    "that fibre length"
+   ],
+   "kind": "Location",
+   "gloss": "This location is the fibre span immediately upstream of and delivering light to the module.",
+   "example": "A bend in the feeding fibre weakens the OFA input.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "previous_ofa",
+   "label": "the OFA before that fibre length",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the optical fibre amplifier upstream of the fibre span feeding the current module.",
+   "example": "An outage of the previous OFA makes the current module's input dark.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "patch_lead_head",
+   "label": "the patch lead at the head of the wavelength section",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the optical jumper at the transmitting head of a wavelength section.",
+   "example": "An unplugged patch lead at the section head causes SEC-IN-DARK at the far landing OFA.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "router_location",
+   "label": "the router",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the wavelength router at which a routing, attenuation, or direction-input symptom is observed.",
+   "example": "The weak \u03bb8 condition first appears at the router output.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "other_end_wavelength",
+   "label": "the other end of the wavelength",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the remote endpoint of the same wavelength path.",
+   "example": "A local dark transmitter is detected as no light at the other end of the wavelength.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "other_end",
+   "label": "the other end",
+   "synonyms": [
+    "at the other end"
+   ],
+   "kind": "Location",
+   "gloss": "This location is the remote endpoint relative to the currently observed terminal or tributary.",
+   "example": "The terminal at the other end reports a defect in the locally transmitted signal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_side",
+   "label": "on this side",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the local endpoint containing the module currently being diagnosed.",
+   "example": "A module failure stops telemetry on this side while the peer reports wavelength loss.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "along_route",
+   "label": "along its route",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location spans the intervening optical path over which wavelength impairment can accumulate.",
+   "example": "Margin shrinks gradually along the route through several amplifiers and routers.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "receiver_location",
+   "label": "at the receiver",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the receiving terminal where end-to-end wavelength quality and margin are finally observed.",
+   "example": "The reduced OSNR margin is seen at the receiver.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "earlier_wavelength_route",
+   "label": "anywhere earlier on the wavelength's route",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is any upstream point on the same wavelength path before the current observation point.",
+   "example": "An attenuation jump anywhere earlier on the wavelength route can cause FRAME-LOSS here.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "earlier_route",
+   "label": "Earlier on the route",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location denotes an upstream segment of the current route relative to the observing equipment.",
+   "example": "Excess noise introduced earlier on the route remains visible at the terminal.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "this_terminal",
+   "label": "this terminal",
+   "synonyms": [
+    "in this terminal"
+   ],
+   "kind": "Location",
+   "gloss": "This location is the wavelength terminal currently reporting or being diagnosed.",
+   "example": "A receiver impairment in this terminal causes local errors only.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "between_ends",
+   "label": "between here and the other end, the other end included",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location covers the entire path from the local endpoint through and including the remote endpoint.",
+   "example": "REMOTE-DEFECT can reflect a fault anywhere between here and the other end, including the peer receiver.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "terminal_sends",
+   "label": "what this terminal sends",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location identifies the outgoing signal generated by the current terminal and evaluated by the far end.",
+   "example": "The peer reports a defect in what this terminal sends.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "terminal_transmitter",
+   "label": "This terminal's transmitter",
+   "synonyms": [],
+   "kind": "Location",
+   "gloss": "This location is the transmit section of the current wavelength terminal.",
+   "example": "TX-HW localizes a laser fault to this terminal's transmitter.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "base",
+   "label": "Base",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "Base is the standard telemetry entitlement that exposes core status and performance measurements without an optional analytics pack.",
+   "example": "A base system reports customer unavailable seconds and supervisory-received status.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "optical_power_pack",
+   "label": "Optical Power pack",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "The Optical Power pack is an optional telemetry entitlement that exposes detailed input, output, and receive optical-power measurements.",
+   "example": "Enabling the pack adds aggregate OFA input and output power readings.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "insight_pack",
+   "label": "Insight pack",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "The Insight pack is an optional analytics entitlement providing derived health and impairment metrics such as OSNR, DGD, pump drive, and laser bias.",
+   "example": "With Insight enabled, an operator trends estimated OSNR and normalized laser bias.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "spectrum_pack",
+   "label": "With the Spectrum pack",
+   "synonyms": [],
+   "kind": "Availability",
+   "gloss": "The Spectrum pack is an optional capability that provides per-wavelength spectral measurements at a wavelength router.",
+   "example": "The pack reports individual level and OSNR values for each channel through VC-WR-X.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "outage",
+   "label": "An outage.",
+   "synonyms": [
+    "An outage"
+   ],
+   "kind": "Nature",
+   "gloss": "Outage is a fault nature in which the affected resource or service becomes unavailable rather than merely degraded.",
+   "example": "A dark transmitter causes a complete wavelength outage.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "provisioning_outage",
+   "label": "An outage; it happens mostly straight after provisioning work.",
+   "synonyms": [],
+   "kind": "Nature",
+   "gloss": "Provisioning outage is service unavailability caused by incorrect configuration and therefore most likely immediately after provisioning work.",
+   "example": "A newly changed DXC mapping sends an ODU to the wrong port and drops service.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "degradation",
+   "label": "A degradation.",
+   "synonyms": [
+    "A degradation"
+   ],
+   "kind": "Nature",
+   "gloss": "Degradation is a fault nature in which service remains present but quality, power, margin, or reliability is reduced.",
+   "example": "Excess amplifier noise lowers OSNR and raises errors without immediately dropping traffic.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "slow",
+   "label": "Slow",
+   "synonyms": [],
+   "kind": "Nature",
+   "gloss": "Slow is a temporal fault nature describing gradual evolution over an extended period rather than a sudden event.",
+   "example": "Laser bias climbs over months during transmitter wear-out.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "urgent",
+   "label": "urgent",
+   "synonyms": [
+    "Urgent"
+   ],
+   "kind": "Severity",
+   "gloss": "Urgent is a severity classification requiring prompt operational response because service is lost or at immediate risk.",
+   "example": "RX-DARK on an in-service wavelength is treated as urgent.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "information_only",
+   "label": "information only",
+   "synonyms": [
+    "Information only"
+   ],
+   "kind": "Severity",
+   "gloss": "Information only is a non-action severity used for state indications that inform operators without identifying a fault requiring repair.",
+   "example": "ON-STANDBY may be logged as information only after successful protection switching.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "important",
+   "label": "important",
+   "synonyms": [],
+   "kind": "Severity",
+   "gloss": "Important is a severity classification for a significant condition that merits attention but is less immediately critical than an urgent outage.",
+   "example": "STANDBY-LOST is important because service remains up but redundancy is gone.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "advisory",
+   "label": "advisory",
+   "synonyms": [
+    "Advisory"
+   ],
+   "kind": "Severity",
+   "gloss": "Advisory is a low-priority severity for early warning or maintenance conditions that do not yet materially affect service.",
+   "example": "PUMP-EOL is advisory while traffic remains healthy but pump replacement should be planned.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "dual_homed_routing",
+   "label": "dual-homed, with a primary and a standby ODU route and the selector at the receiving tributary",
+   "synonyms": [],
+   "kind": "Behaviour",
+   "gloss": "Dual-homed routing is the protection behavior in which a service has primary and standby ODU routes and a selector at the receiving tributary chooses the usable route.",
+   "example": "When the primary ODU receives AIS, the destination tributary switches to the clean standby route with only a brief interruption.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  },
+  {
+   "id": "router_routing",
+   "label": "The router steers every wavelength on its own as it leaves a direction.",
+   "synonyms": [],
+   "kind": "Behaviour",
+   "gloss": "Router routing is the behavior by which a wavelength router independently steers each wavelength from an ingress direction to its selected egress.",
+   "example": "From one west input, the router sends \u03bb1 north, \u03bb2 east, and \u03bb3 south.",
+   "ref": null,
+   "relations": [],
+   "instances": []
+  }
+ ]
+}

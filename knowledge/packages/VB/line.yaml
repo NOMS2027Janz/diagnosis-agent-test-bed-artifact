@@ -1,0 +1,80 @@
+document: "VB Coherent Line Interfaces (transponders, muxponders, OTN line cards): Alarm and Troubleshooting Reference"
+vendor: VB
+types:
+  - {id: VB-TPD-400, class: LineInterface, kind: transponder, rate_g: 400}
+  - {id: VB-MXP-200, class: LineInterface, kind: muxponder, rate_g: 200}
+  - {id: VB-MXP-400, class: LineInterface, kind: muxponder, rate_g: 400}
+  - {id: VB-OTN-LC-200, class: LineInterface, kind: otn_line, rate_g: 200}
+  - {id: VB-OTN-LC-400, class: LineInterface, kind: otn_line, rate_g: 400}
+datasheet:
+  line_rates: {"400G": "DP-16QAM, 64 GBd, OTUC4", "200G": "DP-QPSK, 64 GBd, OTUC2"}
+  receiver_los_threshold_dbm: -25
+  fec: "soft-decision FEC; pre-FEC BER limit about 2e-2"
+  dgd_tolerance_ps: 30
+  sop_tracking: "about 1 Mrad/s; faster polarisation changes cause errors"
+standards: [g798_otn]
+monitoring_points:
+  - {id: rx_pm15, observes: [rx_power_pm15, errored_seconds_pm15], tier: baseline}
+  - {id: rx_power, observes: rx_power, tier: power}
+  - {id: coherent_dsp, observes: [est_osnr, pre_fec_ber, dgd, sop_rate], tier: coherent, rate_s: 1}
+
+signal_behaviour:              # at the receiver
+  - {in: SIGNAL_LOST, out: [OTU_FRAME_LOST], defect: dLOS}
+  - {in: UNIT_DOWN, out: [OTU_FRAME_LOST], defect: dEQ}
+  - {in: [OSNR_LOW, POWER_LOW, DGD_HIGH, FILTER_PENALTY, RX_PENALTY, MARGIN_DECLINE], out: [OTU_ERRORED],
+     note: "errors appear when the degradation exceeds the channel's margin; frame loss when it exceeds it greatly"}
+  - {in: POL_TRANSIENT, out: [OTU_ERRORED], note: "errored seconds if faster than the tracking range"}
+  - {in: OTU_FRAME_LOST, consequent: "see g798_otn: ODU_AIS downstream on every carried ODU; OTU_BDI upstream"}
+fault_modes:
+  - id: TX_LASER_FAIL
+    description: "Transmit laser off or failed; the far-end receiver of this channel loses signal."
+    effects: [{effect: SIGNAL_LOST, scope: channel, where: far_end_receiver}]
+    nature: hard
+    documented_rate: {per_year: 0.005, per: unit}
+    twin_scenario: {kind: tx_off}
+  - id: CARD_FAIL
+    description: "Card failure; the channel it transmits is lost at the far end, and the traffic it receives
+      is lost here, with its monitoring silent and its traffic alarms masked by the equipment alarm."
+    effects: [{effect: SIGNAL_LOST, scope: channel, where: far_end_receiver}, {effect: UNIT_DOWN, scope: this_receiver}]
+    nature: hard
+    documented_rate: {per_year: 0.005, per: unit}
+    twin_scenario: {kind: card_off}
+  - id: RX_DEGRADATION
+    description: "Receiver degradation; errors at this receiver only, other channels and the optical path normal."
+    effects: [{effect: RX_PENALTY, scope: this_receiver}]
+    nature: soft
+    documented_rate: {per_year: 0.01, per: unit}
+    twin_scenario: {kind: rx_penalty, parameter: penalty_db, range: [0.5, 8]}
+
+alarms:
+  - id: OCH_LOS
+    severity: critical
+    raised_when: {point: rx_power, sees: SIGNAL_LOST}
+    probable_causes: [{mode: TX_LASER_FAIL, where: far_end_transmitter}, {mode: CARD_FAIL, where: far_end_transmitter},
+                      {mode: FIBRE_CUT, where: upstream_on_path}, {mode: AMP_PUMP_FAIL, where: upstream_on_path},
+                      {mode: CONNECTOR_PULLED, where: upstream_on_path}, {mode: WSS_PORT_FAIL, where: upstream_on_path}]
+  - id: OTU_LOF
+    severity: critical
+    raised_when: {sees: OTU_FRAME_LOST, condition: "signal present"}
+    probable_causes: [{mode: SPAN_LOSS_INCREASE, where: upstream_on_path}, {mode: AMP_NF_RISE, where: upstream_on_path},
+                      {mode: DGD_RISE, where: upstream_on_path}, {mode: WSS_FILTER_SHIFT, where: upstream_on_path},
+                      {mode: RX_DEGRADATION, where: this_unit}, {mode: SOP_TRANSIENT, where: upstream_on_path}]
+  - id: OTU_SD
+    severity: minor
+    raised_when: {sees: OTU_ERRORED, condition: "margin below about 1 dB"}
+    probable_causes: [{mode: SPAN_LOSS_INCREASE, where: upstream_on_path}, {mode: AMP_NF_RISE, where: upstream_on_path},
+                      {mode: CONNECTOR_DIRTY, where: upstream_on_path}, {mode: WSS_FILTER_SHIFT, where: upstream_on_path},
+                      {mode: RX_DEGRADATION, where: this_unit}, {mode: DGD_RISE, where: upstream_on_path}]
+  - id: OTU_BDI
+    severity: not_alarmed
+    raised_when: {condition: "far end reports a defect on the signal this unit transmits"}
+    probable_causes: [{mode: any_upstream_failure, where: path_to_far_end}]
+  - id: EQPT_TX_FAIL
+    severity: critical
+    raised_when: {condition: "transmit laser fault detected by the unit"}
+    probable_causes: [{mode: TX_LASER_FAIL, where: this_unit}]
+  - id: EQPT_CARD_FAIL
+    severity: critical
+    raised_when: {condition: "card hardware fault"}
+    probable_causes: [{mode: CARD_FAIL, where: this_unit}]
+

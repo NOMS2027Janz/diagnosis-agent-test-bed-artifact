@@ -1,0 +1,182 @@
+{
+ "vendor": "VA",
+ "document_title": "VA ROADM (CDC): Fault Management Guide",
+ "standards": [],
+ "unit_types": [
+  {
+   "product_code": "VA-ROADM-CDC",
+   "unit": "colourless, directionless, contentionless ROADM",
+   "role_or_position": "one WSS module per degree",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "Publication",
+   "value": "VA-TN-0431"
+  },
+  {
+   "item": "revision",
+   "value": "A"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "optical channel monitor (OCM licence)",
+   "measures": [
+    "Per-channel power",
+    "OSNR"
+   ],
+   "availability": "OCM licence",
+   "applies_to": [
+    "VA-ROADM-CDC"
+   ],
+   "location": "each ingress degree",
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "each egress degree"
+   ],
+   "when": [
+    "Switching is per channel"
+   ],
+   "result": [
+    "A line-wide impairment on an ingress degree therefore continues as a per-channel impairment on each channel routed onward."
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "The WSS module of each degree"
+   ],
+   "when": [
+    "An upstream power loss within that range"
+   ],
+   "result": [
+    "is levelled out at the node",
+    "the OSNR penalty it caused stays"
+   ],
+   "threshold": "within an attenuation range of typically 8 dB",
+   "note": "performs channel power equalisation to the launch target"
+  },
+  {
+   "applies_to": [
+    "The WSS module of each degree"
+   ],
+   "when": [
+    "a larger loss"
+   ],
+   "result": [
+    "is passed on as low power"
+   ],
+   "threshold": "an attenuation range of typically 8 dB",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "Everything else"
+   ],
+   "when": [],
+   "result": [
+    "passes through"
+   ],
+   "threshold": null,
+   "note": null
+  }
+ ],
+ "faults": [
+  {
+   "name": "WSS attenuation drift",
+   "applies_to": [
+    "VA-ROADM-CDC"
+   ],
+   "description": "Attenuation of one channel creeps above its setting; that channel is low in power after the node",
+   "effects": [
+    {
+     "effect": "Attenuation creeps above its setting",
+     "scope": "one channel",
+     "where": null
+    },
+    {
+     "effect": "low in power",
+     "scope": "that channel",
+     "where": "after the node"
+    }
+   ],
+   "character": "Soft",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "per degree per year"
+  },
+  {
+   "name": "WSS passband offset",
+   "applies_to": [
+    "VA-ROADM-CDC"
+   ],
+   "description": "Passband of one channel shifted or narrowed; power normal, signal quality down",
+   "effects": [
+    {
+     "effect": "Passband shifted",
+     "scope": "one channel",
+     "where": null
+    },
+    {
+     "effect": "Passband narrowed",
+     "scope": "one channel",
+     "where": null
+    },
+    {
+     "effect": "power normal",
+     "scope": "one channel",
+     "where": null
+    },
+    {
+     "effect": "signal quality down",
+     "scope": "one channel",
+     "where": null
+    }
+   ],
+   "character": "Soft",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "per degree per year"
+  },
+  {
+   "name": "WSS ingress port failure",
+   "applies_to": [
+    "VA-ROADM-CDC"
+   ],
+   "description": "One WSS input port fails; all channels arriving on that degree are blocked at the node; other degrees unaffected",
+   "effects": [
+    {
+     "effect": "fails",
+     "scope": "One WSS input port",
+     "where": null
+    },
+    {
+     "effect": "blocked",
+     "scope": "all channels arriving on that degree",
+     "where": "at the node"
+    },
+    {
+     "effect": "unaffected",
+     "scope": "other degrees",
+     "where": null
+    }
+   ],
+   "character": "Hard",
+   "rate_per_year_fraction": 0.002,
+   "rate_per": "per degree per year"
+  }
+ ],
+ "alarms": [],
+ "routing": "Switching is per channel at each egress degree. A line-wide impairment on an ingress degree therefore continues as a per-channel impairment on each channel routed onward.",
+ "troubleshooting_notes": [
+  "None for the failure modes below. These faults are seen through OCM readings and through alarms on the downstream transponders.",
+  "A single-channel power deviation on the OCM points to the node where the deviation first appears.",
+  "A port failure is located at the ingress port of the affected degree; a single-channel fault at that channel on the ingress port of the degree where it first appears."
+ ]
+}

@@ -1,0 +1,274 @@
+document: "Network operations: alarm-clearing and fault-isolation procedures for the optical transport network"
+kind: operator_practice
+source: >
+  Written in the form of operator alarm-clearing procedures and vendor troubleshooting guides (ordered checks whose
+  outcomes select the next check until a cause is reached), vendor-neutral, from the alarms, monitoring points and
+  probable causes of the equipment description packages and the fibre-plant practice notes. Nothing is derived from
+  the world simulator.
+
+# How to use these procedures (NOC practice).
+# Start from one alarm: the highest in this order that is present; among several instances of it, the earliest,
+# then the one furthest upstream if that is clear. When no alarm explains the question, start from a receiver
+# whose readings degraded; when none did, check every receiver on the working path of the service in question. Run the procedure's checks in order. A check that cannot be answered from
+# the monitoring data (a field test, a site visit) is noted; both of its outcomes stay open until it is done.
+selection_order:
+  - {alarm: AMP_FAIL, procedure: P-AMP-FAIL}
+  - {alarm: EQPT_CARD_FAIL, procedure: P-EQPT-CARD}
+  - {alarm: EQPT_TX_FAIL, procedure: P-EQPT-TX}
+  - {alarm: OTN_FABRIC_FAIL, procedure: P-OTN-SWITCH}
+  - {alarm: EQPT_PORT_FAIL, procedure: P-EQPT-PORT}
+  - {alarm: OMS_LOS_P, procedure: P-AMP-INPUT-LOS}
+  - {alarm: AMP_INPUT_LOS, procedure: P-AMP-INPUT-LOS}
+  - {alarm: OCH_LOS, procedure: P-OCH-LOS}
+  - {alarm: ODU_TIM, procedure: P-ODU-TIM}
+  - {alarm: OTU_LOF, procedure: P-SIGNAL-DEGRADED}
+  - {alarm: CLIENT_SF, procedure: P-CLIENT-SF}
+  - {alarm: AMP_GAIN_OOR, procedure: P-AMP-GAIN}
+  - {alarm: OTU_SD, procedure: P-SIGNAL-DEGRADED}
+  - {alarm: AMP_PUMP_EOL, procedure: P-AMP-PUMP-EOL}
+  - {alarm: LASER_BIAS_HIGH, procedure: P-LASER-BIAS}
+  - {alarm: PROT_ACTIVE, procedure: P-PROTECTION}
+  - {alarm: PROT_UNAVAIL, procedure: P-PROTECTION}
+  - {degraded: receiver, procedure: P-SIGNAL-DEGRADED}
+  - {degraded: client, procedure: P-CLIENT-ERRORS}
+  - {degraded: question_service, procedure: P-SIGNAL-DEGRADED}
+
+# Check vocabulary (what a step may ask):
+#   alarm:   is any of these alarms raised at the location (relative to the unit under investigation)?
+#   find:    which unit at the location raises any of these alarms? (the investigation moves to it)
+#   reading: did this observable change in this way at the location since the onset? (with move: the
+#            investigation continues from the most upstream unit where it did)
+#   role:    is the unit under investigation of this role?
+#   test:    a field test or site check; not answerable from monitoring data
+# Locations use the shared location vocabulary (this_unit, upstream_span, upstream_on_path, ...).
+procedures:
+  - id: P-AMP-FAIL
+    title: "Amplifier failure alarm"
+    start: s1
+    steps:
+      s1: {ask: {reading: amp_input_power, where: this_unit, change: [lost]}, yes: x_input, no: l_pump, unknown: l_pump,
+           text: "Is the amplifier's input power present? AMP_FAIL with input lost is a downstream symptom."}
+    leaves:
+      l_pump: {causes: [{mode: AMP_PUMP_FAIL, where: this_unit}], advice: "Replace the amplifier unit."}
+      x_input: {goto: P-AMP-INPUT-LOS}
+
+  - id: P-EQPT-CARD
+    title: "Line card failure"
+    start: s1
+    steps:
+      s1: {ask: {test: "reseat the card and check its status LEDs and local log"}, yes: l_card, no: l_card, unknown: l_card,
+           text: "Confirm the card fault locally."}
+    leaves:
+      l_card: {causes: [{mode: CARD_FAIL, where: this_unit}], advice: "Replace the line card."}
+
+  - id: P-EQPT-TX
+    title: "Transmitter failure"
+    start: s1
+    steps:
+      s1: {ask: {test: "measure the transmit power at the card's line output"}, yes: l_tx, no: l_tx, unknown: l_tx,
+           text: "Confirm that the transmitter emits no light."}
+    leaves:
+      l_tx: {causes: [{mode: TX_LASER_FAIL, where: this_unit}], advice: "Replace the transponder or its pluggable optic."}
+
+  - id: P-OTN-SWITCH
+    title: "OTN switch fabric failure"
+    start: s1
+    steps:
+      s1: {ask: {test: "check the switch's fabric and controller status"}, yes: l_sw, no: l_sw, unknown: l_sw,
+           text: "Confirm the fabric fault."}
+    leaves:
+      l_sw: {causes: [{mode: OTN_SWITCH_FAIL, where: this_unit}], advice: "Switch to the standby fabric or replace it."}
+
+  - id: P-EQPT-PORT
+    title: "Client port failure"
+    start: s1
+    steps:
+      s1: {ask: {test: "loop back the client port and check its optic"}, yes: l_port, no: l_port, unknown: l_port,
+           text: "Confirm the port or optic fault."}
+    leaves:
+      l_port: {causes: [{mode: CLIENT_PORT_FAIL, where: this_port}], advice: "Replace the client optic or port."}
+
+  - id: P-AMP-INPUT-LOS
+    title: "Amplifier input loss of signal"
+    start: s0
+    steps:
+      s0: {ask: {find: [AMP_INPUT_LOS, OMS_LOS_P], where: upstream_on_path, pick: most_upstream}, yes: s0, no: s1,
+           text: "Trace upstream: does an amplifier further upstream also report input loss? Continue from the first one."}
+      s1: {ask: {role: booster}, yes: s5, no: s2,
+           text: "Is this the booster, at the start of the line?"}
+      s2: {ask: {alarm: [AMP_FAIL], where: upstream_amplifier}, yes: l_up_amp, no: s3,
+           text: "Does the amplifier before the upstream span report a failure?"}
+      s3: {ask: {reading: amp_output_power, where: upstream_amplifier, change: [lost]}, yes: s3b, no: s4, unknown: s4,
+           text: "Has that amplifier's output power been lost?"}
+      s3b: {ask: {reading: amp_input_power, where: upstream_amplifier, change: [lost], move: most_upstream}, yes: s1, no: l_up_amp, unknown: l_up_amp,
+            text: "Has its input been lost too? Then the loss is further upstream: continue from it."}
+      s4: {ask: {alarm: [OSC_LOS], where: upstream_span}, yes: s4b, no: s4c,
+           text: "Is the supervisory channel lost on the upstream span?"}
+      s4b: {ask: {test: "OTDR trace on the upstream span from both ends"}, yes: l_cut, no: l_span, unknown: l_cut_or_loss,
+            text: "Locate the break or the loss on the span."}
+      s4c: {ask: {test: "measure the span loss and inspect the splice points"}, yes: l_span, no: l_span, unknown: l_span_or_cut,
+            text: "The OSC survives: the loss is high but not total."}
+      s5: {ask: {test: "inspect the patch between the ROADM degree and the booster"}, yes: l_patch, no: l_patch, unknown: l_patch,
+           text: "Loss at the booster input with nothing upstream on the line: check the section input patch."}
+    leaves:
+      l_up_amp: {causes: [{mode: AMP_PUMP_FAIL, where: upstream_amplifier}], advice: "Replace the upstream amplifier."}
+      l_cut: {causes: [{mode: FIBRE_CUT, where: upstream_span}], advice: "Dispatch a fibre repair crew; check the reverse fibre and cables in the same duct."}
+      l_span: {causes: [{mode: SPAN_LOSS_INCREASE, where: upstream_span}], advice: "Locate and repair the bend, splice or damage."}
+      l_cut_or_loss: {causes: [{mode: FIBRE_CUT, where: upstream_span}, {mode: SPAN_LOSS_INCREASE, where: upstream_span}],
+                      advice: "Run an OTDR trace on the upstream span."}
+      l_span_or_cut: {causes: [{mode: SPAN_LOSS_INCREASE, where: upstream_span}, {mode: FIBRE_CUT, where: upstream_span}],
+                      advice: "Measure the span loss."}
+      l_patch: {causes: [{mode: CONNECTOR_PULLED, where: oms_input}], advice: "Reconnect or replace the patch cord; check recent site work."}
+
+  - id: P-OCH-LOS
+    title: "Receiver loss of signal"
+    start: s1
+    steps:
+      s1: {ask: {alarm: [EQPT_TX_FAIL], where: far_end_transmitter}, yes: l_tx, no: s2,
+           text: "Does the far-end transmitter report a transmit failure?"}
+      s2: {ask: {alarm: [EQPT_CARD_FAIL], where: far_end_transmitter}, yes: l_card, no: s3,
+           text: "Does the far-end card report a failure?"}
+      s3: {ask: {find: [AMP_FAIL], where: upstream_on_path, pick: most_upstream}, yes: x_amp, no: s4,
+           text: "Does an amplifier on the path report a failure?"}
+      s4: {ask: {find: [AMP_INPUT_LOS, OMS_LOS_P], where: upstream_on_path, pick: most_upstream}, yes: x_los, no: s5,
+           text: "Does an amplifier on the path report input loss? Continue from the most upstream one."}
+      s5: {ask: {reading: ocm_channel_power, where: upstream_on_path, change: [lost]}, yes: l_wss, no: s6, unknown: s6,
+           text: "Do the channel monitors along the path show this channel lost at some node?"}
+      s6: {ask: {test: "measure the transmit power at the far-end line interface"}, yes: l_far, no: l_wss, unknown: l_far_or_wss,
+           text: "Only this channel is lost and no node shows where: check the far-end transmitter locally."}
+    leaves:
+      l_tx: {causes: [{mode: TX_LASER_FAIL, where: far_end_transmitter}], advice: "Replace the far-end transmitter."}
+      l_card: {causes: [{mode: CARD_FAIL, where: far_end_transmitter}], advice: "Replace the far-end card."}
+      x_amp: {goto: P-AMP-FAIL}
+      x_los: {goto: P-AMP-INPUT-LOS}
+      l_wss: {causes: [{mode: WSS_PORT_FAIL, where: upstream_on_path}], advice: "At the node where the channel disappears, check the WSS input port it arrives on: if every channel arriving on that degree is lost there, the port has failed."}
+      l_far: {causes: [{mode: TX_LASER_FAIL, where: far_end_transmitter}, {mode: CARD_FAIL, where: far_end_transmitter}],
+              advice: "Replace the far-end transmitter or card."}
+      l_far_or_wss: {causes: [{mode: TX_LASER_FAIL, where: far_end_transmitter}, {mode: CARD_FAIL, where: far_end_transmitter},
+                              {mode: WSS_PORT_FAIL, where: upstream_on_path}],
+                     advice: "Measure the far-end transmit power; if present, trace the channel node by node."}
+
+  - id: P-SIGNAL-DEGRADED
+    title: "Receiver errors or degraded signal quality (OTU_LOF, OTU_SD, or rising pre-FEC BER)"
+    start: s1
+    steps:
+      s1: {ask: {find: [AMP_INPUT_LOS, OMS_LOS_P, AMP_FAIL], where: upstream_on_path, pick: most_upstream}, yes: x_los, no: s2,
+           text: "Is a loss alarm present upstream on the path? Clear it first."}
+      s2: {ask: {reading: amp_input_power, where: upstream_on_path, change: [level_down], move: most_upstream}, yes: s3, no: s3c, unknown: s3c,
+           text: "Has the input power of an amplifier on the path fallen? Continue from the first one where it did."}
+      s3: {ask: {role: booster}, yes: l_patch_dirty, no: s3b,
+           text: "Is that amplifier the booster (the loss is in the section input patch) or after a span?"}
+      s3b: {ask: {reading: amp_output_power, where: upstream_amplifier, change: [level_down]}, yes: l_gain_up, no: l_span_loss, unknown: l_span_loss,
+            text: "Did the amplifier before that span lose output (its gain) or not (the span's loss)?"}
+      s3c: {ask: {reading: ocm_channel_power, where: upstream_on_path, change: [level_down], move: most_upstream}, yes: l_wss_atten, no: s4, unknown: s4,
+            text: "Amplifier powers normal: has this channel's power fallen at a channel monitor along the path? Continue from the first one where it did."}
+      s4: {ask: {reading: est_osnr, where: this_unit, change: [level_down]}, yes: s5, no: s4b, unknown: s4b,
+           text: "Has the receiver's estimated OSNR fallen?"}
+      s4b: {ask: {reading: ocm_osnr, where: upstream_on_path, change: [level_down]}, yes: s5, no: s6,
+            text: "Has the channel's OSNR fallen at a channel monitor along the path?"}
+      s5: {ask: {reading: amp_output_power, where: upstream_on_path, change: [level_down]}, yes: l_gain, no: l_nf, unknown: l_nf_or_gain,
+           text: "OSNR fell with input powers normal: has an amplifier's output fallen (gain) or not (noise figure)?"}
+      s6: {ask: {reading: dgd, where: this_unit, change: [level_up]}, yes: l_dgd, no: s7,
+           text: "Has the differential group delay risen?"}
+      s7: {ask: {reading: sop_rate, where: this_unit, change: [excursion, level_up]}, yes: l_sop, no: s8,
+           text: "Were there fast polarisation changes?"}
+      s8: {ask: {test: "move the channel to another receiver, or compare with the same channel received elsewhere"}, yes: l_rx, no: l_filter, unknown: l_rx_or_filter,
+           text: "Power, OSNR and polarisation normal: is the impairment in this receiver or in the channel's filtering?"}
+    leaves:
+      x_los: {goto: P-AMP-INPUT-LOS}
+      l_patch_dirty: {causes: [{mode: CONNECTOR_DIRTY, where: oms_input}], advice: "Inspect and clean the section input patch."}
+      l_span_loss: {causes: [{mode: SPAN_LOSS_INCREASE, where: upstream_span}], advice: "Measure the span loss; locate the bend or damaged splice."}
+      l_gain_up: {causes: [{mode: AMP_GAIN_DROP, where: upstream_amplifier}], advice: "Check the gain of the amplifier before the span; adjust or replace."}
+      l_wss_atten: {causes: [{mode: WSS_ATTEN_DRIFT, where: upstream_roadm_channel}], advice: "Check the channel's attenuation setting at the ROADM before the monitor."}
+      l_gain: {causes: [{mode: AMP_GAIN_DROP, where: upstream_on_path}], advice: "Check the amplifier whose output fell; adjust or replace."}
+      l_nf: {causes: [{mode: AMP_NF_RISE, where: upstream_on_path}], advice: "Compare each amplifier's OSNR contribution; replace the degraded stage."}
+      l_nf_or_gain: {causes: [{mode: AMP_NF_RISE, where: upstream_on_path}, {mode: AMP_GAIN_DROP, where: upstream_on_path}],
+                     advice: "Compare each amplifier's gain and OSNR contribution."}
+      l_dgd: {causes: [{mode: DGD_RISE, where: upstream_on_path}], advice: "Measure PMD on the path's spans."}
+      l_sop: {causes: [{mode: SOP_TRANSIENT, where: upstream_on_path}], advice: "Look for aerial spans and nearby work; no repair if it does not recur."}
+      l_rx: {causes: [{mode: RX_DEGRADATION, where: this_unit}], advice: "Replace the receiving line interface."}
+      l_filter: {causes: [{mode: WSS_FILTER_SHIFT, where: upstream_on_path}], advice: "Check the WSS passband settings along the path."}
+      l_rx_or_filter: {causes: [{mode: RX_DEGRADATION, where: this_unit}, {mode: WSS_FILTER_SHIFT, where: upstream_on_path}],
+                       advice: "Swap receivers or check the WSS passbands along the path."}
+
+  - id: P-AMP-GAIN
+    title: "Amplifier gain out of range"
+    start: s1
+    steps:
+      s1: {ask: {reading: amp_input_power, where: this_unit, change: [level_down, lost]}, yes: x_input, no: l_gain, unknown: l_gain,
+           text: "Has the input fallen? If so, the cause is upstream."}
+    leaves:
+      x_input: {goto: P-SIGNAL-DEGRADED}
+      l_gain: {causes: [{mode: AMP_GAIN_DROP, where: this_unit}], advice: "Adjust the gain set point; replace the unit if it cannot hold it."}
+
+  - id: P-AMP-PUMP-EOL
+    title: "Pump end of life"
+    start: s1
+    steps:
+      s1: {ask: {test: "check the pump current history"}, yes: l_eol, no: l_eol, unknown: l_eol, text: "Confirm the trend."}
+    leaves:
+      l_eol: {causes: [{mode: PUMP_CURRENT_DRIFT, where: this_unit}], advice: "Schedule replacement of the amplifier."}
+
+  - id: P-LASER-BIAS
+    title: "Laser bias high"
+    start: s1
+    steps:
+      s1: {ask: {test: "check the laser bias history"}, yes: l_bias, no: l_bias, unknown: l_bias, text: "Confirm the trend."}
+    leaves:
+      l_bias: {causes: [{mode: LASER_BIAS_DRIFT, where: this_unit}], advice: "Schedule replacement of the transmitter."}
+
+  - id: P-ODU-TIM
+    title: "ODU trace identifier mismatch"
+    start: s1
+    steps:
+      s1: {ask: {test: "compare the cross-connects on the ODU path with the provisioning records"}, yes: l_xc, no: l_xc, unknown: l_xc,
+           text: "A trace mismatch means the ODU arriving is not the one expected: find the wrong cross-connect."}
+    leaves:
+      l_xc: {causes: [{mode: XC_MISCONNECT, where: odu_path_switch}], advice: "Correct the cross-connect."}
+
+  - id: P-CLIENT-SF
+    title: "Client signal failure"
+    start: s1
+    steps:
+      s1: {ask: {find: [EQPT_PORT_FAIL], where: either_port}, yes: x_port, no: s2,
+           text: "Does either client port report a hardware fault?"}
+      s2: {ask: {alarm: [ODU_TIM], where: either_port}, yes: x_tim, no: s3,
+           text: "Does either end report a trace mismatch?"}
+      s3: {ask: {find: [OTN_FABRIC_FAIL], where: odu_path_switch}, yes: x_sw, no: s4,
+           text: "Does a switch on the path report a fabric failure?"}
+      s4: {ask: {find: [OCH_LOS, OTU_LOF, EQPT_CARD_FAIL, EQPT_TX_FAIL], where: active_odu_path}, yes: x_line, no: s5,
+           text: "Are there line alarms on the lightpaths carrying the service?"}
+      s5: {ask: {test: "loop back each client port and test the client optics"}, yes: l_port, no: l_port, unknown: l_port,
+           text: "Server path clean: test the client ports."}
+    leaves:
+      x_port: {goto: P-EQPT-PORT}
+      x_tim: {goto: P-ODU-TIM}
+      x_sw: {goto: P-OTN-SWITCH}
+      x_line: {goto_by_alarm: true}
+      l_port: {causes: [{mode: CLIENT_PORT_FAIL, where: either_port}], advice: "Replace the faulty client optic or port."}
+
+  - id: P-PROTECTION
+    title: "Protection switched or protection unavailable"
+    start: s1
+    steps:
+      s1: {ask: {find: [OCH_LOS, OTU_LOF, EQPT_CARD_FAIL, EQPT_TX_FAIL, AMP_INPUT_LOS, OMS_LOS_P, AMP_FAIL], where: working_odu_path}, yes: x_line, no: s2,
+           text: "Is there a line alarm on the failed path?"}
+      s2: {ask: {test: "check the failed path for brief disturbances (work on site, aerial spans)"}, yes: l_transient, no: l_transient, unknown: l_transient,
+           text: "No standing alarm: the switch followed a brief disturbance."}
+    leaves:
+      x_line: {goto_by_alarm: true}
+      l_transient: {causes: [{mode: MECHANICAL_DISTURBANCE, where: working_odu_path}, {mode: SOP_TRANSIENT, where: working_odu_path}],
+                    advice: "No repair unless it recurs; look for work near the path."}
+
+  - id: P-CLIENT-ERRORS
+    title: "Client errored seconds without an alarm"
+    start: s1
+    steps:
+      s1: {ask: {find: [OTU_SD, OTU_LOF], where: active_odu_path}, yes: x_line, no: s2,
+           text: "Are the lightpaths carrying the service reporting errors?"}
+      s2: {ask: {test: "check the service's path for brief disturbances"}, yes: l_transient, no: l_transient, unknown: l_transient,
+           text: "Brief errors with nothing standing: a transient on the path."}
+    leaves:
+      x_line: {goto_by_alarm: true}
+      l_transient: {causes: [{mode: SOP_TRANSIENT, where: active_odu_path}, {mode: MECHANICAL_DISTURBANCE, where: active_odu_path}],
+                    advice: "No repair unless it recurs."}

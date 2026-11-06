@@ -1,0 +1,176 @@
+{
+ "AC": {
+  "cases": 320,
+  "right": 38,
+  "partial": 14,
+  "wrong": 0,
+  "dont_know": 118,
+  "no_procedure": 150,
+  "effort_h": 0.0,
+  "field_h": 0.0,
+  "remote_h": 0.0,
+  "site_visits": 0,
+  "right_per_hour": null,
+  "right_by_kind": {
+   "coincident": 1,
+   "hard": 27,
+   "maintenance": 8,
+   "soft": 2
+  }
+ },
+ "AC-fut": {
+  "cases": 320,
+  "right": 38,
+  "partial": 14,
+  "wrong": 0,
+  "dont_know": 118,
+  "no_procedure": 150,
+  "effort_h": 0.0,
+  "field_h": 0.0,
+  "remote_h": 0.0,
+  "site_visits": 0,
+  "right_per_hour": null,
+  "right_by_kind": {
+   "coincident": 1,
+   "hard": 27,
+   "maintenance": 8,
+   "soft": 2
+  }
+ },
+ "B": {
+  "cases": 320,
+  "right": 104,
+  "partial": 69,
+  "wrong": 19,
+  "dont_know": 59,
+  "no_procedure": 69,
+  "effort_h": 235.2,
+  "field_h": 182.3,
+  "remote_h": 52.9,
+  "site_visits": 69,
+  "right_per_hour": 0.44,
+  "right_by_kind": {
+   "coincident": 1,
+   "hard": 38,
+   "maintenance": 35,
+   "soft": 30
+  }
+ },
+ "B-fut": {
+  "cases": 320,
+  "right": 104,
+  "partial": 69,
+  "wrong": 19,
+  "dont_know": 59,
+  "no_procedure": 69,
+  "effort_h": 164.4,
+  "field_h": 107.5,
+  "remote_h": 56.9,
+  "site_visits": 41,
+  "right_per_hour": 0.63,
+  "right_by_kind": {
+   "coincident": 1,
+   "hard": 38,
+   "maintenance": 35,
+   "soft": 30
+  }
+ },
+ "B-Lall": {
+  "cases": 320,
+  "right": 125,
+  "partial": 69,
+  "wrong": 19,
+  "dont_know": 59,
+  "no_procedure": 48,
+  "effort_h": 164.4,
+  "field_h": 107.5,
+  "remote_h": 56.9,
+  "site_visits": 41,
+  "right_per_hour": 0.76,
+  "right_by_kind": {
+   "coincident": 1,
+   "hard": 38,
+   "maintenance": 35,
+   "monitoring": 21,
+   "soft": 30
+  }
+ },
+ "A-full-cd": {
+  "cases": 320,
+  "right": 241,
+  "partial": 12,
+  "wrong": 1,
+  "dont_know": 42,
+  "no_procedure": 0,
+  "effort_h": 112.7,
+  "field_h": 91.3,
+  "remote_h": 21.4,
+  "site_visits": 30,
+  "right_per_hour": 2.14,
+  "right_by_kind": {
+   "coincident": 14,
+   "common_cause": 40,
+   "drift": 37,
+   "hard": 40,
+   "maintenance": 37,
+   "monitoring": 27,
+   "soft": 31,
+   "transient": 15
+  }
+ },
+ "A-full-cd-fut": {
+  "cases": 320,
+  "right": 241,
+  "partial": 12,
+  "wrong": 1,
+  "dont_know": 42,
+  "no_procedure": 0,
+  "effort_h": 109.6,
+  "field_h": 86.3,
+  "remote_h": 23.3,
+  "site_visits": 29,
+  "right_per_hour": 2.2,
+  "right_by_kind": {
+   "coincident": 14,
+   "common_cause": 40,
+   "drift": 37,
+   "hard": 40,
+   "maintenance": 37,
+   "monitoring": 27,
+   "soft": 31,
+   "transient": 15
+  }
+ },
+ "A-Lall": {
+  "cases": 320,
+  "right": 289,
+  "partial": 14,
+  "wrong": 1,
+  "dont_know": 15,
+  "no_procedure": 0,
+  "effort_h": 41.5,
+  "field_h": 35.2,
+  "remote_h": 6.3,
+  "site_visits": 11,
+  "right_per_hour": 6.97,
+  "right_by_kind": {
+   "coincident": 15,
+   "common_cause": 40,
+   "drift": 39,
+   "hard": 40,
+   "maintenance": 40,
+   "monitoring": 40,
+   "soft": 38,
+   "transient": 37
+  }
+ },
+ "paired_A-full-cd_B": {
+  "cases": 102,
+  "a_effort_h": 3.8,
+  "a_visits": 0,
+  "a_field_h": -0.0,
+  "b_effort_h": 101.4,
+  "b_visits": 36,
+  "b_field_h": 93.9
+ }
+}

@@ -1,0 +1,603 @@
+{
+ "vendor": "VC",
+ "document_title": "VC Wavelength Terminals \u2014 Service Handbook SH-WT, edition 2",
+ "standards": [
+  "G.798"
+ ],
+ "unit_types": [
+  {
+   "product_code": "VC-WT-400T",
+   "unit": "single-client wavelength terminal",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VC-WT-200A",
+   "unit": "aggregating wavelength terminal",
+   "role_or_position": "several clients on one wavelength",
+   "line_rate_or_client_rate": "200G",
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VC-WT-400A",
+   "unit": "aggregating wavelength terminal",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VC-WT-200D",
+   "unit": "digital-switching line module",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "200G",
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VC-WT-400D",
+   "unit": "digital-switching line module",
+   "role_or_position": null,
+   "line_rate_or_client_rate": "400G",
+   "odu_mapping": null
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "Modulation, 400G models",
+   "value": "DP-16QAM at 64 GBd"
+  },
+  {
+   "item": "Modulation, 200G models",
+   "value": "DP-QPSK at 64 GBd"
+  },
+  {
+   "item": "Receiver darkness threshold",
+   "value": "below -25 dBm"
+  },
+  {
+   "item": "Soft-decision FEC",
+   "value": "corrects up to a pre-FEC error ratio of about 2e-2"
+  },
+  {
+   "item": "DGD tolerance",
+   "value": "30 ps"
+  },
+  {
+   "item": "Polarisation tracker",
+   "value": "follows changes up to about 1 Mrad/s"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "Received light level and errored seconds, in 15-minute counters",
+   "measures": [
+    "Received light level",
+    "errored seconds"
+   ],
+   "availability": "Base",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "Received light level, live",
+   "measures": [
+    "Received light level"
+   ],
+   "availability": "Optical Power pack",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "From the coherent receiver, once a second",
+   "measures": [
+    "estimated OSNR",
+    "pre-FEC error ratio",
+    "DGD",
+    "polarisation drift rate"
+   ],
+   "availability": "Insight pack",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "location": "coherent receiver",
+   "alarm_only": false
+  },
+  {
+   "name": "Transmit laser bias, as a share of its value at commissioning",
+   "measures": [
+    "Transmit laser bias, as a share of its value at commissioning"
+   ],
+   "availability": "Insight pack",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "location": null,
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "when": [
+    "Darkness at the receiver"
+   ],
+   "result": [
+    "the terminal declares a loss-of-signal defect (dLOS in G.798 terms)",
+    "can no longer find its OTU frame"
+   ],
+   "threshold": "below -25 dBm",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "when": [
+    "Module failure"
+   ],
+   "result": [
+    "the terminal declares an equipment defect (dEQ)",
+    "the OTU frame is lost"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "when": [
+    "Light that arrives in poor shape",
+    "weak",
+    "noisy",
+    "with too much differential group delay",
+    "clipped by a filter",
+    "spoiled by the receiver itself",
+    "with its margin slowly worn away"
+   ],
+   "result": [
+    "pre-FEC errors begin once the damage exceeds the wavelength's margin",
+    "the frame is lost once it exceeds the margin by far"
+   ],
+   "threshold": "the wavelength's margin",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "when": [
+    "Polarisation swings faster than the tracker can follow"
+   ],
+   "result": [
+    "errored seconds"
+   ],
+   "threshold": "about 1 Mrad/s",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "when": [
+    "Once the OTU frame is gone"
+   ],
+   "result": [
+    "the terminal follows G.798",
+    "It inserts ODU AIS towards every ODU it carries downstream",
+    "returns a backward defect indication to the terminal at the other end"
+   ],
+   "threshold": null,
+   "note": null
+  }
+ ],
+ "faults": [
+  {
+   "name": "Transmitter dark",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "description": "The transmit laser stops or fails, and the terminal at the other end of the wavelength sees no light.",
+   "effects": [
+    {
+     "effect": "The transmit laser stops or fails",
+     "scope": "the transmit laser",
+     "where": null
+    },
+    {
+     "effect": "sees no light",
+     "scope": "the terminal at the other end of the wavelength",
+     "where": "the other end of the wavelength"
+    }
+   ],
+   "character": "An outage",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "terminals a year"
+  },
+  {
+   "name": "Module failure",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "description": "The module dies.",
+   "effects": [
+    {
+     "effect": "loses the wavelength this module sends",
+     "scope": "the terminal at the other end",
+     "where": "the other end"
+    },
+    {
+     "effect": "what the module receives is lost",
+     "scope": "what the module receives",
+     "where": "on this side"
+    },
+    {
+     "effect": "its telemetry stops",
+     "scope": "its telemetry",
+     "where": "on this side"
+    },
+    {
+     "effect": "its traffic alarms are hidden behind the hardware alarm",
+     "scope": "its traffic alarms",
+     "where": "on this side"
+    }
+   ],
+   "character": "An outage",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "terminals a year"
+  },
+  {
+   "name": "Receiver impairment",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "description": "The receiver itself has deteriorated.",
+   "effects": [
+    {
+     "effect": "errors appear",
+     "scope": "this receiver alone",
+     "where": "this receiver alone"
+    },
+    {
+     "effect": "stay healthy",
+     "scope": "the other wavelengths",
+     "where": null
+    },
+    {
+     "effect": "stay healthy",
+     "scope": "the route",
+     "where": null
+    }
+   ],
+   "character": "A degradation",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "terminals a year"
+  },
+  {
+   "name": "Transmitter wear-out",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "description": "The laser bias climbs as the laser ages, ahead of an eventual dark transmitter.",
+   "effects": [
+    {
+     "effect": "The laser bias climbs as the laser ages",
+     "scope": "the laser",
+     "where": null
+    },
+    {
+     "effect": "an eventual dark transmitter",
+     "scope": "transmitter",
+     "where": null
+    }
+   ],
+   "character": "Slow",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "terminals a year"
+  },
+  {
+   "name": "Margin creep",
+   "applies_to": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "description": "The wavelength's margin shrinks slowly, as parts along its route age; it is seen at the receiver.",
+   "effects": [
+    {
+     "effect": "The wavelength's margin shrinks slowly",
+     "scope": "the wavelength's margin",
+     "where": "along its route"
+    },
+    {
+     "effect": "it is seen",
+     "scope": "The wavelength's margin",
+     "where": "at the receiver"
+    }
+   ],
+   "character": "Slow",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "wavelengths a year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "RX-DARK",
+   "raised_by": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "severity": "Urgent",
+   "monitor": "Received light level",
+   "symptom": "The receiver sees no light",
+   "raised_when": "The receiver sees no light",
+   "probable_causes": [
+    {
+     "cause": "The transmitter has gone dark",
+     "where": "at the other end"
+    },
+    {
+     "cause": "its module has failed",
+     "where": "at the other end"
+    },
+    {
+     "cause": "a severed fibre",
+     "where": "anywhere earlier on the wavelength's route"
+    },
+    {
+     "cause": "an amplifier out of service",
+     "where": "anywhere earlier on the wavelength's route"
+    },
+    {
+     "cause": "an unplugged patch lead",
+     "where": "anywhere earlier on the wavelength's route"
+    },
+    {
+     "cause": "a router input that has failed",
+     "where": "anywhere earlier on the wavelength's route"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "FRAME-LOSS",
+   "raised_by": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "severity": "Urgent",
+   "monitor": null,
+   "symptom": "The OTU frame is lost though light arrives",
+   "raised_when": "The OTU frame is lost though light arrives",
+   "probable_causes": [
+    {
+     "cause": "fibre attenuation that has jumped",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "excess amplifier noise",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "DGD growth",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "a misaligned router passband",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "a polarisation swing",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "this terminal's own receiver impairment",
+     "where": "this terminal"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "DEGRADE",
+   "raised_by": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "severity": "Advisory",
+   "monitor": "pre-FEC error ratio",
+   "symptom": "Pre-FEC errors exceed the degrade level",
+   "raised_when": "Pre-FEC errors exceed the degrade level (margin below about 1 dB)",
+   "probable_causes": [
+    {
+     "cause": "fibre attenuation that has jumped",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "excess amplifier noise",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "a soiled connector end-face",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "a misaligned router passband",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "DGD growth",
+     "where": "Earlier on the route"
+    },
+    {
+     "cause": "this terminal's own receiver impairment",
+     "where": "this terminal"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "REMOTE-DEFECT",
+   "raised_by": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "severity": "Information only",
+   "monitor": null,
+   "symptom": "The other end reports a defect in what this terminal sends",
+   "raised_when": "The other end reports a defect in what this terminal sends",
+   "probable_causes": [
+    {
+     "cause": "Any fault",
+     "where": "between here and the other end, the other end included"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "what this terminal sends"
+  },
+  {
+   "id": "TX-HW",
+   "raised_by": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "severity": "Urgent",
+   "monitor": null,
+   "symptom": "transmit laser fault",
+   "raised_when": "The terminal detects a transmit laser fault",
+   "probable_causes": [
+    {
+     "cause": "transmit laser fault",
+     "where": "This terminal's transmitter"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "This terminal's transmitter"
+  },
+  {
+   "id": "MOD-HW",
+   "raised_by": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "severity": "Urgent",
+   "monitor": null,
+   "symptom": "Module hardware fault",
+   "raised_when": "Module hardware fault",
+   "probable_causes": [
+    {
+     "cause": "Module hardware fault",
+     "where": "This module"
+    }
+   ],
+   "suppression": "its traffic alarms are hidden behind the hardware alarm",
+   "reported_against": "This module"
+  },
+  {
+   "id": "TX-BIAS",
+   "raised_by": [
+    "VC-WT-400T",
+    "VC-WT-200A",
+    "VC-WT-400A",
+    "VC-WT-200D",
+    "VC-WT-400D"
+   ],
+   "severity": "Advisory",
+   "monitor": "Transmit laser bias, as a share of its value at commissioning",
+   "symptom": "Laser bias above 120 per cent of its commissioning value",
+   "raised_when": "Laser bias above 120 per cent of its commissioning value",
+   "probable_causes": [
+    {
+     "cause": "Transmitter wear-out",
+     "where": "in this terminal"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "this terminal"
+  }
+ ],
+ "routing": null,
+ "troubleshooting_notes": []
+}

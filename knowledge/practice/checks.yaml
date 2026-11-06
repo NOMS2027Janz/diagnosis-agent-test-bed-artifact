@@ -1,0 +1,33 @@
+document: "Operator practice: diagnostic checks, their effort and what they can show"
+note: >
+  Figures are typical operations practice, not vendor commitments. Remote tests run from the network operations
+  centre through the management system; field tests need a technician at a site, with travel of typically one to
+  four hours. A test that fails to complete, or is not available where it is asked for, shows nothing.
+classes:
+  data_held: {meaning: "further readings of data already collected", effort: "no time beyond the query"}
+  remote: {meaning: "triggered through the management system; nobody on site"}
+  dispatch: {meaning: "a technician must go to the site; travel dominates the effort"}
+checks:
+  - {id: otdr_embedded, class: remote, minutes: 8, available: "spans whose upstream site has an embedded OTDR (full instrumentation)",
+     shows: "events along the span by position: breaks, and loss steps with their size"}
+  - {id: pm_detail, class: remote, minutes: 2, available: "any line receiver",
+     shows: "1-minute minimum received power and errored seconds, from 20 minutes before the question to now"}
+  - {id: coherent_diag, class: remote, minutes: 2, available: "any coherent receiver",
+     shows: "estimated OSNR, pre-FEC BER, chromatic dispersion, DGD, SOP rate and margin, now"}
+  - {id: tx_power, class: remote, minutes: 2, available: "any line interface", shows: "transmit power, or none if the laser is off"}
+  - {id: xc_audit, class: remote, minutes: 15, available: "any OTN switch",
+     shows: "cross-connects that differ from provisioning, or that the switch cannot be reached"}
+  - {id: tcm_segments, class: remote, minutes: 10, available: "any ODU path through OTN switches",
+     shows: "which switch-to-switch segment of the path is failed"}
+  - {id: loopback, class: remote, minutes: 10, impact: "interrupts the service if it is up", available: "any client port",
+     shows: "whether the client port and its local equipment pass a loopback test"}
+  - {id: retune_spare, class: remote, minutes: 30, impact: "interrupts the channel", available: "receivers with a spare port",
+     shows: "whether errors clear when the channel is received on a spare port (the receiver at fault) or persist (the line)"}
+  - {id: otdr_portable, class: dispatch, minutes: 30, available: "any span, at its upstream site", shows: "as the embedded OTDR"}
+  - {id: power_meter, class: dispatch, minutes: 20, available: "any OMS input, at its source site",
+     shows: "launch power per channel into the OMS, or none"}
+  - {id: inspect_clean, class: dispatch, minutes: 20, impact: "brief hit on the OMS", available: "any OMS input connector",
+     shows: "whether the connector was dirty or unseated; cleaning or reseating also repairs it"}
+  - {id: span_loss, class: dispatch, minutes: 45, available: "any span; both ends", shows: "the span's loss against the recorded loss"}
+  - {id: swap_unit, class: dispatch, minutes: 60, impact: "interrupts what the unit carries", available: "amplifiers, line cards, client optics",
+     shows: "whether the symptoms clear when the unit is replaced (and repairs it if they do)"}

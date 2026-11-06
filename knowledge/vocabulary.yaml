@@ -1,0 +1,69 @@
+document: "Shared vocabulary of effects and observables (ontology layer)"
+source: "Framework specification v0.1 §3; general optical transmission practice"
+
+# Effects on the signal leaving an element. scope: all_channels (the whole OMS/OTS signal), channel (one channel),
+# or port (at a ROADM: every channel arriving on one degree's WSS input port, blocked or changed at that node).
+# defect: the G.798 defect a line receiver or path termination declares for the effect (standards/g798_otn.yaml).
+effects:
+  SIGNAL_LOST:      {meaning: "No light, or power below the receiver's detection threshold", defect: dLOS}
+  POWER_LOW:        {meaning: "Signal power reduced", magnitude: dB}
+  OSC_LOST:         {meaning: "Optical supervisory channel lost on a span; the OSC is terminated and regenerated at every amplifier site"}
+  POWER_EXCURSION:  {meaning: "Brief power dip or swing, seconds or less", transient: true}
+  OSNR_LOW:         {meaning: "Added noise; optical signal-to-noise ratio reduced", magnitude: dB}
+  POL_TRANSIENT:    {meaning: "Fast change of state of polarisation", transient: true}
+  DGD_HIGH:         {meaning: "Differential group delay increased", magnitude: ps}
+  FILTER_PENALTY:   {meaning: "Spectral narrowing or misalignment; signal quality reduced, power unchanged"}
+  RX_PENALTY:       {meaning: "Receiver-local degradation; does not propagate"}
+  UNIT_DOWN:        {meaning: "The unit has failed: it carries no traffic and its monitoring reports no valid values", defect: dEQ}
+  OTU_FRAME_LOST:   {meaning: "OTU frame alignment lost at a line receiver", defect: dLOF}
+  OTU_ERRORED:      {meaning: "Pre-FEC errors above the degrade threshold, frames still aligned", defect: dDEG}
+  ODU_AIS:          {meaning: "ODU alarm indication signal travelling downstream on an ODU path", defect: dAIS_ODU}
+  ODU_MISROUTED:    {meaning: "ODU delivered to the wrong destination by a cross-connect", defect: dTIM_ODU}
+  CLIENT_DOWN:      {meaning: "Client service interrupted in a direction"}
+  CLIENT_HIT:       {meaning: "Client service briefly interrupted (protection switch)", transient: true}
+  PUMP_AGEING:      {meaning: "Pump drive current rising to hold gain", incipient: true}
+  LASER_AGEING:     {meaning: "Transmit laser bias rising", incipient: true}
+  MARGIN_DECLINE:   {meaning: "Channel margin declining slowly", incipient: true}
+
+# What each kind of monitoring point can see. Monitoring points are declared per equipment type.
+# A channel that is lost makes the channel monitor's and the receiver's quality readings invalid, which they
+# report; so those observables also "see" SIGNAL_LOST.
+# scope: aggregate monitors see only effects on the whole signal; channel monitors see effects on one channel.
+observables:
+  amp_input_power:  {unit: dBm, scope: aggregate, sees: [SIGNAL_LOST, POWER_LOW, POWER_EXCURSION]}
+  amp_output_power: {unit: dBm, scope: aggregate, sees: [SIGNAL_LOST, POWER_LOW, POWER_EXCURSION]}
+  pump_current_pct: {unit: "%", scope: aggregate, sees: [PUMP_AGEING]}
+  laser_bias_pct:   {unit: "%", scope: channel, sees: [LASER_AGEING]}
+  ocm_channel_power: {unit: dBm, scope: channel, sees: [SIGNAL_LOST, POWER_LOW]}
+  ocm_osnr:         {unit: dB, scope: channel, sees: [OSNR_LOW, SIGNAL_LOST]}
+  rx_power:         {unit: dBm, scope: channel, sees: [UNIT_DOWN, SIGNAL_LOST, POWER_LOW]}
+  rx_power_pm15:    {unit: dBm, scope: channel, sees: [SIGNAL_LOST, POWER_LOW, POWER_EXCURSION]}
+  errored_seconds_pm15: {unit: s, scope: channel, sees: [OTU_FRAME_LOST, OTU_ERRORED, POL_TRANSIENT, POWER_EXCURSION]}
+  est_osnr:         {unit: dB, scope: channel, sees: [UNIT_DOWN, OSNR_LOW, SIGNAL_LOST]}
+  pre_fec_ber:      {unit: ratio, scope: channel, sees: [UNIT_DOWN, SIGNAL_LOST, OSNR_LOW, POWER_LOW, DGD_HIGH, FILTER_PENALTY, RX_PENALTY, POL_TRANSIENT, MARGIN_DECLINE]}
+  dgd:              {unit: ps, scope: channel, sees: [DGD_HIGH]}
+  sop_rate:         {unit: rad/s, scope: channel, sees: [POL_TRANSIENT]}
+  client_errored_seconds_pm15:    {unit: s, scope: channel, sees: [CLIENT_DOWN, CLIENT_HIT]}
+  client_unavailable_seconds_pm15: {unit: s, scope: channel, sees: [CLIENT_DOWN]}
+
+severities: [critical, major, minor, not_alarmed]
+
+# Where a probable cause lies, relative to the unit that raised an alarm or saw a change (the "where" of the
+# probable causes in the description packages). Following the usage of vendor troubleshooting documentation.
+# "Upstream" is against the direction of the signal that arrives at the unit.
+locations:
+  this_unit:            {meaning: "The unit that raised the alarm or saw the change"}
+  this_port:            {meaning: "The port that raised the alarm"}
+  upstream_span:        {meaning: "The fibre span immediately before the unit"}
+  upstream_amplifier:   {meaning: "The amplifier immediately before the fibre span that precedes the unit"}
+  oms_input:            {meaning: "The input connection (patch) of the optical multiplex section the unit is on"}
+  upstream_roadm_channel: {meaning: "This channel at the ROADM immediately before the unit on the signal's path, or the WSS input port it arrives on there"}
+  upstream_on_path:     {meaning: "Any fibre span, amplifier, section input, ROADM channel or ROADM WSS input port before the unit on the signal's path"}
+  far_end_transmitter:  {meaning: "The line interface at the other end of the lightpath that ends at the unit"}
+  far_end_receiver:     {meaning: "The line interface at the other end of the lightpath, receiving from the unit"}
+  path_to_far_end:      {meaning: "Everything on the signal's path from the far-end line interface to the unit, including that interface"}
+  either_port:          {meaning: "A client port of a service carried through the unit, at either end"}
+  odu_path_switch:      {meaning: "An OTN switch, or a cross-connect in it, on the ODU path of a service carried through the unit"}
+  working_odu_path:     {meaning: "Anything the working ODU path of a service carried through the unit depends on"}
+  protection_odu_path:  {meaning: "Anything the protection ODU path of a service carried through the unit depends on"}
+  active_odu_path:      {meaning: "Anything the ODU path currently carrying the service depends on (protection when switched, otherwise working)"}

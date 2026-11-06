@@ -1,0 +1,193 @@
+{
+ "vendor": "",
+ "document_title": "VC Wavelength Router \u2014 Service Handbook SH-WR, edition 3",
+ "standards": [],
+ "unit_types": [
+  {
+   "product_code": "VC-WR-X",
+   "unit": "wavelength router",
+   "role_or_position": null,
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "flexibility",
+   "value": "fully flexible wavelength router (colourless, directionless and contentionless)"
+  },
+  {
+   "item": "selector modules",
+   "value": "Each direction of the router has its own selector module."
+  },
+  {
+   "item": "attenuation range",
+   "value": "normally 8 dB"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "spectrum monitor",
+   "measures": [
+    "per wavelength, the level",
+    "per wavelength, the OSNR"
+   ],
+   "availability": "With the Spectrum pack",
+   "applies_to": [
+    "every incoming direction"
+   ],
+   "location": "every incoming direction",
+   "alarm_only": false
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "every wavelength"
+   ],
+   "when": [
+    "as it leaves a direction"
+   ],
+   "result": [
+    "The router steers every wavelength on its own."
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "all the light entering on one direction"
+   ],
+   "when": [
+    "A problem hits all the light entering on one direction"
+   ],
+   "result": [
+    "the problem reappears, after the router, on each wavelength steered onwards from it"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "Each selector module"
+   ],
+   "when": [
+    "as long as its attenuation range allows"
+   ],
+   "result": [
+    "brings the wavelength levels back to the launch level"
+   ],
+   "threshold": "normally 8 dB",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "A drop in level"
+   ],
+   "when": [
+    "A drop in level of up to about 8 dB before the router"
+   ],
+   "result": [
+    "is evened out at the router",
+    "the noise penalty the drop caused does not go away"
+   ],
+   "threshold": "up to about 8 dB",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "A bigger drop"
+   ],
+   "when": [
+    "A bigger drop"
+   ],
+   "result": [
+    "leaves the router as a weak wavelength"
+   ],
+   "threshold": "bigger than about 8 dB",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "Everything else"
+   ],
+   "when": [],
+   "result": [
+    "crosses the router as it arrived"
+   ],
+   "threshold": null,
+   "note": null
+  }
+ ],
+ "faults": [
+  {
+   "name": "Over-attenuation",
+   "applies_to": [
+    "one wavelength"
+   ],
+   "description": "The selector module attenuates one wavelength more than it should, so that wavelength leaves the router weak.",
+   "effects": [
+    {
+     "effect": "leaves the router weak",
+     "scope": "one wavelength",
+     "where": "the router"
+    }
+   ],
+   "character": "A degradation.",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "directions a year"
+  },
+  {
+   "name": "Passband misalignment",
+   "applies_to": [
+    "one wavelength"
+   ],
+   "description": "The selector module's passband for one wavelength has moved off centre or become too narrow. The wavelength's level is fine but its quality suffers.",
+   "effects": [
+    {
+     "effect": "level is fine",
+     "scope": "one wavelength",
+     "where": null
+    },
+    {
+     "effect": "quality suffers",
+     "scope": "one wavelength",
+     "where": null
+    }
+   ],
+   "character": "A degradation.",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "directions a year"
+  },
+  {
+   "name": "Direction input fault",
+   "applies_to": [
+    "an input of a selector module",
+    "one direction"
+   ],
+   "description": "An input of a selector module dies. All the light coming in on that direction stops at the router, while light entering on the other directions carries on.",
+   "effects": [
+    {
+     "effect": "stops at the router",
+     "scope": "All the light coming in on that direction",
+     "where": "the router"
+    },
+    {
+     "effect": "carries on",
+     "scope": "light entering on the other directions",
+     "where": null
+    }
+   ],
+   "character": "An outage.",
+   "rate_per_year_fraction": 0.002,
+   "rate_per": "directions a year"
+  }
+ ],
+ "alarms": [],
+ "routing": "The router steers every wavelength on its own as it leaves a direction.",
+ "troubleshooting_notes": [
+  "The router has no alarms for the faults below. They are seen in the spectrum monitor's readings and in the alarms of the terminals further along.",
+  "A single wavelength whose level jumps in the spectrum monitor readings is at fault at the first router where the jump is seen.",
+  "An input fault is at the input of the direction it hits; a single-wavelength fault is on that wavelength at that input."
+ ]
+}

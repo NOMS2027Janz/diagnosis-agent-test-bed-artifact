@@ -1,0 +1,1 @@
+{"case": "x2190-s2230-maintenance", "seed": 2230, "kind": "maintenance", "candidates": 48, "rule_verdicts_agree": 186, "rule_verdicts_differ": 0, "differences": [], "overall_differ": 0, "engine_requests": [], "seconds_code": 0.707, "seconds_graph": 0.688}

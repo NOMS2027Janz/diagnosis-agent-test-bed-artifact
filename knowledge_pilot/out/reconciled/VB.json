@@ -1,0 +1,2874 @@
+{
+ "vendor": "VB",
+ "lifted": {
+  "Resource": {
+   "res.roadm": {
+    "id": "res.roadm",
+    "label": "ROADM",
+    "kind": "Resource",
+    "gloss": "A unit described in VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2.",
+    "example": "VB-ROADM-CDC",
+    "uses": 1
+   },
+   "res.colourless_directionless_and_contentionless_roadm": {
+    "id": "res.colourless_directionless_and_contentionless_roadm",
+    "label": "colourless, directionless and contentionless ROADM",
+    "kind": "Resource",
+    "gloss": "The position of unit VB-ROADM-CDC in the line.",
+    "example": "ROADM",
+    "uses": 1
+   },
+   "res.transponder": {
+    "id": "res.transponder",
+    "label": "Transponder",
+    "kind": "Resource",
+    "gloss": "A unit described in VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5.",
+    "example": "VB-TPD-400",
+    "uses": 1
+   },
+   "res.muxponder": {
+    "id": "res.muxponder",
+    "label": "Muxponder",
+    "kind": "Resource",
+    "gloss": "A unit described in VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5.",
+    "example": "VB-MXP-200",
+    "uses": 2
+   },
+   "res.otn_line_card": {
+    "id": "res.otn_line_card",
+    "label": "OTN line card",
+    "kind": "Resource",
+    "gloss": "A unit described in VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5.",
+    "example": "VB-OTN-LC-200",
+    "uses": 2
+   },
+   "res.all_units": {
+    "id": "res.all_units",
+    "label": "All units",
+    "kind": "Resource",
+    "gloss": "A unit, role or product that raises alarm OCH_LOS.",
+    "example": "OCH_LOS",
+    "uses": 6
+   },
+   "res.booster_amplifier_ba": {
+    "id": "res.booster_amplifier_ba",
+    "label": "Booster amplifier (BA)",
+    "kind": "Resource",
+    "gloss": "A unit described in VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3.",
+    "example": "VB-OA-BST",
+    "uses": 3
+   },
+   "res.at_the_transmitting_end_of_a_multiplex_section_after_the_roa": {
+    "id": "res.at_the_transmitting_end_of_a_multiplex_section_after_the_roa",
+    "label": "At the transmitting end of a multiplex section, after the ROADM",
+    "kind": "Resource",
+    "gloss": "The position of unit VB-OA-BST in the line.",
+    "example": "Booster amplifier (BA)",
+    "uses": 1
+   },
+   "res.line_amplifier_la": {
+    "id": "res.line_amplifier_la",
+    "label": "Line amplifier (LA)",
+    "kind": "Resource",
+    "gloss": "A unit described in VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3.",
+    "example": "VB-OA-ILA",
+    "uses": 6
+   },
+   "res.at_intermediate_amplifier_sites": {
+    "id": "res.at_intermediate_amplifier_sites",
+    "label": "At intermediate amplifier sites",
+    "kind": "Resource",
+    "gloss": "The position of unit VB-OA-ILA in the line.",
+    "example": "Line amplifier (LA)",
+    "uses": 1
+   },
+   "res.preamplifier_pa": {
+    "id": "res.preamplifier_pa",
+    "label": "Preamplifier (PA)",
+    "kind": "Resource",
+    "gloss": "A unit described in VB Optical Amplifier Family \u2014 Alarm and Troubleshooting Reference, Document VB-OA-ATR, issue 3.",
+    "example": "VB-OA-PRE",
+    "uses": 6
+   },
+   "res.at_the_receiving_end_of_a_multiplex_section_before_the_roadm": {
+    "id": "res.at_the_receiving_end_of_a_multiplex_section_before_the_roadm",
+    "label": "At the receiving end of a multiplex section, before the ROADM",
+    "kind": "Resource",
+    "gloss": "The position of unit VB-OA-PRE in the line.",
+    "example": "Preamplifier (PA)",
+    "uses": 1
+   },
+   "res.otn_switch": {
+    "id": "res.otn_switch",
+    "label": "OTN switch",
+    "kind": "Resource",
+    "gloss": "A unit described in VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4.",
+    "example": "VB-OTNSW",
+    "uses": 2
+   },
+   "res.odu_cross_connect_fabric": {
+    "id": "res.odu_cross_connect_fabric",
+    "label": "ODU cross-connect fabric",
+    "kind": "Resource",
+    "gloss": "The position of unit VB-OTNSW in the line.",
+    "example": "OTN switch",
+    "uses": 1
+   },
+   "res.client_port_10ge": {
+    "id": "res.client_port_10ge",
+    "label": "Client port, 10GE",
+    "kind": "Resource",
+    "gloss": "A unit described in VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4.",
+    "example": "VB-CP-10GE",
+    "uses": 1
+   },
+   "res.client_port_100ge": {
+    "id": "res.client_port_100ge",
+    "label": "Client port, 100GE",
+    "kind": "Resource",
+    "gloss": "A unit described in VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4.",
+    "example": "VB-CP-100GE",
+    "uses": 1
+   },
+   "res.client_port_400ge": {
+    "id": "res.client_port_400ge",
+    "label": "Client port, 400GE",
+    "kind": "Resource",
+    "gloss": "A unit described in VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4.",
+    "example": "VB-CP-400GE",
+    "uses": 1
+   },
+   "res.client_port": {
+    "id": "res.client_port",
+    "label": "client port",
+    "kind": "Resource",
+    "gloss": "A unit, role or product that raises alarm CLIENT_SF.",
+    "example": "CLIENT_SF",
+    "uses": 7
+   }
+  },
+  "Characteristic": {
+   "cha.the_power_of_every_channel": {
+    "id": "cha.the_power_of_every_channel",
+    "label": "the power of every channel",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor optical channel monitor (on each ingress degree).",
+    "example": "optical channel monitor",
+    "uses": 1
+   },
+   "cha.the_osnr_of_every_channel": {
+    "id": "cha.the_osnr_of_every_channel",
+    "label": "the OSNR of every channel",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor optical channel monitor (on each ingress degree).",
+    "example": "optical channel monitor",
+    "uses": 1
+   },
+   "cha.received_power": {
+    "id": "cha.received_power",
+    "label": "Received power",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Receive performance counters (unit).",
+    "example": "Receive performance counters",
+    "uses": 1
+   },
+   "cha.errored_seconds_in_15_minute_bins": {
+    "id": "cha.errored_seconds_in_15_minute_bins",
+    "label": "errored seconds, in 15-minute bins",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Receive performance counters (unit).",
+    "example": "Receive performance counters",
+    "uses": 1
+   },
+   "cha.optical_power": {
+    "id": "cha.optical_power",
+    "label": "Optical power",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Received power (the line receiver).",
+    "example": "Received power",
+    "uses": 1
+   },
+   "cha.estimated_osnr": {
+    "id": "cha.estimated_osnr",
+    "label": "Estimated OSNR",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Coherent DSP monitors (unit).",
+    "example": "Coherent DSP monitors",
+    "uses": 1
+   },
+   "cha.pre_fec_bit_error_ratio": {
+    "id": "cha.pre_fec_bit_error_ratio",
+    "label": "pre-FEC bit error ratio",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Coherent DSP monitors (unit).",
+    "example": "Coherent DSP monitors",
+    "uses": 1
+   },
+   "cha.differential_group_delay": {
+    "id": "cha.differential_group_delay",
+    "label": "differential group delay",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Coherent DSP monitors (unit).",
+    "example": "Coherent DSP monitors",
+    "uses": 1
+   },
+   "cha.polarisation_change_rate": {
+    "id": "cha.polarisation_change_rate",
+    "label": "polarisation change rate",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Coherent DSP monitors (unit).",
+    "example": "Coherent DSP monitors",
+    "uses": 1
+   },
+   "cha.total_optical_power_at_the_unit_s_input": {
+    "id": "cha.total_optical_power_at_the_unit_s_input",
+    "label": "Total optical power at the unit's input",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Input power (the unit's input).",
+    "example": "Input power",
+    "uses": 1
+   },
+   "cha.total_optical_power_at_the_unit_s_output": {
+    "id": "cha.total_optical_power_at_the_unit_s_output",
+    "label": "Total optical power at the unit's output",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Output power (the unit's output).",
+    "example": "Output power",
+    "uses": 1
+   },
+   "cha.drive_current_of_the_pump_laser_as_a_percentage_of_its_begin": {
+    "id": "cha.drive_current_of_the_pump_laser_as_a_percentage_of_its_begin",
+    "label": "Drive current of the pump laser, as a percentage of its beginning-of-life value",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Pump drive current (unit).",
+    "example": "Pump drive current",
+    "uses": 1
+   },
+   "cha.an_indicator_of_pump_health": {
+    "id": "cha.an_indicator_of_pump_health",
+    "label": "an indicator of pump health",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor Pump drive current (unit).",
+    "example": "Pump drive current",
+    "uses": 1
+   },
+   "cha.presence_of_the_supervisory_channel_at_the_input": {
+    "id": "cha.presence_of_the_supervisory_channel_at_the_input",
+    "label": "Presence of the supervisory channel at the input",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor OSC receiver (at the input).",
+    "example": "OSC receiver",
+    "uses": 1
+   },
+   "cha.osc_receiver_alarm_generation_only": {
+    "id": "cha.osc_receiver_alarm_generation_only",
+    "label": "OSC receiver (alarm generation only)",
+    "kind": "Characteristic",
+    "gloss": "A monitor used only to raise alarms, not reported as values.",
+    "example": "OSC receiver",
+    "uses": 1
+   },
+   "cha.client_errored_seconds": {
+    "id": "cha.client_errored_seconds",
+    "label": "client errored seconds",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor client errored seconds (unit).",
+    "example": "client errored seconds",
+    "uses": 1
+   },
+   "cha.client_unavailable_seconds": {
+    "id": "cha.client_unavailable_seconds",
+    "label": "client unavailable seconds",
+    "kind": "Characteristic",
+    "gloss": "Reported by monitor client unavailable seconds (unit).",
+    "example": "client unavailable seconds",
+    "uses": 1
+   }
+  },
+  "Availability": {
+   "ava.available_on_nodes_with_the_channel_monitoring_option": {
+    "id": "ava.available_on_nodes_with_the_channel_monitoring_option",
+    "label": "available on nodes with the channel monitoring option",
+    "kind": "Availability",
+    "gloss": "The condition under which monitor optical channel monitor is present.",
+    "example": "optical channel monitor",
+    "uses": 1
+   },
+   "ava.all_units": {
+    "id": "ava.all_units",
+    "label": "All units",
+    "kind": "Availability",
+    "gloss": "The condition under which monitor Receive performance counters is present.",
+    "example": "Receive performance counters",
+    "uses": 2
+   },
+   "ava.units_with_the_power_monitoring_option": {
+    "id": "ava.units_with_the_power_monitoring_option",
+    "label": "Units with the power monitoring option",
+    "kind": "Availability",
+    "gloss": "The condition under which monitor Received power is present.",
+    "example": "Received power",
+    "uses": 3
+   },
+   "ava.units_with_the_advanced_monitoring_option": {
+    "id": "ava.units_with_the_advanced_monitoring_option",
+    "label": "Units with the advanced monitoring option",
+    "kind": "Availability",
+    "gloss": "The condition under which monitor Coherent DSP monitors is present.",
+    "example": "Coherent DSP monitors",
+    "uses": 2
+   },
+   "ava.each_client_port_reports_client_errored_seconds_in_15_minute": {
+    "id": "ava.each_client_port_reports_client_errored_seconds_in_15_minute",
+    "label": "Each client port reports client errored seconds in 15-minute bins.",
+    "kind": "Availability",
+    "gloss": "The condition under which monitor client errored seconds is present.",
+    "example": "client errored seconds",
+    "uses": 1
+   },
+   "ava.each_client_port_reports_client_unavailable_seconds_in_15_mi": {
+    "id": "ava.each_client_port_reports_client_unavailable_seconds_in_15_mi",
+    "label": "Each client port reports client unavailable seconds in 15-minute bins.",
+    "kind": "Availability",
+    "gloss": "The condition under which monitor client unavailable seconds is present.",
+    "example": "client unavailable seconds",
+    "uses": 1
+   }
+  },
+  "Condition": {
+   "con.an_impairment_affecting_the_whole_incoming_line": {
+    "id": "con.an_impairment_affecting_the_whole_incoming_line",
+    "label": "An impairment affecting the whole incoming line",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "continues, after the node, as an impairment of each channel routed onwards",
+    "uses": 1
+   },
+   "con.continues_after_the_node_as_an_impairment_of_each_channel_ro": {
+    "id": "con.continues_after_the_node_as_an_impairment_of_each_channel_ro",
+    "label": "continues, after the node, as an impairment of each channel routed onwards",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "An impairment affecting the whole incoming line",
+    "uses": 1
+   },
+   "con.a_power_loss_upstream_of_up_to_about_8_db": {
+    "id": "con.a_power_loss_upstream_of_up_to_about_8_db",
+    "label": "A power loss upstream of up to about 8 dB",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds (equalises the channel powers to the launch target within its attenuation range, typically 8 dB).",
+    "example": "is re-levelled at the node; does not appear downstream as low power; the loss of signal-to-noise ratio it caused remains",
+    "uses": 1
+   },
+   "con.is_re_levelled_at_the_node": {
+    "id": "con.is_re_levelled_at_the_node",
+    "label": "is re-levelled at the node",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "A power loss upstream of up to about 8 dB",
+    "uses": 1
+   },
+   "con.does_not_appear_downstream_as_low_power": {
+    "id": "con.does_not_appear_downstream_as_low_power",
+    "label": "does not appear downstream as low power",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "A power loss upstream of up to about 8 dB",
+    "uses": 1
+   },
+   "con.the_loss_of_signal_to_noise_ratio_it_caused_remains": {
+    "id": "con.the_loss_of_signal_to_noise_ratio_it_caused_remains",
+    "label": "the loss of signal-to-noise ratio it caused remains",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "A power loss upstream of up to about 8 dB",
+    "uses": 1
+   },
+   "con.a_larger_loss": {
+    "id": "con.a_larger_loss",
+    "label": "A larger loss",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "passes on as low power",
+    "uses": 1
+   },
+   "con.passes_on_as_low_power": {
+    "id": "con.passes_on_as_low_power",
+    "label": "passes on as low power",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "A larger loss",
+    "uses": 1
+   },
+   "con.pass_through_the_node_unchanged": {
+    "id": "con.pass_through_the_node_unchanged",
+    "label": "pass through the node unchanged",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "",
+    "uses": 1
+   },
+   "con.power_is_low": {
+    "id": "con.power_is_low",
+    "label": "power is low",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'WSS attenuation drift': The WSS attenuation for one channel drifts above its set value.",
+    "example": "that channel",
+    "uses": 1
+   },
+   "con.power_is_normal": {
+    "id": "con.power_is_normal",
+    "label": "power is normal",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'WSS passband shift': The WSS passband for one channel is shifted or narrowed.",
+    "example": "The channel",
+    "uses": 1
+   },
+   "con.signal_quality_is_reduced": {
+    "id": "con.signal_quality_is_reduced",
+    "label": "signal quality is reduced",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'WSS passband shift': The WSS passband for one channel is shifted or narrowed.",
+    "example": "The channel",
+    "uses": 1
+   },
+   "con.is_blocked": {
+    "id": "con.is_blocked",
+    "label": "is blocked",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'WSS input port failure': An input port of a WSS fails.",
+    "example": "Every channel arriving at the node on that degree",
+    "uses": 1
+   },
+   "con.are_unaffected": {
+    "id": "con.are_unaffected",
+    "label": "are unaffected",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'WSS input port failure': An input port of a WSS fails.",
+    "example": "channels arriving on the other degrees",
+    "uses": 1
+   },
+   "con.no_light_reaches_the_receiver": {
+    "id": "con.no_light_reaches_the_receiver",
+    "label": "no light reaches the receiver",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "declares loss of signal (G.798 dLOS); loses OTU frame alignment",
+    "uses": 1
+   },
+   "con.declares_loss_of_signal_g_798_dlos": {
+    "id": "con.declares_loss_of_signal_g_798_dlos",
+    "label": "declares loss of signal (G.798 dLOS)",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "no light reaches the receiver",
+    "uses": 1
+   },
+   "con.loses_otu_frame_alignment": {
+    "id": "con.loses_otu_frame_alignment",
+    "label": "loses OTU frame alignment",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "no light reaches the receiver",
+    "uses": 1
+   },
+   "con.the_unit_itself_has_failed": {
+    "id": "con.the_unit_itself_has_failed",
+    "label": "the unit itself has failed",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "declares an equipment defect (dEQ); frame alignment is lost; the unit's traffic alarms are masked by the equipment alarm",
+    "uses": 1
+   },
+   "con.declares_an_equipment_defect_deq": {
+    "id": "con.declares_an_equipment_defect_deq",
+    "label": "declares an equipment defect (dEQ)",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "the unit itself has failed",
+    "uses": 1
+   },
+   "con.frame_alignment_is_lost": {
+    "id": "con.frame_alignment_is_lost",
+    "label": "frame alignment is lost",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "the unit itself has failed",
+    "uses": 4
+   },
+   "con.the_unit_s_traffic_alarms_are_masked_by_the_equipment_alarm": {
+    "id": "con.the_unit_s_traffic_alarms_are_masked_by_the_equipment_alarm",
+    "label": "the unit's traffic alarms are masked by the equipment alarm",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "the unit itself has failed",
+    "uses": 1
+   },
+   "con.the_signal_arrives_but_is_impaired": {
+    "id": "con.the_signal_arrives_but_is_impaired",
+    "label": "the signal arrives but is impaired",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "pre-FEC errors appear",
+    "uses": 2
+   },
+   "con.lower_power_a_lower_signal_to_noise_ratio_a_raised_different": {
+    "id": "con.lower_power_a_lower_signal_to_noise_ratio_a_raised_different",
+    "label": "lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "pre-FEC errors appear",
+    "uses": 2
+   },
+   "con.pre_fec_errors_appear": {
+    "id": "con.pre_fec_errors_appear",
+    "label": "pre-FEC errors appear",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "the signal arrives but is impaired; lower power, a lower signal-to-noise ratio, a raised differential group delay, a filtering penalty from a misaligned or narrowed passband, a receiver-side penalty, or a slow loss of margin",
+    "uses": 1
+   },
+   "con.polarisation_changes_faster_than_the_tracking_range": {
+    "id": "con.polarisation_changes_faster_than_the_tracking_range",
+    "label": "Polarisation changes faster than the tracking range",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "produce errored seconds",
+    "uses": 1
+   },
+   "con.produce_errored_seconds": {
+    "id": "con.produce_errored_seconds",
+    "label": "produce errored seconds",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "Polarisation changes faster than the tracking range",
+    "uses": 1
+   },
+   "con.an_odu_alarm_indication_signal_is_inserted_downstream": {
+    "id": "con.an_odu_alarm_indication_signal_is_inserted_downstream",
+    "label": "an ODU alarm indication signal is inserted downstream",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "frame alignment is lost",
+    "uses": 1
+   },
+   "con.a_backward_defect_indication_is_sent": {
+    "id": "con.a_backward_defect_indication_is_sent",
+    "label": "a backward defect indication is sent",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "frame alignment is lost",
+    "uses": 1
+   },
+   "con.loses_the_signal": {
+    "id": "con.loses_the_signal",
+    "label": "loses the signal",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Transmit laser failure': The transmit laser is off or has failed.",
+    "example": "this channel",
+    "uses": 1
+   },
+   "con.is_lost": {
+    "id": "con.is_lost",
+    "label": "is lost",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Card failure': The card fails.",
+    "example": "The channel it transmits",
+    "uses": 4
+   },
+   "con.goes_silent": {
+    "id": "con.goes_silent",
+    "label": "goes silent",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Card failure': The card fails.",
+    "example": "its monitoring",
+    "uses": 1
+   },
+   "con.are_masked_by_the_equipment_alarm": {
+    "id": "con.are_masked_by_the_equipment_alarm",
+    "label": "are masked by the equipment alarm",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Card failure': The card fails.",
+    "example": "its traffic alarms",
+    "uses": 1
+   },
+   "con.errors_appear": {
+    "id": "con.errors_appear",
+    "label": "Errors appear",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Receiver degradation': The receiver degrades.",
+    "example": "this receiver only",
+    "uses": 1
+   },
+   "con.are_normal": {
+    "id": "con.are_normal",
+    "label": "are normal",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Receiver degradation': The receiver degrades.",
+    "example": "other channels",
+    "uses": 1
+   },
+   "con.is_normal": {
+    "id": "con.is_normal",
+    "label": "is normal",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Receiver degradation': The receiver degrades.",
+    "example": "the optical path",
+    "uses": 1
+   },
+   "con.no_light_at_the_line_receiver": {
+    "id": "con.no_light_at_the_line_receiver",
+    "label": "No light at the line receiver.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm OCH_LOS: No light at the line receiver.",
+    "example": "OCH_LOS",
+    "uses": 1
+   },
+   "con.otu_frame_alignment_lost_while_light_is_present": {
+    "id": "con.otu_frame_alignment_lost_while_light_is_present",
+    "label": "OTU frame alignment lost while light is present.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm OTU_LOF: OTU frame alignment lost while light is present.",
+    "example": "OTU_LOF",
+    "uses": 1
+   },
+   "con.signal_degraded_pre_fec_errors_above_threshold": {
+    "id": "con.signal_degraded_pre_fec_errors_above_threshold",
+    "label": "Signal degraded: pre-FEC errors above threshold",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm OTU_SD: the margin falls below about 1 dB",
+    "example": "OTU_SD",
+    "uses": 1
+   },
+   "con.the_far_end_reports_a_defect_on_the_signal_this_unit_transmi": {
+    "id": "con.the_far_end_reports_a_defect_on_the_signal_this_unit_transmi",
+    "label": "The far end reports a defect on the signal this unit transmits.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm OTU_BDI: The far end reports a defect on the signal this unit transmits.",
+    "example": "OTU_BDI",
+    "uses": 1
+   },
+   "con.the_unit_has_detected_a_fault_in_its_transmit_laser": {
+    "id": "con.the_unit_has_detected_a_fault_in_its_transmit_laser",
+    "label": "The unit has detected a fault in its transmit laser.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm EQPT_TX_FAIL: The unit has detected a fault in its transmit laser.",
+    "example": "EQPT_TX_FAIL",
+    "uses": 1
+   },
+   "con.card_hardware_fault": {
+    "id": "con.card_hardware_fault",
+    "label": "Card hardware fault.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm EQPT_CARD_FAIL: Card hardware fault.",
+    "example": "EQPT_CARD_FAIL",
+    "uses": 1
+   },
+   "con.all_three_units_operate": {
+    "id": "con.all_three_units_operate",
+    "label": "All three units operate",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds (The gain is set at commissioning to match the loss of the fibre section that precedes the unit, and the unit holds that gain thereafter.).",
+    "example": "constant-gain mode",
+    "uses": 1
+   },
+   "con.constant_gain_mode": {
+    "id": "con.constant_gain_mode",
+    "label": "constant-gain mode",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "All three units operate",
+    "uses": 1
+   },
+   "con.less_light_arrives_at_the_input": {
+    "id": "con.less_light_arrives_at_the_input",
+    "label": "less light arrives at the input",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds (the amplifier adds the same noise regardless).",
+    "example": "less light leaves the output; the optical signal-to-noise ratio of every channel falls as well",
+    "uses": 1
+   },
+   "con.less_light_leaves_the_output": {
+    "id": "con.less_light_leaves_the_output",
+    "label": "less light leaves the output",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "less light arrives at the input",
+    "uses": 1
+   },
+   "con.the_optical_signal_to_noise_ratio_of_every_channel_falls_as_": {
+    "id": "con.the_optical_signal_to_noise_ratio_of_every_channel_falls_as_",
+    "label": "the optical signal-to-noise ratio of every channel falls as well",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "less light arrives at the input",
+    "uses": 1
+   },
+   "con.loss_of_the_osc_on_one_section": {
+    "id": "con.loss_of_the_osc_on_one_section",
+    "label": "Loss of the OSC on one section",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds (The optical supervisory channel (OSC) is terminated at every amplifier site and a fresh OSC is launched on the next fibre section.).",
+    "example": "does not propagate to the next",
+    "uses": 1
+   },
+   "con.does_not_propagate_to_the_next": {
+    "id": "con.does_not_propagate_to_the_next",
+    "label": "does not propagate to the next",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "Loss of the OSC on one section",
+    "uses": 1
+   },
+   "con.no_light_arrives": {
+    "id": "con.no_light_arrives",
+    "label": "no light arrives",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds (Apart from the OSC, the unit passes on what it receives.).",
+    "example": "no light leaves",
+    "uses": 1
+   },
+   "con.no_light_leaves": {
+    "id": "con.no_light_leaves",
+    "label": "no light leaves",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "no light arrives",
+    "uses": 1
+   },
+   "con.the_input_is_weak": {
+    "id": "con.the_input_is_weak",
+    "label": "the input is weak",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds (Apart from the OSC, the unit passes on what it receives.).",
+    "example": "the output is weak; the output is noisier",
+    "uses": 1
+   },
+   "con.the_output_is_weak": {
+    "id": "con.the_output_is_weak",
+    "label": "the output is weak",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "the input is weak",
+    "uses": 1
+   },
+   "con.the_output_is_noisier": {
+    "id": "con.the_output_is_noisier",
+    "label": "the output is noisier",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "the input is weak",
+    "uses": 1
+   },
+   "con.the_output_goes_dark": {
+    "id": "con.the_output_goes_dark",
+    "label": "the output goes dark",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Pump or unit failure': The pump laser or the unit fails and the output goes dark. Every channel carried by the unit is lost downstream. This is a hard failure. Field return rate about 1 per cent of units per year.",
+    "example": "the unit",
+    "uses": 1
+   },
+   "con.output_power_is_low": {
+    "id": "con.output_power_is_low",
+    "label": "Output power is low",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Gain loss': The unit's gain falls below its set point. Output power is low on every channel, and, since the noise added is unchanged, the signal-to-noise ratio of every channel falls too. This is a gradual or step degradation rather than an outage. About 1 per cent of units per year.",
+    "example": "every channel",
+    "uses": 1
+   },
+   "con.the_signal_to_noise_ratio_falls": {
+    "id": "con.the_signal_to_noise_ratio_falls",
+    "label": "the signal-to-noise ratio falls",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Gain loss': The unit's gain falls below its set point. Output power is low on every channel, and, since the noise added is unchanged, the signal-to-noise ratio of every channel falls too. This is a gradual or step degradation rather than an outage. About 1 per cent of units per year.",
+    "example": "every channel",
+    "uses": 1
+   },
+   "con.raises_its_drive_current_to_hold_the_gain": {
+    "id": "con.raises_its_drive_current_to_hold_the_gain",
+    "label": "raises its drive current to hold the gain",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Pump ageing': As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+    "example": "the unit",
+    "uses": 1
+   },
+   "con.traffic_is_unaffected_until_the_drive_current_reaches_its_li": {
+    "id": "con.traffic_is_unaffected_until_the_drive_current_reaches_its_li",
+    "label": "Traffic is unaffected until the drive current reaches its limit",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Pump ageing': As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+    "example": "Traffic",
+    "uses": 1
+   },
+   "con.gives_early_warning": {
+    "id": "con.gives_early_warning",
+    "label": "gives early warning",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Pump ageing': As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+    "example": "the trend",
+    "uses": 1
+   },
+   "con.leads_eventually_to_the_end_of_life_alarm_amp_pump_eol": {
+    "id": "con.leads_eventually_to_the_end_of_life_alarm_amp_pump_eol",
+    "label": "leads eventually to the end-of-life alarm (AMP_PUMP_EOL)",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Pump ageing': As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+    "example": "the trend",
+    "uses": 1
+   },
+   "con.arrive_weaker_than_the_others": {
+    "id": "con.arrive_weaker_than_the_others",
+    "label": "arrive weaker than the others",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Gain tilt': The gain is no longer flat across the band, so channels at one edge of the band arrive weaker than the others. Some channels are affected, not all. This is a degradation rather than an outage. About 0.5 per cent of units per year.",
+    "example": "channels at one edge of the band",
+    "uses": 1
+   },
+   "con.are_affected": {
+    "id": "con.are_affected",
+    "label": "are affected",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Gain tilt': The gain is no longer flat across the band, so channels at one edge of the band arrive weaker than the others. Some channels are affected, not all. This is a degradation rather than an outage. About 0.5 per cent of units per year.",
+    "example": "Some channels, not all",
+    "uses": 1
+   },
+   "con.no_light_arrives_at_its_input": {
+    "id": "con.no_light_arrives_at_its_input",
+    "label": "no light arrives at its input",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm AMP_INPUT_LOS: when no light arrives at its input",
+    "example": "AMP_INPUT_LOS",
+    "uses": 1
+   },
+   "con.no_light_arrives_at_the_input_of_the_receiving_end_of_the_mu": {
+    "id": "con.no_light_arrives_at_the_input_of_the_receiving_end_of_the_mu",
+    "label": "no light arrives at the input of the receiving end of the multiplex section",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm OMS_LOS_P: when no light arrives at the input of the receiving end of the multiplex section",
+    "example": "OMS_LOS_P",
+    "uses": 1
+   },
+   "con.the_supervisory_channel_is_not_received": {
+    "id": "con.the_supervisory_channel_is_not_received",
+    "label": "the supervisory channel is not received",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm OSC_LOS: when the supervisory channel is not received",
+    "example": "OSC_LOS",
+    "uses": 1
+   },
+   "con.light_is_present_at_its_input_but_none_leaves_its_output": {
+    "id": "con.light_is_present_at_its_input_but_none_leaves_its_output",
+    "label": "light is present at its input but none leaves its output",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm AMP_FAIL: when light is present at its input but none leaves its output",
+    "example": "AMP_FAIL",
+    "uses": 1
+   },
+   "con.the_gain_departs_from_its_set_point_by_more_than_2_db": {
+    "id": "con.the_gain_departs_from_its_set_point_by_more_than_2_db",
+    "label": "the gain departs from its set point by more than 2 dB",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm AMP_GAIN_OOR: when the gain departs from its set point by more than 2 dB",
+    "example": "AMP_GAIN_OOR",
+    "uses": 1
+   },
+   "con.the_pump_drive_current_exceeds_120_per_cent_of_its_beginning": {
+    "id": "con.the_pump_drive_current_exceeds_120_per_cent_of_its_beginning",
+    "label": "the pump drive current exceeds 120 per cent of its beginning-of-life value",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm AMP_PUMP_EOL: when the pump drive current exceeds 120 per cent of its beginning-of-life value",
+    "example": "AMP_PUMP_EOL",
+    "uses": 1
+   },
+   "con.an_odu_alarm_indication_signal": {
+    "id": "con.an_odu_alarm_indication_signal",
+    "label": "an ODU alarm indication signal",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "carries an ODU alarm indication signal onwards on every ODU cross-connected through it",
+    "uses": 2
+   },
+   "con.carries_an_odu_alarm_indication_signal_onwards_on_every_odu_": {
+    "id": "con.carries_an_odu_alarm_indication_signal_onwards_on_every_odu_",
+    "label": "carries an ODU alarm indication signal onwards on every ODU cross-connected through it",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "an ODU alarm indication signal",
+    "uses": 1
+   },
+   "con.an_odu_delivered_from_the_wrong_source": {
+    "id": "con.an_odu_delivered_from_the_wrong_source",
+    "label": "an ODU delivered from the wrong source",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds.",
+    "example": "takes the client service down",
+    "uses": 1
+   },
+   "con.takes_the_client_service_down": {
+    "id": "con.takes_the_client_service_down",
+    "label": "takes the client service down",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "an ODU alarm indication signal; an ODU delivered from the wrong source",
+    "uses": 1
+   },
+   "con.the_service_is_protected": {
+    "id": "con.the_service_is_protected",
+    "label": "the service is protected",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds (Client services may be protected by subnetwork connection protection (SNCP), with a working and a protection ODU path and a selector at the receiving client port.).",
+    "example": "the service suffers only a brief hit while the selector switches",
+    "uses": 1
+   },
+   "con.the_selector_can_choose_a_path_free_of_defects": {
+    "id": "con.the_selector_can_choose_a_path_free_of_defects",
+    "label": "the selector can choose a path free of defects",
+    "kind": "Condition",
+    "gloss": "A condition arriving at a unit, in the manual's description of how the unit responds (Client services may be protected by subnetwork connection protection (SNCP), with a working and a protection ODU path and a selector at the receiving client port.).",
+    "example": "the service suffers only a brief hit while the selector switches",
+    "uses": 1
+   },
+   "con.the_service_suffers_only_a_brief_hit_while_the_selector_swit": {
+    "id": "con.the_service_suffers_only_a_brief_hit_while_the_selector_swit",
+    "label": "the service suffers only a brief hit while the selector switches",
+    "kind": "Condition",
+    "gloss": "What a unit passes on or declares in response to an arriving condition.",
+    "example": "the service is protected; the selector can choose a path free of defects",
+    "uses": 1
+   },
+   "con.is_interrupted": {
+    "id": "con.is_interrupted",
+    "label": "is interrupted",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Switch fabric failure': Every ODU cross-connected through the switch is interrupted: an alarm indication signal is carried onwards on each.",
+    "example": "Every ODU cross-connected through the switch",
+    "uses": 1
+   },
+   "con.an_alarm_indication_signal_is_carried_onwards": {
+    "id": "con.an_alarm_indication_signal_is_carried_onwards",
+    "label": "an alarm indication signal is carried onwards",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Switch fabric failure': Every ODU cross-connected through the switch is interrupted: an alarm indication signal is carried onwards on each.",
+    "example": "each",
+    "uses": 1
+   },
+   "con.is_delivered_to_the_wrong_destination": {
+    "id": "con.is_delivered_to_the_wrong_destination",
+    "label": "is delivered to the wrong destination",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Wrong cross-connection': A cross-connection has been provisioned wrongly, so one ODU is delivered to the wrong destination. There is no optical symptom.",
+    "example": "one ODU",
+    "uses": 1
+   },
+   "con.there_is_no_optical_symptom": {
+    "id": "con.there_is_no_optical_symptom",
+    "label": "There is no optical symptom.",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Wrong cross-connection': A cross-connection has been provisioned wrongly, so one ODU is delivered to the wrong destination. There is no optical symptom.",
+    "example": "one ODU",
+    "uses": 1
+   },
+   "con.fails": {
+    "id": "con.fails",
+    "label": "fails",
+    "kind": "Condition",
+    "gloss": "A symptom of the fault 'Client port failure': The client optic or the port fails, and the client service is lost.",
+    "example": "The client optic",
+    "uses": 2
+   },
+   "con.the_client_service_has_failed": {
+    "id": "con.the_client_service_has_failed",
+    "label": "The client service has failed.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm CLIENT_SF: The client service has failed.",
+    "example": "CLIENT_SF",
+    "uses": 1
+   },
+   "con.an_odu_alarm_indication_signal_is_received": {
+    "id": "con.an_odu_alarm_indication_signal_is_received",
+    "label": "An ODU alarm indication signal is received.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm ODU_AIS: An ODU alarm indication signal is received.",
+    "example": "ODU_AIS",
+    "uses": 1
+   },
+   "con.the_far_end_reports_that_it_is_receiving_an_alarm_indication": {
+    "id": "con.the_far_end_reports_that_it_is_receiving_an_alarm_indication",
+    "label": "The far end reports that it is receiving an alarm indication signal.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm ODU_BDI: The far end reports that it is receiving an alarm indication signal.",
+    "example": "ODU_BDI",
+    "uses": 1
+   },
+   "con.trail_trace_identifier_mismatch_the_odu_received_is_not_the_": {
+    "id": "con.trail_trace_identifier_mismatch_the_odu_received_is_not_the_",
+    "label": "Trail trace identifier mismatch: the ODU received is not the one expected.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm ODU_TIM: the ODU received is not the one expected",
+    "example": "ODU_TIM",
+    "uses": 1
+   },
+   "con.the_selector_is_on_the_protection_path": {
+    "id": "con.the_selector_is_on_the_protection_path",
+    "label": "The selector is on the protection path.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm PROT_ACTIVE: The selector is on the protection path.",
+    "example": "PROT_ACTIVE",
+    "uses": 1
+   },
+   "con.the_protection_path_has_failed": {
+    "id": "con.the_protection_path_has_failed",
+    "label": "The protection path has failed.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm PROT_UNAVAIL: The protection path has failed.",
+    "example": "PROT_UNAVAIL",
+    "uses": 1
+   },
+   "con.port_hardware_fault": {
+    "id": "con.port_hardware_fault",
+    "label": "Port hardware fault.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm EQPT_PORT_FAIL: Port hardware fault.",
+    "example": "EQPT_PORT_FAIL",
+    "uses": 1
+   },
+   "con.fabric_fault": {
+    "id": "con.fabric_fault",
+    "label": "Fabric fault.",
+    "kind": "Condition",
+    "gloss": "The condition that raises alarm OTN_FABRIC_FAIL: Fabric fault.",
+    "example": "OTN_FABRIC_FAIL",
+    "uses": 1
+   }
+  },
+  "Behaviour": {
+   "beh.each_channel_leaving_a_degree_is_switched_separately": {
+    "id": "beh.each_channel_leaving_a_degree_is_switched_separately",
+    "label": "Each channel leaving a degree is switched separately.",
+    "kind": "Behaviour",
+    "gloss": "How the unit switches the channels it carries.",
+    "example": "VB CDC ROADM \u2014 Alarm and Troubleshooting Reference, Document VB-ROADM-ATR, issue 2",
+    "uses": 1
+   },
+   "beh.when_frame_alignment_is_lost_the_unit_applies_the_g_798_cons": {
+    "id": "beh.when_frame_alignment_is_lost_the_unit_applies_the_g_798_cons",
+    "label": "When frame alignment is lost, the unit applies the G.798 consequent actions: an ODU alarm indication signal is inserted downstream on every ODU the OTU carries, and a backward defect indication is sent to the far-end transmitter.",
+    "kind": "Behaviour",
+    "gloss": "How the unit switches the channels it carries.",
+    "example": "VB Coherent Line Interfaces \u2014 Alarm and Troubleshooting Reference, Document VB-LI-ATR, issue 5",
+    "uses": 1
+   },
+   "beh.the_otn_switch_carries_an_odu_alarm_indication_signal_onward": {
+    "id": "beh.the_otn_switch_carries_an_odu_alarm_indication_signal_onward",
+    "label": "The OTN switch carries an ODU alarm indication signal onwards on every ODU cross-connected through it.",
+    "kind": "Behaviour",
+    "gloss": "How the unit switches the channels it carries.",
+    "example": "VB OTN Switch, Client Ports and Protection \u2014 Alarm and Troubleshooting Reference, Document VB-OTN-ATR, issue 4",
+    "uses": 1
+   }
+  },
+  "Cause": {
+   "cau.wss_attenuation_drift": {
+    "id": "cau.wss_attenuation_drift",
+    "label": "WSS attenuation drift",
+    "kind": "Cause",
+    "gloss": "The WSS attenuation for one channel drifts above its set value.",
+    "example": "power is low",
+    "uses": 1
+   },
+   "cau.wss_passband_shift": {
+    "id": "cau.wss_passband_shift",
+    "label": "WSS passband shift",
+    "kind": "Cause",
+    "gloss": "The WSS passband for one channel is shifted or narrowed.",
+    "example": "power is normal; signal quality is reduced",
+    "uses": 1
+   },
+   "cau.wss_input_port_failure": {
+    "id": "cau.wss_input_port_failure",
+    "label": "WSS input port failure",
+    "kind": "Cause",
+    "gloss": "An input port of a WSS fails.",
+    "example": "is blocked; are unaffected",
+    "uses": 1
+   },
+   "cau.transmit_laser_failure": {
+    "id": "cau.transmit_laser_failure",
+    "label": "Transmit laser failure",
+    "kind": "Cause",
+    "gloss": "The transmit laser is off or has failed.",
+    "example": "loses the signal",
+    "uses": 2
+   },
+   "cau.card_failure": {
+    "id": "cau.card_failure",
+    "label": "Card failure",
+    "kind": "Cause",
+    "gloss": "The card fails.",
+    "example": "is lost; is lost; goes silent; are masked by the equipment alarm",
+    "uses": 1
+   },
+   "cau.receiver_degradation": {
+    "id": "cau.receiver_degradation",
+    "label": "Receiver degradation",
+    "kind": "Cause",
+    "gloss": "The receiver degrades.",
+    "example": "Errors appear; are normal; is normal",
+    "uses": 1
+   },
+   "cau.the_far_end_transmitter_s_laser_has_failed": {
+    "id": "cau.the_far_end_transmitter_s_laser_has_failed",
+    "label": "the far-end transmitter's laser has failed",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OCH_LOS (No light at the line receiver.).",
+    "example": "the far-end transmitter",
+    "uses": 1
+   },
+   "cau.the_far_end_card_has_failed": {
+    "id": "cau.the_far_end_card_has_failed",
+    "label": "the far-end card has failed",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OCH_LOS (No light at the line receiver.).",
+    "example": "the far end",
+    "uses": 1
+   },
+   "cau.a_broken_fibre": {
+    "id": "cau.a_broken_fibre",
+    "label": "a broken fibre",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OCH_LOS (No light at the line receiver.).",
+    "example": "along the channel's path",
+    "uses": 1
+   },
+   "cau.a_failed_amplifier": {
+    "id": "cau.a_failed_amplifier",
+    "label": "a failed amplifier",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OCH_LOS (No light at the line receiver.).",
+    "example": "along the channel's path",
+    "uses": 1
+   },
+   "cau.a_disconnected_patch_cord": {
+    "id": "cau.a_disconnected_patch_cord",
+    "label": "a disconnected patch cord",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OCH_LOS (No light at the line receiver.).",
+    "example": "along the channel's path",
+    "uses": 1
+   },
+   "cau.a_blocked_roadm_port": {
+    "id": "cau.a_blocked_roadm_port",
+    "label": "a blocked ROADM port",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OCH_LOS (No light at the line receiver.).",
+    "example": "along the channel's path",
+    "uses": 1
+   },
+   "cau.a_rise_in_fibre_loss": {
+    "id": "cau.a_rise_in_fibre_loss",
+    "label": "a rise in fibre loss",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.).",
+    "example": "along the channel's path",
+    "uses": 2
+   },
+   "cau.a_rise_in_an_amplifier_s_noise": {
+    "id": "cau.a_rise_in_an_amplifier_s_noise",
+    "label": "a rise in an amplifier's noise",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.).",
+    "example": "along the channel's path",
+    "uses": 2
+   },
+   "cau.a_rise_in_differential_group_delay": {
+    "id": "cau.a_rise_in_differential_group_delay",
+    "label": "a rise in differential group delay",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.).",
+    "example": "along the channel's path",
+    "uses": 2
+   },
+   "cau.a_misaligned_roadm_passband": {
+    "id": "cau.a_misaligned_roadm_passband",
+    "label": "a misaligned ROADM passband",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.).",
+    "example": "along the channel's path",
+    "uses": 2
+   },
+   "cau.a_fast_polarisation_transient": {
+    "id": "cau.a_fast_polarisation_transient",
+    "label": "a fast polarisation transient",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.).",
+    "example": "along the channel's path",
+    "uses": 1
+   },
+   "cau.degradation_of_this_unit_s_own_receiver": {
+    "id": "cau.degradation_of_this_unit_s_own_receiver",
+    "label": "degradation of this unit's own receiver",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OTU_LOF (OTU frame alignment lost while light is present.).",
+    "example": "this unit's own receiver",
+    "uses": 2
+   },
+   "cau.a_dirty_connector": {
+    "id": "cau.a_dirty_connector",
+    "label": "a dirty connector",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OTU_SD (the margin falls below about 1 dB).",
+    "example": "along the channel's path",
+    "uses": 1
+   },
+   "cau.any_failure": {
+    "id": "cau.any_failure",
+    "label": "any failure",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OTU_BDI (The far end reports a defect on the signal this unit transmits.).",
+    "example": "on the path to the far end",
+    "uses": 4
+   },
+   "cau.failure": {
+    "id": "cau.failure",
+    "label": "failure",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm EQPT_CARD_FAIL (Card hardware fault.).",
+    "example": "this card",
+    "uses": 3
+   },
+   "cau.pump_or_unit_failure": {
+    "id": "cau.pump_or_unit_failure",
+    "label": "Pump or unit failure",
+    "kind": "Cause",
+    "gloss": "The pump laser or the unit fails and the output goes dark. Every channel carried by the unit is lost downstream. This is a hard failure. Field return rate about 1 per cent of units per year.",
+    "example": "the output goes dark; is lost",
+    "uses": 1
+   },
+   "cau.gain_loss": {
+    "id": "cau.gain_loss",
+    "label": "Gain loss",
+    "kind": "Cause",
+    "gloss": "The unit's gain falls below its set point. Output power is low on every channel, and, since the noise added is unchanged, the signal-to-noise ratio of every channel falls too. This is a gradual or step degradation rather than an outage. About 1 per cent of units per year.",
+    "example": "Output power is low; the signal-to-noise ratio falls",
+    "uses": 2
+   },
+   "cau.pump_ageing": {
+    "id": "cau.pump_ageing",
+    "label": "Pump ageing",
+    "kind": "Cause",
+    "gloss": "As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+    "example": "raises its drive current to hold the gain; Traffic is unaffected until the drive current reaches its limit; gives early warning; leads eventually to the end-of-life alarm (AMP_PUMP_EOL)",
+    "uses": 2
+   },
+   "cau.gain_tilt": {
+    "id": "cau.gain_tilt",
+    "label": "Gain tilt",
+    "kind": "Cause",
+    "gloss": "The gain is no longer flat across the band, so channels at one edge of the band arrive weaker than the others. Some channels are affected, not all. This is a degradation rather than an outage. About 0.5 per cent of units per year.",
+    "example": "arrive weaker than the others; are affected",
+    "uses": 1
+   },
+   "cau.the_fibre_section_feeding_this_unit_is_broken": {
+    "id": "cau.the_fibre_section_feeding_this_unit_is_broken",
+    "label": "the fibre section feeding this unit is broken",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm AMP_INPUT_LOS (when no light arrives at its input).",
+    "example": "the fibre section feeding this unit",
+    "uses": 3
+   },
+   "cau.its_loss_has_risen_sharply": {
+    "id": "cau.its_loss_has_risen_sharply",
+    "label": "its loss has risen sharply",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm AMP_INPUT_LOS (when no light arrives at its input).",
+    "example": "the fibre section feeding this unit",
+    "uses": 3
+   },
+   "cau.the_preceding_amplifier_has_failed_and_emits_no_light": {
+    "id": "cau.the_preceding_amplifier_has_failed_and_emits_no_light",
+    "label": "the preceding amplifier has failed and emits no light",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm AMP_INPUT_LOS (when no light arrives at its input).",
+    "example": "the preceding amplifier",
+    "uses": 2
+   },
+   "cau.the_patch_cord_may_have_been_disconnected": {
+    "id": "cau.the_patch_cord_may_have_been_disconnected",
+    "label": "the patch cord may have been disconnected",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm OMS_LOS_P (when no light arrives at the input of the receiving end of the multiplex section).",
+    "example": "at the input of the multiplex section",
+    "uses": 1
+   },
+   "cau.failure_of_this_unit_s_pump_laser": {
+    "id": "cau.failure_of_this_unit_s_pump_laser",
+    "label": "failure of this unit's pump laser",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm AMP_FAIL (when light is present at its input but none leaves its output).",
+    "example": "this unit",
+    "uses": 1
+   },
+   "cau.failure_of_the_unit_itself": {
+    "id": "cau.failure_of_the_unit_itself",
+    "label": "failure of the unit itself",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm AMP_FAIL (when light is present at its input but none leaves its output).",
+    "example": "this unit",
+    "uses": 1
+   },
+   "cau.switch_fabric_failure": {
+    "id": "cau.switch_fabric_failure",
+    "label": "Switch fabric failure",
+    "kind": "Cause",
+    "gloss": "Every ODU cross-connected through the switch is interrupted: an alarm indication signal is carried onwards on each.",
+    "example": "is interrupted; an alarm indication signal is carried onwards",
+    "uses": 1
+   },
+   "cau.wrong_cross_connection": {
+    "id": "cau.wrong_cross_connection",
+    "label": "Wrong cross-connection",
+    "kind": "Cause",
+    "gloss": "A cross-connection has been provisioned wrongly, so one ODU is delivered to the wrong destination. There is no optical symptom.",
+    "example": "is delivered to the wrong destination; There is no optical symptom.",
+    "uses": 1
+   },
+   "cau.client_port_failure": {
+    "id": "cau.client_port_failure",
+    "label": "Client port failure",
+    "kind": "Cause",
+    "gloss": "The client optic or the port fails, and the client service is lost.",
+    "example": "fails; fails; is lost",
+    "uses": 1
+   },
+   "cau.a_failure_of_the_client_port": {
+    "id": "cau.a_failure_of_the_client_port",
+    "label": "a failure of the client port",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm CLIENT_SF (The client service has failed.).",
+    "example": "at either end",
+    "uses": 1
+   },
+   "cau.a_wrong_cross_connection": {
+    "id": "cau.a_wrong_cross_connection",
+    "label": "a wrong cross-connection",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm CLIENT_SF (The client service has failed.).",
+    "example": "in an OTN switch along the ODU path",
+    "uses": 2
+   },
+   "cau.a_fabric_failure": {
+    "id": "cau.a_fabric_failure",
+    "label": "a fabric failure",
+    "kind": "Cause",
+    "gloss": "A probable cause of alarm CLIENT_SF (The client service has failed.).",
+    "example": "in an OTN switch along the ODU path",
+    "uses": 1
+   }
+  },
+  "Nature": {
+   "nat.a_degradation": {
+    "id": "nat.a_degradation",
+    "label": "A degradation",
+    "kind": "Nature",
+    "gloss": "The character of the fault 'WSS attenuation drift'.",
+    "example": "The WSS attenuation for one channel drifts above its set value.",
+    "uses": 2
+   },
+   "nat.hard_failure": {
+    "id": "nat.hard_failure",
+    "label": "Hard failure",
+    "kind": "Nature",
+    "gloss": "The character of the fault 'WSS input port failure'.",
+    "example": "An input port of a WSS fails.",
+    "uses": 6
+   },
+   "nat.a_degradation_not_an_outage": {
+    "id": "nat.a_degradation_not_an_outage",
+    "label": "A degradation, not an outage",
+    "kind": "Nature",
+    "gloss": "The character of the fault 'Receiver degradation'.",
+    "example": "The receiver degrades.",
+    "uses": 1
+   },
+   "nat.gradual_or_step_degradation_rather_than_an_outage": {
+    "id": "nat.gradual_or_step_degradation_rather_than_an_outage",
+    "label": "gradual or step degradation rather than an outage",
+    "kind": "Nature",
+    "gloss": "The character of the fault 'Gain loss'.",
+    "example": "The unit's gain falls below its set point. Output power is low on every channel, and, since the noise added is unchanged, the signal-to-noise ratio of every channel falls too. This is a gradual or step degradation rather than an outage. About 1 per cent of units per year.",
+    "uses": 1
+   },
+   "nat.slow_incipient_condition": {
+    "id": "nat.slow_incipient_condition",
+    "label": "slow, incipient condition",
+    "kind": "Nature",
+    "gloss": "The character of the fault 'Pump ageing'.",
+    "example": "As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+    "uses": 1
+   },
+   "nat.degradation_rather_than_an_outage": {
+    "id": "nat.degradation_rather_than_an_outage",
+    "label": "degradation rather than an outage",
+    "kind": "Nature",
+    "gloss": "The character of the fault 'Gain tilt'.",
+    "example": "The gain is no longer flat across the band, so channels at one edge of the band arrive weaker than the others. Some channels are affected, not all. This is a degradation rather than an outage. About 0.5 per cent of units per year.",
+    "uses": 1
+   },
+   "nat.mostly_just_after_provisioning_changes": {
+    "id": "nat.mostly_just_after_provisioning_changes",
+    "label": "mostly just after provisioning changes",
+    "kind": "Nature",
+    "gloss": "The character of the fault 'Wrong cross-connection'.",
+    "example": "A cross-connection has been provisioned wrongly, so one ODU is delivered to the wrong destination. There is no optical symptom.",
+    "uses": 1
+   }
+  },
+  "Scope": {
+   "sco.that_channel": {
+    "id": "sco.that_channel",
+    "label": "that channel",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'power is low' of 'WSS attenuation drift' affects.",
+    "example": "The WSS attenuation for one channel drifts above its set value.",
+    "uses": 1
+   },
+   "sco.the_channel": {
+    "id": "sco.the_channel",
+    "label": "The channel",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'power is normal' of 'WSS passband shift' affects.",
+    "example": "The WSS passband for one channel is shifted or narrowed.",
+    "uses": 2
+   },
+   "sco.every_channel_arriving_at_the_node_on_that_degree": {
+    "id": "sco.every_channel_arriving_at_the_node_on_that_degree",
+    "label": "Every channel arriving at the node on that degree",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'is blocked' of 'WSS input port failure' affects.",
+    "example": "An input port of a WSS fails.",
+    "uses": 1
+   },
+   "sco.channels_arriving_on_the_other_degrees": {
+    "id": "sco.channels_arriving_on_the_other_degrees",
+    "label": "channels arriving on the other degrees",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'are unaffected' of 'WSS input port failure' affects.",
+    "example": "An input port of a WSS fails.",
+    "uses": 1
+   },
+   "sco.this_channel": {
+    "id": "sco.this_channel",
+    "label": "this channel",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'loses the signal' of 'Transmit laser failure' affects.",
+    "example": "The transmit laser is off or has failed.",
+    "uses": 1
+   },
+   "sco.the_channel_it_transmits": {
+    "id": "sco.the_channel_it_transmits",
+    "label": "The channel it transmits",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'is lost' of 'Card failure' affects.",
+    "example": "The card fails.",
+    "uses": 1
+   },
+   "sco.the_traffic_it_receives": {
+    "id": "sco.the_traffic_it_receives",
+    "label": "the traffic it receives",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'is lost' of 'Card failure' affects.",
+    "example": "The card fails.",
+    "uses": 1
+   },
+   "sco.its_monitoring": {
+    "id": "sco.its_monitoring",
+    "label": "its monitoring",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'goes silent' of 'Card failure' affects.",
+    "example": "The card fails.",
+    "uses": 1
+   },
+   "sco.its_traffic_alarms": {
+    "id": "sco.its_traffic_alarms",
+    "label": "its traffic alarms",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'are masked by the equipment alarm' of 'Card failure' affects.",
+    "example": "The card fails.",
+    "uses": 1
+   },
+   "sco.this_receiver_only": {
+    "id": "sco.this_receiver_only",
+    "label": "this receiver only",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'Errors appear' of 'Receiver degradation' affects.",
+    "example": "The receiver degrades.",
+    "uses": 1
+   },
+   "sco.other_channels": {
+    "id": "sco.other_channels",
+    "label": "other channels",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'are normal' of 'Receiver degradation' affects.",
+    "example": "The receiver degrades.",
+    "uses": 1
+   },
+   "sco.the_optical_path": {
+    "id": "sco.the_optical_path",
+    "label": "the optical path",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'is normal' of 'Receiver degradation' affects.",
+    "example": "The receiver degrades.",
+    "uses": 1
+   },
+   "sco.the_unit": {
+    "id": "sco.the_unit",
+    "label": "the unit",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'the output goes dark' of 'Pump or unit failure' affects.",
+    "example": "The pump laser or the unit fails and the output goes dark. Every channel carried by the unit is lost downstream. This is a hard failure. Field return rate about 1 per cent of units per year.",
+    "uses": 2
+   },
+   "sco.every_channel_carried_by_the_unit": {
+    "id": "sco.every_channel_carried_by_the_unit",
+    "label": "Every channel carried by the unit",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'is lost' of 'Pump or unit failure' affects.",
+    "example": "The pump laser or the unit fails and the output goes dark. Every channel carried by the unit is lost downstream. This is a hard failure. Field return rate about 1 per cent of units per year.",
+    "uses": 1
+   },
+   "sco.every_channel": {
+    "id": "sco.every_channel",
+    "label": "every channel",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'Output power is low' of 'Gain loss' affects.",
+    "example": "The unit's gain falls below its set point. Output power is low on every channel, and, since the noise added is unchanged, the signal-to-noise ratio of every channel falls too. This is a gradual or step degradation rather than an outage. About 1 per cent of units per year.",
+    "uses": 2
+   },
+   "sco.traffic": {
+    "id": "sco.traffic",
+    "label": "Traffic",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'Traffic is unaffected until the drive current reaches its limit' of 'Pump ageing' affects.",
+    "example": "As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+    "uses": 1
+   },
+   "sco.the_trend": {
+    "id": "sco.the_trend",
+    "label": "the trend",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'gives early warning' of 'Pump ageing' affects.",
+    "example": "As the pump laser ages, the unit raises its drive current to hold the gain. Traffic is unaffected until the drive current reaches its limit; the trend gives early warning and leads eventually to the end-of-life alarm (AMP_PUMP_EOL). This is a slow, incipient condition. About 2 per cent of units per year.",
+    "uses": 2
+   },
+   "sco.channels_at_one_edge_of_the_band": {
+    "id": "sco.channels_at_one_edge_of_the_band",
+    "label": "channels at one edge of the band",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'arrive weaker than the others' of 'Gain tilt' affects.",
+    "example": "The gain is no longer flat across the band, so channels at one edge of the band arrive weaker than the others. Some channels are affected, not all. This is a degradation rather than an outage. About 0.5 per cent of units per year.",
+    "uses": 1
+   },
+   "sco.some_channels_not_all": {
+    "id": "sco.some_channels_not_all",
+    "label": "Some channels, not all",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'are affected' of 'Gain tilt' affects.",
+    "example": "The gain is no longer flat across the band, so channels at one edge of the band arrive weaker than the others. Some channels are affected, not all. This is a degradation rather than an outage. About 0.5 per cent of units per year.",
+    "uses": 1
+   },
+   "sco.every_odu_cross_connected_through_the_switch": {
+    "id": "sco.every_odu_cross_connected_through_the_switch",
+    "label": "Every ODU cross-connected through the switch",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'is interrupted' of 'Switch fabric failure' affects.",
+    "example": "Every ODU cross-connected through the switch is interrupted: an alarm indication signal is carried onwards on each.",
+    "uses": 1
+   },
+   "sco.each": {
+    "id": "sco.each",
+    "label": "each",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'an alarm indication signal is carried onwards' of 'Switch fabric failure' affects.",
+    "example": "Every ODU cross-connected through the switch is interrupted: an alarm indication signal is carried onwards on each.",
+    "uses": 1
+   },
+   "sco.one_odu": {
+    "id": "sco.one_odu",
+    "label": "one ODU",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'is delivered to the wrong destination' of 'Wrong cross-connection' affects.",
+    "example": "A cross-connection has been provisioned wrongly, so one ODU is delivered to the wrong destination. There is no optical symptom.",
+    "uses": 2
+   },
+   "sco.the_client_optic": {
+    "id": "sco.the_client_optic",
+    "label": "The client optic",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'fails' of 'Client port failure' affects.",
+    "example": "The client optic or the port fails, and the client service is lost.",
+    "uses": 1
+   },
+   "sco.the_port": {
+    "id": "sco.the_port",
+    "label": "the port",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'fails' of 'Client port failure' affects.",
+    "example": "The client optic or the port fails, and the client service is lost.",
+    "uses": 1
+   },
+   "sco.the_client_service": {
+    "id": "sco.the_client_service",
+    "label": "the client service",
+    "kind": "Scope",
+    "gloss": "How much traffic the symptom 'is lost' of 'Client port failure' affects.",
+    "example": "The client optic or the port fails, and the client service is lost.",
+    "uses": 1
+   }
+  },
+  "Location": {
+   "loc.after_the_node": {
+    "id": "loc.after_the_node",
+    "label": "after the node",
+    "kind": "Location",
+    "gloss": "Where the symptom 'power is low' of 'WSS attenuation drift' shows, relative to the faulty unit.",
+    "example": "The WSS attenuation for one channel drifts above its set value.",
+    "uses": 1
+   },
+   "loc.there": {
+    "id": "loc.there",
+    "label": "there",
+    "kind": "Location",
+    "gloss": "Where the symptom 'is blocked' of 'WSS input port failure' shows, relative to the faulty unit.",
+    "example": "An input port of a WSS fails.",
+    "uses": 1
+   },
+   "loc.the_receiver_at_the_far_end": {
+    "id": "loc.the_receiver_at_the_far_end",
+    "label": "The receiver at the far end",
+    "kind": "Location",
+    "gloss": "Where the symptom 'loses the signal' of 'Transmit laser failure' shows, relative to the faulty unit.",
+    "example": "The transmit laser is off or has failed.",
+    "uses": 1
+   },
+   "loc.at_the_far_end": {
+    "id": "loc.at_the_far_end",
+    "label": "at the far end",
+    "kind": "Location",
+    "gloss": "Where the symptom 'is lost' of 'Card failure' shows, relative to the faulty unit.",
+    "example": "The card fails.",
+    "uses": 1
+   },
+   "loc.here": {
+    "id": "loc.here",
+    "label": "here",
+    "kind": "Location",
+    "gloss": "Where the symptom 'is lost' of 'Card failure' shows, relative to the faulty unit.",
+    "example": "The card fails.",
+    "uses": 1
+   },
+   "loc.this_receiver": {
+    "id": "loc.this_receiver",
+    "label": "this receiver",
+    "kind": "Location",
+    "gloss": "Where the symptom 'Errors appear' of 'Receiver degradation' shows, relative to the faulty unit.",
+    "example": "The receiver degrades.",
+    "uses": 1
+   },
+   "loc.the_far_end_transmitter": {
+    "id": "loc.the_far_end_transmitter",
+    "label": "the far-end transmitter",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'the far-end transmitter's laser has failed' of alarm OCH_LOS lies, relative to the unit raising the alarm.",
+    "example": "No light at the line receiver.",
+    "uses": 1
+   },
+   "loc.the_far_end": {
+    "id": "loc.the_far_end",
+    "label": "the far end",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'the far-end card has failed' of alarm OCH_LOS lies, relative to the unit raising the alarm.",
+    "example": "No light at the line receiver.",
+    "uses": 1
+   },
+   "loc.along_the_channel_s_path": {
+    "id": "loc.along_the_channel_s_path",
+    "label": "along the channel's path",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'a broken fibre' of alarm OCH_LOS lies, relative to the unit raising the alarm.",
+    "example": "No light at the line receiver.",
+    "uses": 14
+   },
+   "loc.the_line_receiver": {
+    "id": "loc.the_line_receiver",
+    "label": "the line receiver",
+    "kind": "Location",
+    "gloss": "What alarm OCH_LOS is reported against.",
+    "example": "OCH_LOS",
+    "uses": 1
+   },
+   "loc.this_unit_s_own_receiver": {
+    "id": "loc.this_unit_s_own_receiver",
+    "label": "this unit's own receiver",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'degradation of this unit's own receiver' of alarm OTU_LOF lies, relative to the unit raising the alarm.",
+    "example": "OTU frame alignment lost while light is present.",
+    "uses": 2
+   },
+   "loc.on_the_path_to_the_far_end": {
+    "id": "loc.on_the_path_to_the_far_end",
+    "label": "on the path to the far end",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'any failure' of alarm OTU_BDI lies, relative to the unit raising the alarm.",
+    "example": "The far end reports a defect on the signal this unit transmits.",
+    "uses": 1
+   },
+   "loc.the_signal_this_unit_transmits": {
+    "id": "loc.the_signal_this_unit_transmits",
+    "label": "the signal this unit transmits",
+    "kind": "Location",
+    "gloss": "What alarm OTU_BDI is reported against.",
+    "example": "OTU_BDI",
+    "uses": 1
+   },
+   "loc.on_this_unit": {
+    "id": "loc.on_this_unit",
+    "label": "on this unit",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'transmit laser failure' of alarm EQPT_TX_FAIL lies, relative to the unit raising the alarm.",
+    "example": "The unit has detected a fault in its transmit laser.",
+    "uses": 1
+   },
+   "loc.this_unit": {
+    "id": "loc.this_unit",
+    "label": "this unit",
+    "kind": "Location",
+    "gloss": "What alarm EQPT_TX_FAIL is reported against.",
+    "example": "EQPT_TX_FAIL",
+    "uses": 5
+   },
+   "loc.this_card": {
+    "id": "loc.this_card",
+    "label": "this card",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'failure' of alarm EQPT_CARD_FAIL lies, relative to the unit raising the alarm.",
+    "example": "Card hardware fault.",
+    "uses": 2
+   },
+   "loc.the_output": {
+    "id": "loc.the_output",
+    "label": "the output",
+    "kind": "Location",
+    "gloss": "Where the symptom 'the output goes dark' of 'Pump or unit failure' shows, relative to the faulty unit.",
+    "example": "The pump laser or the unit fails and the output goes dark. Every channel carried by the unit is lost downstream. This is a hard failure. Field return rate about 1 per cent of units per year.",
+    "uses": 1
+   },
+   "loc.downstream": {
+    "id": "loc.downstream",
+    "label": "downstream",
+    "kind": "Location",
+    "gloss": "Where the symptom 'is lost' of 'Pump or unit failure' shows, relative to the faulty unit.",
+    "example": "The pump laser or the unit fails and the output goes dark. Every channel carried by the unit is lost downstream. This is a hard failure. Field return rate about 1 per cent of units per year.",
+    "uses": 1
+   },
+   "loc.the_fibre_section_feeding_this_unit": {
+    "id": "loc.the_fibre_section_feeding_this_unit",
+    "label": "the fibre section feeding this unit",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'the fibre section feeding this unit is broken' of alarm AMP_INPUT_LOS lies, relative to the unit raising the alarm.",
+    "example": "when no light arrives at its input",
+    "uses": 6
+   },
+   "loc.the_preceding_amplifier": {
+    "id": "loc.the_preceding_amplifier",
+    "label": "the preceding amplifier",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'the preceding amplifier has failed and emits no light' of alarm AMP_INPUT_LOS lies, relative to the unit raising the alarm.",
+    "example": "when no light arrives at its input",
+    "uses": 2
+   },
+   "loc.at_the_input_of_the_multiplex_section": {
+    "id": "loc.at_the_input_of_the_multiplex_section",
+    "label": "at the input of the multiplex section",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'the patch cord may have been disconnected' of alarm OMS_LOS_P lies, relative to the unit raising the alarm.",
+    "example": "when no light arrives at the input of the receiving end of the multiplex section",
+    "uses": 1
+   },
+   "loc.the_fibre_section_feeding_the_unit_not_against_the_unit_itse": {
+    "id": "loc.the_fibre_section_feeding_the_unit_not_against_the_unit_itse",
+    "label": "the fibre section feeding the unit, not against the unit itself",
+    "kind": "Location",
+    "gloss": "What alarm OSC_LOS is reported against.",
+    "example": "OSC_LOS",
+    "uses": 1
+   },
+   "loc.through_the_switch": {
+    "id": "loc.through_the_switch",
+    "label": "through the switch",
+    "kind": "Location",
+    "gloss": "Where the symptom 'is interrupted' of 'Switch fabric failure' shows, relative to the faulty unit.",
+    "example": "Every ODU cross-connected through the switch is interrupted: an alarm indication signal is carried onwards on each.",
+    "uses": 1
+   },
+   "loc.the_wrong_destination": {
+    "id": "loc.the_wrong_destination",
+    "label": "the wrong destination",
+    "kind": "Location",
+    "gloss": "Where the symptom 'is delivered to the wrong destination' of 'Wrong cross-connection' shows, relative to the faulty unit.",
+    "example": "A cross-connection has been provisioned wrongly, so one ODU is delivered to the wrong destination. There is no optical symptom.",
+    "uses": 1
+   },
+   "loc.on_the_odu_path_currently_in_use": {
+    "id": "loc.on_the_odu_path_currently_in_use",
+    "label": "on the ODU path currently in use",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'any failure' of alarm CLIENT_SF lies, relative to the unit raising the alarm.",
+    "example": "The client service has failed.",
+    "uses": 1
+   },
+   "loc.at_either_end": {
+    "id": "loc.at_either_end",
+    "label": "at either end",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'a failure of the client port' of alarm CLIENT_SF lies, relative to the unit raising the alarm.",
+    "example": "The client service has failed.",
+    "uses": 1
+   },
+   "loc.in_an_otn_switch_along_the_odu_path": {
+    "id": "loc.in_an_otn_switch_along_the_odu_path",
+    "label": "in an OTN switch along the ODU path",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'a wrong cross-connection' of alarm CLIENT_SF lies, relative to the unit raising the alarm.",
+    "example": "The client service has failed.",
+    "uses": 3
+   },
+   "loc.client_port": {
+    "id": "loc.client_port",
+    "label": "client port",
+    "kind": "Location",
+    "gloss": "What alarm CLIENT_SF is reported against.",
+    "example": "CLIENT_SF",
+    "uses": 7
+   },
+   "loc.on_the_working_odu_path": {
+    "id": "loc.on_the_working_odu_path",
+    "label": "on the working ODU path",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'any failure' of alarm PROT_ACTIVE lies, relative to the unit raising the alarm.",
+    "example": "The selector is on the protection path.",
+    "uses": 1
+   },
+   "loc.on_the_protection_odu_path": {
+    "id": "loc.on_the_protection_odu_path",
+    "label": "on the protection ODU path",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'any failure' of alarm PROT_UNAVAIL lies, relative to the unit raising the alarm.",
+    "example": "The protection path has failed.",
+    "uses": 1
+   },
+   "loc.this_port": {
+    "id": "loc.this_port",
+    "label": "this port",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'failure' of alarm EQPT_PORT_FAIL lies, relative to the unit raising the alarm.",
+    "example": "Port hardware fault.",
+    "uses": 1
+   },
+   "loc.this_switch_s_fabric": {
+    "id": "loc.this_switch_s_fabric",
+    "label": "this switch's fabric",
+    "kind": "Location",
+    "gloss": "Where the probable cause 'failure' of alarm OTN_FABRIC_FAIL lies, relative to the unit raising the alarm.",
+    "example": "Fabric fault.",
+    "uses": 1
+   },
+   "loc.otn_switch": {
+    "id": "loc.otn_switch",
+    "label": "OTN switch",
+    "kind": "Location",
+    "gloss": "What alarm OTN_FABRIC_FAIL is reported against.",
+    "example": "OTN_FABRIC_FAIL",
+    "uses": 1
+   }
+  },
+  "Severity": {
+   "sev.critical": {
+    "id": "sev.critical",
+    "label": "critical",
+    "kind": "Severity",
+    "gloss": "The severity of alarm OCH_LOS.",
+    "example": "No light at the line receiver.",
+    "uses": 10
+   },
+   "sev.minor": {
+    "id": "sev.minor",
+    "label": "minor",
+    "kind": "Severity",
+    "gloss": "The severity of alarm OTU_SD.",
+    "example": "the margin falls below about 1 dB",
+    "uses": 5
+   },
+   "sev.not_alarmed": {
+    "id": "sev.not_alarmed",
+    "label": "not alarmed",
+    "kind": "Severity",
+    "gloss": "The severity of alarm OTU_BDI.",
+    "example": "The far end reports a defect on the signal this unit transmits.",
+    "uses": 3
+   },
+   "sev.major": {
+    "id": "sev.major",
+    "label": "major",
+    "kind": "Severity",
+    "gloss": "The severity of alarm OSC_LOS.",
+    "example": "when the supervisory channel is not received",
+    "uses": 2
+   }
+  }
+ },
+ "by_class": {
+  "Resource": {
+   "correspondences": [
+    {
+     "a_id": "res.roadm",
+     "b_id": "ROADM",
+     "confidence": 0.98,
+     "rationale": "Both denote a ROADM network unit; the VB concept identifies the vendor-specific implementation of the shared ROADM resource."
+    },
+    {
+     "a_id": "res.transponder",
+     "b_id": "kind:transponder",
+     "confidence": 0.97,
+     "rationale": "The VB transponder is the vendor-specific coherent line-interface kind identified as transponder in model B."
+    },
+    {
+     "a_id": "res.muxponder",
+     "b_id": "kind:muxponder",
+     "confidence": 0.97,
+     "rationale": "Both denote the muxponder kind of coherent line interface."
+    },
+    {
+     "a_id": "res.otn_line_card",
+     "b_id": "kind:otn_line",
+     "confidence": 0.98,
+     "rationale": "Model B explicitly defines otn_line as the OTN line-card kind represented by the VB unit."
+    },
+    {
+     "a_id": "res.at_the_transmitting_end_of_a_multiplex_section_after_the_roa",
+     "b_id": "role:booster",
+     "confidence": 0.95,
+     "rationale": "Both denote the amplifier role or position at the transmitting end of an optical multiplex section."
+    },
+    {
+     "a_id": "res.at_intermediate_amplifier_sites",
+     "b_id": "role:inline",
+     "confidence": 0.99,
+     "rationale": "Both denote the inline-amplifier role at intermediate amplifier sites."
+    },
+    {
+     "a_id": "res.at_the_receiving_end_of_a_multiplex_section_before_the_roadm",
+     "b_id": "role:preamp",
+     "confidence": 0.95,
+     "rationale": "Both denote the preamplifier role or position at the receiving end of an optical multiplex section."
+    },
+    {
+     "a_id": "res.otn_switch",
+     "b_id": "OTNSwitch",
+     "confidence": 0.99,
+     "rationale": "Both denote an OTN switching unit providing ODU cross-connect functionality."
+    },
+    {
+     "a_id": "res.client_port",
+     "b_id": "ClientPort",
+     "confidence": 0.91,
+     "rationale": "Both denote the generic client-port resource, independent of a particular Ethernet rate."
+    }
+   ],
+   "residual_vendor": [
+    "res.colourless_directionless_and_contentionless_roadm",
+    "res.all_units",
+    "res.booster_amplifier_ba",
+    "res.line_amplifier_la",
+    "res.preamplifier_pa",
+    "res.odu_cross_connect_fabric",
+    "res.client_port_10ge",
+    "res.client_port_100ge",
+    "res.client_port_400ge"
+   ],
+   "residual_operator": [
+    "Amplifier",
+    "LineInterface"
+   ],
+   "effort": {
+    "prompt_tokens": 2498,
+    "completion_tokens": 1118,
+    "total_tokens": 3616,
+    "reasoning_tokens": 596,
+    "latency_s": 16.58,
+    "model": "gpt-5.6"
+   }
+  },
+  "Characteristic": {
+   "correspondences": [
+    {
+     "a_id": "cha.the_power_of_every_channel",
+     "b_id": "ocm_channel_power",
+     "confidence": 0.99,
+     "rationale": "Both denote per-channel optical power reported by an optical channel monitor."
+    },
+    {
+     "a_id": "cha.the_osnr_of_every_channel",
+     "b_id": "ocm_osnr",
+     "confidence": 0.99,
+     "rationale": "Both denote per-channel OSNR reported by an optical channel monitor."
+    },
+    {
+     "a_id": "cha.received_power",
+     "b_id": "rx_power_pm15",
+     "confidence": 0.82,
+     "rationale": "Both denote received-power performance-counter measurements; B explicitly identifies the 15-minute binning that is implicit in the performance-counter context of A."
+    },
+    {
+     "a_id": "cha.errored_seconds_in_15_minute_bins",
+     "b_id": "errored_seconds_pm15",
+     "confidence": 0.99,
+     "rationale": "Both denote line errored seconds accumulated in 15-minute performance-monitoring bins."
+    },
+    {
+     "a_id": "cha.optical_power",
+     "b_id": "rx_power",
+     "confidence": 0.99,
+     "rationale": "A explicitly describes optical power at the line receiver, exactly matching B's receiver optical power."
+    },
+    {
+     "a_id": "cha.estimated_osnr",
+     "b_id": "est_osnr",
+     "confidence": 0.99,
+     "rationale": "Both denote OSNR estimated by coherent receiver DSP monitoring."
+    },
+    {
+     "a_id": "cha.pre_fec_bit_error_ratio",
+     "b_id": "pre_fec_ber",
+     "confidence": 1.0,
+     "rationale": "BER is the standard abbreviation for bit error ratio; both specify the pre-FEC coherent-receiver measurement."
+    },
+    {
+     "a_id": "cha.differential_group_delay",
+     "b_id": "dgd",
+     "confidence": 1.0,
+     "rationale": "DGD is the standard abbreviation for differential group delay, and both are coherent DSP measurements."
+    },
+    {
+     "a_id": "cha.polarisation_change_rate",
+     "b_id": "sop_rate",
+     "confidence": 0.98,
+     "rationale": "Both denote the DSP-estimated rate of change of optical state of polarisation."
+    },
+    {
+     "a_id": "cha.total_optical_power_at_the_unit_s_input",
+     "b_id": "amp_input_power",
+     "confidence": 0.97,
+     "rationale": "Both denote total optical power at the monitored amplifier/unit input."
+    },
+    {
+     "a_id": "cha.total_optical_power_at_the_unit_s_output",
+     "b_id": "amp_output_power",
+     "confidence": 0.97,
+     "rationale": "Both denote total optical power at the monitored amplifier/unit output."
+    },
+    {
+     "a_id": "cha.drive_current_of_the_pump_laser_as_a_percentage_of_its_begin",
+     "b_id": "pump_current_pct",
+     "confidence": 1.0,
+     "rationale": "Both denote amplifier pump drive current expressed as a percentage of its beginning-of-life value."
+    },
+    {
+     "a_id": "cha.osc_receiver_alarm_generation_only",
+     "b_id": "alarm_only",
+     "confidence": 1.0,
+     "rationale": "Both denote a monitor, exemplified by an OSC receiver, that raises alarms but does not report measured values."
+    },
+    {
+     "a_id": "cha.client_errored_seconds",
+     "b_id": "client_errored_seconds_pm15",
+     "confidence": 0.88,
+     "rationale": "Both denote client errored-seconds performance monitoring; B makes the customary 15-minute binning explicit."
+    },
+    {
+     "a_id": "cha.client_unavailable_seconds",
+     "b_id": "client_unavailable_seconds_pm15",
+     "confidence": 0.88,
+     "rationale": "Both denote client unavailable-seconds performance monitoring; B makes the customary 15-minute binning explicit."
+    }
+   ],
+   "residual_vendor": [
+    "cha.an_indicator_of_pump_health",
+    "cha.presence_of_the_supervisory_channel_at_the_input"
+   ],
+   "residual_operator": [
+    "laser_bias_pct"
+   ],
+   "effort": {
+    "prompt_tokens": 2505,
+    "completion_tokens": 912,
+    "total_tokens": 3417,
+    "reasoning_tokens": 163,
+    "latency_s": 11.26,
+    "model": "gpt-5.6"
+   }
+  },
+  "Availability": {
+   "correspondences": [
+    {
+     "a_id": "ava.available_on_nodes_with_the_channel_monitoring_option",
+     "b_id": "ocm",
+     "confidence": 0.99,
+     "rationale": "Both denote availability of optical channel monitoring when the channel-monitoring capability is installed."
+    },
+    {
+     "a_id": "ava.all_units",
+     "b_id": "baseline",
+     "confidence": 0.97,
+     "rationale": "Both denote standard monitoring available on every unit, including performance counters."
+    },
+    {
+     "a_id": "ava.units_with_the_power_monitoring_option",
+     "b_id": "power",
+     "confidence": 0.99,
+     "rationale": "Both denote optical received-power monitoring available on units fitted with the power-monitoring option."
+    },
+    {
+     "a_id": "ava.units_with_the_advanced_monitoring_option",
+     "b_id": "coherent",
+     "confidence": 0.98,
+     "rationale": "Both denote advanced coherent-DSP monitoring available with the advanced monitoring capability."
+    }
+   ],
+   "residual_vendor": [
+    "ava.each_client_port_reports_client_errored_seconds_in_15_minute",
+    "ava.each_client_port_reports_client_unavailable_seconds_in_15_mi"
+   ],
+   "residual_operator": [],
+   "effort": {
+    "prompt_tokens": 1067,
+    "completion_tokens": 262,
+    "total_tokens": 1329,
+    "reasoning_tokens": 32,
+    "latency_s": 3.89,
+    "model": "gpt-5.6"
+   }
+  },
+  "Condition": {
+   "correspondences": [
+    {
+     "a_id": "con.no_light_at_the_line_receiver",
+     "b_id": "SIGNAL_LOST",
+     "confidence": 0.94,
+     "rationale": "Both denote absence of detectable optical signal at the line receiver."
+    },
+    {
+     "a_id": "con.power_is_low",
+     "b_id": "POWER_LOW",
+     "confidence": 0.96,
+     "rationale": "Both denote reduced optical power on a signal or channel."
+    },
+    {
+     "a_id": "con.the_supervisory_channel_is_not_received",
+     "b_id": "OSC_LOST",
+     "confidence": 0.98,
+     "rationale": "Both denote loss of reception of the optical supervisory channel."
+    },
+    {
+     "a_id": "con.the_signal_to_noise_ratio_falls",
+     "b_id": "OSNR_LOW",
+     "confidence": 0.92,
+     "rationale": "Both denote degradation of optical signal-to-noise ratio."
+    },
+    {
+     "a_id": "con.polarisation_changes_faster_than_the_tracking_range",
+     "b_id": "POL_TRANSIENT",
+     "confidence": 0.94,
+     "rationale": "A polarization change faster than receiver tracking is the fast state-of-polarization change denoted by POL_TRANSIENT."
+    },
+    {
+     "a_id": "con.signal_quality_is_reduced",
+     "b_id": "FILTER_PENALTY",
+     "confidence": 0.82,
+     "rationale": "The A condition is reduced signal quality caused by a shifted or narrowed WSS passband, matching the spectral narrowing or misalignment penalty in B."
+    },
+    {
+     "a_id": "con.the_unit_itself_has_failed",
+     "b_id": "UNIT_DOWN",
+     "confidence": 0.96,
+     "rationale": "Both denote failure of the unit itself, with traffic and valid operation lost."
+    },
+    {
+     "a_id": "con.otu_frame_alignment_lost_while_light_is_present",
+     "b_id": "OTU_FRAME_LOST",
+     "confidence": 0.98,
+     "rationale": "Both denote loss of OTU frame alignment at a line receiver."
+    },
+    {
+     "a_id": "con.signal_degraded_pre_fec_errors_above_threshold",
+     "b_id": "OTU_ERRORED",
+     "confidence": 0.99,
+     "rationale": "Both denote pre-FEC errors exceeding the degradation threshold while the signal remains framed."
+    },
+    {
+     "a_id": "con.an_odu_alarm_indication_signal",
+     "b_id": "ODU_AIS",
+     "confidence": 0.99,
+     "rationale": "Both denote an ODU alarm indication signal propagated downstream on an ODU path."
+    },
+    {
+     "a_id": "con.is_delivered_to_the_wrong_destination",
+     "b_id": "ODU_MISROUTED",
+     "confidence": 0.99,
+     "rationale": "Both denote an ODU delivered to the wrong destination by a cross-connect."
+    },
+    {
+     "a_id": "con.the_client_service_has_failed",
+     "b_id": "CLIENT_DOWN",
+     "confidence": 0.97,
+     "rationale": "Both denote failure or interruption of the client service."
+    },
+    {
+     "a_id": "con.the_service_suffers_only_a_brief_hit_while_the_selector_swit",
+     "b_id": "CLIENT_HIT",
+     "confidence": 0.99,
+     "rationale": "Both denote a brief client-service interruption during a protection switch."
+    },
+    {
+     "a_id": "con.raises_its_drive_current_to_hold_the_gain",
+     "b_id": "PUMP_AGEING",
+     "confidence": 0.98,
+     "rationale": "Both denote the characteristic pump-ageing condition in which drive current rises to maintain gain."
+    }
+   ],
+   "residual_vendor": [
+    "con.an_impairment_affecting_the_whole_incoming_line",
+    "con.continues_after_the_node_as_an_impairment_of_each_channel_ro",
+    "con.a_power_loss_upstream_of_up_to_about_8_db",
+    "con.is_re_levelled_at_the_node",
+    "con.does_not_appear_downstream_as_low_power",
+    "con.the_loss_of_signal_to_noise_ratio_it_caused_remains",
+    "con.a_larger_loss",
+    "con.passes_on_as_low_power",
+    "con.pass_through_the_node_unchanged",
+    "con.power_is_normal",
+    "con.is_blocked",
+    "con.are_unaffected",
+    "con.no_light_reaches_the_receiver",
+    "con.declares_loss_of_signal_g_798_dlos",
+    "con.loses_otu_frame_alignment",
+    "con.declares_an_equipment_defect_deq",
+    "con.frame_alignment_is_lost",
+    "con.the_unit_s_traffic_alarms_are_masked_by_the_equipment_alarm",
+    "con.the_signal_arrives_but_is_impaired",
+    "con.lower_power_a_lower_signal_to_noise_ratio_a_raised_different",
+    "con.pre_fec_errors_appear",
+    "con.produce_errored_seconds",
+    "con.an_odu_alarm_indication_signal_is_inserted_downstream",
+    "con.a_backward_defect_indication_is_sent",
+    "con.loses_the_signal",
+    "con.is_lost",
+    "con.goes_silent",
+    "con.are_masked_by_the_equipment_alarm",
+    "con.errors_appear",
+    "con.are_normal",
+    "con.is_normal",
+    "con.the_far_end_reports_a_defect_on_the_signal_this_unit_transmi",
+    "con.the_unit_has_detected_a_fault_in_its_transmit_laser",
+    "con.card_hardware_fault",
+    "con.all_three_units_operate",
+    "con.constant_gain_mode",
+    "con.less_light_arrives_at_the_input",
+    "con.less_light_leaves_the_output",
+    "con.the_optical_signal_to_noise_ratio_of_every_channel_falls_as_",
+    "con.loss_of_the_osc_on_one_section",
+    "con.does_not_propagate_to_the_next",
+    "con.no_light_arrives",
+    "con.no_light_leaves",
+    "con.the_input_is_weak",
+    "con.the_output_is_weak",
+    "con.the_output_is_noisier",
+    "con.the_output_goes_dark",
+    "con.output_power_is_low",
+    "con.traffic_is_unaffected_until_the_drive_current_reaches_its_li",
+    "con.gives_early_warning",
+    "con.leads_eventually_to_the_end_of_life_alarm_amp_pump_eol",
+    "con.arrive_weaker_than_the_others",
+    "con.are_affected",
+    "con.no_light_arrives_at_its_input",
+    "con.no_light_arrives_at_the_input_of_the_receiving_end_of_the_mu",
+    "con.light_is_present_at_its_input_but_none_leaves_its_output",
+    "con.the_gain_departs_from_its_set_point_by_more_than_2_db",
+    "con.the_pump_drive_current_exceeds_120_per_cent_of_its_beginning",
+    "con.carries_an_odu_alarm_indication_signal_onwards_on_every_odu_",
+    "con.an_odu_delivered_from_the_wrong_source",
+    "con.takes_the_client_service_down",
+    "con.the_service_is_protected",
+    "con.the_selector_can_choose_a_path_free_of_defects",
+    "con.is_interrupted",
+    "con.an_alarm_indication_signal_is_carried_onwards",
+    "con.there_is_no_optical_symptom",
+    "con.fails",
+    "con.an_odu_alarm_indication_signal_is_received",
+    "con.the_far_end_reports_that_it_is_receiving_an_alarm_indication",
+    "con.trail_trace_identifier_mismatch_the_odu_received_is_not_the_",
+    "con.the_selector_is_on_the_protection_path",
+    "con.the_protection_path_has_failed",
+    "con.port_hardware_fault",
+    "con.fabric_fault"
+   ],
+   "residual_operator": [
+    "POWER_EXCURSION",
+    "DGD_HIGH",
+    "RX_PENALTY",
+    "LASER_AGEING",
+    "MARGIN_DECLINE"
+   ],
+   "effort": {
+    "prompt_tokens": 9246,
+    "completion_tokens": 3264,
+    "total_tokens": 12510,
+    "reasoning_tokens": 1813,
+    "latency_s": 41.37,
+    "model": "gpt-5.6"
+   }
+  },
+  "Behaviour": {
+   "correspondences": [
+    {
+     "a_id": "beh.each_channel_leaving_a_degree_is_switched_separately",
+     "b_id": "routing:per channel",
+     "confidence": 0.99,
+     "rationale": "Both denote independent per-channel switching, with conditions following each separately routed channel."
+    },
+    {
+     "a_id": "beh.the_otn_switch_carries_an_odu_alarm_indication_signal_onward",
+     "b_id": "pass",
+     "confidence": 0.96,
+     "rationale": "Carrying the ODU alarm indication signal onward through each cross-connection is passing the arriving condition through unchanged."
+    }
+   ],
+   "residual_vendor": [
+    "beh.when_frame_alignment_is_lost_the_unit_applies_the_g_798_cons"
+   ],
+   "residual_operator": [
+    "default"
+   ],
+   "effort": {
+    "prompt_tokens": 908,
+    "completion_tokens": 249,
+    "total_tokens": 1157,
+    "reasoning_tokens": 92,
+    "latency_s": 4.6,
+    "model": "gpt-5.6"
+   }
+  },
+  "Cause": {
+   "correspondences": [
+    {
+     "a_id": "cau.wss_attenuation_drift",
+     "b_id": "WSS_ATTEN_DRIFT",
+     "confidence": 0.99,
+     "rationale": "Both denote a per-channel WSS attenuation deviation from its configured value."
+    },
+    {
+     "a_id": "cau.wss_passband_shift",
+     "b_id": "WSS_FILTER_SHIFT",
+     "confidence": 0.98,
+     "rationale": "Both denote frequency displacement or misalignment of a WSS channel passband."
+    },
+    {
+     "a_id": "cau.wss_input_port_failure",
+     "b_id": "WSS_PORT_FAIL",
+     "confidence": 0.93,
+     "rationale": "Both denote hard failure of a WSS port; model A specializes it to an input port."
+    },
+    {
+     "a_id": "cau.transmit_laser_failure",
+     "b_id": "TX_LASER_FAIL",
+     "confidence": 0.99,
+     "rationale": "Both denote failure or loss of output from a transponder transmit laser."
+    },
+    {
+     "a_id": "cau.card_failure",
+     "b_id": "CARD_FAIL",
+     "confidence": 1.0,
+     "rationale": "Both denote a hard card failure."
+    },
+    {
+     "a_id": "cau.receiver_degradation",
+     "b_id": "RX_DEGRADATION",
+     "confidence": 0.99,
+     "rationale": "Both denote degradation of a coherent receiver that impairs signal quality without necessarily removing light."
+    },
+    {
+     "a_id": "cau.a_broken_fibre",
+     "b_id": "FIBRE_CUT",
+     "confidence": 0.99,
+     "rationale": "Both denote a broken or cut fibre that prevents light from passing."
+    },
+    {
+     "a_id": "cau.a_disconnected_patch_cord",
+     "b_id": "CONNECTOR_PULLED",
+     "confidence": 0.99,
+     "rationale": "Both denote disconnection of a connector or patch cord."
+    },
+    {
+     "a_id": "cau.a_rise_in_fibre_loss",
+     "b_id": "SPAN_LOSS_INCREASE",
+     "confidence": 0.98,
+     "rationale": "Both denote increased optical loss in a fibre span or section."
+    },
+    {
+     "a_id": "cau.a_rise_in_an_amplifier_s_noise",
+     "b_id": "AMP_NF_RISE",
+     "confidence": 0.97,
+     "rationale": "A rise in amplifier-added noise corresponds to an increase in the amplifier noise figure."
+    },
+    {
+     "a_id": "cau.a_rise_in_differential_group_delay",
+     "b_id": "DGD_RISE",
+     "confidence": 0.99,
+     "rationale": "Both denote an increase in differential group delay on the fibre path."
+    },
+    {
+     "a_id": "cau.a_fast_polarisation_transient",
+     "b_id": "SOP_TRANSIENT",
+     "confidence": 0.98,
+     "rationale": "Both denote a rapid transient change in optical state of polarisation."
+    },
+    {
+     "a_id": "cau.a_dirty_connector",
+     "b_id": "CONNECTOR_DIRTY",
+     "confidence": 1.0,
+     "rationale": "Both denote connector contamination that adds optical loss."
+    },
+    {
+     "a_id": "cau.any_failure",
+     "b_id": "any_upstream_failure",
+     "confidence": 0.99,
+     "rationale": "Both are generic placeholders for any failure on the path toward the far end."
+    },
+    {
+     "a_id": "cau.pump_or_unit_failure",
+     "b_id": "AMP_PUMP_FAIL",
+     "confidence": 1.0,
+     "rationale": "Both denote failure of an amplifier pump laser or amplifier unit resulting in no output."
+    },
+    {
+     "a_id": "cau.gain_loss",
+     "b_id": "AMP_GAIN_DROP",
+     "confidence": 0.99,
+     "rationale": "Both denote amplifier gain falling below its set point."
+    },
+    {
+     "a_id": "cau.pump_ageing",
+     "b_id": "PUMP_CURRENT_DRIFT",
+     "confidence": 0.99,
+     "rationale": "Both denote ageing of an amplifier pump manifested by increasing pump drive current."
+    },
+    {
+     "a_id": "cau.gain_tilt",
+     "b_id": "AMP_GAIN_TILT",
+     "confidence": 1.0,
+     "rationale": "Both denote amplifier gain becoming non-flat across the optical band."
+    },
+    {
+     "a_id": "cau.switch_fabric_failure",
+     "b_id": "OTN_SWITCH_FAIL",
+     "confidence": 0.99,
+     "rationale": "Both denote hard failure of an OTN switch fabric affecting cross-connected ODUs."
+    },
+    {
+     "a_id": "cau.wrong_cross_connection",
+     "b_id": "XC_MISCONNECT",
+     "confidence": 1.0,
+     "rationale": "Both denote an incorrectly provisioned OTN cross-connect delivering an ODU to the wrong destination."
+    },
+    {
+     "a_id": "cau.client_port_failure",
+     "b_id": "CLIENT_PORT_FAIL",
+     "confidence": 1.0,
+     "rationale": "Both denote failure of a client port or its optical interface."
+    }
+   ],
+   "residual_vendor": [
+    "cau.the_far_end_transmitter_s_laser_has_failed",
+    "cau.the_far_end_card_has_failed",
+    "cau.a_failed_amplifier",
+    "cau.a_blocked_roadm_port",
+    "cau.a_misaligned_roadm_passband",
+    "cau.degradation_of_this_unit_s_own_receiver",
+    "cau.failure",
+    "cau.the_fibre_section_feeding_this_unit_is_broken",
+    "cau.its_loss_has_risen_sharply",
+    "cau.the_preceding_amplifier_has_failed_and_emits_no_light",
+    "cau.the_patch_cord_may_have_been_disconnected",
+    "cau.failure_of_this_unit_s_pump_laser",
+    "cau.failure_of_the_unit_itself",
+    "cau.a_failure_of_the_client_port",
+    "cau.a_wrong_cross_connection",
+    "cau.a_fabric_failure"
+   ],
+   "residual_operator": [
+    "LASER_BIAS_DRIFT",
+    "MARGIN_EROSION",
+    "MECHANICAL_DISTURBANCE",
+    "CHANNEL_LOADING_TRANSIENT",
+    "PROTECTION_SWITCH_HIT",
+    "INSTRUMENT_MISREPORT",
+    "TELEMETRY_STALE",
+    "any_server_failure"
+   ],
+   "effort": {
+    "prompt_tokens": 5366,
+    "completion_tokens": 2242,
+    "total_tokens": 7608,
+    "reasoning_tokens": 1081,
+    "latency_s": 31.95,
+    "model": "gpt-5.6"
+   }
+  },
+  "Nature": {
+   "correspondences": [
+    {
+     "a_id": "nat.a_degradation",
+     "b_id": "soft",
+     "confidence": 0.98,
+     "rationale": "Both denote a non-outage degradation in which service continues with reduced quality."
+    },
+    {
+     "a_id": "nat.hard_failure",
+     "b_id": "hard",
+     "confidence": 0.93,
+     "rationale": "A failed WSS input port is a hard failure and is consistent with the shared category of abrupt traffic loss."
+    },
+    {
+     "a_id": "nat.a_degradation_not_an_outage",
+     "b_id": "soft",
+     "confidence": 0.99,
+     "rationale": "The concept explicitly denotes degradation rather than outage, matching the definition of soft."
+    },
+    {
+     "a_id": "nat.gradual_or_step_degradation_rather_than_an_outage",
+     "b_id": "soft",
+     "confidence": 0.97,
+     "rationale": "Gain loss reduces output quality and signal-to-noise ratio without constituting an outage, which is a soft fault."
+    },
+    {
+     "a_id": "nat.slow_incipient_condition",
+     "b_id": "incipient",
+     "confidence": 0.99,
+     "rationale": "Both denote a slow developing trend that provides warning before failure while traffic remains unaffected."
+    },
+    {
+     "a_id": "nat.degradation_rather_than_an_outage",
+     "b_id": "soft",
+     "confidence": 0.98,
+     "rationale": "Gain tilt impairs some channels without causing an outage, directly matching the soft degradation category."
+    }
+   ],
+   "residual_vendor": [
+    "nat.mostly_just_after_provisioning_changes"
+   ],
+   "residual_operator": [
+    "transient"
+   ],
+   "effort": {
+    "prompt_tokens": 1285,
+    "completion_tokens": 865,
+    "total_tokens": 2150,
+    "reasoning_tokens": 545,
+    "latency_s": 13.72,
+    "model": "gpt-5.6"
+   }
+  },
+  "Scope": {
+   "correspondences": [
+    {
+     "a_id": "sco.that_channel",
+     "b_id": "channel",
+     "confidence": 0.98,
+     "rationale": "The WSS attenuation drift affects one optical channel."
+    },
+    {
+     "a_id": "sco.the_channel",
+     "b_id": "channel",
+     "confidence": 0.98,
+     "rationale": "The shifted or narrowed WSS passband pertains to one optical channel."
+    },
+    {
+     "a_id": "sco.every_channel_arriving_at_the_node_on_that_degree",
+     "b_id": "port",
+     "confidence": 1.0,
+     "rationale": "Both denote all channels arriving on one ROADM degree's input port."
+    },
+    {
+     "a_id": "sco.this_channel",
+     "b_id": "channel",
+     "confidence": 0.99,
+     "rationale": "The failed transmit laser causes loss of one optical channel."
+    },
+    {
+     "a_id": "sco.the_channel_it_transmits",
+     "b_id": "channel",
+     "confidence": 0.97,
+     "rationale": "This is the single optical channel transmitted by the failed card."
+    },
+    {
+     "a_id": "sco.this_receiver_only",
+     "b_id": "this_receiver",
+     "confidence": 1.0,
+     "rationale": "Both explicitly restrict the scope to this receiver alone."
+    },
+    {
+     "a_id": "sco.other_channels",
+     "b_id": "some_channels",
+     "confidence": 0.86,
+     "rationale": "The channels other than the receiver's affected channel form a non-total subset of the multiplex."
+    },
+    {
+     "a_id": "sco.the_unit",
+     "b_id": "unit",
+     "confidence": 0.96,
+     "rationale": "Both denote the equipment unit itself rather than a set of carried traffic."
+    },
+    {
+     "a_id": "sco.every_channel_carried_by_the_unit",
+     "b_id": "all_channels",
+     "confidence": 0.99,
+     "rationale": "Every channel carried by the failed unit is the entire multiplexed channel set at that unit."
+    },
+    {
+     "a_id": "sco.every_channel",
+     "b_id": "all_channels",
+     "confidence": 1.0,
+     "rationale": "Both denote every channel in the multiplexed signal."
+    },
+    {
+     "a_id": "sco.traffic",
+     "b_id": "all_channels",
+     "confidence": 0.82,
+     "rationale": "In the amplifier context, unaffected traffic comprises all multiplexed channels carried by the unit."
+    },
+    {
+     "a_id": "sco.channels_at_one_edge_of_the_band",
+     "b_id": "some_channels",
+     "confidence": 0.99,
+     "rationale": "Band-edge channels are the canonical example of some, but not all, multiplexed channels."
+    },
+    {
+     "a_id": "sco.some_channels_not_all",
+     "b_id": "some_channels",
+     "confidence": 1.0,
+     "rationale": "The meanings are explicitly identical: some channels, not all."
+    },
+    {
+     "a_id": "sco.every_odu_cross_connected_through_the_switch",
+     "b_id": "every_odu_through",
+     "confidence": 1.0,
+     "rationale": "Both denote every ODU cross-connected through the switch."
+    },
+    {
+     "a_id": "sco.each",
+     "b_id": "every_odu_through",
+     "confidence": 0.93,
+     "rationale": "In context, 'each' refers distributively to every ODU cross-connected through the switch."
+    },
+    {
+     "a_id": "sco.one_odu",
+     "b_id": "one_odu",
+     "confidence": 1.0,
+     "rationale": "Both denote a single ODU."
+    },
+    {
+     "a_id": "sco.the_client_service",
+     "b_id": "this_service",
+     "confidence": 0.99,
+     "rationale": "Both denote the particular client service affected by the client-port failure."
+    }
+   ],
+   "residual_vendor": [
+    "sco.channels_arriving_on_the_other_degrees",
+    "sco.the_traffic_it_receives",
+    "sco.its_monitoring",
+    "sco.its_traffic_alarms",
+    "sco.the_optical_path",
+    "sco.the_trend",
+    "sco.the_client_optic",
+    "sco.the_port"
+   ],
+   "residual_operator": [],
+   "effort": {
+    "prompt_tokens": 3165,
+    "completion_tokens": 2398,
+    "total_tokens": 5563,
+    "reasoning_tokens": 1617,
+    "latency_s": 34.61,
+    "model": "gpt-5.6"
+   }
+  },
+  "Location": {
+   "correspondences": [
+    {
+     "a_id": "loc.this_unit",
+     "b_id": "this_unit",
+     "confidence": 0.99,
+     "rationale": "Both denote the local unit against which the alarm is raised."
+    },
+    {
+     "a_id": "loc.this_port",
+     "b_id": "this_port",
+     "confidence": 0.99,
+     "rationale": "Both denote the local port that raised or is associated with the alarm."
+    },
+    {
+     "a_id": "loc.the_fibre_section_feeding_this_unit",
+     "b_id": "upstream_span",
+     "confidence": 0.98,
+     "rationale": "The fibre section feeding the unit is the immediately preceding upstream fibre span."
+    },
+    {
+     "a_id": "loc.the_preceding_amplifier",
+     "b_id": "upstream_amplifier",
+     "confidence": 0.98,
+     "rationale": "Both denote the amplifier immediately upstream of the unit."
+    },
+    {
+     "a_id": "loc.at_the_input_of_the_multiplex_section",
+     "b_id": "oms_input",
+     "confidence": 0.98,
+     "rationale": "Both denote the input connection of the optical multiplex section."
+    },
+    {
+     "a_id": "loc.along_the_channel_s_path",
+     "b_id": "upstream_on_path",
+     "confidence": 0.91,
+     "rationale": "In the OCH_LOS context, a break along the incoming channel path is a failure somewhere upstream on that path."
+    },
+    {
+     "a_id": "loc.the_far_end_transmitter",
+     "b_id": "far_end_transmitter",
+     "confidence": 0.99,
+     "rationale": "Both denote the remote transmitting line interface feeding the local receiver."
+    },
+    {
+     "a_id": "loc.the_receiver_at_the_far_end",
+     "b_id": "far_end_receiver",
+     "confidence": 0.99,
+     "rationale": "Both denote the remote receiver that receives the signal transmitted by the local side."
+    },
+    {
+     "a_id": "loc.on_the_path_to_the_far_end",
+     "b_id": "path_to_far_end",
+     "confidence": 0.9,
+     "rationale": "Both denote the network path between the local unit and the far-end line interface, despite a directional wording difference."
+    },
+    {
+     "a_id": "loc.at_either_end",
+     "b_id": "either_port",
+     "confidence": 0.96,
+     "rationale": "In context, 'either end' means either client-service endpoint port."
+    },
+    {
+     "a_id": "loc.in_an_otn_switch_along_the_odu_path",
+     "b_id": "odu_path_switch",
+     "confidence": 0.98,
+     "rationale": "Both denote an OTN switch or cross-connect situated on the service's ODU path."
+    },
+    {
+     "a_id": "loc.on_the_working_odu_path",
+     "b_id": "working_odu_path",
+     "confidence": 0.99,
+     "rationale": "Both denote the working ODU path and the resources on which it depends."
+    },
+    {
+     "a_id": "loc.on_the_protection_odu_path",
+     "b_id": "protection_odu_path",
+     "confidence": 0.99,
+     "rationale": "Both denote the protection ODU path and the resources on which it depends."
+    },
+    {
+     "a_id": "loc.on_the_odu_path_currently_in_use",
+     "b_id": "active_odu_path",
+     "confidence": 0.99,
+     "rationale": "Both denote whichever ODU path is currently carrying the service."
+    }
+   ],
+   "residual_vendor": [
+    "loc.after_the_node",
+    "loc.there",
+    "loc.at_the_far_end",
+    "loc.here",
+    "loc.this_receiver",
+    "loc.the_far_end",
+    "loc.the_line_receiver",
+    "loc.this_unit_s_own_receiver",
+    "loc.the_signal_this_unit_transmits",
+    "loc.on_this_unit",
+    "loc.this_card",
+    "loc.the_output",
+    "loc.downstream",
+    "loc.the_fibre_section_feeding_the_unit_not_against_the_unit_itse",
+    "loc.through_the_switch",
+    "loc.the_wrong_destination",
+    "loc.client_port",
+    "loc.this_switch_s_fabric",
+    "loc.otn_switch"
+   ],
+   "residual_operator": [
+    "upstream_roadm_channel"
+   ],
+   "effort": {
+    "prompt_tokens": 4073,
+    "completion_tokens": 2982,
+    "total_tokens": 7055,
+    "reasoning_tokens": 2199,
+    "latency_s": 42.19,
+    "model": "gpt-5.6"
+   }
+  },
+  "Severity": {
+   "correspondences": [
+    {
+     "a_id": "sev.critical",
+     "b_id": "critical",
+     "confidence": 1.0,
+     "rationale": "Both denote the critical alarm severity."
+    },
+    {
+     "a_id": "sev.minor",
+     "b_id": "minor",
+     "confidence": 1.0,
+     "rationale": "Both denote the minor alarm severity."
+    },
+    {
+     "a_id": "sev.not_alarmed",
+     "b_id": "not_alarmed",
+     "confidence": 1.0,
+     "rationale": "Both denote a reported condition that is not alarmed."
+    },
+    {
+     "a_id": "sev.major",
+     "b_id": "major",
+     "confidence": 1.0,
+     "rationale": "Both denote the major alarm severity."
+    }
+   ],
+   "residual_vendor": [],
+   "residual_operator": [],
+   "effort": {
+    "prompt_tokens": 834,
+    "completion_tokens": 147,
+    "total_tokens": 981,
+    "reasoning_tokens": 0,
+    "latency_s": 2.09,
+    "model": "gpt-5.6"
+   }
+  }
+ }
+}

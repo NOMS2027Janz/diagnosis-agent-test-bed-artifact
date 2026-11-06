@@ -1,0 +1,9 @@
+{
+ "kind": "sig",
+ "seed": "dev",
+ "degradation": {
+  "signatures_removed": 27,
+  "probable_causes_removed": 40
+ },
+ "types": {}
+}

@@ -1,0 +1,465 @@
+{
+ "vendor": "VC",
+ "document_title": "VC OFA Series Optical Fibre Amplifiers, Service Handbook SH-OFA, edition 4",
+ "standards": [],
+ "unit_types": [
+  {
+   "product_code": "VC-OFA-T",
+   "unit": "launch OFA",
+   "role_or_position": "where a wavelength section leaves the wavelength router",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VC-OFA-M",
+   "unit": "mid-span OFA",
+   "role_or_position": "in repeater shelters between terminals",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VC-OFA-R",
+   "unit": "landing OFA",
+   "role_or_position": "where a wavelength section arrives at the next wavelength router",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "Rated noise figure",
+   "value": "5.5 dB, 6.5 dB at worst"
+  },
+  {
+   "item": "input dark",
+   "value": "below -30 dBm per wavelength"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "P-IN",
+   "measures": [
+    "Aggregate optical power entering the module"
+   ],
+   "availability": "Optical Power pack",
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "P-OUT",
+   "measures": [
+    "Aggregate optical power leaving the module"
+   ],
+   "availability": "Optical Power pack",
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "I-PUMP",
+   "measures": [
+    "Pump drive, as a share of the value at commissioning"
+   ],
+   "availability": "Insight pack",
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "SV-RX",
+   "measures": [
+    "Whether the supervisory link is being received"
+   ],
+   "availability": "Base",
+   "applies_to": [
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "location": null,
+   "alarm_only": true
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "when": [
+    "At installation"
+   ],
+   "result": [
+    "the gain is set to cancel the attenuation of the fibre length that feeds the module",
+    "the module keeps that gain from then on"
+   ],
+   "threshold": null,
+   "note": "An OFA holds a fixed gain."
+  },
+  {
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "when": [
+    "When the incoming light weakens"
+   ],
+   "result": [
+    "the outgoing light weakens by the same amount",
+    "every wavelength carried gets noisier"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "when": [
+    "When the incoming light disappears"
+   ],
+   "result": [
+    "the outgoing light disappears too"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "when": [
+    "Anything else the module receives"
+   ],
+   "result": [
+    "it sends on as it is"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "when": [
+    "Every shelter"
+   ],
+   "result": [
+    "ends the supervisory link it receives",
+    "starts a fresh one on the next fibre length"
+   ],
+   "threshold": null,
+   "note": "The supervisory link is local to each fibre length."
+  },
+  {
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "when": [
+    "a supervisory outage"
+   ],
+   "result": [
+    "never spreads beyond the fibre length where it occurs"
+   ],
+   "threshold": null,
+   "note": null
+  }
+ ],
+ "faults": [
+  {
+   "name": "Amplifier outage",
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "description": "The pump or the whole module dies.",
+   "effects": [
+    {
+     "effect": "nothing leaves the module",
+     "scope": "the module",
+     "where": null
+    },
+    {
+     "effect": "is gone",
+     "scope": "every wavelength it carried",
+     "where": null
+    }
+   ],
+   "character": "An outage.",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "modules a year"
+  },
+  {
+   "name": "Gain sag",
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "description": "The gain falls short of its setting.",
+   "effects": [
+    {
+     "effect": "leaves the module weaker",
+     "scope": "every wavelength",
+     "where": null
+    },
+    {
+     "effect": "leaves the module noisier",
+     "scope": "every wavelength",
+     "where": null
+    }
+   ],
+   "character": "A degradation.",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "modules a year"
+  },
+  {
+   "name": "Excess noise",
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "description": "The amplifying stage adds more noise than its rating.",
+   "effects": [
+    {
+     "effect": "look normal",
+     "scope": "Output levels",
+     "where": null
+    },
+    {
+     "effect": "is noisier",
+     "scope": "every wavelength",
+     "where": "downstream"
+    }
+   ],
+   "character": "A degradation.",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "modules a year"
+  },
+  {
+   "name": "Pump wear-out",
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "description": "I-PUMP creeps up as the module works harder to hold its gain, and the trend ends in PUMP-EOL.",
+   "effects": [
+    {
+     "effect": "creeps up",
+     "scope": "I-PUMP",
+     "where": "this module"
+    },
+    {
+     "effect": "ends in PUMP-EOL",
+     "scope": "the trend",
+     "where": "this module"
+    },
+    {
+     "effect": "no service effect until late",
+     "scope": "service",
+     "where": null
+    }
+   ],
+   "character": "Slow",
+   "rate_per_year_fraction": 0.02,
+   "rate_per": "modules a year"
+  },
+  {
+   "name": "Spectral tilt",
+   "applies_to": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "description": "The gain is no longer even across the band.",
+   "effects": [
+    {
+     "effect": "come out weaker",
+     "scope": "the wavelengths at one end of the band",
+     "where": null
+    }
+   ],
+   "character": "A degradation.",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "modules a year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "IN-DARK",
+   "raised_by": [
+    "VC-OFA-M"
+   ],
+   "severity": "urgent",
+   "monitor": "P-IN",
+   "symptom": "no light",
+   "raised_when": "P-IN shows no light",
+   "probable_causes": [
+    {
+     "cause": "it may be severed",
+     "where": "the fibre length feeding the module"
+    },
+    {
+     "cause": "its attenuation may have jumped",
+     "where": "the fibre length feeding the module"
+    },
+    {
+     "cause": "may be out of service",
+     "where": "the OFA before that fibre length"
+    }
+   ],
+   "suppression": "Only the first module along the section to lose its input raises IN-DARK; the modules after it are muted by a downstream defect flag sent on the supervisory link.",
+   "reported_against": null
+  },
+  {
+   "id": "SEC-IN-DARK",
+   "raised_by": [
+    "VC-OFA-R"
+   ],
+   "severity": "urgent",
+   "monitor": "P-IN",
+   "symptom": "no light",
+   "raised_when": "P-IN shows no light",
+   "probable_causes": [
+    {
+     "cause": "it may be severed",
+     "where": "the fibre length feeding the module"
+    },
+    {
+     "cause": "its attenuation may have jumped",
+     "where": "the fibre length feeding the module"
+    },
+    {
+     "cause": "may be out of service",
+     "where": "the OFA before that fibre length"
+    },
+    {
+     "cause": "may have been unplugged",
+     "where": "the patch lead at the head of the wavelength section"
+    }
+   ],
+   "suppression": "Muted in the same way as IN-DARK.",
+   "reported_against": null
+  },
+  {
+   "id": "SV-LOSS",
+   "raised_by": [
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "severity": "important",
+   "monitor": "SV-RX",
+   "symptom": "receives nothing",
+   "raised_when": "SV-RX receives nothing",
+   "probable_causes": [
+    {
+     "cause": "is severed",
+     "where": "the fibre length feeding the module"
+    },
+    {
+     "cause": "its attenuation has jumped",
+     "where": "the fibre length feeding the module"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "that fibre length"
+  },
+  {
+   "id": "OUT-DARK",
+   "raised_by": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "severity": "urgent",
+   "monitor": "P-OUT",
+   "symptom": "no light although light is entering",
+   "raised_when": "P-OUT shows no light although light is entering",
+   "probable_causes": [
+    {
+     "cause": "is out of service",
+     "where": "The module itself"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "GAIN-DEV",
+   "raised_by": [
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "severity": "advisory",
+   "monitor": null,
+   "symptom": "the gain strays more than 2 dB from its setting",
+   "raised_when": "the gain strays more than 2 dB from its setting",
+   "probable_causes": [
+    {
+     "cause": "the module is out of service",
+     "where": "in this module"
+    },
+    {
+     "cause": "its gain has sagged",
+     "where": "in this module"
+    },
+    {
+     "cause": "its pump is wearing out",
+     "where": "in this module"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "PUMP-EOL",
+   "raised_by": [
+    "VC-OFA-T",
+    "VC-OFA-M",
+    "VC-OFA-R"
+   ],
+   "severity": "advisory",
+   "monitor": "I-PUMP",
+   "symptom": "I-PUMP passes 120 per cent of its commissioning value",
+   "raised_when": "I-PUMP passes 120 per cent of its commissioning value",
+   "probable_causes": [
+    {
+     "cause": "pump wear-out",
+     "where": "in this module"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  }
+ ],
+ "routing": null,
+ "troubleshooting_notes": [
+  "Look first at the fibre length feeding the module: it may be severed, or its attenuation may have jumped.",
+  "Otherwise the OFA before that fibre length may be out of service."
+ ]
+}

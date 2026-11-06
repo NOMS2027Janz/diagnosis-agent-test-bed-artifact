@@ -1,0 +1,79 @@
+{
+ "version": "0.1",
+ "train_cases": 6000,
+ "held_cases": 1000,
+ "epochs": 25,
+ "hidden": 32,
+ "layers": 3,
+ "loss": [
+  "epoch 23/25 loss 0.1400",
+  "epoch 24/25 loss 0.1402",
+  "epoch 25/25 loss 0.1386"
+ ],
+ "cases": 1000,
+ "faults": 1317,
+ "mean_pool": 310.534,
+ "recall_at_1": 0.5991,
+ "recall_at_3": 0.8147,
+ "recall_at_5": 0.8762,
+ "recall_at_10": 0.9134,
+ "by_class": {
+  "FIBRE_CUT": {
+   "faults": 106,
+   "recall_at_3": 0.981
+  },
+  "SPAN_LOSS_INCREASE": {
+   "faults": 94,
+   "recall_at_3": 0.957
+  },
+  "DGD_RISE": {
+   "faults": 89,
+   "recall_at_3": 0.416
+  },
+  "CONNECTOR_PULLED": {
+   "faults": 89,
+   "recall_at_3": 0.978
+  },
+  "CONNECTOR_DIRTY": {
+   "faults": 70,
+   "recall_at_3": 1.0
+  },
+  "AMP_PUMP_FAIL": {
+   "faults": 95,
+   "recall_at_3": 0.968
+  },
+  "AMP_GAIN_DROP": {
+   "faults": 102,
+   "recall_at_3": 0.98
+  },
+  "AMP_NF_RISE": {
+   "faults": 94,
+   "recall_at_3": 0.309
+  },
+  "WSS_ATTEN_DRIFT": {
+   "faults": 76,
+   "recall_at_3": 0.947
+  },
+  "WSS_FILTER_SHIFT": {
+   "faults": 83,
+   "recall_at_3": 0.458
+  },
+  "RX_DEGRADATION": {
+   "faults": 53,
+   "recall_at_3": 0.491
+  },
+  "TX_LASER_FAIL": {
+   "faults": 54,
+   "recall_at_3": 0.87
+  },
+  "CARD_FAIL": {
+   "faults": 58,
+   "recall_at_3": 0.983
+  },
+  "INSTRUMENT_MISREPORT": {
+   "faults": 254,
+   "recall_at_3": 0.882
+  }
+ },
+ "seconds": 3440
+}

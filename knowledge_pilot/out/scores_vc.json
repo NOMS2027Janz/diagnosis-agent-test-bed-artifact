@@ -1,0 +1,144 @@
+{
+ "v2.VC-op.none": {
+  "proposed": 95,
+  "correct": 95,
+  "wrong": 0,
+  "precision": 1.0,
+  "forced": 0,
+  "confident_errors": 0,
+  "concept_recall_a": 0.549,
+  "unknown_ids": 0,
+  "meaning_recall": 0.896,
+  "shared_meanings": 106,
+  "wrong_examples": [],
+  "effort_tokens": 36640
+ },
+ "v2.VC-op.constructed": {
+  "proposed": 106,
+  "correct": 104,
+  "wrong": 2,
+  "precision": 0.981,
+  "forced": 1,
+  "confident_errors": 2,
+  "concept_recall_a": 0.601,
+  "unknown_ids": 0,
+  "meaning_recall": 0.877,
+  "shared_meanings": 106,
+  "wrong_examples": [
+   [
+    "service",
+    "op.this_service",
+    0.97
+   ],
+   [
+    "passes_odu_ais",
+    "op.pass",
+    0.99
+   ]
+  ],
+  "effort_tokens": 88941
+ },
+ "v2.VC-op.given": {
+  "proposed": 93,
+  "correct": 93,
+  "wrong": 0,
+  "precision": 1.0,
+  "forced": 0,
+  "confident_errors": 0,
+  "concept_recall_a": 0.538,
+  "unknown_ids": 0,
+  "meaning_recall": 0.849,
+  "shared_meanings": 106,
+  "wrong_examples": [],
+  "effort_tokens": 42613
+ },
+ "v2.VA-VC.none": {
+  "proposed": 177,
+  "correct": 175,
+  "wrong": 2,
+  "precision": 0.989,
+  "forced": 2,
+  "confident_errors": 2,
+  "concept_recall_a": 0.833,
+  "unknown_ids": 0,
+  "concept_recall_b": 0.795,
+  "meaning_recall": 0.926,
+  "shared_meanings": 148,
+  "wrong_examples": [
+   [
+    "condition.precedes_tx_laser_failure",
+    "eventual_dark_transmitter",
+    0.94
+   ],
+   [
+    "location.at_node",
+    "router_location",
+    0.96
+   ]
+  ],
+  "effort_tokens": 51513
+ },
+ "v3.VC-op.none": {
+  "proposed": 92,
+  "correct": 92,
+  "wrong": 0,
+  "precision": 1.0,
+  "forced": 0,
+  "confident_errors": 0,
+  "concept_recall_a": 0.63,
+  "unknown_ids": 0,
+  "meaning_recall": 0.868,
+  "shared_meanings": 106,
+  "wrong_examples": [],
+  "effort_tokens": 36180
+ },
+ "v3.VC-op.constructed": {
+  "proposed": 101,
+  "correct": 101,
+  "wrong": 0,
+  "precision": 1.0,
+  "forced": 0,
+  "confident_errors": 0,
+  "concept_recall_a": 0.692,
+  "unknown_ids": 0,
+  "meaning_recall": 0.877,
+  "shared_meanings": 106,
+  "wrong_examples": [],
+  "effort_tokens": 84152
+ },
+ "v3.VC-op.given": {
+  "proposed": 102,
+  "correct": 102,
+  "wrong": 0,
+  "precision": 1.0,
+  "forced": 0,
+  "confident_errors": 0,
+  "concept_recall_a": 0.699,
+  "unknown_ids": 0,
+  "meaning_recall": 0.858,
+  "shared_meanings": 106,
+  "wrong_examples": [],
+  "effort_tokens": 39298
+ },
+ "v3.VA-VC.none": {
+  "proposed": 143,
+  "correct": 142,
+  "wrong": 1,
+  "precision": 0.993,
+  "forced": 1,
+  "confident_errors": 1,
+  "concept_recall_a": 0.821,
+  "unknown_ids": 0,
+  "concept_recall_b": 0.754,
+  "meaning_recall": 0.885,
+  "shared_meanings": 148,
+  "wrong_examples": [
+   [
+    "condition.every_hut_terminates_the_optical_supervisory_cha",
+    "condition.every_shelter",
+    0.98
+   ]
+  ],
+  "effort_tokens": 49767
+ }
+}

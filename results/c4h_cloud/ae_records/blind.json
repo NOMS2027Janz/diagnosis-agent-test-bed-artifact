@@ -1,0 +1,802 @@
+[
+ {
+  "seed": 7000,
+  "question": "The customer on service svc155 (10GE between S07 and S15) reports a loss of service from about t=480 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by OTN_SWITCH_FAIL@el:otn.S08(), with 95.5% confidence. No checks were reported. Diagnostic effort was 0.0 hours, with no site visits.",
+  "B": "Cause: OTN_SWITCH_FAIL@el:otn.S08() (probability 0.955). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7001,
+  "question": "Performance monitoring shows degraded signal quality on service svc337 (100GE between S08 and S12) from about t=540 s. What is the cause?",
+  "A": "The system localized the degradation to OMS S12\u2013S15 with 0.995 probability. It did not identify a specific amplifier or fault type. No checks were recorded, and no diagnostic effort or site visits were reported.",
+  "B": "The cause lies at oms.S12-S15 (oms grain, probability 0.995); the exact cause could not be settled among: AMP_GAIN_DROP@el:oms.S12-S15.amp0(), AMP_GAIN_DROP@el:oms.S12-S15.amp1(), AMP_GAIN_DROP@el:oms.S12-S15.amp2(), AMP_GAIN_DROP@el:oms.S12-S15.amp3(), AMP_GAIN_DROP@el:oms.S12-S15.amp4(), AMP_GAIN_TILT@el:oms.S12-S15.amp0(), AMP_GAIN_TILT@el:oms.S12-S15.amp1(), AMP_GAIN_TILT@el:oms.S12-S15.amp2(). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7002,
+  "question": "The customer on service svc149 (100GE between S11 and S06) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "The system could not determine the cause. Its only candidate is `NONE_OF_THESE`, with 0.95 probability assigned to that candidate set, indicating the cause was probably not among those considered. No checks were performed, so there are no diagnostic results to distinguish a specific cause. Investigation must therefore continue without a supported cause from this analysis.",
+  "B": "The cause could not be decided. Candidates: NONE_OF_THESE. The cause was probably not among those proposed. Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7003,
+  "question": "Monitoring shows the transmit laser bias current of trx.och117.a rising over about 12 days, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "The system committed to laser bias drift at trx.och117.a as the cause, with 0.999 probability. No diagnostic checks were recorded, and the assessment required no engineering effort or site visits. The summary does not specify whether corrective action is needed.",
+  "B": "Cause: LASER_BIAS_DRIFT@el:trx.och117.a() (probability 0.999). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7004,
+  "question": "Monitoring shows the received power reported by trx.och75.z unchanged since about t=600 s while neighbouring readings vary. What is the cause?",
+  "A": "The system could not determine a single cause. It assigned 0.92 probability to the candidate set, not to any individual candidate. The candidates are WSS attenuation drift, instrument misreporting, stale telemetry, WSS filter shift, amplifier gain tilt, or none of these. The oms.S08-S24.amp6 unit was swapped, but the symptoms remained unchanged, so that check did not distinguish among the candidates. The system did not flag a probable unconsidered cause. No further diagnostic step was specified.",
+  "B": "The cause could not be decided. Candidates: WSS_ATTEN_DRIFT@el:oms.S08-S24|3(), INSTRUMENT_MISREPORT@el:inst.trx.och75.z.rx_power(), TELEMETRY_STALE@el:inst.trx.och75.z.rx_power(), NONE_OF_THESE, WSS_FILTER_SHIFT@el:oms.S08-S24|3(), AMP_GAIN_TILT@el:oms.S08-S24.amp6(). Checks made: swap_unit {'unit': 'oms.S08-S24.amp6'}: done. Effort: 2.51 h of tests and travel, 1 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7005,
+  "question": "The customer on service svc245 (100GE between S12 and S05) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "Cause: FIBRE_CUT@el:oms.S12-S15.span1() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the service loss was caused by a fibre cut on span 1 of the S12\u2013S15 OMS: `FIBRE_CUT@el:oms.S12-S15.span1()`. Confidence is 100%. No checks, engineering effort, or site visits were recorded.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7006,
+  "question": "The customer on service svc328 (100GE between S20 and S01) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by a pulled connector on the S09\u2013S12 OMS link (`CONNECTOR_PULLED@el:oms.S09-S12()`). Confidence is very high: 0.998. No checks were reported. Diagnostic effort was 0.0 hours, with no site visits.",
+  "B": "Cause: CONNECTOR_PULLED@el:oms.S09-S12() (probability 0.998). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7007,
+  "question": "The customer on service svc266 (10GE between S18 and S24) reports a loss of service from about t=540 s. What is the cause?",
+  "A": "Cause: FIBRE_CUT@el:oms.S17-S18.span3()+FIBRE_CUT@el:oms.S18-S24.span0() (probability 0.996). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the service loss was caused by two fibre cuts: one on OMS S17\u2013S18 span 3 and one on OMS S18\u2013S24 span 0. Confidence is 99.6%. No additional checks, engineering effort, or site visits were recorded.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7008,
+  "question": "The customer on service svc052 (10GE between S21 and S03) reports a loss of service from about t=480 s. What is the cause?",
+  "A": "The system concluded that the service loss was caused by CLIENT_PORT_FAIL@el:cp.svc052.S03(), with 92.5% confidence. No checks were reported. Diagnostic effort was 0.0 hours, with no site visits.",
+  "B": "Cause: CLIENT_PORT_FAIL@el:cp.svc052.S03() (probability 0.925). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7009,
+  "question": "Performance monitoring shows degraded signal quality on service svc396 (10GE between S13 and S02) from about t=540 s. What is the cause?",
+  "A": "The system concluded that the degraded signal quality on svc396 was caused by a dirty connector on the S13\u2013S01 optical multiplex section: CONNECTOR_DIRTY@el:oms.S13-S01(). Confidence is 99.7%. No checks, engineering effort, or site visits were recorded.",
+  "B": "Cause: CONNECTOR_DIRTY@el:oms.S13-S01() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7010,
+  "question": "Alarm OTU_LOF (critical) was raised on trx.och177.a at about t=600 s. What is the cause?",
+  "A": "The cause lies at oms.S18-S24 (oms grain, probability 0.986); the exact cause could not be settled among: AMP_GAIN_TILT@el:oms.S18-S24.amp4(), AMP_NF_RISE@el:oms.S18-S24.amp0(), AMP_NF_RISE@el:oms.S18-S24.amp1(), AMP_NF_RISE@el:oms.S18-S24.amp2(), AMP_NF_RISE@el:oms.S18-S24.amp3(), AMP_NF_RISE@el:oms.S18-S24.amp4(), DGD_RISE@el:oms.S18-S24.span0(), DGD_RISE@el:oms.S18-S24.span1(). Checks made: swap_unit {'unit': 'trx.och177.a'}: done. Effort: 2.74 h of tests and travel, 1 site visit(s).",
+  "B": "The system localized the fault to OMS oms.S18-S24 with confidence 0.986, but did not determine a specific component-level cause. The unresolved candidates are AMP_GAIN_TILT at amp4; AMP_NF_RISE at amp0, amp1, amp2, amp3, or amp4; and DGD_RISE at span0 or span1, all within oms.S18-S24. A swap of trx.och177.a was completed, and the symptoms remained unchanged. No further action was specified by the diagnosis.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7011,
+  "question": "Monitoring shows the pre-FEC bit error rate on the channel received at trx.och91.a rising over about 4 days, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "Cause: MARGIN_EROSION@el:trx.och91.a() (probability 0.999). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that margin erosion is occurring at trx.och91.a, with 0.999 confidence. It committed specifically to MARGIN_EROSION@el:trx.och91.a(). No diagnostic checks were recorded, and the analysis required no engineering effort or site visits. The supplied result does not determine whether operational action is needed, so no action recommendation can be made from this diagnosis alone.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7012,
+  "question": "Monitoring shows the input and output power reported by oms.S20-S14.amp0 changed by about -5.8 dB at about t=600 s, with no alarm. What is the cause?",
+  "A": "Cause: INSTRUMENT_MISREPORT@el:inst.oms.S20-S14.amp0.input_power() (probability 0.935). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the cause is instrument misreporting at the input-power measurement of oms.S20-S14.amp0 (`INSTRUMENT_MISREPORT@el:inst.oms.S20-S14.amp0.input_power()`). Confidence is 93.5%. No checks, engineering effort, or site visits were recorded.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7013,
+  "question": "The customer on service svc364 (100GE between S17 and S14) reports a loss of service from about t=720 s. What is the cause?",
+  "A": "The system could not identify a specific cause. Its candidate result is NONE_OF_THESE, with probability 1.0 for that set, and it indicates that the actual cause was probably not considered. Investigate causes outside the evaluated set.\n\nThe PM check on trx.och192.a shows receive power becoming unavailable at t=600 s with 1 errored second, followed by 60 errored seconds at both t=660 s and t=720 s. The coherent diagnostic on trx.och217.z found an estimated OSNR of 28.49 dB, pre-FEC BER of 0.03530404181068076, and margin of -0.51 dB.",
+  "B": "The cause could not be decided. Candidates: NONE_OF_THESE. The cause was probably not among those proposed. Checks made: coherent_diag {'trx': 'trx.och217.z'}: done; pm_detail {'trx': 'trx.och192.a'}: done. Effort: 0.07 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7014,
+  "question": "The customer on service svc290 (10GE between S18 and S03) reports a loss of service from about t=540 s. What is the cause?",
+  "A": "The system concluded that the service loss was caused by TX_LASER_FAIL@el:trx.och172.a(). Confidence is 100%. No checks, diagnostic effort, or site visits were recorded.",
+  "B": "Cause: TX_LASER_FAIL@el:trx.och172.a() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7015,
+  "question": "The customer on service svc183 (100GE between S05 and S16) reports a loss of service from about t=720 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by simultaneous fibre cuts on OMS spans S03\u2013S16 span 2 and S07\u2013S16 span 2. Confidence is 99.6%. No checks, engineering effort, or site visits were recorded.",
+  "B": "Cause: FIBRE_CUT@el:oms.S03-S16.span2()+FIBRE_CUT@el:oms.S07-S16.span2() (probability 0.996). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7016,
+  "question": "The customer on service svc026 (10GE between S05 and S19) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "Cause: CLIENT_PORT_FAIL@el:cp.svc026.S19() (probability 0.925). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the service loss was caused by CLIENT_PORT_FAIL@el:cp.svc026.S19(), i.e. a client-port failure on svc026 at S19. Confidence is 92.5%. No checks were reported. Diagnostic effort was 0.0 hours, with no site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7017,
+  "question": "The customer on service svc203 (400GE between S14 and S15) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by RX_DEGRADATION@el:trx.och132.z(), with confidence 0.851. Coherent diagnostics on trx.och132.z showed a -0.36 dB margin and pre-FEC BER of 0.020521324486005132. Performance monitoring recorded 60 errored seconds at t=600 s and t=660 s; RX minimum power at t=660 s was -6.39 dBm. The loopback at cp.svc203.S15 passed.",
+  "B": "Cause: RX_DEGRADATION@el:trx.och132.z() (probability 0.851). Checks made: coherent_diag {'trx': 'trx.och132.z'}: done; pm_detail {'trx': 'trx.och132.z'}: done; loopback {'port': 'cp.svc203.S15'}: done. Effort: 0.23 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7018,
+  "question": "Performance monitoring shows degraded signal quality on service svc179 (100GE between S17 and S06) from about t=660 s. What is the cause?",
+  "A": "Cause: MECHANICAL_DISTURBANCE@el:oms.S06-S21.span4() (probability 0.987). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the degraded signal quality on svc179 was caused by a mechanical disturbance at el:oms.S06-S21.span4(). Confidence is high: probability 0.987. No checks were reported, and the diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7019,
+  "question": "Monitoring shows the pre-FEC bit error rate on the channel received at trx.och130.a rising over about 13 days, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "Cause: MARGIN_EROSION@el:trx.och130.a() (probability 0.999). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that margin erosion is occurring at trx.och130.a, with 0.999 confidence. It committed to this cause rather than presenting alternatives. No diagnostic checks were reported, and the assessment required no recorded engineering effort or site visits. The summary does not specify a corrective action, so no action recommendation can be made from these results alone.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7020,
+  "question": "Monitoring shows the input and output power reported by oms.S16-S03.amp3 unchanged since about t=600 s while neighbouring readings vary. What is the cause?",
+  "A": "The system could not determine a single cause. It assigned 0.922 probability to the candidate set: three WSS attenuation-drift faults, input-power instrument misreporting, stale input-power telemetry, or NONE_OF_THESE. It did not flag a likely unconsidered cause. No checks were performed, no diagnostic effort was recorded, and no site visits occurred, so the available result does not support narrowing the candidates or prescribing a specific next action.",
+  "B": "The cause could not be decided. Candidates: WSS_ATTEN_DRIFT@el:oms.S16-S22|7(), WSS_ATTEN_DRIFT@el:oms.S03-S16|7(), WSS_ATTEN_DRIFT@el:oms.S22-S17|7(), INSTRUMENT_MISREPORT@el:inst.oms.S16-S03.amp3.input_power(), TELEMETRY_STALE@el:inst.oms.S16-S03.amp3.input_power(), NONE_OF_THESE. Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7021,
+  "question": "The customer on service svc365 (10GE between S11 and S17) reports a brief interruption from about t=720 s. What is the cause?",
+  "A": "The cause could not be decided. Candidates: WSS_FILTER_SHIFT@el:oms.S17-S18|20()+XC_MISCONNECT@el:otn.S21|odu.svc365.w(), WSS_FILTER_SHIFT@el:oms.S18-S19|20()+XC_MISCONNECT@el:otn.S21|odu.svc365.w(), WSS_FILTER_SHIFT@el:oms.S19-S21|20()+XC_MISCONNECT@el:otn.S21|odu.svc365.w(), MARGIN_EROSION@el:trx.och46.z()+XC_MISCONNECT@el:otn.S21|odu.svc365.w(). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system could not decide among four candidate causes. The candidate set has probability 0.958:\n\n- WSS filter shift on OMS S17\u2013S18, channel 20, plus an XC misconnect at S21 for svc365\n- WSS filter shift on OMS S18\u2013S19, channel 20, plus the same XC misconnect\n- WSS filter shift on OMS S19\u2013S21, channel 20, plus the same XC misconnect\n- Margin erosion at transceiver och46.z, plus the same XC misconnect\n\nNo checks were performed, and no effort or site visits were recorded. The system indicates that the cause was probably not omitted from consideration. Further investigation is needed to distinguish among the listed candidates.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7022,
+  "question": "Performance monitoring shows degraded signal quality on service svc014 (10GE between S10 and S11) from about t=720 s. What is the cause?",
+  "A": "Cause: CONNECTOR_DIRTY@el:oms.S12-S11() (probability 0.998). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the degraded signal quality on svc014 was caused by a dirty connector on oms.S12-S11. Confidence is 99.8%. No checks were reported. The diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7023,
+  "question": "The customer on service svc038 (10GE between S12 and S21) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "Cause: FIBRE_CUT@el:oms.S01-S15.span2()+FIBRE_CUT@el:oms.S12-S15.span3() (probability 0.996). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the service loss was caused by concurrent fibre cuts on OMS S01\u2013S15 span 2 and OMS S12\u2013S15 span 3. Confidence is 99.6%. No checks, engineering effort, or site visits were recorded.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7024,
+  "question": "The customer on service svc186 (100GE between S19 and S12) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "The system concluded that the service loss was caused by AMP_PUMP_FAIL@el:oms.S15-S12.amp4(). Confidence is 100%. No checks were reported, and the diagnosis required no engineering effort or site visits.",
+  "B": "Cause: AMP_PUMP_FAIL@el:oms.S15-S12.amp4() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7025,
+  "question": "Alarm AMP_GAIN_OOR (minor) was raised on oms.S18-S19.amp3 at about t=600 s. What is the cause?",
+  "A": "The system concluded that the alarm was caused by AMP_GAIN_DROP at oms.S18-S19.amp3, with 99.8% confidence. No additional checks were reported. The diagnosis required no engineering effort or site visits.",
+  "B": "Cause: AMP_GAIN_DROP@el:oms.S18-S19.amp3() (probability 0.998). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7026,
+  "question": "The customer on service svc311 (10GE between S08 and S23) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "The system localized the fault to OMS S08\u2013S23 with 95.3% confidence. It did not determine a specific amplifier or distinguish between an amplifier gain drop and gain tilt. No checks were recorded. Diagnostic effort was 0.0 hours, with no site visits.",
+  "B": "The cause lies at oms.S08-S23 (oms grain, probability 0.953); the exact cause could not be settled among: AMP_GAIN_DROP@el:oms.S08-S23.amp0(), AMP_GAIN_DROP@el:oms.S08-S23.amp1(), AMP_GAIN_DROP@el:oms.S08-S23.amp2(), AMP_GAIN_DROP@el:oms.S08-S23.amp3(), AMP_GAIN_TILT@el:oms.S08-S23.amp0(), AMP_GAIN_TILT@el:oms.S08-S23.amp1(), AMP_GAIN_TILT@el:oms.S08-S23.amp2(), AMP_GAIN_TILT@el:oms.S08-S23.amp3(). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7027,
+  "question": "Monitoring shows the transmit laser bias current of trx.och16.a rising over about 4 weeks, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "Cause: LASER_BIAS_DRIFT@el:trx.och16.a() (probability 0.999). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that LASER_BIAS_DRIFT is occurring at trx.och16.a, with 0.999 confidence. It committed to this cause rather than reporting multiple candidates. No diagnostic checks, engineering effort, or site visits were recorded. The result does not specify whether corrective action is needed.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7028,
+  "question": "Monitoring shows the input and output power reported by oms.S18-S24.amp1 unchanged since about t=600 s while neighbouring readings vary. What is the cause?",
+  "A": "The system concluded that the unchanged readings are caused by instrument misreporting at the input-power measurement of oms.S18-S24.amp1. Confidence is 92.7%. No checks were recorded, and the diagnosis required no effort hours or site visits.",
+  "B": "Cause: INSTRUMENT_MISREPORT@el:inst.oms.S18-S24.amp1.input_power() (probability 0.927). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7029,
+  "question": "Performance monitoring shows degraded signal quality on service svc207 (100GE between S12 and S18) from about t=660 s. What is the cause?",
+  "A": "The system concluded that the degradation was caused by the combined AMP_GAIN_TILT at oms.S18-S02.amp4 and WSS_ATTEN_DRIFT at oms.S12-S11|4, with probability 0.974. Coherent diagnostics on trx.och135.z showed estimated OSNR of 18.75 dB, pre-FEC BER of 0.00189804739570689, and margin of 3.11 dB. Swapping oms.S18-S02.amp6 left symptoms unchanged, while swapping oms.S18-S02.amp4 cleared them. The investigation required 5.52 hours and two site visits.",
+  "B": "Cause: AMP_GAIN_TILT@el:oms.S18-S02.amp4()+WSS_ATTEN_DRIFT@el:oms.S12-S11|4() (probability 0.974). Checks made: coherent_diag {'trx': 'trx.och135.z'}: done; swap_unit {'unit': 'oms.S18-S02.amp6'}: done; swap_unit {'unit': 'oms.S18-S02.amp4'}: done. Effort: 5.52 h of tests and travel, 2 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7030,
+  "question": "The customer on service svc382 (10GE between S10 and S24) reports a loss of service from about t=540 s. What is the cause?",
+  "A": "The system concluded that the service loss was caused by CONNECTOR_PULLED@el:oms.S10-S02(), with 0.997 probability. No checks were reported. The diagnosis required 0.0 effort hours and no site visits.",
+  "B": "Cause: CONNECTOR_PULLED@el:oms.S10-S02() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7031,
+  "question": "The customer on service svc074 (10GE between S10 and S23) reports a loss of service from about t=540 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by simultaneous fibre cuts on oms.S06-S19.span0() and oms.S06-S21.span0(). Confidence is 99.6%. No checks or site visits were recorded, and diagnostic effort was 0.0 hours.",
+  "B": "Cause: FIBRE_CUT@el:oms.S06-S19.span0()+FIBRE_CUT@el:oms.S06-S21.span0() (probability 0.996). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7032,
+  "question": "The customer on service svc303 (10GE between S04 and S05) reports a loss of service from about t=720 s. What is the cause?",
+  "A": "Cause: FIBRE_CUT@el:oms.S05-S15.span0() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the service loss was caused by a fibre cut on span 0 of the optical multiplex section between S05 and S15 (`FIBRE_CUT@el:oms.S05-S15.span0()`). Confidence is 100% (probability 1.0). No checks were recorded, and the diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7033,
+  "question": "The customer on service svc240 (100GE between S08 and S21) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "The system committed only to the OMS fault location: oms.S12-S11, with probability 0.989. It did not resolve the cause to a specific element or fault mechanism. Coherent diagnostics on trx.och116.z and trx.och135.z showed negative margins of -0.26 dB and -1.23 dB. Performance monitoring showed both transceivers changing from 0 to 60 errored seconds at t=600 s and remaining errored at t=660 s, while receive minimum power remained near its prior level. No site visit was performed.",
+  "B": "The cause lies at oms.S12-S11 (oms grain, probability 0.989); the exact cause could not be settled among: AMP_GAIN_DROP@el:oms.S12-S11.amp0(), AMP_GAIN_DROP@el:oms.S12-S11.amp1(), AMP_GAIN_DROP@el:oms.S12-S11.amp2(), AMP_GAIN_DROP@el:oms.S12-S11.amp3(), AMP_GAIN_DROP@el:oms.S12-S11.amp4(), AMP_GAIN_DROP@el:oms.S12-S11.amp5(), AMP_GAIN_DROP@el:oms.S12-S11.amp6(), AMP_GAIN_TILT@el:oms.S12-S11.amp0(). Checks made: coherent_diag {'trx': 'trx.och116.z'}: done; pm_detail {'trx': 'trx.och116.z'}: done; coherent_diag {'trx': 'trx.och135.z'}: done; pm_detail {'trx': 'trx.och135.z'}: done. Effort: 0.13 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7034,
+  "question": "The customer on service svc271 (10GE between S15 and S16) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "The system could not determine a single cause. It identified eight candidates with a combined probability of 0.902 and indicated that the cause was probably not omitted from consideration. Coherent diagnostics completed at both ends of och68: trx.och68.a showed 25.69 dB estimated OSNR, 0.0027344752737050444 pre-FEC BER, and 2.74 dB margin; trx.och68.z showed 25.89 dB estimated OSNR, 0.003104138521634911 pre-FEC BER, and 3.01 dB margin. Both reported 12769 ps/nm CD, low DGD, and zero SOP rate. No site visit occurred. The summary specifies no further diagnostic action.",
+  "B": "The cause could not be decided. Candidates: PROTECTION_SWITCH_HIT@el:och68(), NONE_OF_THESE, SOP_TRANSIENT@el:oms.S03-S18.span0(), INSTRUMENT_MISREPORT@el:inst.oms.S06-S23.amp1.input_power(), TELEMETRY_STALE@el:inst.oms.S06-S23.amp1.input_power(), SOP_TRANSIENT@el:oms.S03-S18.span0()+SOP_TRANSIENT@el:oms.S18-S03.span0(), SOP_TRANSIENT@el:oms.S03-S18.span1(), SOP_TRANSIENT@el:oms.S03-S18.span2(). Checks made: coherent_diag {'trx': 'trx.och68.a'}: done; coherent_diag {'trx': 'trx.och68.z'}: done. Effort: 0.07 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7035,
+  "question": "Monitoring shows the pump current of amplifier oms.S19-S18.amp4 rising over about 13 days, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "The system concludes that amplifier oms.S19-S18.amp4 is experiencing pump-current drift. Confidence is 100%. No supporting checks were reported. The summary provides no recommendation on whether action is needed, and reports no diagnostic effort or site visits.",
+  "B": "Cause: PUMP_CURRENT_DRIFT@el:oms.S19-S18.amp4() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7036,
+  "question": "Monitoring shows the input and output power reported by oms.S24-S17.amp0 unchanged since about t=600 s while neighbouring readings vary. What is the cause?",
+  "A": "The cause could not be decided. Candidates: NONE_OF_THESE, WSS_ATTEN_DRIFT@el:oms.S01-S20|11(), WSS_ATTEN_DRIFT@el:oms.S08-S20|20(), WSS_ATTEN_DRIFT@el:oms.S20-S04|11(), WSS_ATTEN_DRIFT@el:oms.S20-S04|20(), WSS_ATTEN_DRIFT@el:oms.S07-S03|3(), INSTRUMENT_MISREPORT@el:inst.oms.S18-S24.amp0.input_power(), INSTRUMENT_MISREPORT@el:inst.oms.S24-S17.amp0.input_power(). Checks made: swap_unit {'unit': 'oms.S07-S03.amp1'}: done. Effort: 2.93 h of tests and travel, 1 site visit(s).",
+  "B": "The system could not decide among the listed candidates. The candidate set has probability 0.907: NONE_OF_THESE; five WSS attenuation-drift candidates; and input-power instrument misreporting at inst.oms.S18-S24.amp0 or inst.oms.S24-S17.amp0. A swap of unit oms.S07-S03.amp1 was completed, and the symptoms remained unchanged. The results do not support narrowing the diagnosis further or specify a next check.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7037,
+  "question": "Alarm OTU_LOF (critical) was raised on trx.och107.z at about t=600 s. What is the cause?",
+  "A": "The system could not determine the cause from the considered possibilities. It concluded that the cause is probably outside the considered set, represented by NONE_OF_THESE, with 0.994 probability for that candidate set. No checks were performed, no engineering effort was recorded, and no site visits occurred. Further investigation is required, but the available summary does not specify particular next steps.",
+  "B": "The cause could not be decided. Candidates: NONE_OF_THESE. The cause was probably not among those proposed. Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7038,
+  "question": "The customer on service svc276 (100GE between S14 and S15) reports a loss of service from about t=720 s. What is the cause?",
+  "A": "Cause: OTN_SWITCH_FAIL@el:otn.S04() (probability 0.955). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the service loss was caused by OTN_SWITCH_FAIL@el:otn.S04(), with 95.5% confidence. No checks were reported.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7039,
+  "question": "The customer on service svc240 (100GE between S08 and S21) reports a loss of service from about t=480 s. What is the cause?",
+  "A": "The system concluded that the service loss was caused by simultaneous fibre cuts on oms.S06-S19.span0() and oms.S06-S21.span0(). Confidence is 99.6%. No checks were recorded. Diagnostic effort was 0.0 hours, with no site visits.",
+  "B": "Cause: FIBRE_CUT@el:oms.S06-S19.span0()+FIBRE_CUT@el:oms.S06-S21.span0() (probability 0.996). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7040,
+  "question": "The customer on service svc186 (100GE between S19 and S12) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "Cause: FIBRE_CUT@el:oms.S10-S21.span0() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the service loss was caused by a fibre cut on span 0 of the S10\u2013S21 OMS element (`FIBRE_CUT@el:oms.S10-S21.span0()`). Confidence is 100%. No checks, engineering effort, or site visits were recorded.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7041,
+  "question": "Performance monitoring shows degraded signal quality on service svc385 (100GE between S18 and S05) from about t=540 s. What is the cause?",
+  "A": "Cause: WSS_ATTEN_DRIFT@el:oms.S04-S15|4() (probability 0.996). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the degraded signal quality on svc385 was caused by WSS attenuation drift at el:oms.S04-S15|4(). Confidence is 99.6%. No supporting checks were reported. The diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7042,
+  "question": "Performance monitoring shows degraded signal quality on service svc315 (10GE between S14 and S15) from about t=660 s. What is the cause?",
+  "A": "The system concludes that the degraded signal quality on svc315 was caused by CHANNEL_LOADING_TRANSIENT@el:oms.S04-S01(). Confidence is high, with probability 0.986. No checks were reported.",
+  "B": "Cause: CHANNEL_LOADING_TRANSIENT@el:oms.S04-S01() (probability 0.986). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7043,
+  "question": "Monitoring shows the pump current of amplifier oms.S18-S24.amp0 rising over about 3 weeks, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "Cause: PUMP_CURRENT_DRIFT@el:oms.S18-S24.amp0() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that amplifier oms.S18-S24.amp0 is experiencing pump-current drift (PUMP_CURRENT_DRIFT). Confidence is 100%. No additional checks were reported. The summary does not specify any required action.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7044,
+  "question": "Monitoring shows the received power reported by trx.och211.z changed by about +5.3 dB at about t=600 s, with no alarm. What is the cause?",
+  "A": "The system concludes that the +5.3 dB change was caused by an instrument misreport in the received-power measurement for trx.och211.z. Confidence is 82.6%. No supporting checks were recorded. The diagnosis required no engineering effort or site visits.",
+  "B": "Cause: INSTRUMENT_MISREPORT@el:inst.trx.och211.z.rx_power() (probability 0.826). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7045,
+  "question": "Performance monitoring shows degraded signal quality on service svc262 (10GE between S10 and S15) from about t=660 s. What is the cause?",
+  "A": "Cause: AMP_GAIN_DROP@el:oms.S13-S20.amp1()+DGD_RISE@el:oms.S10-S19.span0() (probability 0.994). Checks made: coherent_diag {'trx': 'trx.och29.z'}: failed; coherent_diag {'trx': 'trx.och29.z'}: done; otdr_portable {'span': 'oms.S13-S20.span0'}: done; power_meter {'oms': 'oms.S13-S20'}: done; swap_unit {'unit': 'oms.S13-S20.amp1'}: done. Effort: 3.74 h of tests and travel, 1 site visit(s).",
+  "B": "The system concludes that the cause is the combined fault AMP_GAIN_DROP@el:oms.S13-S20.amp1()+DGD_RISE@el:oms.S10-S19.span0(), with 0.994 probability. The first coherent diagnostic did not complete; a later run measured 27.17 dB estimated OSNR, 0.003399003557056801 pre-FEC BER, 9403 ps/nm chromatic dispersion, 38.2 ps DGD, and 2.54 dB margin. Portable OTDR found no events on oms.S13-S20.span0. Per-channel input power on oms.S13-S20 was 1.08 dBm. Swapping oms.S13-S20.amp1 cleared the symptoms.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7046,
+  "question": "The customer on service svc267 (10GE between S17 and S23) reports a loss of service from about t=720 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by a pulled connector at oms.S12-S01. Confidence is 0.997. No checks were reported. The diagnosis required 0.0 effort hours and no site visits.",
+  "B": "Cause: CONNECTOR_PULLED@el:oms.S12-S01() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7047,
+  "question": "The customer on service svc225 (10GE between S15 and S21) reports a loss of service from about t=720 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by two fibre cuts: FIBRE_CUT@el:oms.S01-S04.span0() and FIBRE_CUT@el:oms.S01-S15.span0(). Confidence is high at 0.997. No diagnostic checks, engineering effort, or site visits were recorded.",
+  "B": "Cause: FIBRE_CUT@el:oms.S01-S04.span0()+FIBRE_CUT@el:oms.S01-S15.span0() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7048,
+  "question": "The customer on service svc298 (10GE between S21 and S05) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "The system concluded that the service loss was caused by CLIENT_PORT_FAIL@el:cp.svc298.S05(), with 92.5% confidence. No checks were reported. Diagnostic effort was 0.0 hours, with no site visits.",
+  "B": "Cause: CLIENT_PORT_FAIL@el:cp.svc298.S05() (probability 0.925). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7049,
+  "question": "Performance monitoring shows degraded signal quality on service svc119 (10GE between S10 and S21) from about t=540 s. What is the cause?",
+  "A": "The system concluded that the degraded signal quality on svc119 was caused by increased span loss at `el:oms.S10-S19.span2()`. Confidence is high (probability 0.996). No checks, engineering effort, or site visits were recorded.",
+  "B": "Cause: SPAN_LOSS_INCREASE@el:oms.S10-S19.span2() (probability 0.996). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7050,
+  "question": "Performance monitoring shows degraded signal quality on service svc207 (100GE between S12 and S18) from about t=720 s. What is the cause?",
+  "A": "The system localized the degradation to OMS oms.S18-S17, with confidence 0.891, but did not determine a more specific cause. Coherent diagnostics completed at both ends of trx.och134. Spare-retune testing showed persistent errors at both ends of och49, och110, and och129; an earlier och49 z-end test did not complete. No site visits were made.",
+  "B": "The cause lies at oms.S18-S17 (oms grain, probability 0.891); the exact cause could not be settled among: MECHANICAL_DISTURBANCE@el:oms.S18-S17.span0(), MECHANICAL_DISTURBANCE@el:oms.S18-S17.span0()+SOP_TRANSIENT@el:oms.S18-S17.span0(), MECHANICAL_DISTURBANCE@el:oms.S18-S17.span1(), MECHANICAL_DISTURBANCE@el:oms.S18-S17.span2(), MECHANICAL_DISTURBANCE@el:oms.S18-S17.span3(), MECHANICAL_DISTURBANCE@el:oms.S18-S17.span3()+SOP_TRANSIENT@el:oms.S18-S17.span0(), SOP_TRANSIENT@el:oms.S18-S17.span0(), SOP_TRANSIENT@el:oms.S18-S17.span1(). Checks made: coherent_diag {'trx': 'trx.och134.z'}: done; coherent_diag {'trx': 'trx.och134.a'}: done; retune_spare {'lightpath': 'och49', 'end': 'z'}: failed; retune_spare {'lightpath': 'och49', 'end': 'z'}: done; retune_spare {'lightpath': 'och49', 'end': 'a'}: done; retune_spare {'lightpath': 'och110', 'end': 'a'}: done; retune_spare {'lightpath': 'och129', 'end': 'z'}: done; retune_spare {'lightpath': 'och110', 'end': 'z'}: done; retune_spare {'lightpath': 'och129', 'end': 'a'}: done. Effort: 3.57 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7051,
+  "question": "Monitoring shows the pre-FEC bit error rate on the channel received at trx.och135.z rising over about 2 days, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "Cause: MARGIN_EROSION@el:trx.och135.z() (probability 0.99). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that margin erosion is occurring at trx.och135.z, with 0.99 probability. No diagnostic checks were recorded. The result does not specify whether action is needed or recommend any next step; it records zero engineering effort and zero site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7052,
+  "question": "Monitoring shows the input and output power reported by oms.S24-S08.amp1 changed by about -3.5 dB at about t=600 s, with no alarm. What is the cause?",
+  "A": "Cause: INSTRUMENT_MISREPORT@el:inst.oms.S24-S08.amp1.input_power() (probability 0.822). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the reported ~3.5 dB change was caused by an instrument misreport in the input-power measurement of oms.S24-S08.amp1. Confidence is 82.2%. No checks were recorded, and the diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7053,
+  "question": "The customer on service svc384 (10GE between S02 and S19) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by TX_LASER_FAIL at el:trx.och215.z(), with 99.7% confidence. No checks were reported. Diagnostic effort was 0.0 hours, with no site visits.",
+  "B": "Cause: TX_LASER_FAIL@el:trx.och215.z() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7054,
+  "question": "Alarm OTU_SD (minor) was raised on trx.och140.z at about t=600 s. What is the cause?",
+  "A": "Cause: CONNECTOR_DIRTY@el:oms.S20-S08() (probability 0.998). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the OTU_SD minor alarm on trx.och140.z was caused by a dirty connector at oms.S20-S08. Confidence is high: probability 0.998. No checks were reported, and the diagnosis required no effort hours or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7055,
+  "question": "The customer on service svc167 (10GE between S14 and S11) reports a loss of service from about t=540 s. What is the cause?",
+  "A": "The system committed to the cause FIBRE_CUT@el:oms.S04-S14.span5()+FIBRE_CUT@el:oms.S14-S20.span0() with probability 0.996. No checks, investigation effort, or site visits were recorded.",
+  "B": "Cause: FIBRE_CUT@el:oms.S04-S14.span5()+FIBRE_CUT@el:oms.S14-S20.span0() (probability 0.996). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7056,
+  "question": "The customer on service svc285 (10GE between S20 and S08) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by OTN_SWITCH_FAIL@el:otn.S04(), with 95.5% confidence. No checks were reported.",
+  "B": "Cause: OTN_SWITCH_FAIL@el:otn.S04() (probability 0.955). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7057,
+  "question": "Alarm AMP_GAIN_OOR (minor) was raised on oms.S07-S16.amp2 at about t=600 s. What is the cause?",
+  "A": "Cause: AMP_GAIN_DROP@el:oms.S07-S16.amp2() (probability 0.998). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the alarm was caused by AMP_GAIN_DROP at oms.S07-S16.amp2. Confidence is 99.8%. No additional checks were recorded. The diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7058,
+  "question": "The customer on service svc186 (100GE between S19 and S12) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "The system could not determine a single cause. It identified four candidates: NONE_OF_THESE, PROTECTION_SWITCH_HIT@el:och98(), WSS_FILTER_SHIFT@el:oms.S10-S19|4(), and SOP_TRANSIENT@el:oms.S10-S19.span0(). The candidate set has probability 0.913, and the system indicates the actual cause was probably not considered. Retuning spare lightpath och98 at end a did not clear the issue; errors persisted on receiver trx.och98.a. Swapping unit oms.S10-S19.amp3 also left the symptoms unchanged.",
+  "B": "The cause could not be decided. Candidates: NONE_OF_THESE, PROTECTION_SWITCH_HIT@el:och98(), WSS_FILTER_SHIFT@el:oms.S10-S19|4(), SOP_TRANSIENT@el:oms.S10-S19.span0(). The cause was probably not among those proposed. Checks made: retune_spare {'lightpath': 'och98', 'end': 'a'}: done; swap_unit {'unit': 'oms.S10-S19.amp3'}: done. Effort: 3.48 h of tests and travel, 1 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7059,
+  "question": "Monitoring shows the pre-FEC bit error rate on the channel received at trx.och95.z rising over about 6 days, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "Cause: MARGIN_EROSION@el:trx.och95.z() (probability 0.999). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that margin erosion is occurring at trx.och95.z, with 0.999 probability. It committed to this cause rather than reporting multiple candidates or only a broader fault location. No diagnostic checks were recorded, and the diagnosis required no reported engineering effort or site visits. The summary does not specify whether corrective action is needed, so no action recommendation can be made from these results alone.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7060,
+  "question": "Monitoring shows the received power reported by trx.och186.a changed by about -5.4 dB at about t=600 s, with no alarm. What is the cause?",
+  "A": "The system concluded that the change was caused by an instrument misreport in the receive-power measurement at `el:inst.trx.och186.a.rx_power()`. Confidence is 91.7%. No checks were recorded, and the diagnosis required no engineering effort or site visits.",
+  "B": "Cause: INSTRUMENT_MISREPORT@el:inst.trx.och186.a.rx_power() (probability 0.917). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7061,
+  "question": "The customer on service svc167 (10GE between S14 and S11) reports a loss of service from about t=480 s. What is the cause?",
+  "A": "Cause: OTN_SWITCH_FAIL@el:otn.S21()+SPAN_LOSS_INCREASE@el:oms.S10-S19.span0() (probability 0.895). Checks made: coherent_diag {'trx': 'trx.och16.a'}: done; coherent_diag {'trx': 'trx.och153.a'}: done; otdr_embedded {'span': 'oms.S10-S19.span0'}: done. Effort: 0.2 h of tests and travel, 0 site visit(s).",
+  "B": "The system committed to the cause OTN_SWITCH_FAIL@el:otn.S21()+SPAN_LOSS_INCREASE@el:oms.S10-S19.span0(), with 0.895 probability. Coherent diagnostics completed on trx.och16.a and trx.och153.a, showing estimated OSNR of 20.02 dB and 19.15 dB and margins of 5.97 dB and 5.74 dB, respectively. Embedded OTDR on oms.S10-S19.span0 completed and found a 9.31 dB loss event at 40.3 km on the 80.8 km span.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7062,
+  "question": "Alarm AMP_GAIN_OOR (minor) was raised on oms.S20-S13.amp4 at about t=600 s. What is the cause?",
+  "A": "The system concluded that the alarm was caused by AMP_GAIN_DROP at oms.S20-S13.amp4, with 0.999 probability. No checks were reported. The diagnosis required 0.0 effort hours and no site visits.",
+  "B": "Cause: AMP_GAIN_DROP@el:oms.S20-S13.amp4() (probability 0.999). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7063,
+  "question": "The customer on service svc231 (100GE between S15 and S04) reports a loss of service from about t=540 s. What is the cause?",
+  "A": "Cause: FIBRE_CUT@el:oms.S01-S04.span0()+FIBRE_CUT@el:oms.S01-S15.span0() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the service loss was caused by fibre cuts on both oms.S01-S04.span0() and oms.S01-S15.span0(). Confidence is very high (probability 0.997). No diagnostic checks were reported. The diagnosis required 0.0 effort hours and no site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7064,
+  "question": "Alarm EQPT_CARD_FAIL (critical) was raised on trx.och94.z at about t=600 s. What is the cause?",
+  "A": "Cause: CARD_FAIL@el:trx.och94.z() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the alarm was caused by CARD_FAIL on trx.och94.z. Confidence is 100%. No additional checks were recorded, and the diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7065,
+  "question": "The customer on service svc350 (400GE between S14 and S15) reports a brief interruption from about t=720 s. What is the cause?",
+  "A": "Cause: RX_DEGRADATION@el:trx.och196.z() (probability 0.923). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the interruption was caused by RX_DEGRADATION@el:trx.och196.z(), with 0.923 probability. No checks were reported. Diagnostic effort was 0.0 hours, with no site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7066,
+  "question": "The customer on service svc373 (10GE between S10 and S21) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "The system could not determine a single cause. It identified five candidates: NONE_OF_THESE, PROTECTION_SWITCH_HIT@el:och189(), SOP_TRANSIENT@el:oms.S10-S19.span0(), SOP_TRANSIENT@el:oms.S10-S19.span0()+SOP_TRANSIENT@el:oms.S19-S10.span0(), and SOP_TRANSIENT@el:oms.S19-S10.span2(). The candidate set has probability 0.903, and the system indicates that the actual cause was probably not considered. Coherent diagnostics completed at both ends of och189. trx.och189.a showed 26.52 dB estimated OSNR, 0.0006927545933291986 pre-FEC BER, 4.03 dB margin, and zero SOP rate. trx.och189.z showed 26.59 dB estimated OSNR, 0.0005850879868328732 pre-FEC BER, 3.89 dB margin, and zero SOP rate.",
+  "B": "The cause could not be decided. Candidates: NONE_OF_THESE, PROTECTION_SWITCH_HIT@el:och189(), SOP_TRANSIENT@el:oms.S10-S19.span0(), SOP_TRANSIENT@el:oms.S10-S19.span0()+SOP_TRANSIENT@el:oms.S19-S10.span0(), SOP_TRANSIENT@el:oms.S19-S10.span2(). The cause was probably not among those proposed. Checks made: coherent_diag {'trx': 'trx.och189.a'}: done; coherent_diag {'trx': 'trx.och189.z'}: done. Effort: 0.07 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7067,
+  "question": "Monitoring shows the transmit laser bias current of trx.och200.a rising over about 2 weeks, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "The system concludes that trx.och200.a is experiencing transmit laser bias drift (LASER_BIAS_DRIFT). Confidence is very high at 0.999. No checks were reported, and no effort or site visits were recorded. The summary does not specify whether action is needed, so no action recommendation can be made from these results.",
+  "B": "Cause: LASER_BIAS_DRIFT@el:trx.och200.a() (probability 0.999). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7068,
+  "question": "Monitoring shows the input and output power reported by oms.S10-S02.amp6 unchanged since about t=600 s while neighbouring readings vary. What is the cause?",
+  "A": "The cause could not be decided. Candidates: WSS_ATTEN_DRIFT@el:oms.S17-S24|4(), WSS_ATTEN_DRIFT@el:oms.S24-S18|4(), INSTRUMENT_MISREPORT@el:inst.oms.S10-S02.amp6.input_power(), TELEMETRY_STALE@el:inst.oms.S10-S02.amp6.input_power(), NONE_OF_THESE. Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system could not determine a single cause. It identified five candidates with a combined probability of 0.94: two WSS attenuation drifts, instrument misreporting, stale telemetry, or none of these. It did not indicate that a probable cause was omitted. No diagnostic checks, engineering effort, or site visits were performed, so there is no check evidence to distinguish among the candidates.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7069,
+  "question": "Alarm AMP_INPUT_LOS (critical) was raised on oms.S09-S05.amp1 at about t=600 s. What is the cause?",
+  "A": "Cause: CONNECTOR_PULLED@el:oms.S09-S05() (probability 0.973). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the AMP_INPUT_LOS alarm on oms.S09-S05.amp1 was caused by CONNECTOR_PULLED@el:oms.S09-S05(), with 0.973 probability. No checks, effort hours, or site visits were recorded.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7070,
+  "question": "The customer on service svc176 (10GE between S07 and S18) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by a pulled connector on OMS S07\u2013S03: CONNECTOR_PULLED@el:oms.S07-S03(). Confidence is 0.997. No checks were reported. Diagnostic effort was 0.0 hours, with 0 site visits.",
+  "B": "Cause: CONNECTOR_PULLED@el:oms.S07-S03() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7071,
+  "question": "The customer on service svc055 (10GE between S13 and S24) reports a loss of service from about t=540 s. What is the cause?",
+  "A": "The system concludes that the service loss was caused by simultaneous fibre cuts on oms.S01-S15.span2() and oms.S12-S15.span3(). Confidence is 99.7%. No diagnostic checks, engineering effort, or site visits were recorded.",
+  "B": "Cause: FIBRE_CUT@el:oms.S01-S15.span2()+FIBRE_CUT@el:oms.S12-S15.span3() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7072,
+  "question": "Alarm EQPT_CARD_FAIL (critical) was raised on trx.och45.a at about t=600 s. What is the cause?",
+  "A": "The system concluded that the alarm was caused by a card failure at trx.och45.a: CARD_FAIL@el:trx.och45.a(). Confidence is 100%. No additional checks were recorded. The diagnosis required no engineering effort or site visits.",
+  "B": "Cause: CARD_FAIL@el:trx.och45.a() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7073,
+  "question": "Performance monitoring shows degraded signal quality on service svc332 (10GE between S01 and S24) from about t=660 s. What is the cause?",
+  "A": "Cause: SPAN_LOSS_INCREASE@el:oms.S20-S14.span0() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the degraded signal quality on svc332 was caused by increased span loss on the S20\u2013S14 OMS span (span0). Confidence is 99.7%. No checks were reported, and the diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7074,
+  "question": "Performance monitoring shows degraded signal quality on service svc038 (10GE between S12 and S21) from about t=540 s. What is the cause?",
+  "A": "Cause: CHANNEL_LOADING_TRANSIENT@el:oms.S13-S01() (probability 0.986). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the degraded signal quality on svc038 was caused by `CHANNEL_LOADING_TRANSIENT@el:oms.S13-S01()`. Confidence is high at 0.986. No checks were reported, and the diagnosis required no engineering effort or site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7075,
+  "question": "Monitoring shows the pre-FEC bit error rate on the channel received at trx.och216.a rising over about 2 days, with no alarm and no service affected yet. What is happening, and is action needed?",
+  "A": "The system localized the issue to element trx.och216.a with probability 1.0, but did not determine the specific fault. The unresolved candidates are instrument misreporting, laser-bias drift, margin erosion, and stale telemetry at the listed elements/functions. No diagnostic checks, engineering effort, or site visits were performed. The summary does not establish whether corrective action is needed or recommend a next step.",
+  "B": "The cause lies at trx.och216.a (element grain, probability 1.0); the exact cause could not be settled among: INSTRUMENT_MISREPORT@el:inst.trx.och216.a.rx_power(), LASER_BIAS_DRIFT@el:trx.och216.a(), MARGIN_EROSION@el:trx.och216.a(), TELEMETRY_STALE@el:inst.trx.och216.a.rx_power(). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "key": {
+   "A": "llm",
+   "B": "template"
+  }
+ },
+ {
+  "seed": 7076,
+  "question": "Monitoring shows the received power reported by trx.och69.z unchanged since about t=600 s while neighbouring readings vary. What is the cause?",
+  "A": "The cause lies at trx.och69.z (element grain, probability 1.0); the exact cause could not be settled among: INSTRUMENT_MISREPORT@el:inst.trx.och69.z.rx_power(), LASER_BIAS_DRIFT@el:trx.och69.z(), MARGIN_EROSION@el:trx.och69.z(), TELEMETRY_STALE@el:inst.trx.och69.z.rx_power(). Checks made: swap_unit {'unit': 'trx.och69.z'}: done. Effort: 2.44 h of tests and travel, 1 site visit(s).",
+  "B": "The system localized the fault to element trx.och69.z with probability 1.0, but did not determine a more specific cause. A swap of unit trx.och69.z was completed; the symptoms remained unchanged after the swap. The investigation used 2.44 effort-hours and one site visit. No next action was specified in the summary.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7077,
+  "question": "The customer on service svc188 (100GE between S24 and S15) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "Cause: CARD_FAIL@el:trx.och122.a() (probability 1.0). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the service loss was caused by CARD_FAIL@el:trx.och122.a(), with probability 1.0. No checks were reported. The diagnosis required 0.0 effort hours and no site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7078,
+  "question": "The customer on service svc247 (10GE between S24 and S02) reports a loss of service from about t=660 s. What is the cause?",
+  "A": "Cause: CONNECTOR_PULLED@el:oms.S03-S02() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concluded that the service loss was caused by CONNECTOR_PULLED@el:oms.S03-S02(), with 0.997 probability. No checks were reported. Diagnostic effort was 0.0 hours, with 0 site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ },
+ {
+  "seed": 7079,
+  "question": "The customer on service svc077 (10GE between S08 and S01) reports a loss of service from about t=600 s. What is the cause?",
+  "A": "Cause: FIBRE_CUT@el:oms.S01-S15.span2()+FIBRE_CUT@el:oms.S12-S15.span3() (probability 0.997). Checks made: none. Effort: 0.0 h of tests and travel, 0 site visit(s).",
+  "B": "The system concludes that the service loss was caused by two fibre cuts: FIBRE_CUT@el:oms.S01-S15.span2() and FIBRE_CUT@el:oms.S12-S15.span3(). Confidence is 0.997. No checks were reported; diagnostic effort was 0.0 hours with no site visits.",
+  "key": {
+   "A": "template",
+   "B": "llm"
+  }
+ }
+]

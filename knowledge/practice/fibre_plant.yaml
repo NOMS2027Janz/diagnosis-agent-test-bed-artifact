@@ -1,0 +1,70 @@
+document: "Operator practice note: fibre plant and OMS patching, faults and their signatures"
+source: "Operator outside-plant practice; ITU-T G.652 and G.650 series for fibre characteristics"
+types:
+  - {id: PLANT-SPAN, class: FibreSpan}
+  - {id: PLANT-OMS-INPUT, class: OMS, note: "the patch between a ROADM degree output and its booster amplifier"}
+
+signal_behaviour:            # a span or patch passes every effect that arrives at it
+  default: pass
+
+fault_modes:
+  - id: FIBRE_CUT
+    applies_to: PLANT-SPAN
+    description: "Fibre broken, usually by excavation; both fibres of a cable are normally cut together, and
+      other cables in the same duct may be cut too."
+    effects: [{effect: SIGNAL_LOST, scope: all_channels}, {effect: OSC_LOST, scope: all_channels}]
+    extends_to: same_cable_section      # both fibres of the cable section, in both directions
+    nature: hard
+    documented_rate: {per_year: 1.0, per: "1000 route-km buried; three times higher on aerial routes"}
+    twin_scenario: {kind: span_cut}
+  - id: SPAN_LOSS_INCREASE
+    applies_to: PLANT-SPAN
+    description: "Added loss in the span: a macro-bend, a damaged splice, a crushed cable. Large added loss
+      also loses the OSC on the span."
+    effects: [{effect: POWER_LOW, scope: all_channels}, {effect: OSC_LOST, scope: all_channels, if: large}]
+    nature: soft
+    documented_rate: {per_year: 0.03, per: span}
+    twin_scenario: {kind: span_added_loss, parameter: added_loss_db, range: [0.5, 15]}
+  - id: DGD_RISE
+    applies_to: PLANT-SPAN
+    description: "Polarisation mode dispersion higher than recorded, usually in older or stressed fibre."
+    effects: [{effect: DGD_HIGH, scope: all_channels}]
+    nature: soft
+    documented_rate: {per_year: 0.005, per: span}
+    twin_scenario: {kind: span_dgd, parameter: dgd_increase_ps, range: [5, 80]}
+  - id: SOP_TRANSIENT
+    applies_to: PLANT-SPAN
+    description: "Fast polarisation change from mechanical disturbance of the cable: wind on aerial spans,
+      lightning, nearby works. Usually lasts milliseconds and causes no alarm, but may cause errored seconds."
+    effects: [{effect: POL_TRANSIENT, scope: all_channels}]
+    nature: transient
+    documented_rate: {per_year: 1.0, per: "aerial span; rare on buried spans"}
+    twin_scenario: {kind: span_sop, parameter: peak_rate_rad_s, range: [1.0e4, 5.0e6]}
+  - id: MECHANICAL_DISTURBANCE
+    applies_to: PLANT-SPAN
+    description: "Cable or patch handled during work nearby; brief power excursions."
+    effects: [{effect: POWER_EXCURSION, scope: all_channels}]
+    nature: transient
+    documented_rate: {per_year: 0.5, per: span}
+    twin_scenario: {kind: span_added_loss, parameter: loss_excursion_db, range: [0.5, 20], transient: true}
+  - id: CONNECTOR_DIRTY
+    applies_to: PLANT-OMS-INPUT
+    description: "Contaminated connector on the patch between ROADM degree and booster, often after
+      maintenance at the site."
+    effects: [{effect: POWER_LOW, scope: all_channels}]
+    nature: soft
+    documented_rate: {per_year: 0.1, per: "OMS; higher in the days after site maintenance"}
+    twin_scenario: {kind: oms_input_loss, parameter: added_loss_db, range: [0.5, 6]}
+  - id: CONNECTOR_PULLED
+    applies_to: PLANT-OMS-INPUT
+    description: "Patch cord disconnected or broken, usually during site work."
+    effects: [{effect: SIGNAL_LOST, scope: all_channels}]
+    nature: hard
+    documented_rate: {per_year: 0.02, per: "OMS; mostly during site maintenance"}
+    twin_scenario: {kind: oms_input_open}
+
+alarms: []                   # passive plant raises no alarms of its own; see amplifier and line documentation
+
+notes:
+  - "Optical supervisory channel (OSC) loss on a span, with input loss at the next amplifier, points to the span."
+  - "Loss at the first amplifier of an OMS with the OSC still present points to the OMS input patch or the booster."

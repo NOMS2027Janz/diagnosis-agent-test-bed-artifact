@@ -1,0 +1,12 @@
+document: "Operator practice: what the management systems' records can be relied on for"
+note: >
+  A missing fact can be read as false only where the record is complete. Inventory and provisioning are the
+  systems of record and are complete once a change is recorded, though a change may take days to be recorded.
+  Plant records of shared ducts and cables are known to be incomplete, as are registrations of instrument
+  deployments. Vendor documentation is incomplete by nature: a fault mode or alarm cause it does not list may
+  still occur.
+relations:
+  complete_once_recorded: [hasType, locatedAt, partOf, traverses, feeds, carriedBy, oduHop, working, protecting,
+                           protectedBy, crossConnectedAt, endsAt, terminatesAt, hostedOn, hasPort, at]
+  incomplete: [inDuct, inCable, monitoredBy, observes]
+  as_documented: [hasFaultMode, canRaise, sees, produces, defines, implements]

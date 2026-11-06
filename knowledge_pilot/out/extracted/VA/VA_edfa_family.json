@@ -1,0 +1,443 @@
+{
+ "vendor": "VA",
+ "document_title": "VA EDFA Family: Fault Management Guide",
+ "standards": [],
+ "unit_types": [
+  {
+   "product_code": "VA-OA-BST",
+   "unit": "EDFA card",
+   "role_or_position": "transmit-side EDFA (booster), fitted at the head end of each optical multiplex section (OMS)",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VA-OA-ILA",
+   "unit": "EDFA card",
+   "role_or_position": "optical line amplifier (OLA), fitted at in-line amplifier huts",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  },
+  {
+   "product_code": "VA-OA-PRE",
+   "unit": "EDFA card",
+   "role_or_position": "receive-side EDFA (pre-amp), fitted at the tail end of each OMS",
+   "line_rate_or_client_rate": null,
+   "odu_mapping": null
+  }
+ ],
+ "datasheet": [
+  {
+   "item": "Publication",
+   "value": "VA-TN-0412"
+  },
+  {
+   "item": "revision",
+   "value": "C"
+  },
+  {
+   "item": "Noise figure",
+   "value": "5.5 dB nominal, 6.5 dB worst case"
+  },
+  {
+   "item": "Input loss-of-light threshold",
+   "value": "-30 dBm per channel"
+  }
+ ],
+ "monitors": [
+  {
+   "name": "IN-PWR",
+   "measures": [
+    "Composite input power"
+   ],
+   "availability": "Power monitoring licence",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "OUT-PWR",
+   "measures": [
+    "Composite output power"
+   ],
+   "availability": "Power monitoring licence",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "PUMP-I",
+   "measures": [
+    "Pump laser drive current, % of beginning of life"
+   ],
+   "availability": "Advanced monitoring licence",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "location": null,
+   "alarm_only": false
+  },
+  {
+   "name": "OSC-RX",
+   "measures": [
+    "OSC receiver status"
+   ],
+   "availability": "Standard",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "location": null,
+   "alarm_only": true
+  }
+ ],
+ "behaviours": [
+  {
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "when": [
+    "The EDFA cards run in automatic gain control (AGC)."
+   ],
+   "result": [
+    "The gain target is provisioned at turn-up equal to the attenuation of the fibre span ahead of the card."
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "when": [
+    "Under AGC, a drop of input level"
+   ],
+   "result": [
+    "an equal drop of output level",
+    "the optical signal-to-noise ratio (OSNR) of all channels degrades with it"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "when": [
+    "A card with no input light"
+   ],
+   "result": [
+    "has no output light"
+   ],
+   "threshold": "Input loss-of-light threshold: -30 dBm per channel.",
+   "note": null
+  },
+  {
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "when": [
+    "Other conditions at the input"
+   ],
+   "result": [
+    "are passed through to the output"
+   ],
+   "threshold": null,
+   "note": null
+  },
+  {
+   "applies_to": [
+    "OSC"
+   ],
+   "when": [
+    "Every hut terminates the optical supervisory channel (OSC) and launches its own OSC onto the next span"
+   ],
+   "result": [
+    "an OSC failure is confined to the span on which it occurs"
+   ],
+   "threshold": null,
+   "note": null
+  }
+ ],
+ "faults": [
+  {
+   "name": "EDFA dead",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "description": "Pump laser or card failure",
+   "effects": [
+    {
+     "effect": "no output light",
+     "scope": "all channels",
+     "where": null
+    },
+    {
+     "effect": "all channels lost",
+     "scope": "all channels",
+     "where": null
+    }
+   ],
+   "character": "Hard",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "card per year"
+  },
+  {
+   "name": "Gain loss",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "description": "Gain under target",
+   "effects": [
+    {
+     "effect": "low output",
+     "scope": "all channels",
+     "where": null
+    },
+    {
+     "effect": "OSNR down",
+     "scope": "all channels",
+     "where": null
+    }
+   ],
+   "character": "Soft",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "card per year"
+  },
+  {
+   "name": "Noise figure degradation",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "description": "Amplifier stage noisier than specified",
+   "effects": [
+    {
+     "effect": "output power normal",
+     "scope": "all channels",
+     "where": null
+    },
+    {
+     "effect": "OSNR down",
+     "scope": "every channel downstream",
+     "where": "downstream"
+    }
+   ],
+   "character": "Soft",
+   "rate_per_year_fraction": 0.01,
+   "rate_per": "card per year"
+  },
+  {
+   "name": "Pump ageing",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "description": "",
+   "effects": [
+    {
+     "effect": "PUMP-I climbs to maintain gain",
+     "scope": "this card",
+     "where": "this card"
+    },
+    {
+     "effect": "ends in the end-of-life alarm",
+     "scope": "this card",
+     "where": "this card"
+    }
+   ],
+   "character": "Incipient",
+   "rate_per_year_fraction": 0.02,
+   "rate_per": "card per year"
+  },
+  {
+   "name": "Gain tilt",
+   "applies_to": [
+    "VA-OA-BST",
+    "VA-OA-ILA",
+    "VA-OA-PRE"
+   ],
+   "description": "Gain not flat across the C-band",
+   "effects": [
+    {
+     "effect": "channels low",
+     "scope": "channels at one band edge",
+     "where": "one band edge"
+    }
+   ],
+   "character": "Soft",
+   "rate_per_year_fraction": 0.005,
+   "rate_per": "card per year"
+  }
+ ],
+ "alarms": [
+  {
+   "id": "AMP_INPUT_LOS",
+   "raised_by": [
+    "OLA"
+   ],
+   "severity": "Critical",
+   "monitor": "IN-PWR",
+   "symptom": "Loss of light at IN-PWR",
+   "raised_when": "Loss of light at IN-PWR",
+   "probable_causes": [
+    {
+     "cause": "Fibre break",
+     "where": "on the incoming span"
+    },
+    {
+     "cause": "high span loss",
+     "where": "on the incoming span"
+    },
+    {
+     "cause": "previous EDFA dead",
+     "where": "previous EDFA"
+    }
+   ],
+   "suppression": "AMP_INPUT_LOS and OMS_LOS_P are raised by the first card on the OMS to lose input light only. Downstream cards are held off by the forward defect indication on the OSC.",
+   "reported_against": null
+  },
+  {
+   "id": "OMS_LOS_P",
+   "raised_by": [
+    "Pre-amp"
+   ],
+   "severity": "Critical",
+   "monitor": "IN-PWR",
+   "symptom": "Loss of light at IN-PWR",
+   "raised_when": "Loss of light at IN-PWR",
+   "probable_causes": [
+    {
+     "cause": "Fibre break",
+     "where": "on the incoming span"
+    },
+    {
+     "cause": "high span loss",
+     "where": "on the incoming span"
+    },
+    {
+     "cause": "previous EDFA dead",
+     "where": "previous EDFA"
+    },
+    {
+     "cause": "OMS input jumper pulled",
+     "where": "OMS input"
+    }
+   ],
+   "suppression": "AMP_INPUT_LOS and OMS_LOS_P are raised by the first card on the OMS to lose input light only. Downstream cards are held off by the forward defect indication on the OSC.",
+   "reported_against": null
+  },
+  {
+   "id": "OSC_LOS",
+   "raised_by": [
+    "OLA",
+    "pre-amp"
+   ],
+   "severity": "Major",
+   "monitor": "OSC-RX",
+   "symptom": "OSC not received",
+   "raised_when": "OSC not received",
+   "probable_causes": [
+    {
+     "cause": "Fibre break",
+     "where": "on the incoming span"
+    },
+    {
+     "cause": "high span loss",
+     "where": "on the incoming span"
+    }
+   ],
+   "suppression": null,
+   "reported_against": "the incoming span"
+  },
+  {
+   "id": "AMP_FAIL",
+   "raised_by": [
+    "All"
+   ],
+   "severity": "Critical",
+   "monitor": "OUT-PWR",
+   "symptom": "No light at OUT-PWR with input light present",
+   "raised_when": "No light at OUT-PWR with input light present",
+   "probable_causes": [
+    {
+     "cause": "EDFA dead",
+     "where": "this card"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "AMP_GAIN_OOR",
+   "raised_by": [
+    "OLA",
+    "pre-amp"
+   ],
+   "severity": "Minor",
+   "monitor": null,
+   "symptom": "Gain more than 2 dB from target",
+   "raised_when": "Gain more than 2 dB from target",
+   "probable_causes": [
+    {
+     "cause": "EDFA dead",
+     "where": "This card"
+    },
+    {
+     "cause": "gain loss",
+     "where": "This card"
+    },
+    {
+     "cause": "pump ageing",
+     "where": "This card"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  },
+  {
+   "id": "AMP_PUMP_EOL",
+   "raised_by": [
+    "All"
+   ],
+   "severity": "Minor",
+   "monitor": "PUMP-I",
+   "symptom": "PUMP-I above 120 % of beginning of life",
+   "raised_when": "PUMP-I above 120 % of beginning of life",
+   "probable_causes": [
+    {
+     "cause": "pump ageing",
+     "where": "This card"
+    }
+   ],
+   "suppression": null,
+   "reported_against": null
+  }
+ ],
+ "routing": "Every hut terminates the optical supervisory channel (OSC) and launches its own OSC onto the next span.",
+ "troubleshooting_notes": []
+}
